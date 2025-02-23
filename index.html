@@ -4,62 +4,56 @@
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
     <title>My Viva Presentation</title>
 
     <!-- Reveal.js CSS -->
     <link rel="stylesheet" href="dist/reset.css">
     <link rel="stylesheet" href="dist/reveal.css">
-    <!-- Theme -->
     <link rel="stylesheet" href="dist/theme/black.css">
 
-    <!-- Plugins CSS (e.g. for syntax highlighting if needed) -->
+    <!-- Optional syntax highlighting theme -->
     <link rel="stylesheet" href="plugin/highlight/monokai.css">
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
 
-        <!-- =========== FIRST SLIDE (Title) =========== -->
+        <!-- Title Slide -->
         <section
           data-background="img/aston_title_background.jpg"
           data-background-size="cover"
           data-background-position="center"
           data-transition="fade"
-
           style="
             color: white;
             text-align: left;
-            padding: 3em;
+            padding: 2em;
+            text-shadow: 0 0 5px rgba(0,0,0,0.7);
           "
         >
-          <h1 style="font-size: 2.2em; margin-bottom: 0.5em;">
-            Enhancing Robot Social Navigation with <br>
-            Reinforcement Learning and Advanced Predictive Models
+          <h1 style="font-size: 1.8em; margin-bottom: 0.5em;">
+            Enhancing Robot Social Navigation <br>
+            with Reinforcement Learning and Advanced Predictive Models
           </h1>
-          <h3 style="font-size: 1.4em; margin-top: 1.5em;">
+          <h3 style="font-size: 1.2em; margin-top: 1em;">
             Goodluck Oguzie <br>
             190212683@aston.ac.uk
           </h3>
-
-          <aside class="notes">
-            <!-- Speaker notes (only visible in Presenter Mode) -->
-            Introduce yourself and give a brief overview of the talk.
-          </aside>
         </section>
 
-        <!-- =========== SECOND SLIDE (Example) =========== -->
+        <!-- Another Slide -->
         <section
           data-background="img/aston_slides_background.jpg"
           data-background-size="cover"
           data-background-position="center"
           style="
             color: white;
+            text-shadow: 0 0 5px rgba(0,0,0,0.7);
             text-align: left;
-            padding: 3em;
+            padding: 2em;
           "
         >
-          <h2>Outline</h2>
+          <h2 style="font-size: 1.5em;">Outline</h2>
           <ul>
             <li>Introduction &amp; Motivation</li>
             <li>Related Work</li>
@@ -67,31 +61,33 @@
             <li>Results &amp; Discussion</li>
             <li>Conclusion &amp; Future Work</li>
           </ul>
-
-          <aside class="notes">
-            Quick run-through of the overall structure of the presentation.
-          </aside>
         </section>
 
-        <!-- =========== ADD MORE SLIDES AS NEEDED =========== -->
-        <!-- Just keep using data-background="resource/aston_slides_background.jpg" 
-             for each subsequent slide if you want the same background -->
       </div>
     </div>
 
-    <!-- Reveal.js core JS -->
+    <!-- Reveal.js Core JS -->
     <script src="dist/reveal.js"></script>
 
-    <!-- Plugins JS -->
+    <!-- Plugins -->
     <script src="plugin/notes/notes.js"></script>
     <script src="plugin/markdown/markdown.js"></script>
     <script src="plugin/highlight/highlight.js"></script>
 
     <script>
       Reveal.initialize({
+        // Force 1280x720 slides and allow some scaling.
+        width: 1280,
+        height: 720,
+        margin: 0.05,
+        minScale: 0.2,
+        maxScale: 1.0,
+        center: false,
+
         hash: true,
         slideNumber: true,
-        plugins: [ 
+
+        plugins: [
           RevealMarkdown,
           RevealHighlight,
           RevealNotes
