@@ -15,37 +15,40 @@
     <link rel="stylesheet" href="plugin/highlight/monokai.css">
 
     <style>
-      /* Make the slide container "relative" so we can absolutely-position the text */
+      /* Ensure the first slide is correctly formatted */
       .title-slide {
         position: relative;
-        /* Overflow hidden to ensure any large text doesn't spill out visually */
-        overflow: hidden;
-      }
-      /* This block holds your text at the bottom-left corner */
-      .title-slide .text-block {
-        position: absolute;
-        bottom: 3em; /* Move text up/down by changing this */
-        left: 3em;   /* Move text left/right by changing this */
+        display: flex;
+        align-items: flex-end; /* Align text to bottom */
+        justify-content: flex-start; /* Align to left */
+        height: 100vh; /* Ensure full height usage */
+        padding: 5em; /* Space from edges */
         color: white;
-        text-align: left;
-        text-shadow: 0 0 5px rgba(0,0,0,0.7);
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Make text stand out */
       }
 
-      /* Fine-tune font sizes and spacing */
-      .title-slide .text-block h1 {
+      /* Text container */
+      .text-block {
+        max-width: 60%; /* Ensures it doesn’t stretch too wide */
+      }
+
+      /* Adjust Title & Name Formatting */
+      .text-block h1 {
         font-size: 1.8em;
-        margin: 0.3em 0;
         font-weight: bold;
+        margin-bottom: 0.5em;
       }
-      .title-slide .text-block h2 {
+
+      .text-block h2 {
         font-size: 1.6em;
-        margin: 0.3em 0;
         font-weight: normal;
+        margin-bottom: 0.4em;
       }
-      .title-slide .text-block h3 {
+
+      .text-block h3 {
         font-size: 1.2em;
-        margin: 0.3em 0;
         font-weight: normal;
+        margin-top: 2em; /* Space between title and name */
       }
     </style>
   </head>
@@ -61,12 +64,11 @@
           class="title-slide"
         >
           <div class="text-block">
-            <!-- Break your title into multiple lines for a similar look -->
             <h1>Enhancing Robot Social Navigation</h1>
             <h2>with Reinforcement Learning and Advanced</h2>
             <h2>Predictive Models</h2>
 
-            <h3>Goodluck Oguzie</h3>
+            <h3 style="font-weight: bold;">Goodluck Oguzie</h3>
             <h3>190212683@aston.ac.uk</h3>
           </div>
         </section>
@@ -78,7 +80,7 @@
           data-background-position="center"
           style="
             color: white;
-            padding: 2em;
+            padding: 3em;
             text-shadow: 0 0 5px rgba(0,0,0,0.7);
           "
         >
