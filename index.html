@@ -4,21 +4,23 @@
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     <title>My Viva Presentation</title>
 
     <!-- Reveal.js CSS -->
     <link rel="stylesheet" href="dist/reset.css">
     <link rel="stylesheet" href="dist/reveal.css">
+    <!-- Theme -->
     <link rel="stylesheet" href="dist/theme/black.css">
 
-    <!-- Optional syntax highlighting theme -->
+    <!-- Optional syntax highlighting -->
     <link rel="stylesheet" href="plugin/highlight/monokai.css">
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
 
-        <!-- Title Slide -->
+        <!-- =========== TITLE SLIDE (FIRST SLIDE) =========== -->
         <section
           data-background="img/aston_title_background.jpg"
           data-background-size="cover"
@@ -31,26 +33,34 @@
             text-shadow: 0 0 5px rgba(0,0,0,0.7);
           "
         >
-          <h1 style="font-size: 1.8em; margin-bottom: 0.5em;">
+          <!-- Title with smaller font size -->
+          <h1 style="font-size: 1.6em; margin-bottom: 0.5em;">
             Enhancing Robot Social Navigation <br>
             with Reinforcement Learning and Advanced Predictive Models
           </h1>
-          <h3 style="font-size: 1.2em; margin-top: 1em;">
+
+          <!-- Name and email with smaller font size -->
+          <h3 style="font-size: 1em; margin-top: 1em;">
             Goodluck Oguzie <br>
             190212683@aston.ac.uk
           </h3>
+
+          <aside class="notes">
+            <!-- Speaker notes (only visible in Presenter Mode, press 'S') -->
+            Introduce yourself and briefly outline your research.
+          </aside>
         </section>
 
-        <!-- Another Slide -->
+        <!-- =========== SECOND SLIDE (Example) =========== -->
         <section
           data-background="img/aston_slides_background.jpg"
           data-background-size="cover"
           data-background-position="center"
           style="
             color: white;
-            text-shadow: 0 0 5px rgba(0,0,0,0.7);
             text-align: left;
             padding: 2em;
+            text-shadow: 0 0 5px rgba(0,0,0,0.7);
           "
         >
           <h2 style="font-size: 1.5em;">Outline</h2>
@@ -61,6 +71,29 @@
             <li>Results &amp; Discussion</li>
             <li>Conclusion &amp; Future Work</li>
           </ul>
+
+          <aside class="notes">
+            Quick run-through of the overall structure of the presentation.
+          </aside>
+        </section>
+
+        <!-- =========== ADDITIONAL SLIDES =========== -->
+        <section
+          data-background="img/aston_slides_background.jpg"
+          data-background-size="cover"
+          data-background-position="center"
+          style="
+            color: white;
+            text-align: left;
+            padding: 2em;
+            text-shadow: 0 0 5px rgba(0,0,0,0.7);
+          "
+        >
+          <h2 style="font-size: 1.5em;">Introduction</h2>
+          <p>
+            Provide an overview of the problem you’re tackling,<br>
+            the motivation, and the research scope.
+          </p>
         </section>
 
       </div>
@@ -76,7 +109,7 @@
 
     <script>
       Reveal.initialize({
-        // Force 1280x720 slides and allow some scaling.
+        // Ensure proper slide scaling
         width: 1280,
         height: 720,
         margin: 0.05,
