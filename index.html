@@ -1,42 +1,102 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Enhancing Robot Social Navigation</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>My Viva Presentation</title>
+
+    <!-- Reveal.js CSS -->
     <link rel="stylesheet" href="dist/reset.css">
     <link rel="stylesheet" href="dist/reveal.css">
+    <!-- Theme -->
     <link rel="stylesheet" href="dist/theme/black.css">
+
+    <!-- Plugins CSS (e.g. for syntax highlighting if needed) -->
     <link rel="stylesheet" href="plugin/highlight/monokai.css">
-    <style>
-        .title-slide {
-            background-image: url('img/aston_title_background.png'); /* Updated with your renamed image path */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-    </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="reveal">
-        <div class="slides">
-            <!-- First Slide (Title Slide) - Purple and Blue Diagonal Stripe with Logo and Text in Image -->
-            <section class="title-slide" data-transition="fade">
-                <!-- No additional content needed; the image contains the logo and text -->
-            </section>
-            <!-- You can add more slides here later, using aston_slides_background.jpg -->
-        </div>
+      <div class="slides">
+
+        <!-- =========== FIRST SLIDE (Title) =========== -->
+        <section
+          data-background="resource/aston_title_background.jpg"
+          data-background-size="cover"
+          data-background-position="center"
+          data-transition="fade"
+
+          style="
+            color: white;
+            text-align: left;
+            padding: 3em;
+          "
+        >
+          <h1 style="font-size: 2.2em; margin-bottom: 0.5em;">
+            Enhancing Robot Social Navigation with <br>
+            Reinforcement Learning and Advanced Predictive Models
+          </h1>
+          <h3 style="font-size: 1.4em; margin-top: 1.5em;">
+            Goodluck Oguzie <br>
+            190212683@aston.ac.uk
+          </h3>
+
+          <aside class="notes">
+            <!-- Speaker notes (only visible in Presenter Mode) -->
+            Introduce yourself and give a brief overview of the talk.
+          </aside>
+        </section>
+
+        <!-- =========== SECOND SLIDE (Example) =========== -->
+        <section
+          data-background="resource/aston_slides_background.jpg"
+          data-background-size="cover"
+          data-background-position="center"
+          style="
+            color: white;
+            text-align: left;
+            padding: 3em;
+          "
+        >
+          <h2>Outline</h2>
+          <ul>
+            <li>Introduction &amp; Motivation</li>
+            <li>Related Work</li>
+            <li>Methodology</li>
+            <li>Results &amp; Discussion</li>
+            <li>Conclusion &amp; Future Work</li>
+          </ul>
+
+          <aside class="notes">
+            Quick run-through of the overall structure of the presentation.
+          </aside>
+        </section>
+
+        <!-- =========== ADD MORE SLIDES AS NEEDED =========== -->
+        <!-- Just keep using data-background="resource/aston_slides_background.jpg" 
+             for each subsequent slide if you want the same background -->
+      </div>
     </div>
+
+    <!-- Reveal.js core JS -->
     <script src="dist/reveal.js"></script>
+
+    <!-- Plugins JS -->
     <script src="plugin/notes/notes.js"></script>
     <script src="plugin/markdown/markdown.js"></script>
     <script src="plugin/highlight/highlight.js"></script>
+
     <script>
-        Reveal.initialize({
-            hash: true,
-            slideNumber: true,
-            plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
-        });
+      Reveal.initialize({
+        hash: true,
+        slideNumber: true,
+        plugins: [ 
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes
+        ]
+      });
     </script>
-</body>
+  </body>
 </html>
