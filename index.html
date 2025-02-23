@@ -15,33 +15,36 @@
     <link rel="stylesheet" href="plugin/highlight/monokai.css">
 
     <style>
-      /* Custom Styling for First Slide */
+      /* Make the slide container "relative" so we can absolutely-position the text */
       .title-slide {
+        position: relative;
+        /* Overflow hidden to ensure any large text doesn't spill out visually */
+        overflow: hidden;
+      }
+      /* This block holds your text at the bottom-left corner */
+      .title-slide .text-block {
+        position: absolute;
+        bottom: 3em; /* Move text up/down by changing this */
+        left: 3em;   /* Move text left/right by changing this */
+        color: white;
         text-align: left;
-        padding-left: 3em;
-        padding-top: 10em; /* Moves everything down */
+        text-shadow: 0 0 5px rgba(0,0,0,0.7);
       }
 
-      .title-slide h1 {
-        font-size: 1.7em;
+      /* Fine-tune font sizes and spacing */
+      .title-slide .text-block h1 {
+        font-size: 1.8em;
+        margin: 0.3em 0;
         font-weight: bold;
-        margin-bottom: 0.8em;
       }
-
-      .title-slide h2 {
+      .title-slide .text-block h2 {
         font-size: 1.6em;
+        margin: 0.3em 0;
         font-weight: normal;
-        margin-bottom: 0.4em;
       }
-
-      .title-slide .author {
+      .title-slide .text-block h3 {
         font-size: 1.2em;
-        font-weight: bold;
-        margin-top: 4em; /* Moves name further down */
-      }
-
-      .title-slide .email {
-        font-size: 1.1em;
+        margin: 0.3em 0;
         font-weight: normal;
       }
     </style>
@@ -55,32 +58,31 @@
           data-background="img/aston_title_background.jpg"
           data-background-size="cover"
           data-background-position="center"
-          data-transition="fade"
           class="title-slide"
         >
-          <!-- Main Title (moved down and aligned left) -->
-          <h1>Enhancing Robot Social Navigation with</h1>
-          <h2>Reinforcement Learning and Advanced</h2>
-          <h2>Predictive Models</h2>
+          <div class="text-block">
+            <!-- Break your title into multiple lines for a similar look -->
+            <h1>Enhancing Robot Social Navigation</h1>
+            <h2>with Reinforcement Learning and Advanced</h2>
+            <h2>Predictive Models</h2>
 
-          <!-- Name & Email moved further down -->
-          <h3 class="author">GOODLUCK OGUZIE</h3>
-          <h3 class="email">190212683@ASTON.AC.UK</h3>
+            <h3>Goodluck Oguzie</h3>
+            <h3>190212683@aston.ac.uk</h3>
+          </div>
         </section>
 
-        <!-- =========== SECOND SLIDE (EXAMPLE) =========== -->
+        <!-- =========== SECOND SLIDE (Example) =========== -->
         <section
           data-background="img/aston_slides_background.jpg"
           data-background-size="cover"
           data-background-position="center"
           style="
             color: white;
-            text-align: left;
             padding: 2em;
             text-shadow: 0 0 5px rgba(0,0,0,0.7);
           "
         >
-          <h2 style="font-size: 1.5em;">Outline</h2>
+          <h2>Outline</h2>
           <ul>
             <li>Introduction &amp; Motivation</li>
             <li>Related Work</li>
