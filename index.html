@@ -1,8 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>My Viva Presentation</title>
 
     <!-- Reveal.js CSS -->
@@ -14,91 +15,82 @@
     <link rel="stylesheet" href="plugin/highlight/monokai.css">
 
     <style>
-        /* Ensure the first slide is correctly formatted */
-        .title-slide {
-            position: relative;
-            display: flex; /* Use flex for better control */
-            align-items: center; /* Center text vertically */
-            justify-content: flex-start; /* Align to left */
-            height: 100vh; /* Ensure full height usage */
-            padding: 5em; /* Space from edges */
-            color: white;
-            text-shadow: 0 0 20px rgba(0, 0, 0, 0.95); /* Stronger shadow for better visibility */
-            z-index: 1; /* Ensure text is above background */
-        }
+      /* Custom Styling for First Slide */
+      .title-slide {
+        text-align: left;
+        padding-left: 3em;
+        padding-top: 4em;
+      }
 
-        /* Text container */
-        .text-block {
-            max-width: 60%; /* Limits width for readability */
-            z-index: 3; /* Ensure text is above all other elements */
-        }
+      .title-slide h1 {
+        font-size: 1.7em; /* Adjusted to fit neatly */
+        font-weight: bold;
+        margin-bottom: 0.8em;
+      }
 
-        /* Adjust Title & Name Formatting */
-        .text-block h1 {
-            font-size: 1.8em;
-            font-weight: bold;
-            margin-bottom: 0.5em;
-            color: white; /* Explicitly ensure white text */
-        }
+      .title-slide h2 {
+        font-size: 1.6em;
+        font-weight: normal;
+        margin-bottom: 0.4em;
+      }
 
-        .text-block h2 {
-            font-size: 1.6em;
-            font-weight: normal;
-            margin-bottom: 0.4em;
-            color: white; /* Explicitly ensure white text */
-        }
+      .title-slide .author {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: 4em;
+      }
 
-        .text-block h3 {
-            font-size: 1.2em;
-            font-weight: normal;
-            margin-top: 2em; /* Space between title and name */
-            color: white; /* Explicitly ensure white text for name and email */
-        }
+      .title-slide .email {
+        font-size: 1.1em;
+        font-weight: normal;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="reveal">
-        <div class="slides">
+      <div class="slides">
 
-            <!-- =========== FIRST SLIDE (TITLE) =========== -->
-            <section
-                data-background="img/aston_title_background.jpg"
-                data-background-size="cover"
-                data-background-position="center"
-                class="title-slide"
-            >
-                <div class="text-block">
-                    <h1>Enhancing Robot Social Navigation</h1>
-                    <h2>with Reinforcement Learning and Advanced</h2>
-                    <h2>Predictive Models</h2>
+        <!-- =========== FIRST SLIDE (TITLE) =========== -->
+        <section
+          data-background="img/aston_title_background.jpg"
+          data-background-size="cover"
+          data-background-position="center"
+          data-transition="fade"
+          class="title-slide"
+        >
+          <!-- Main Title (split into multiple lines for correct spacing) -->
+          <h1>Enhancing Robot Social Navigation with</h1>
+          <h2>Reinforcement Learning and Advanced</h2>
+          <h2>Predictive Models</h2>
 
-                    <h3 style="font-weight: bold;">Goodluck Oguzie</h3>
-                    <h3>190212683@aston.ac.uk</h3>
-                </div>
-            </section>
+          <!-- Name & Email at bottom -->
+          <h3 class="author">Goodluck Oguzie</h3>
+          <h3 class="email">190212683@aston.ac.uk</h3>
+        </section>
 
-            <!-- =========== SECOND SLIDE (Example) =========== -->
-            <section
-                data-background="img/aston_slides_background.jpg"
-                data-background-size="cover"
-                data-background-position="center"
-                style="
-                    color: white;
-                    padding: 3em;
-                    text-shadow: 0 0 5px rgba(0,0,0,0.7);
-                "
-            >
-                <h2>Outline</h2>
-                <ul>
-                    <li>Introduction & Motivation</li>
-                    <li>Related Work</li>
-                    <li>Methodology</li>
-                    <li>Results & Discussion</li>
-                    <li>Conclusion & Future Work</li>
-                </ul>
-            </section>
+        <!-- =========== SECOND SLIDE (EXAMPLE) =========== -->
+        <section
+          data-background="img/aston_slides_background.jpg"
+          data-background-size="cover"
+          data-background-position="center"
+          style="
+            color: white;
+            text-align: left;
+            padding: 2em;
+            text-shadow: 0 0 5px rgba(0,0,0,0.7);
+          "
+        >
+          <h2 style="font-size: 1.5em;">Outline</h2>
+          <ul>
+            <li>Introduction &amp; Motivation</li>
+            <li>Related Work</li>
+            <li>Methodology</li>
+            <li>Results &amp; Discussion</li>
+            <li>Conclusion &amp; Future Work</li>
+          </ul>
+        </section>
 
-        </div>
+      </div>
     </div>
 
     <!-- Reveal.js Core JS -->
@@ -110,23 +102,23 @@
     <script src="plugin/highlight/highlight.js"></script>
 
     <script>
-        Reveal.initialize({
-            width: 1280,
-            height: 720,
-            margin: 0.05,
-            minScale: 0.2,
-            maxScale: 1.0,
-            center: false,
+      Reveal.initialize({
+        width: 1280,
+        height: 720,
+        margin: 0.05,
+        minScale: 0.2,
+        maxScale: 1.0,
+        center: false,
 
-            hash: true,
-            slideNumber: true,
+        hash: true,
+        slideNumber: true,
 
-            plugins: [
-                RevealMarkdown,
-                RevealHighlight,
-                RevealNotes
-            ]
-        });
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes
+        ]
+      });
     </script>
-</body>
+  </body>
 </html>
