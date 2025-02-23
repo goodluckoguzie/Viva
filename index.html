@@ -4,71 +4,54 @@
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     <title>My Viva Presentation</title>
 
     <!-- Reveal.js CSS -->
     <link rel="stylesheet" href="dist/reset.css">
     <link rel="stylesheet" href="dist/reveal.css">
+    <!-- Theme -->
     <link rel="stylesheet" href="dist/theme/black.css">
 
     <!-- Optional syntax highlighting -->
     <link rel="stylesheet" href="plugin/highlight/monokai.css">
-
-    <style>
-      /* Custom Styling for First Slide */
-      .title-slide {
-        text-align: left;
-        padding-left: 3em;
-        padding-top: 4em;
-      }
-
-      .title-slide h1 {
-        font-size: 1.7em; /* Adjusted to fit neatly */
-        font-weight: bold;
-        margin-bottom: 0.8em;
-      }
-
-      .title-slide h2 {
-        font-size: 1.6em;
-        font-weight: normal;
-        margin-bottom: 0.4em;
-      }
-
-      .title-slide .author {
-        font-size: 1.2em;
-        font-weight: bold;
-        margin-top: 4em;
-      }
-
-      .title-slide .email {
-        font-size: 1.1em;
-        font-weight: normal;
-      }
-    </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
 
-        <!-- =========== FIRST SLIDE (TITLE) =========== -->
+        <!-- =========== TITLE SLIDE (FIRST SLIDE) =========== -->
         <section
           data-background="img/aston_title_background.jpg"
           data-background-size="cover"
           data-background-position="center"
           data-transition="fade"
-          class="title-slide"
+          style="
+            color: white;
+            text-align: left;
+            padding: 2em;
+            text-shadow: 0 0 5px rgba(0,0,0,0.7);
+          "
         >
-          <!-- Main Title (split into multiple lines for correct spacing) -->
-          <h1>Enhancing Robot Social Navigation with</h1>
-          <h2>Reinforcement Learning and Advanced</h2>
-          <h2>Predictive Models</h2>
+          <!-- Title with smaller font size -->
+          <h1 style="font-size: 1.6em; margin-bottom: 0.5em;">
+            Enhancing Robot Social Navigation <br>
+            with Reinforcement Learning and Advanced Predictive Models
+          </h1>
 
-          <!-- Name & Email at bottom -->
-          <h3 class="author">Goodluck Oguzie</h3>
-          <h3 class="email">190212683@aston.ac.uk</h3>
+          <!-- Name and email with smaller font size -->
+          <h3 style="font-size: 1em; margin-top: 1em;">
+            Goodluck Oguzie <br>
+            190212683@aston.ac.uk
+          </h3>
+
+          <aside class="notes">
+            <!-- Speaker notes (only visible in Presenter Mode, press 'S') -->
+            Introduce yourself and briefly outline your research.
+          </aside>
         </section>
 
-        <!-- =========== SECOND SLIDE (EXAMPLE) =========== -->
+        <!-- =========== SECOND SLIDE (Example) =========== -->
         <section
           data-background="img/aston_slides_background.jpg"
           data-background-size="cover"
@@ -88,6 +71,29 @@
             <li>Results &amp; Discussion</li>
             <li>Conclusion &amp; Future Work</li>
           </ul>
+
+          <aside class="notes">
+            Quick run-through of the overall structure of the presentation.
+          </aside>
+        </section>
+
+        <!-- =========== ADDITIONAL SLIDES =========== -->
+        <section
+          data-background="img/aston_slides_background.jpg"
+          data-background-size="cover"
+          data-background-position="center"
+          style="
+            color: white;
+            text-align: left;
+            padding: 2em;
+            text-shadow: 0 0 5px rgba(0,0,0,0.7);
+          "
+        >
+          <h2 style="font-size: 1.5em;">Introduction</h2>
+          <p>
+            Provide an overview of the problem you’re tackling,<br>
+            the motivation, and the research scope.
+          </p>
         </section>
 
       </div>
@@ -103,6 +109,7 @@
 
     <script>
       Reveal.initialize({
+        // Ensure proper slide scaling
         width: 1280,
         height: 720,
         margin: 0.05,
