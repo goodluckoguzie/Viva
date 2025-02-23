@@ -2,55 +2,55 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <!-- Optimize for mobile -->
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <title>My Viva Presentation</title>
 
-    <!-- Reveal.js CSS -->
+    <!-- Core Reveal.js CSS -->
     <link rel="stylesheet" href="dist/reset.css">
     <link rel="stylesheet" href="dist/reveal.css">
-    <!-- Theme -->
+
+    <!-- Choose a theme (e.g., black) or replace with your preferred theme -->
     <link rel="stylesheet" href="dist/theme/black.css">
 
-    <!-- Plugins CSS (e.g. for syntax highlighting if needed) -->
+    <!-- Syntax highlight theme (only if you're showing code) -->
     <link rel="stylesheet" href="plugin/highlight/monokai.css">
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
-
-        <!-- =========== FIRST SLIDE (Title) =========== -->
+        <!-- =============== FIRST SLIDE (TITLE) =============== -->
         <section
-          data-background="img/aston_title_background.jpg"
+          data-background="resource/first_aston.jpg"
           data-background-size="cover"
           data-background-position="center"
           data-transition="fade"
-
           style="
             color: white;
             text-align: left;
             padding: 3em;
           "
         >
-          <h1 style="font-size: 2.2em; margin-bottom: 0.5em;">
-            Enhancing Robot Social Navigation with <br>
+          <h1 style="font-size: 2em; margin-bottom: 0.5em;">
+            Enhancing Robot Social Navigation with<br>
             Reinforcement Learning and Advanced Predictive Models
           </h1>
-          <h3 style="font-size: 1.4em; margin-top: 1.5em;">
-            Goodluck Oguzie <br>
+          <h3 style="margin-top: 1.5em; font-size: 1.4em;">
+            Goodluck Oguzie<br>
             190212683@aston.ac.uk
           </h3>
 
           <aside class="notes">
-            <!-- Speaker notes (only visible in Presenter Mode) -->
-            Introduce yourself and give a brief overview of the talk.
+            <!-- Speaker notes (invisible to audience; press 'S' to see Presenter Mode) -->
+            Introduce yourself and outline the purpose of the presentation here.
           </aside>
         </section>
 
-        <!-- =========== SECOND SLIDE (Example) =========== -->
+        <!-- =============== SECOND SLIDE (AGENDA EXAMPLE) =============== -->
         <section
-          data-background="resource/aston_slides_background.png"
+          data-background="resource/aston_back.jpg"
           data-background-size="cover"
           data-background-position="center"
           style="
@@ -59,7 +59,7 @@
             padding: 3em;
           "
         >
-          <h2>Outline</h2>
+          <h2>Presentation Outline</h2>
           <ul>
             <li>Introduction &amp; Motivation</li>
             <li>Related Work</li>
@@ -69,29 +69,50 @@
           </ul>
 
           <aside class="notes">
-            Quick run-through of the overall structure of the presentation.
+            Here, briefly describe your talk’s structure.
           </aside>
         </section>
 
-        <!-- =========== ADD MORE SLIDES AS NEEDED =========== -->
-        <!-- Just keep using data-background="resource/aston_slides_background.jpg" 
-             for each subsequent slide if you want the same background -->
+        <!-- =============== ADD MORE SLIDES AS NEEDED =============== -->
+        <section
+          data-background="resource/aston_back.jpg"
+          data-background-size="cover"
+          data-background-position="center"
+          style="
+            color: white;
+            padding: 3em;
+          "
+        >
+          <h2>Introduction</h2>
+          <p>
+            Provide an overview of the problem you’re tackling,<br>
+            the motivation, and the research scope.
+          </p>
+        </section>
+
       </div>
     </div>
 
-    <!-- Reveal.js core JS -->
+    <!-- Reveal.js Core JavaScript -->
     <script src="dist/reveal.js"></script>
 
-    <!-- Plugins JS -->
+    <!-- Reveal.js Plugins -->
     <script src="plugin/notes/notes.js"></script>
     <script src="plugin/markdown/markdown.js"></script>
     <script src="plugin/highlight/highlight.js"></script>
 
     <script>
+      // Initialize Reveal.js
       Reveal.initialize({
+        // Push each slide change to the browser history so refreshing
+        // or sharing a URL retains the correct slide.
         hash: true,
+
+        // Show a slide number at the bottom-right.
         slideNumber: true,
-        plugins: [ 
+
+        // Add your plugins here.
+        plugins: [
           RevealMarkdown,
           RevealHighlight,
           RevealNotes
