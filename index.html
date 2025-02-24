@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
     <title>My Viva Presentation</title>
 
     <!-- Reveal.js CSS -->
@@ -12,7 +11,6 @@
     <link rel="stylesheet" href="dist/reveal.css">
     <!-- Theme -->
     <link rel="stylesheet" href="dist/theme/black.css">
-
     <!-- Optional syntax highlighting -->
     <link rel="stylesheet" href="plugin/highlight/monokai.css">
   </head>
@@ -33,17 +31,26 @@
             padding: 2em;
           "
         >
-          <!-- Container for title and name/email, positioned at the bottom-left -->
+          <!-- Title Container: Middle Left -->
           <div style="
             position: absolute;
-            bottom: 2em;
+            top: 50%;
             left: 2em;
+            transform: translateY(-50%);
           ">
             <h1 style="font-size: 1.6em; margin-bottom: 0.5em;">
               Enhancing Robot Social Navigation <br>
               with Reinforcement Learning and Advanced Predictive Models
             </h1>
-            <h3 style="font-size: 1em; margin-top: 1em;">
+          </div>
+          
+          <!-- Name/Email Container: Bottom Left -->
+          <div style="
+            position: absolute;
+            bottom: 2em;
+            left: 2em;
+          ">
+            <h3 style="font-size: 1em; margin: 0;">
               Goodluck Oguzie <br>
               190212683@aston.ac.uk
             </h3>
@@ -119,10 +126,8 @@
         minScale: 0.2,
         maxScale: 1.0,
         center: false,
-
         hash: true,
         slideNumber: true,
-
         plugins: [
           RevealMarkdown,
           RevealHighlight,
