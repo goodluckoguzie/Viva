@@ -13,6 +13,21 @@
     <link rel="stylesheet" href="dist/theme/black.css">
     <!-- Optional syntax highlighting -->
     <link rel="stylesheet" href="plugin/highlight/monokai.css">
+    <style>
+      /* Custom inline CSS to mimic the supervisor's style */
+      .custom-title {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 2em;
+        margin: 0;
+        line-height: 1.2;
+      }
+      .custom-subtitle {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 1.2em;
+        margin: 0;
+        line-height: 1.2;
+      }
+    </style>
   </head>
   <body>
     <div class="reveal">
@@ -25,32 +40,31 @@
           data-background-position="center"
           data-transition="fade"
           style="
-            color: white;
-            text-shadow: 0 0 5px rgba(0,0,0,0.7);
             position: relative;
             padding: 2em;
+            color: white;
+            text-shadow: 0 0 5px rgba(0,0,0,0.7);
           "
         >
-          <!-- Title Container: Middle Left -->
+          <!-- Title Container: Positioned at the middle left -->
           <div style="
             position: absolute;
-            top: 50%;
+            top: 40%;
             left: 2em;
             transform: translateY(-50%);
           ">
-            <h1 style="font-size: 1.6em; margin-bottom: 0.5em;">
+            <h1 class="custom-title">
               Enhancing Robot Social Navigation <br>
               with Reinforcement Learning and Advanced Predictive Models
             </h1>
           </div>
-          
-          <!-- Name/Email Container: Bottom Left -->
+          <!-- Name/Email Container: Positioned at the bottom left -->
           <div style="
             position: absolute;
             bottom: 2em;
             left: 2em;
           ">
-            <h3 style="font-size: 1em; margin: 0;">
+            <h3 class="custom-subtitle">
               Goodluck Oguzie <br>
               190212683@aston.ac.uk
             </h3>
@@ -81,7 +95,6 @@
             <li>Results &amp; Discussion</li>
             <li>Conclusion &amp; Future Work</li>
           </ul>
-
           <aside class="notes">
             Quick run-through of the overall structure of the presentation.
           </aside>
@@ -119,7 +132,6 @@
 
     <script>
       Reveal.initialize({
-        // Ensure proper slide scaling
         width: 1280,
         height: 720,
         margin: 0.05,
