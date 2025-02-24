@@ -13,19 +13,22 @@
     <link rel="stylesheet" href="dist/theme/black.css">
     <!-- Optional syntax highlighting -->
     <link rel="stylesheet" href="plugin/highlight/monokai.css">
+    
+    <!-- Custom CSS to mimic supervisor's text template -->
     <style>
-      /* Custom inline CSS to mimic the supervisor's style */
-      .custom-title {
+      body, h1, h2, h3, p, ul, li {
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 2em;
-        margin: 0;
+      }
+      .custom-title {
+        font-size: 2.2em;
+        font-weight: bold;
         line-height: 1.2;
+        margin: 0;
       }
       .custom-subtitle {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         font-size: 1.2em;
+        font-weight: normal;
         margin: 0;
-        line-height: 1.2;
       }
     </style>
   </head>
@@ -40,10 +43,10 @@
           data-background-position="center"
           data-transition="fade"
           style="
-            position: relative;
-            padding: 2em;
             color: white;
             text-shadow: 0 0 5px rgba(0,0,0,0.7);
+            position: relative;
+            padding: 2em;
           "
         >
           <!-- Title Container: Positioned at the middle left -->
@@ -69,7 +72,6 @@
               190212683@aston.ac.uk
             </h3>
           </div>
-
           <aside class="notes">
             Introduce yourself and briefly outline your research.
           </aside>
