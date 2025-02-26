@@ -55,18 +55,33 @@
 					</div>
 				</section>
 
-				<!-- =========== CONTENT SLIDE (UPDATED, CENTERED, WHITE TEXT, NUMBERED, FIXED BACKGROUND) =========== -->
+				<!-- =========== CONTENT SLIDE (UPDATED, CENTERED, WHITE TEXT, NUMBERED, FIXED BACKGROUND, DYNAMIC SIZING) =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
 					<h2 style="color: white; text-align: center;">Content</h2>
-					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+					<div style="text-align: center; color: white; padding-top: 100px;">
 						<ol style="list-style-position: inside;">
-							<li class="fragment">Context and scope:<br><span style="font-size: 0.75em;">Brief introduction to my field of study, goals and objectives of the PhD</span></li>
-							<li class="fragment">Reinforcement Learning (RL):<br><span style="font-size: 0.75em;">Introduction to RL and how it enables robots to learn optimal navigation strategies through trial and error</span></li>
-							<li class="fragment">Predictive World Models for Social Navigation:<br><span style="font-size: 0.75em;">Use of predictive models to predict future states and improve decision-making in dynamic environments</span></li>
-							<li class="fragment">Cosine-Gated LSTM (CGLSTM) for Prediction:<br><span style="font-size: 0.75em;">Development of CGLSTM to improve sequence prediction by integrating cosine-based gating mechanisms</span></li>
-							<li class="fragment">Adaptive Prediction Horizons:<br><span style="font-size: 0.75em;">Introduction of an entropy-driven mechanism to dynamically adjust prediction horizons based on environmental uncertainty</span></li>
-							<li class="fragment">Conclusion:<br><span style="font-size: 0.75em;">Conclusion of the work done during this 4 years</span></li>
+							<li class="fragment grow bold">Context and scope:<br><span class="fragment grow bold" style="font-size: 1.25em;">Brief introduction to my field of study, goals and objectives of the PhD</span></li>
+							<li class="fragment grow bold">Reinforcement Learning (RL):<br><span class="fragment grow bold" style="font-size: 1.25em;">Introduction to RL and how it enables robots to learn optimal navigation strategies through trial and error</span></li>
+							<li class="fragment grow bold">Predictive World Models for Social Navigation:<br><span class="fragment grow bold" style="font-size: 1.25em;">Use of predictive models to predict future states and improve decision-making in dynamic environments</span></li>
+							<li class="fragment grow bold">Cosine-Gated LSTM (CGLSTM) for Prediction:<br><span class="fragment grow bold" style="font-size: 1.25em;">Development of CGLSTM to improve sequence prediction by integrating cosine-based gating mechanisms</span></li>
+							<li class="fragment grow bold">Adaptive Prediction Horizons:<br><span class="fragment grow bold" style="font-size: 1.25em;">Introduction of an entropy-driven mechanism to dynamically adjust prediction horizons based on environmental uncertainty</span></li>
+							<li class="fragment grow bold">Conclusion:<br><span class="fragment grow bold" style="font-size: 1.25em;">Conclusion of the work done during this 4 years</span></li>
 						</ol>
+						<style>
+							/* Custom CSS for fragment states */
+							.reveal .slides section .fragment.grow:not(.current-fragment) {
+								font-size: 0.85em !important;
+								font-weight: normal !important;
+							}
+							.reveal .slides section .fragment.grow:not(.current-fragment) span {
+								font-size: 0.75em !important;
+							}
+							.reveal .slides section .fragment.grow.current-fragment,
+							.reveal .slides section .fragment.grow.current-fragment span {
+								font-size: 1.5em !important;
+								font-weight: bold !important;
+							}
+						</style>
 					</div>
 					<aside class="notes">
 						Briefly outline the structure of your presentation: context, RL, predictive models, technical innovations, adaptive methods, and concluding remarks.
