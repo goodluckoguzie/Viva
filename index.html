@@ -33,6 +33,9 @@
 			video::-webkit-media-controls-panel {
          		background-image: linear-gradient(transparent, transparent) !important;
     		}
+			.reveal section div ul li span {
+				line-height: 1.2;
+			}
 		</style>
 
 	</head>
@@ -55,29 +58,47 @@
 					</div>
 				</section>
 
-				<!-- =========== CONTENT SLIDE (UPDATED, CENTERED, WHITE TEXT, NUMBERED, FIXED BACKGROUND) =========== -->
+				<!-- =========== CONTENT SLIDE (PART 1, UPDATED, CENTERED, WHITE TEXT, NUMBERED, FIXED BACKGROUND) =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
-					<h2 style="color: white; text-align: center;">Content</h2>
+					<h2 style="color: white; text-align: center;">Content (Part 1)</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
 						<ol style="list-style-position: inside;">
-							<li class="fragment">Context and scope:<br><span style="font-size: 0.75em;">Brief introduction to my field of study, goals and objectives of the PhD</span></li>
-							<li class="fragment">Fundamentals of Reinforcement Learning:<br><span style="font-size: 0.75em;">Core concepts and algorithms used in this thesis</span></li>
-							<li class="fragment">Social Robot Navigation:<br><span style="font-size: 0.75em;">Overview and challenges of social navigation</span></li>
-							<li class="fragment">Reinforcement Learning (RL) in Social Navigation:<br><span style="font-size: 0.75em;">Introduction to RL and how it enables optimal navigation strategies</span></li>
-							<li class="fragment">Predictive World Models for Social Navigation:<br><span style="font-size: 0.75em;">Challenges, methods, evaluation, and results of predictive models</span></li>
-							<li class="fragment">Cosine-Gated LSTM (CGLSTM) for Prediction:<br><span style="font-size: 0.75em;">Challenges, methods, evaluation, and results of CGLSTM development</span></li>
-							<li class="fragment">Adaptive Prediction Horizons:<br><span style="font-size: 0.75em;">Challenges, methods, evaluation, and results of entropy-driven horizons</span></li>
-							<li class="fragment">Environments Used in This Research:<br><span style="font-size: 0.75em;">Overview of SocNavGym, FallingBallEnv, and LunarLander-v2</span></li>
-							<li class="fragment">Evaluation and Results:<br><span style="font-size: 0.75em;">Overview of performance metrics and comparisons across environments</span></li>
-							<li class="fragment">Conclusion and Future Work:<br><span style="font-size: 0.75em;">Conclusion of the work and potential future directions</span></li>
+							<li class="fragment">What is Social Robot Navigation?<br><span style="font-size: 0.75em;">Introduction to the field, importance, and applications</span></li>
+							<li class="fragment">Current Approaches<br><span style="font-size: 0.75em;">Traditional and modern methods, including RL</span></li>
+							<li class="fragment">Fundamentals of Reinforcement Learning (Part 1)<br><span style="font-size: 0.75em;">Core concepts like history and RL problem</span></li>
+							<li class="fragment">Fundamentals of Reinforcement Learning (Part 2)<br><span style="font-size: 0.75em;">Policy learning and RL algorithms</span></li>
+							<li class="fragment">Social Robot Navigation<br><span style="font-size: 0.75em;">Overview, history, and approaches</span></li>
 						</ol>
 					</div>
 					<aside class="notes">
-						Briefly outline the structure of your presentation: context, RL fundamentals, social navigation, RL application, detailed contributions (predictive models, CGLSTM, adaptive horizons), environments, evaluation, and concluding remarks.
+						Outline the first half of the presentation structure: introduction to social robot navigation, current methods, and RL fundamentals.
 					</aside>
 				</section>
 
-				<!-- =========== CONTEXT AND SCOPE: SLIDE 1 - WHAT IS SOCIAL ROBOT NAVIGATION? (UPDATED BACKGROUND) =========== -->
+				<!-- =========== CONTENT SLIDE (PART 2, UPDATED, CENTERED, WHITE TEXT, NUMBERED, FIXED BACKGROUND) =========== -->
+				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
+					<h2 style="color: white; text-align: center;">Content (Part 2)</h2>
+					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+						<ol style="list-style-position: inside;">
+							<li class="fragment">Current State of Art in RL<br><span style="font-size: 0.75em;">RL algorithms and their limitations</span></li>
+							<li class="fragment">Challenges and Limitations<br><span style="font-size: 0.75em;">Key issues in RL and predictive models</span></li>
+							<li class="fragment">Research Questions<br><span style="font-size: 0.75em;">Key questions guiding the thesis</span></li>
+							<li class="fragment">Research Objectives<br><span style="font-size: 0.75em;">Achievements in RL and predictive models</span></li>
+							<li class="fragment">Environments Used in This Research<br><span style="font-size: 0.75em;">Overview of SocNavGym, FallingBallEnv, LunarLander-v2</span></li>
+							<li class="fragment">Predictive World Models for Social Navigation<br><span style="font-size: 0.75em;">Challenges, methods, evaluation, and results</span></li>
+							<li class="fragment">Cosine-Gated LSTM (CGLSTM) for Prediction<br><span style="font-size: 0.75em;">Challenges, methods, evaluation, and results</span></li>
+							<li class="fragment">Adaptive Prediction Horizons<br><span style="font-size: 0.75em;">Challenges, methods, evaluation, and results</span></li>
+							<li class="fragment">Evaluation and Results (Overview)<br><span style="font-size: 0.75em;">Performance metrics and comparisons</span></li>
+							<li class="fragment">Conclusion and Future Work<br><span style="font-size: 0.75em;">Summary and future directions</span></li>
+							<li class="fragment">About Me<br><span style="font-size: 0.75em;">Personal background and career</span></li>
+						</ol>
+					</div>
+					<aside class="notes">
+						Outline the second half of the presentation structure: RL state of art, challenges, research framework, detailed contributions, environments, evaluation, conclusion, and personal context.
+					</aside>
+				</section>
+
+				<!-- =========== CONTEXT AND SCOPE: SLIDE 3 - WHAT IS SOCIAL ROBOT NAVIGATION? (UPDATED BACKGROUND) =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center;">What is Social Robot Navigation?</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
@@ -95,7 +116,7 @@
 					</aside>
 				</section>
 
-				<!-- =========== CONTEXT AND SCOPE: SLIDE 2 - CURRENT APPROACHES (UPDATED WITH CLASSICAL.PNG ON RIGHT) =========== -->
+				<!-- =========== CONTEXT AND SCOPE: SLIDE 4 - CURRENT APPROACHES (UPDATED WITH CLASSICAL.PNG ON RIGHT) =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center;">Current Approaches</h2>
 					<div style="display: flex; justify-content: center; align-items: flex-start; padding-top: 100px;">
@@ -123,7 +144,7 @@
 					</aside>
 				</section>
 
-				<!-- =========== FOUNDATIONS: SLIDE 3 - FUNDAMENTALS OF REINFORCEMENT LEARNING (PART 1) =========== -->
+				<!-- =========== FOUNDATIONS: SLIDE 5 - FUNDAMENTALS OF REINFORCEMENT LEARNING (PART 1) =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Fundamentals of Reinforcement Learning (Part 1)</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
@@ -146,7 +167,7 @@
 					</aside>
 				</section>
 
-				<!-- =========== FOUNDATIONS: SLIDE 4 - FUNDAMENTALS OF REINFORCEMENT LEARNING (PART 2) =========== -->
+				<!-- =========== FOUNDATIONS: SLIDE 6 - FUNDAMENTALS OF REINFORCEMENT LEARNING (PART 2) =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Fundamentals of Reinforcement Learning (Part 2)</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
@@ -172,7 +193,7 @@
 					</aside>
 				</section>
 
-				<!-- =========== FOUNDATIONS: SLIDE 5 - SOCIAL ROBOT NAVIGATION =========== -->
+				<!-- =========== FOUNDATIONS: SLIDE 7 - SOCIAL ROBOT NAVIGATION =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Social Robot Navigation</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
@@ -196,7 +217,7 @@
 					</aside>
 				</section>
 
-				<!-- =========== CONTEXT AND SCOPE: SLIDE 6 - CURRENT STATE OF ART IN RL =========== -->
+				<!-- =========== CONTEXT AND SCOPE: SLIDE 8 - CURRENT STATE OF ART IN RL =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Current State of Art in RL</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
@@ -229,7 +250,7 @@
 					</aside>
 				</section>
 
-				<!-- =========== CONTEXT AND SCOPE: SLIDE 7 - CHALLENGES AND LIMITATIONS =========== -->
+				<!-- =========== CONTEXT AND SCOPE: SLIDE 9 - CHALLENGES AND LIMITATIONS =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center;">Challenges and Limitations</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
@@ -256,7 +277,7 @@
 					</aside>
 				</section>
 
-				<!-- =========== CONTEXT AND SCOPE: SLIDE 8 - RESEARCH QUESTIONS =========== -->
+				<!-- =========== CONTEXT AND SCOPE: SLIDE 10 - RESEARCH QUESTIONS =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Research Questions</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
@@ -273,7 +294,7 @@
 					</aside>
 				</section>
 
-				<!-- =========== CONTEXT AND SCOPE: SLIDE 9 - RESEARCH OBJECTIVES =========== -->
+				<!-- =========== CONTEXT AND SCOPE: SLIDE 11 - RESEARCH OBJECTIVES =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Research Objectives</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
@@ -291,7 +312,7 @@
 					</aside>
 				</section>
 
-				<!-- =========== CONTEXT AND SCOPE: SLIDE 10 - ENVIRONMENTS USED IN THIS RESEARCH =========== -->
+				<!-- =========== CONTEXT AND SCOPE: SLIDE 12 - ENVIRONMENTS USED IN THIS RESEARCH =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Environments Used in This Research</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
@@ -309,7 +330,7 @@
 					</aside>
 				</section>
 
-				<!-- =========== METHODOLOGY: SLIDE 11 - PREDICTIVE WORLD MODELS FOR SOCIAL NAVIGATION: CHALLENGES/LIMITATIONS =========== -->
+				<!-- =========== METHODOLOGY: SLIDE 13 - PREDICTIVE WORLD MODELS FOR SOCIAL NAVIGATION: CHALLENGES/LIMITATIONS =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive World Models: Challenges/Limitations</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
@@ -327,7 +348,7 @@
 					</aside>
 				</section>
 
-				<!-- =========== METHODOLOGY: SLIDE 12 - PREDICTIVE WORLD MODELS FOR SOCIAL NAVIGATION: METHODS =========== -->
+				<!-- =========== METHODOLOGY: SLIDE 14 - PREDICTIVE WORLD MODELS FOR SOCIAL NAVIGATION: METHODS =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive World Models: Methods</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
@@ -345,7 +366,7 @@
 					</aside>
 				</section>
 
-				<!-- =========== METHODOLOGY: SLIDE 13 - PREDICTIVE WORLD MODELS FOR SOCIAL NAVIGATION: EVALUATION =========== -->
+				<!-- =========== METHODOLOGY: SLIDE 15 - PREDICTIVE WORLD MODELS FOR SOCIAL NAVIGATION: EVALUATION =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive World Models: Evaluation</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
@@ -363,7 +384,7 @@
 					</aside>
 				</section>
 
-				<!-- =========== METHODOLOGY: SLIDE 14 - PREDICTIVE WORLD MODELS FOR SOCIAL NAVIGATION: RESULTS =========== -->
+				<!-- =========== METHODOLOGY: SLIDE 16 - PREDICTIVE WORLD MODELS FOR SOCIAL NAVIGATION: RESULTS =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive World Models: Results</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
@@ -381,7 +402,7 @@
 					</aside>
 				</section>
 
-				<!-- =========== METHODOLOGY: SLIDE 15 - COSINE-GATED LSTM (CGLSTM) FOR PREDICTION: CHALLENGES/LIMITATIONS =========== -->
+				<!-- =========== METHODOLOGY: SLIDE 17 - COSINE-GATED LSTM (CGLSTM) FOR PREDICTION: CHALLENGES/LIMITATIONS =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">CGLSTM: Challenges/Limitations</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
@@ -399,7 +420,7 @@
 					</aside>
 				</section>
 
-				<!-- =========== METHODOLOGY: SLIDE 16 - COSINE-GATED LSTM (CGLSTM) FOR PREDICTION: METHODS =========== -->
+				<!-- =========== METHODOLOGY: SLIDE 18 - COSINE-GATED LSTM (CGLSTM) FOR PREDICTION: METHODS =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">CGLSTM: Methods</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
@@ -417,7 +438,7 @@
 					</aside>
 				</section>
 
-				<!-- =========== METHODOLOGY: SLIDE 17 - COSINE-GATED LSTM (CGLSTM) FOR PREDICTION: EVALUATION =========== -->
+				<!-- =========== METHODOLOGY: SLIDE 19 - COSINE-GATED LSTM (CGLSTM) FOR PREDICTION: EVALUATION =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">CGLSTM: Evaluation</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
@@ -435,7 +456,7 @@
 					</aside>
 				</section>
 
-				<!-- =========== METHODOLOGY: SLIDE 18 - COSINE-GATED LSTM (CGLSTM) FOR PREDICTION: RESULTS =========== -->
+				<!-- =========== METHODOLOGY: SLIDE 20 - COSINE-GATED LSTM (CGLSTM) FOR PREDICTION: RESULTS =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">CGLSTM: Results</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
@@ -453,7 +474,7 @@
 					</aside>
 				</section>
 
-				<!-- =========== METHODOLOGY: SLIDE 19 - ADAPTIVE PREDICTION HORIZONS: CHALLENGES/LIMITATIONS =========== -->
+				<!-- =========== METHODOLOGY: SLIDE 21 - ADAPTIVE PREDICTION HORIZONS: CHALLENGES/LIMITATIONS =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons: Challenges/Limitations</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
@@ -471,7 +492,7 @@
 					</aside>
 				</section>
 
-				<!-- =========== METHODOLOGY: SLIDE 20 - ADAPTIVE PREDICTION HORIZONS: METHODS =========== -->
+				<!-- =========== METHODOLOGY: SLIDE 22 - ADAPTIVE PREDICTION HORIZONS: METHODS =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons: Methods</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
@@ -489,7 +510,7 @@
 					</aside>
 				</section>
 
-				<!-- =========== METHODOLOGY: SLIDE 21 - ADAPTIVE PREDICTION HORIZONS: EVALUATION =========== -->
+				<!-- =========== METHODOLOGY: SLIDE 23 - ADAPTIVE PREDICTION HORIZONS: EVALUATION =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons: Evaluation</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
@@ -507,7 +528,7 @@
 					</aside>
 				</section>
 
-				<!-- =========== METHODOLOGY: SLIDE 22 - ADAPTIVE PREDICTION HORIZONS: RESULTS =========== -->
+				<!-- =========== METHODOLOGY: SLIDE 24 - ADAPTIVE PREDICTION HORIZONS: RESULTS =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons: Results</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
@@ -525,7 +546,7 @@
 					</aside>
 				</section>
 
-				<!-- =========== RESULTS AND DISCUSSION: SLIDE 23 - EVALUATION AND RESULTS (OVERVIEW) =========== -->
+				<!-- =========== RESULTS AND DISCUSSION: SLIDE 25 - EVALUATION AND RESULTS (OVERVIEW) =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Evaluation and Results (Overview)</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
@@ -543,7 +564,7 @@
 					</aside>
 				</section>
 
-				<!-- =========== CONCLUSION AND FUTURE WORK: SLIDE 24 - CONCLUSION AND FUTURE WORK =========== -->
+				<!-- =========== CONCLUSION AND FUTURE WORK: SLIDE 26 - CONCLUSION AND FUTURE WORK =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Conclusion and Future Work</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
@@ -561,7 +582,7 @@
 					</aside>
 				</section>
 
-				<!-- =========== PERSONAL: SLIDE 25 - ABOUT ME =========== -->
+				<!-- =========== PERSONAL: SLIDE 27 - ABOUT ME =========== -->
 				<section data-background="img/aston_background.jpg" data-transition="slide">
 					<h3>About Me</h3>
 					<div style="text-align: left; font-size: 0.85em;">
