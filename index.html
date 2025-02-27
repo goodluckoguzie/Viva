@@ -57,76 +57,78 @@
 						  190212683@aston.ac.uk
 					</div>
 				</section>
-
+				
 				<!-- =========== CONTENT SLIDE (UPDATED, CENTERED, WHITE TEXT, NUMBERED, FIXED BACKGROUND) =========== -->
-		<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
-		  <h2 style="color: white; text-align: center; margin-bottom: 20px;">Presentation Outline</h2>
-		  <div style="display: flex; justify-content: center; align-items: flex-start; padding-top: 50px; font-size: 1em; color: white;">
-		    <!-- Left Column -->
-		    <div style="flex: 0 0 40%; text-align: left; padding-right: 40px;">
-		      <ol style="list-style-position: inside;">
-		        <li class="fragment">Context and Scope</li>
-		        <li class="fragment">Social Robot Navigation</li>
-		        <li class="fragment">Reinforcement Learning</li>
-		        <li class="fragment">Environments Used</li>
-		      </ol>
-		    </div>
-		    <!-- Right Column -->
-		    <div style="flex: 0 0 40%; text-align: left; padding-left: 40px;">
-		      <ol start="5" style="list-style-position: inside;">
-		        <li class="fragment"><strong>Predictive World Models</strong></li>
-		        <li class="fragment"><strong>Cosine-Gated LSTM (CGLSTM)</strong></li>
-		        <li class="fragment"><strong>Adaptive Prediction Horizons</strong></li>
-		        <li class="fragment">Conclusion</li>
-		      </ol>
-		    </div>
-		  </div>
-		  <!-- SVG Timeline -->
-		  <div class="fragment" style="text-align: center; padding-top: 30px;">
-		    <svg width="800" height="150" xmlns="http://www.w3.org/2000/svg">
-		      <!-- Dashed Line -->
-		      <line x1="50" y1="50" x2="750" y2="50" stroke="white" stroke-width="2" stroke-dasharray="5,5" />
-		      <!-- Circles -->
-		      <circle cx="50" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
-		      <circle cx="150" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
-		      <circle cx="250" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
-		      <circle cx="350" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
-		      <circle cx="450" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
-		      <circle cx="550" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
-		      <circle cx="650" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
-		      <circle cx="750" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
-		      <!-- Numbers -->
-		      <text x="50" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">1</text>
-		      <text x="150" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">2</text>
-		      <text x="250" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">3</text>
-		      <text x="350" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">4</text>
-		      <text x="450" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">5</text>
-		      <text x="550" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">6</text>
-		      <text x="650" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">7</text>
-		      <text x="750" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">8</text>
-		      <!-- Arrows -->
-		      <path d="M80 50 L130 50 M135 45 L130 50 L135 55" stroke="white" stroke-width="1" fill="none" />
-		      <path d="M180 50 L230 50 M235 45 L230 50 L235 55" stroke="white" stroke-width="1" fill="none" />
-		      <path d="M280 50 L330 50 M335 45 L330 50 L335 55" stroke="white" stroke-width="1" fill="none" />
-		      <path d="M380 50 L430 50 M435 45 L430 50 L435 55" stroke="white" stroke-width="1" fill="none" />
-		      <path d="M480 50 L530 50 M535 45 L530 50 L535 55" stroke="white" stroke-width="1" fill="none" />
-		      <path d="M580 50 L630 50 M635 45 L630 50 L635 55" stroke="white" stroke-width="1" fill="none" />
-		      <path d="M680 50 L730 50 M735 45 L730 50 L735 55" stroke="white" stroke-width="1" fill="none" />
-		      <!-- Labels -->
-		      <text x="50" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Context</text>
-		      <text x="150" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">SocNav</text>
-		      <text x="250" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">RL</text>
-		      <text x="350" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Enviro</text>
-		      <text x="450" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Pred.Models</text>
-		      <text x="550" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">CGLSTM</text>
-		      <text x="650" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Adapt.Horiz</text>
-		      <text x="750" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Conclusion</text>
-		    </svg>
-		  </div>
-		  <aside class="notes">
-		    Introduce the structure briefly: Start with context and foundational topics (1–4), then detail my three main contributions (5–7)—predictive models, CGLSTM, and adaptive horizons—each tackling unique challenges with innovative methods and results, before wrapping up with conclusions (8). The SVG timeline visually ties it all together.
-		  </aside>
-		</section>
+				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
+				  <h2 style="color: white; text-align: center; margin-bottom: 20px;">Presentation Outline</h2>
+				  <div style="display: flex; justify-content: center; align-items: flex-start; padding-top: 50px; font-size: 1em; color: white;">
+				    <!-- Left Column -->
+				    <div style="flex: 0 0 40%; text-align: left; padding-right: 40px;">
+				      <ol style="list-style-position: inside;">
+				        <li class="fragment">Context and Scope</li>
+				        <li class="fragment">Social Robot Navigation</li>
+				        <li class="fragment">Reinforcement Learning</li>
+				        <li class="fragment">Environments Used</li>
+				      </ol>
+				    </div>
+				    <!-- Right Column -->
+				    <div style="flex: 0 0 40%; text-align: left; padding-left: 40px;">
+				      <ol start="5" style="list-style-position: inside;">
+				        <li class="fragment">Predictive World Models *</li>
+				        <li class="fragment">Cosine-Gated LSTM (CGLSTM) *</li>
+				        <li class="fragment">Adaptive Prediction Horizons *</li>
+				        <li class="fragment">Conclusion</li>
+				      </ol>
+				    </div>
+				  </div>
+				  <!-- SVG Timeline -->
+				  <div class="fragment" style="text-align: center; padding-top: 30px;">
+				    <svg width="800" height="150" xmlns="http://www.w3.org/2000/svg">
+				      <!-- Dashed Line -->
+				      <line x1="50" y1="50" x2="750" y2="50" stroke="white" stroke-width="2" stroke-dasharray="5,5" />
+				      <!-- Circles -->
+				      <circle cx="50" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
+				      <circle cx="150" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
+				      <circle cx="250" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
+				      <circle cx="350" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
+				      <circle cx="450" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
+				      <circle cx="550" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
+				      <circle cx="650" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
+				      <circle cx="750" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
+				      <!-- Numbers -->
+				      <text x="50" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">1</text>
+				      <text x="150" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">2</text>
+				      <text x="250" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">3</text>
+				      <text x="350" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">4</text>
+				      <text x="450" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">5</text>
+				      <text x="550" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">6</text>
+				      <text x="650" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">7</text>
+				      <text x="750" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">8</text>
+				      <!-- Arrows -->
+				      <path d="M80 50 L130 50 M135 45 L130 50 L135 55" stroke="white" stroke-width="1" fill="none" />
+				      <path d="M180 50 L230 50 M235 45 L230 50 L235 55" stroke="white" stroke-width="1" fill="none" />
+				      <path d="M280 50 L330 50 M335 45 L330 50 L335 55" stroke="white" stroke-width="1" fill="none" />
+				      <path d="M380 50 L430 50 M435 45 L430 50 L435 55" stroke="white" stroke-width="1" fill="none" />
+				      <path d="M480 50 L530 50 M535 45 L530 50 L535 55" stroke="white" stroke-width="1" fill="none" />
+				      <path d="M580 50 L630 50 M635 45 L630 50 L635 55" stroke="white" stroke-width="1" fill="none" />
+				      <path d="M680 50 L730 50 M735 45 L730 50 L735 55" stroke="white" stroke-width="1" fill="none" />
+				      <!-- Labels -->
+				      <text x="50" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Context</text>
+				      <text x="150" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">SocNav</text>
+				      <text x="250" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">RL</text>
+				      <text x="350" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Enviro</text>
+				      <text x="450" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Pred.Models *</text>
+				      <text x="550" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">CGLSTM *</text>
+				      <text x="650" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Adapt.Horiz *</text>
+				      <text x="750" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Conclusion</text>
+				      <!-- Footnote -->
+				      <text x="400" y="130" font-family="Arial" font-size="10" fill="white" text-anchor="middle">* My Original Contributions</text>
+				    </svg>
+				  </div>
+				  <aside class="notes">
+				    Introduce the structure briefly: Start with context and foundational topics (1–4), then detail my three main contributions (5–7)—predictive models, CGLSTM, and adaptive horizons, marked with asterisks as my original work—each tackling unique challenges with innovative methods and results, before wrapping up with conclusions (8). The SVG timeline visually ties it all together, with the footnote clarifying my contributions.
+				  </aside>
+				</section>
 				<!-- =========== CONTEXT AND SCOPE: SLIDE 3 - WHAT IS SOCIAL ROBOT NAVIGATION? (UPDATED BACKGROUND) =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center;">What is Social Robot Navigation?</h2>
