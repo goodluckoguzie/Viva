@@ -61,16 +61,18 @@
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
 						<ol style="list-style-position: inside;">
 							<li class="fragment">Context and scope:<br><span style="font-size: 0.75em;">Brief introduction to my field of study, goals and objectives of the PhD</span></li>
-							<li class="fragment">Reinforcement Learning (RL) in Social Navigation:<br><span style="font-size: 0.75em;">Introduction to RL and how it enables robots to learn optimal navigation strategies through trial and error</span></li>
-							<li class="fragment">Predictive World Models for Social Navigation:<br><span style="font-size: 0.75em;">Use of predictive models to predict future states and improve decision-making in dynamic environments</span></li>
-							<li class="fragment">Cosine-Gated LSTM (CGLSTM) for Prediction:<br><span style="font-size: 0.75em;">Development of CGLSTM to improve sequence prediction by integrating cosine-based gating mechanisms</span></li>
-							<li class="fragment">Adaptive Prediction Horizons:<br><span style="font-size: 0.75em;">Introduction of an entropy-driven mechanism to dynamically adjust prediction horizons based on environmental uncertainty</span></li>
+							<li class="fragment">Fundamentals of Reinforcement Learning:<br><span style="font-size: 0.75em;">Core concepts and algorithms used in this thesis</span></li>
+							<li class="fragment">Social Robot Navigation:<br><span style="font-size: 0.75em;">Overview and challenges of social navigation</span></li>
+							<li class="fragment">Reinforcement Learning (RL) in Social Navigation:<br><span style="font-size: 0.75em;">Introduction to RL and how it enables optimal navigation strategies</span></li>
+							<li class="fragment">Predictive World Models for Social Navigation:<br><span style="font-size: 0.75em;">Use of predictive models to predict future states and improve decision-making</span></li>
+							<li class="fragment">Cosine-Gated LSTM (CGLSTM) for Prediction:<br><span style="font-size: 0.75em;">Development of CGLSTM to improve sequence prediction</span></li>
+							<li class="fragment">Adaptive Prediction Horizons:<br><span style="font-size: 0.75em;">Introduction of an entropy-driven mechanism for dynamic horizon adjustment</span></li>
 							<li class="fragment">Evaluation and Results:<br><span style="font-size: 0.75em;">Performance metrics, comparisons, and discussions from simulated environments</span></li>
 							<li class="fragment">Conclusion and Future Work:<br><span style="font-size: 0.75em;">Conclusion of the work and potential future directions</span></li>
 						</ol>
 					</div>
 					<aside class="notes">
-						Briefly outline the structure of your presentation: context, RL, predictive models, technical innovations, adaptive methods, evaluation, and concluding remarks.
+						Briefly outline the structure of your presentation: context, RL fundamentals, social navigation, RL application, predictive models, technical innovations, adaptive methods, evaluation, and concluding remarks.
 					</aside>
 				</section>
 
@@ -120,24 +122,100 @@
 					</aside>
 				</section>
 
-				<!-- =========== CONTEXT AND SCOPE: SLIDE 2.5 - CURRENT STATE OF ART IN RL =========== -->
+				<!-- =========== FOUNDATIONS: SLIDE 3 - FUNDAMENTALS OF REINFORCEMENT LEARNING (PART 1) =========== -->
+				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Fundamentals of Reinforcement Learning (Part 1)</h2>
+					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+						<ul>
+							<li class="fragment">History: Originated in the 1950s, evolved with dynamic programming and machine learning (Chapter 3, p. 32).</li>
+							<li class="fragment">RL Problem: Agent learns optimal actions through trial and error, maximizing cumulative rewards (Chapter 3, p. 34).</li>
+							<li class="fragment">Model-Free vs. Model-Based:
+								<ul style="list-style-type: none;">
+									<li>Model-Free (e.g., Q-learning, SAC): Learn directly from experience (Chapter 3, p. 36).</li>
+									<li>Model-Based (e.g., DreamerV3): Use a world model for planning (Chapter 3, p. 36).</li>
+								</ul>
+							</li>
+							<div class="fragment" style="padding-top: 20px;">
+								<img src="img/rl_fundamentals_diagram1.jpg" width="70%" style="border: 2px solid white;" />
+							</div>
+						</ul>
+					</div>
+					<aside class="notes">
+						Introduce RL’s history, problem definition, and model-free vs. model-based approaches, referencing the diagram comparing these concepts or showing an RL agent-environment interaction.
+					</aside>
+				</section>
+
+				<!-- =========== FOUNDATIONS: SLIDE 4 - FUNDAMENTALS OF REINFORCEMENT LEARNING (PART 2) =========== -->
+				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Fundamentals of Reinforcement Learning (Part 2)</h2>
+					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+						<ul>
+							<li class="fragment">Policy Learning: Optimize policies (deterministic/stochastic) to map states to actions (Chapter 3, p. 39).</li>
+							<li class="fragment">RL Algorithms Used:
+								<ul style="list-style-type: none;">
+									<li>Deep Q-Network (DQN): Value-based, discrete actions (Chapter 3, p. 40).</li>
+									<li>Deep Deterministic Policy Gradient (DDPG): Continuous actions, deterministic policies (Chapter 3, p. 42).</li>
+									<li>Proximal Policy Optimization (PPO): Policy gradient, stable training (Chapter 3, p. 44).</li>
+									<li>Advantage Actor-Critic (A2C): Combines value and policy learning (Chapter 3, p. 46).</li>
+									<li>Soft Actor-Critic (SAC): Stochastic, continuous spaces, entropy regularization (Chapter 3, p. 48).</li>
+									<li>DreamerV3: Model-based, long-term planning (Chapter 3, p. 51).</li>
+								</ul>
+							</li>
+							<div class="fragment" style="padding-top: 20px;">
+								<img src="img/rl_fundamentals_diagram2.jpg" width="70%" style="border: 2px solid white;" />
+							</div>
+						</ul>
+					</div>
+					<aside class="notes">
+						Detail policy learning and RL algorithms, referencing the diagram comparing DQN, DDPG, PPO, A2C, SAC, and DreamerV3, setting the stage for their use in social navigation.
+					</aside>
+				</section>
+
+				<!-- =========== FOUNDATIONS: SLIDE 5 - SOCIAL ROBOT NAVIGATION =========== -->
+				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Social Robot Navigation</h2>
+					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+						<ul>
+							<li class="fragment">Introduction: Robots navigating in human-populated environments, respecting social norms (Chapter 4, p. 58).</li>
+							<li class="fragment">Historical Overview: Evolved from classical path planning to ML-based methods (Chapter 4, p. 58).</li>
+							<li class="fragment">Approaches:
+								<ul style="list-style-type: none;">
+									<li>Classical: Path planning (A*, Dijkstra’s), rule-based systems (Chapter 4, p. 60).</li>
+									<li>Machine Learning: RL, predictive models for dynamic settings (Chapter 4, p. 61).</li>
+								</ul>
+							</li>
+							<li class="fragment">SocNavGym: A benchmark environment for testing social navigation (Chapter 4, p. 63).</li>
+							<div class="fragment" style="padding-top: 20px;">
+								<img src="img/social_navigation_diagram.jpg" width="70%" style="border: 2px solid white;" />
+							</div>
+						</ul>
+					</div>
+					<aside class="notes">
+						Introduce social robot navigation, its history, approaches, and SocNavGym, referencing the diagram illustrating classical vs. ML approaches or SocNavGym layout.
+					</aside>
+				</section>
+
+				<!-- =========== CONTEXT AND SCOPE: SLIDE 6 - CURRENT STATE OF ART IN RL =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Current State of Art in RL</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
 						<ul>
 							<li class="fragment">RL Algorithms:
 								<ul style="list-style-type: none;">
-									<li>DreamerV3: Model-based, long-term planning, computationally expensive in dynamic settings (Chapter 5, p. 83).</li>
-									<li>SAC: Model-free, efficient in continuous spaces, struggles with exploration (Chapter 7, p. 125).</li>
-									<li>DQN: Value-based, limited in continuous navigation tasks (Chapter 1, p. 16).</li>
+									<li>Deep Q-Network (DQN): Value-based, discrete actions, limited in continuous navigation (Chapter 3, p. 40).</li>
+									<li>Deep Deterministic Policy Gradient (DDPG): Continuous actions, deterministic, struggles with exploration (Chapter 3, p. 42).</li>
+									<li>Proximal Policy Optimization (PPO): Stable policy gradient, but computationally intensive (Chapter 3, p. 44).</li>
+									<li>Advantage Actor-Critic (A2C): Combines value/policy, less efficient in complex tasks (Chapter 3, p. 46).</li>
+									<li>Soft Actor-Critic (SAC): Stochastic, continuous spaces, exploration challenges (Chapter 3, p. 48).</li>
+									<li>DreamerV3: Model-based, long-term planning, computationally expensive in dynamic settings (Chapter 3, p. 51).</li>
 								</ul>
 							</li>
 							<li class="fragment">Limitations:
 								<ul style="list-style-type: none;">
-									<li>Sample efficiency: Requires extensive data, challenging in real-world settings (Chapter 1, p. 16).</li>
+									<li>Sample efficiency: Requires extensive data, challenging in real-world settings (Chapter 3, p. 54; Chapter 8, p. 151).</li>
 									<li>Reliance on simulated environments: Struggles with real-world transitions (Chapter 8, p. 151).</li>
-									<li>Fixed prediction horizons: Limits adaptability in dynamic environments (Chapter 1, p. 16).</li>
-									<li>Exploration challenges: Particularly in continuous action spaces, affecting long-term planning (Chapter 8, p. 149).</li>
+									<li>Fixed prediction horizons: Limits adaptability in dynamic environments (Chapter 5, p. 86).</li>
+									<li>Exploration challenges: Particularly in continuous action spaces, affecting long-term planning (Chapter 7, p. 121).</li>
 								</ul>
 							</li>
 							<div class="fragment" style="padding-top: 20px;">
@@ -146,203 +224,221 @@
 						</ul>
 					</div>
 					<aside class="notes">
-						Discuss the current state of RL, highlighting algorithms like DreamerV3 and SAC, and their limitations, setting the stage for your research to address sample efficiency, adaptability, and exploration challenges with CGLSTM and adaptive horizons.
+						Discuss the current state of RL, highlighting algorithms from Chapter 3 and their limitations, setting the stage for your research to address sample efficiency, adaptability, and exploration challenges with CGLSTM and adaptive horizons.
 					</aside>
 				</section>
 
-				<!-- =========== CONTEXT AND SCOPE: SLIDE 3 - CHALLENGES AND LIMITATIONS =========== -->
+				<!-- =========== CONTEXT AND SCOPE: SLIDE 7 - CHALLENGES AND LIMITATIONS =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center;">Challenges and Limitations</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
 						<ul>
-							<li class="fragment">Predicting human behavior in RL and predictive models:
+							<li class="fragment">Predicting human behavior in current RL and predictive models:
 								<ul style="list-style-type: none;">
-									<li>Difficulty anticipating sudden movements, group dynamics, and non-verbal cues, limiting RL performance in SocNavGym due to sparse data (Chapter 1, p. 16).</li>
+									<li>Difficulty anticipating sudden movements, group dynamics, and non-verbal cues, limiting RL performance in SocNavGym due to sparse data and fixed horizons (Chapter 3, p. 54; Chapter 5, p. 86).</li>
 								</ul>
 							</li>
 							<li class="fragment">Navigating dynamic environments:
 								<ul style="list-style-type: none;">
-									<li>Complexity of real-world settings with changing obstacles and human interactions, challenging current RL and predictive models’ adaptability and sample efficiency (Chapter 1, p. 16; Chapter 8, p. 151).</li>
+									<li>Complexity of real-world settings with changing obstacles and human interactions, challenging RL adaptability, sample efficiency, and predictive model robustness (Chapter 4, p. 61; Chapter 7, p. 121; Chapter 8, p. 151).</li>
 								</ul>
 							</li>
 							<li class="fragment">Balancing efficiency and social norms in current methods:
 								<ul style="list-style-type: none;">
-									<li>Trade-offs between fast navigation and respecting personal space, cultural norms, and safety, exacerbated by fixed prediction horizons and RL’s computational overhead in dynamic settings (Chapter 1, p. 16; Chapter 8, p. 149, 152).</li>
+									<li>Trade-offs between fast navigation and respecting personal space, cultural norms, and safety, worsened by RL’s computational overhead and fixed prediction horizons (Chapter 4, p. 61; Chapter 5, p. 86; Chapter 7, p. 125).</li>
 								</ul>
 							</li>
 						</ul>
 					</div>
 					<aside class="notes">
-						Explain how these challenges highlight the need for advanced RL and predictive models, referencing your thesis’s focus on addressing unpredictability (e.g., SocNavGym), environmental complexity (e.g., real-world transitions), and efficiency-social compliance trade-offs (e.g., fixed horizon limitations and RL computational challenges in Chapters 1, 8).
+						Explain how these challenges highlight the need for advanced RL and predictive models, referencing your thesis’s focus on addressing unpredictability (e.g., SocNavGym), environmental complexity, and efficiency-social compliance trade-offs (e.g., fixed horizons and RL limitations in Chapters 3–7).
 					</aside>
 				</section>
 
-				<!-- =========== CONTEXT AND SCOPE: SLIDE 4 - RESEARCH QUESTIONS =========== -->
+				<!-- =========== CONTEXT AND SCOPE: SLIDE 8 - RESEARCH QUESTIONS =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Research Questions</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
 						<ul>
 							<li class="fragment"><span style="color: #00BFFF;">Q1:</span> How do predictive world models improve decision-making in Social Robot Navigation? (Chapter 1, p. 17)</li>
-							<li class="fragment"><span style="color: #00BFFF;">Q2:</span> What challenges arise when transitioning from discrete to continuous action spaces in RL for Social Robot Navigation, and how do we address them? (Chapter 1, p. 17; Chapter 8, p. 149)</li>
+							<li class="fragment"><span style="color: #00BFFF;">Q2:</span> What challenges arise when transitioning from discrete to continuous action spaces in RL for Social Robot Navigation, and how do we address them? (Chapter 3, p. 42; Chapter 7, p. 121; Chapter 8, p. 149)</li>
 						</ul>
 						<div class="fragment" style="padding-top: 20px;">
 							<img src="img/predictive_model_diagram.jpg" width="70%" style="border: 2px solid white;" />
 						</div>
 					</div>
 					<aside class="notes">
-						Introduce the two key research questions guiding your thesis, referencing your thesis’s focus on predictive models and RL challenges in continuous action spaces (Chapters 1, 8). Explain how the diagram illustrates predictive world models or action space transitions, setting the foundation for your objectives and methods.
+						Introduce the two key research questions guiding your thesis, referencing your thesis’s focus on predictive models and RL challenges in continuous action spaces (Chapters 1, 3, 7, 8). Explain how the diagram illustrates predictive world models or action space transitions, setting the foundation for your objectives and methods.
 					</aside>
 				</section>
 
-				<!-- =========== CONTEXT AND SCOPE: SLIDE 5 - RESEARCH OBJECTIVES =========== -->
+				<!-- =========== CONTEXT AND SCOPE: SLIDE 9 - RESEARCH OBJECTIVES =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Research Objectives</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
 						<ul>
-							<li class="fragment">Developed RL-based navigation strategies, integrating Soft Actor-Critic (SAC) and DreamerV3, to learn optimal paths through trial and error, improving performance in dynamic SocNavGym and FallingBallEnv environments (Chapter 7, p. 138–143; Chapter 8, p. 149).</li>
-							<li class="fragment">Integrated advanced predictive models, including Cosine-Gated LSTM (CGLSTM) and adaptive prediction horizons, achieving up to 30% reduction in Mean Absolute Error (MAE) and a 5% increase in cumulative rewards in SocNavGym and FallingBallEnv (Chapters 6–7, p. 103–114, 138–143; Chapter 8, p. 148).</li>
-							<li class="fragment">Evaluated these strategies in simulated environments (SocNavGym, FallingBallEnv, LunarLander-v2), demonstrating a 15% improvement in success rates, computational efficiency (2% increase in inference time), and social compliance in dynamic, human-populated settings (Chapter 7, p. 138–143; Chapter 8, p. 150–151).</li>
+							<li class="fragment">Developed RL-based navigation strategies, integrating Soft Actor-Critic (SAC), DreamerV3, and other algorithms (DQN, DDPG, PPO, A2C), to learn optimal paths through trial and error, addressing sample efficiency in SocNavGym and FallingBallEnv (Chapter 7, p. 138–143; Chapter 8, p. 149).</li>
+							<li class="fragment">Integrated advanced predictive models, including Cosine-Gated LSTM (CGLSTM), 2StepAhead, MASPM, and adaptive prediction horizons, achieving up to 30% reduction in Mean Absolute Error (MAE) and a 5% increase in cumulative rewards in SocNavGym and FallingBallEnv (Chapters 5–7, p. 86, 103–114, 138–143; Chapter 8, p. 148).</li>
+							<li class="fragment">Evaluated these strategies in simulated environments (SocNavGym, FallingBallEnv, LunarLander-v2), demonstrating a 15% improvement in success rates, computational efficiency (2% increase in inference time), and social compliance, addressing limitations in dynamic, human-populated settings (Chapter 7, p. 138–143; Chapter 8, p. 150–151).</li>
 						</ul>
 						<div class="fragment" style="padding-top: 20px;">
 							<img src="img/rl_predictive_model_diagram.jpg" width="70%" style="border: 2px solid white;" />
 						</div>
 					</div>
 					<aside class="notes">
-						Highlight the specific achievements of your thesis, explaining how you developed RL and predictive models to address social robot navigation challenges, referencing key results (e.g., CGLSTM performance, adaptive horizons) from Chapters 6–8. Note how the diagram illustrates your RL-predictive model integration or evaluation results.
+						Highlight the specific achievements of your thesis, explaining how you developed RL and predictive models to address social robot navigation challenges, referencing key results (e.g., CGLSTM, adaptive horizons) from Chapters 5–8 and the limitations they overcome, setting the stage for methodology details.
 					</aside>
 				</section>
 
-				<!-- =========== METHODOLOGY: SLIDE 6 - REINFORCEMENT LEARNING (RL) IN SOCIAL NAVIGATION =========== -->
+				<!-- =========== CONTEXT AND SCOPE: SLIDE 10 - ENVIRONMENTS USED IN THIS RESEARCH =========== -->
+				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Environments Used in This Research</h2>
+					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+						<ul>
+							<li class="fragment">SocNavGym: Benchmark for social navigation, testing RL and predictive models in dynamic, human-populated scenarios (Chapter 4, p. 63; Chapter 7, p. 132).</li>
+							<li class="fragment">FallingBallEnv: Synthetic environment for sequence prediction, evaluating CGLSTM performance (Chapter 6, p. 103; Chapter 7, p. 132).</li>
+							<li class="fragment">LunarLander-v2: Continuous control task for RL, assessing robustness and efficiency (Chapter 7, p. 132; Chapter 8, p. 150).</li>
+							<div class="fragment" style="padding-top: 20px;">
+								<img src="img/environments_diagram.jpg" width="70%" style="border: 2px solid white;" />
+							</div>
+						</ul>
+					</div>
+					<aside class="notes">
+						Describe SocNavGym, FallingBallEnv, and LunarLander-v2, their roles in evaluating your RL and predictive models, and how the diagram illustrates these environments or their setups.
+					</aside>
+				</section>
+
+				<!-- =========== METHODOLOGY: SLIDE 11 - REINFORCEMENT LEARNING (RL) IN SOCIAL NAVIGATION =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Reinforcement Learning (RL) in Social Navigation</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
 						<ul>
-							<li class="fragment">Overview: RL enables robots to learn optimal navigation strategies via trial and error, using reward signals (Chapter 1, p. 16).</li>
+							<li class="fragment">Overview: RL enables robots to learn optimal navigation strategies via trial and error, addressing sample efficiency and exploration challenges (Chapter 3, p. 34; Chapter 7, p. 121).</li>
 							<li class="fragment">Key Algorithms:
 								<ul style="list-style-type: none;">
-									<li>Soft Actor-Critic (SAC): Model-free RL for continuous action spaces, enhancing exploration (Chapter 7, p. 125).</li>
-									<li>DreamerV3: Model-based RL for long-term planning, integrated with predictive models (Chapter 5, p. 83).</li>
+									<li>Soft Actor-Critic (SAC): Model-free, continuous spaces, enhances exploration (Chapter 3, p. 48; Chapter 7, p. 125).</li>
+									<li>DreamerV3: Model-based, long-term planning, integrated with predictive models to overcome fixed horizon limitations (Chapter 3, p. 51; Chapter 5, p. 83).</li>
 								</ul>
 							</li>
-							<li class="fragment">Integration: Combined with predictive models to address dynamic, human-populated environments (Chapter 7, p. 138).</li>
+							<li class="fragment">Addressing Limitations: Tackles sample efficiency, fixed horizons, and continuous action space challenges in SocNavGym (Chapter 7, p. 138).</li>
 							<div class="fragment" style="padding-top: 20px;">
 								<img src="img/rl_social_navigation_diagram.jpg" width="70%" style="border: 2px solid white;" />
 							</div>
 						</ul>
 					</div>
 					<aside class="notes">
-						Explain how RL, specifically SAC and DreamerV3, learns navigation strategies for social robots, referencing their integration with predictive models and the diagram illustrating the RL framework in SocNavGym or FallingBallEnv.
+						Explain how RL, specifically SAC and DreamerV3, learns navigation strategies for social robots, addressing limitations like sample efficiency and fixed horizons, referencing the diagram illustrating the RL framework in SocNavGym or FallingBallEnv.
 					</aside>
 				</section>
 
-				<!-- =========== METHODOLOGY: SLIDE 7 - PREDICTIVE WORLD MODELS FOR SOCIAL NAVIGATION =========== -->
+				<!-- =========== METHODOLOGY: SLIDE 12 - PREDICTIVE WORLD MODELS FOR SOCIAL NAVIGATION =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive World Models for Social Navigation</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
 						<ul>
-							<li class="fragment">Concept: Models predict future states to improve decision-making in dynamic environments (Chapter 5, p. 79).</li>
+							<li class="fragment">Concept: Models predict future states to improve decision-making, addressing fixed horizon limitations (Chapter 5, p. 79).</li>
 							<li class="fragment">Key Models:
 								<ul style="list-style-type: none;">
-									<li>2StepAhead: Fixed-horizon prediction for short-term planning (Chapter 5, p. 83).</li>
-									<li>MASPM: Multi-agent state prediction model for human-robot interactions (Chapter 5, p. 85).</li>
+									<li>2StepAhead: Fixed-horizon prediction, limited by adaptability in dynamic settings (Chapter 5, p. 83).</li>
+									<li>MASPM: Multi-agent prediction, struggles with computational overhead (Chapter 5, p. 84).</li>
 								</ul>
 							</li>
-							<li class="fragment">Integration: Combined with RL (e.g., DreamerV3) to enhance adaptability (Chapter 7, p. 138).</li>
+							<li class="fragment">Addressing Limitations: Combined with RL (e.g., DreamerV3) to enhance adaptability in SocNavGym (Chapter 7, p. 138).</li>
 							<div class="fragment" style="padding-top: 20px;">
 								<img src="img/predictive_world_models_diagram.jpg" width="70%" style="border: 2px solid white;" />
 							</div>
 						</ul>
 					</div>
 					<aside class="notes">
-						Describe predictive world models like 2StepAhead and MASPM, their role in decision-making, and integration with RL, referencing the diagram illustrating their application in SocNavGym or FallingBallEnv.
+						Describe predictive world models like 2StepAhead and MASPM, their role in decision-making, and how they address fixed horizon and computational challenges, referencing the diagram illustrating their application in SocNavGym or FallingBallEnv.
 					</aside>
 				</section>
 
-				<!-- =========== METHODOLOGY: SLIDE 8 - COSINE-GATED LSTM (CGLSTM) FOR PREDICTION =========== -->
+				<!-- =========== METHODOLOGY: SLIDE 13 - COSINE-GATED LSTM (CGLSTM) FOR PREDICTION =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Cosine-Gated LSTM (CGLSTM) for Prediction</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
 						<ul>
-							<li class="fragment">Methodology: Developed CGLSTM by integrating cosine similarity-based gating with LSTM, improving sequence prediction (Chapter 6, p. 92).</li>
-							<li class="fragment">Performance: Achieved up to 30% reduction in Mean Absolute Error (MAE) compared to LSTM, GRU, and RAU in SocNavGym and FallingBallEnv (Chapter 6, p. 103–114).</li>
-							<li class="fragment">Integration: Integrated into DreamerV3, increasing cumulative rewards by 5% (Chapter 8, p. 148).</li>
+							<li class="fragment">Methodology: Developed CGLSTM by integrating cosine similarity-based gating with LSTM, addressing prediction accuracy limitations of traditional LSTMs (Chapter 6, p. 92).</li>
+							<li class="fragment">Performance: Achieved up to 30% reduction in Mean Absolute Error (MAE) compared to LSTM, GRU, and RAU in SocNavGym and FallingBallEnv, tackling sparse data challenges (Chapter 6, p. 103–114).</li>
+							<li class="fragment">Addressing Limitations: Integrated into DreamerV3 and SAC, improving RL robustness in dynamic environments (Chapter 8, p. 148).</li>
 							<div class="fragment" style="padding-top: 20px;">
 								<img src="img/cglstm_diagram.jpg" width="70%" style="border: 2px solid white;" />
 							</div>
 						</ul>
 					</div>
 					<aside class="notes">
-						Explain the development of CGLSTM, its performance improvements, and integration with RL, referencing the diagram showing its architecture or results in SocNavGym.
+						Explain the development of CGLSTM, its performance improvements, and how it addresses prediction accuracy and sparse data limitations, referencing the diagram showing its architecture or results in SocNavGym.
 					</aside>
 				</section>
 
-				<!-- =========== METHODOLOGY: SLIDE 9 - ADAPTIVE PREDICTION HORIZONS =========== -->
+				<!-- =========== METHODOLOGY: SLIDE 14 - ADAPTIVE PREDICTION HORIZONS =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
 						<ul>
-							<li class="fragment">Mechanism: Entropy-driven adaptation to dynamically adjust prediction horizons based on policy uncertainty (Chapter 7, p. 125).</li>
-							<li class="fragment">Outcomes: Improved success rates by 15% in high-entropy SocNavGym scenarios, maintaining computational efficiency (2% increase in inference time) (Chapter 7, p. 138–143).</li>
-							<li class="fragment">Integration: Combined with CGLSTM and SAC, enhancing RL robustness (Chapter 8, p. 149).</li>
+							<li class="fragment">Mechanism: Entropy-driven adaptation to dynamically adjust prediction horizons, addressing fixed horizon limitations in RL and predictive models (Chapter 7, p. 125).</li>
+							<li class="fragment">Outcomes: Improved success rates by 15% in high-entropy SocNavGym scenarios, maintaining computational efficiency (2% increase in inference time), tackling efficiency and adaptability challenges (Chapter 7, p. 138–143).</li>
+							<li class="fragment">Addressing Limitations: Combined with CGLSTM and SAC, enhancing robustness in dynamic, human-populated environments (Chapter 8, p. 149).</li>
 							<div class="fragment" style="padding-top: 20px;">
 								<img src="img/adaptive_horizons_diagram.jpg" width="70%" style="border: 2px solid white;" />
 							</div>
 						</ul>
 					</div>
 					<aside class="notes">
-						Describe the entropy-driven adaptive horizon mechanism, its impact on success rates, and integration with RL, referencing the diagram illustrating its application or results in SocNavGym.
+						Describe the entropy-driven adaptive horizon mechanism, its impact on success rates, and how it addresses fixed horizon and efficiency challenges, referencing the diagram illustrating its application or results in SocNavGym.
 					</aside>
 				</section>
 
-				<!-- =========== RESULTS AND DISCUSSION: SLIDE 10 - EVALUATION AND RESULTS (PART 1) =========== -->
+				<!-- =========== RESULTS AND DISCUSSION: SLIDE 15 - EVALUATION AND RESULTS (PART 1) =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Evaluation and Results (Part 1)</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
 						<ul>
-							<li class="fragment">Environments: Evaluated in SocNavGym, FallingBallEnv, and LunarLander-v2 (Chapter 8, p. 150).</li>
+							<li class="fragment">Environments: Evaluated in SocNavGym, FallingBallEnv, and LunarLander-v2, addressing real-world transition challenges (Chapter 8, p. 150).</li>
 							<li class="fragment">Performance Metrics:
 								<ul style="list-style-type: none;">
-									<li>Success Rate: 15% improvement with adaptive horizons in high-entropy SocNavGym scenarios (Chapter 7, p. 138).</li>
-									<li>MAE Reduction: 30% improvement with CGLSTM in sequence prediction (Chapter 6, p. 103).</li>
+									<li>Success Rate: 15% improvement with adaptive horizons in high-entropy SocNavGym, overcoming exploration limitations (Chapter 7, p. 138).</li>
+									<li>MAE Reduction: 30% improvement with CGLSTM in sequence prediction, addressing prediction accuracy issues (Chapter 6, p. 103).</li>
 								</ul>
 							</li>
-							<li class="fragment">Comparison: Outperformed vanilla LSTM, GRU, and RAU in FallingBallEnv (Chapter 6, p. 114).</li>
+							<li class="fragment">Comparison: Outperformed vanilla LSTM, GRU, and RAU in FallingBallEnv, tackling efficiency challenges (Chapter 6, p. 114).</li>
 							<div class="fragment" style="padding-top: 20px;">
 								<img src="img/evaluation_results_graph1.jpg" width="70%" style="border: 2px solid white;" />
 							</div>
 						</ul>
 					</div>
 					<aside class="notes">
-						Discuss evaluation environments, key performance metrics, and comparisons, referencing the graph showing success rates or MAE reductions in SocNavGym or FallingBallEnv.
+						Discuss evaluation environments, key performance metrics, and comparisons, referencing the graph showing success rates or MAE reductions in SocNavGym or FallingBallEnv, and how they address thesis limitations.
 					</aside>
 				</section>
 
-				<!-- =========== RESULTS AND DISCUSSION: SLIDE 11 - EVALUATION AND RESULTS (PART 2) =========== -->
+				<!-- =========== RESULTS AND DISCUSSION: SLIDE 16 - EVALUATION AND RESULTS (PART 2) =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Evaluation and Results (Part 2)</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
 						<ul>
-							<li class="fragment">Computational Efficiency: 2% increase in inference time with adaptive horizons, maintaining performance (Chapter 7, p. 143).</li>
-							<li class="fragment">Social Compliance: Demonstrated improved navigation respecting personal space and norms in SocNavGym (Chapter 8, p. 150).</li>
-							<li class="fragment">Robustness: Enhanced stability in dynamic environments with SAC and CGLSTM integration (Chapter 8, p. 151).</li>
+							<li class="fragment">Computational Efficiency: 2% increase in inference time with adaptive horizons, balancing efficiency and performance challenges (Chapter 7, p. 143).</li>
+							<li class="fragment">Social Compliance: Demonstrated improved navigation respecting personal space and norms in SocNavGym, addressing social norm trade-offs (Chapter 8, p. 150).</li>
+							<li class="fragment">Robustness: Enhanced stability in dynamic environments with SAC and CGLSTM integration, overcoming exploration and adaptability issues (Chapter 8, p. 151).</li>
 							<div class="fragment" style="padding-top: 20px;">
 								<img src="img/evaluation_results_graph2.jpg" width="70%" style="border: 2px solid white;" />
 							</div>
 						</ul>
 					</div>
 					<aside class="notes">
-						Highlight computational efficiency, social compliance, and robustness, referencing the graph showing inference time or social compliance metrics in SocNavGym.
+						Highlight computational efficiency, social compliance, and robustness, referencing the graph showing inference time or social compliance metrics in SocNavGym, and how they address thesis challenges.
 					</aside>
 				</section>
 
-				<!-- =========== CONCLUSION AND FUTURE WORK: SLIDE 12 - CONCLUSION AND FUTURE WORK =========== -->
+				<!-- =========== CONCLUSION AND FUTURE WORK: SLIDE 17 - CONCLUSION AND FUTURE WORK =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
 					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Conclusion and Future Work</h2>
 					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
 						<ul>
-							<li class="fragment">Contributions: Developed CGLSTM, adaptive prediction horizons, and integrated RL for robust social navigation (Chapter 8, p. 147–149).</li>
-							<li class="fragment">Impact: Improved success rates, efficiency, and social compliance in simulated environments (Chapter 8, p. 150–151).</li>
-							<li class="fragment">Future Work: Extend to real-world deployment, broader applications, and sensor noise mitigation (Chapter 8, p. 151–153).</li>
+							<li class="fragment">Contributions: Developed CGLSTM, adaptive prediction horizons, and integrated RL (SAC, DreamerV3) to address sample efficiency, fixed horizons, and exploration challenges (Chapter 8, p. 147–149).</li>
+							<li class="fragment">Impact: Improved success rates, efficiency, and social compliance in SocNavGym, FallingBallEnv, and LunarLander-v2, overcoming current limitations (Chapter 8, p. 150–151).</li>
+							<li class="fragment">Future Work: Extend to real-world deployment, address sensor noise, and explore broader applications like multi-robot systems (Chapter 8, p. 151–153).</li>
 							<div class="fragment" style="padding-top: 20px;">
 								<img src="img/conclusion_diagram.jpg" width="70%" style="border: 2px solid white;" />
 							</div>
@@ -353,7 +449,7 @@
 					</aside>
 				</section>
 
-				<!-- =========== PERSONAL: SLIDE 13 - ABOUT ME =========== -->
+				<!-- =========== PERSONAL: SLIDE 18 - ABOUT ME =========== -->
 				<section data-background="img/aston_background.jpg" data-transition="slide">
 					<h3>About Me</h3>
 					<div style="text-align: left; font-size: 0.85em;">
