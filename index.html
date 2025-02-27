@@ -60,22 +60,34 @@
 
 				<!-- =========== CONTENT SLIDE (UPDATED, CENTERED, WHITE TEXT, NUMBERED, FIXED BACKGROUND) =========== -->
 				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
-					<h2 style="color: white; text-align: center;">Content</h2>
-					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 90px;">
-						<ol style="list-style-position: inside;">
-							<li class="fragment">Context and Scope<br><span style="font-size: 0.75em;">Introduces social robot navigation with clear study goals and objectives of the PhD</span></li>
-							<li class="fragment">Social Robot Navigation<br><span style="font-size: 0.75em;">Provides an overview, historical context, and approaches to social robot navigation</span></li>
-							<li class="fragment">Reinforcement Learning<br><span style="font-size: 0.75em;">Covers core concepts, algorithms, and their application in social navigation</span></li>
-							<li class="fragment">Environments Used in This Research<br><span style="font-size: 0.75em;">Details SocNavGym, FallingBallEnv, and LunarLander-v2 for testing and evaluation</span></li>
-							<li class="fragment">Predictive World Models for Social Navigation<br><span style="font-size: 0.75em;">Addresses challenges, methods, evaluation, and results of predictive models</span></li>
-							<li class="fragment">Cosine-Gated LSTM (CGLSTM) for Prediction<br><span style="font-size: 0.75em;">Explores challenges, methods, evaluation, and results of CGLSTM development</span></li>
-							<li class="fragment">Adaptive Prediction Horizons in RL<br><span style="font-size: 0.75em;">Examines challenges, methods, evaluation, and results of adaptive horizons in RL</span></li>
-							<li class="fragment">Conclusion<br><span style="font-size: 0.75em;">Summarizes contributions, impact, and suggests future directions for research</span></li>
-						</ol>
-					</div>
-					<aside class="notes">
-						Outline the structure of your presentation: context, social navigation, RL fundamentals, environments, detailed contributions (predictive models, CGLSTM, adaptive horizons), and conclusion.
-					</aside>
+				  <h2 style="color: white; text-align: center; margin-bottom: 20px;">Presentation Outline</h2>
+				  <div style="display: flex; justify-content: center; align-items: flex-start; padding-top: 50px; font-size: 1em; color: white;">
+				    <!-- Left Column -->
+				    <div style="flex: 0 0 40%; text-align: left; padding-right: 40px;">
+				      <ol style="list-style-position: inside;">
+					<li class="fragment">Context and Scope</li>
+					<li class="fragment">Social Robot Navigation</li>
+					<li class="fragment">Reinforcement Learning</li>
+					<li class="fragment">Environments Used</li>
+				      </ol>
+				    </div>
+				    <!-- Right Column -->
+				    <div style="flex: 0 0 40%; text-align: left; padding-left: 40px;">
+				      <ol start="5" style="list-style-position: inside;">
+					<li class="fragment"><strong>Predictive World Models</strong></li>
+					<li class="fragment"><strong>Cosine-Gated LSTM (CGLSTM)</strong></li>
+					<li class="fragment"><strong>Adaptive Prediction Horizons</strong></li>
+					<li class="fragment">Conclusion</li>
+				      </ol>
+				    </div>
+				  </div>
+				  <!-- Timeline Visual -->
+				  <div class="fragment" style="text-align: center; padding-top: 30px;">
+				    <img src="img/timeline_diagram.png" width="80%" style="border: 2px solid white;" alt="Timeline of Presentation Sections" />
+				  </div>
+				  <aside class="notes">
+				    Introduce the structure briefly: Start with context and foundational topics (1–4), then detail my three main contributions (5–7)—predictive models, CGLSTM, and adaptive horizons—each tackling unique challenges with innovative methods and results, before wrapping up with conclusions (8). The timeline visually ties it all together.
+				  </aside>
 				</section>
 
 				<!-- =========== CONTEXT AND SCOPE: SLIDE 3 - WHAT IS SOCIAL ROBOT NAVIGATION? (UPDATED BACKGROUND) =========== -->
