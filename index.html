@@ -139,17 +139,31 @@
     <div style="padding-bottom: 20px;">
       <video muted data-autoplay src="img/socialrobot.mp4" width="60%"></video>
     </div>
-    <!-- Text Sequence -->
+    <!-- Single Text Element -->
     <div style="font-size: 1em; color: white;">
-      <p class="fragment fade-in" data-fragment-index="0" style="margin: 0;">Definition: Robots navigating safely in human-populated environments, respecting social norms.</p>
-      <p class="fragment fade-in" data-fragment-index="1" style="margin: 0; display: none;">Importance: Critical for seamless integration into daily life, ensuring safety and social acceptance.</p>
-      <p class="fragment fade-out" data-fragment-index="1" style="margin: 0; display: none;">Definition: Robots navigating safely in human-populated environments, respecting social norms.</p>
-      <p class="fragment fade-in" data-fragment-index="2" style="margin: 0; display: none;">Applications: Healthcare robots, hospitality robots, public space navigation.</p>
-      <p class="fragment fade-out" data-fragment-index="2" style="margin: 0; display: none;">Importance: Critical for seamless integration into daily life, ensuring safety and social acceptance.</p>
+      <p id="textDisplay" style="margin: 0;"></p>
     </div>
   </div>
+  <!-- Fragment Triggers -->
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    Reveal.addEventListener('fragmentshown', function(event) {
+      var textDisplay = document.getElementById('textDisplay');
+      if (event.fragment.dataset.fragmentIndex === '0') {
+        textDisplay.textContent = 'Definition: Robots navigating safely in human-populated environments, respecting social norms.';
+      } else if (event.fragment.dataset.fragmentIndex === '1') {
+        textDisplay.textContent = 'Importance: Critical for seamless integration into daily life, ensuring safety and social acceptance.';
+      } else if (event.fragment.dataset.fragmentIndex === '2') {
+        textDisplay.textContent = 'Applications: Healthcare robots, hospitality robots, public space navigation.';
+      }
+    });
+  </script>
   <aside class="notes">
-    The video plays as the slide loads, showing a robot navigating among humans. On the first down arrow, reveal the Definition. On the next press, replace it with Importance to explain its significance. On the final press, switch to Applications to show where it applies, narrating each step.
+    The video plays as the slide loads. On the first down arrow, show the Definition. On the next press, replace it with Importance. On the final press, replace it with Applications, narrating each step as it appears.
   </aside>
 </section>
 				
