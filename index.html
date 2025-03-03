@@ -158,60 +158,63 @@
             </section>
 
             <!-- Approaches to Social Robot Navigation -->
-            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Approaches to Social Robot Navigation</h2>
-                <div style="display: flex; justify-content: center; align-items: flex-start; padding-top: 50px;">
-                    <div style="flex: 0 0 50%; text-align: left; font-size: 1em; color: white; padding-right: 40px;">
-                        <p class="fragment" style="font-size: 0.9em; margin-bottom: 10px;">Existing methods include:</p>
-                        <ul>
-                            <li class="fragment">Traditional:
-                                <ul style="list-style-type: none;">
-                                    <li>Path planning (A*, Dijkstra’s) – Static focus</li>
-                                    <li>Social force models – Crowd dynamics</li>
-                                    <li>Rule-based – Limited adaptability</li>
-                                </ul>
-                            </li>
-                            <li class="fragment">Modern:
-                                <ul style="list-style-type: none; color: #00A9D4;">
-                                    <li>Reinforcement Learning (RL) – Dynamic adaptability</li>
-                                    <li>Deep RL (DQN, PPO) – Complex environments</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="fragment" style="flex: 0 0 50%; text-align: center;">
-                        <table style="font-size: 0.9em; color: white; width: 100%; border-collapse: collapse;">
-                            <thead>
-                                <tr style="background-color: #003087;">
-                                    <th style="padding: 8px; border: 1px solid white;">Method</th>
-                                    <th style="padding: 8px; border: 1px solid white;">Strength</th>
-                                    <th style="padding: 8px; border: 1px solid white;">Limitation</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="fragment">
-                                    <td style="padding: 8px; border: 1px solid white;">Path Planning (A*)</td>
-                                    <td style="padding: 8px; border: 1px solid white;">Efficient in static settings</td>
-                                    <td style="padding: 8px; border: 1px solid white;">Fails with human unpredictability</td>
-                                </tr>
-                                <tr class="fragment">
-                                    <td style="padding: 8px; border: 1px solid white;">Social Force Models</td>
-                                    <td style="padding: 8px; border: 1px solid white;">Models crowd behavior</td>
-                                    <td style="padding: 8px; border: 1px solid white;">Limited to predefined rules</td>
-                                </tr>
-                                <tr class="fragment" style="color: #00A9D4;">
-                                    <td style="padding: 8px; border: 1px solid white;">Deep RL (DQN, PPO)</td>
-                                    <td style="padding: 8px; border: 1px solid white;">Adapts to dynamic environments</td>
-                                    <td style="padding: 8px; border: 1px solid white;">Requires extensive training</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <aside class="notes">
-                    Discuss traditional methods (static focus, crowd dynamics, limited adaptability) and modern RL methods (dynamic adaptability, complex environments). Use the table to compare strengths and limitations.
-                </aside>
-            </section>
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">Approaches to Social Robot Navigation</h2>
+  <div style="display: flex; justify-content: center; align-items: flex-start; padding-top: 50px;">
+    <div style="flex: 0 0 50%; text-align: left; font-size: 1em; color: white; padding-right: 40px;">
+      <p class="fragment" style="font-size: 0.9em; margin-bottom: 10px;">Existing methods include:</p>
+      <ul>
+        <li class="fragment">Traditional:
+          <ul style="list-style-type: none;">
+            <li>Path planning (A*, Dijkstra’s) – Static focus</li>
+            <li>Social force models – Crowd dynamics</li>
+            <li>Rule-based – Limited adaptability</li>
+          </ul>
+        </li>
+        <li class="fragment">Modern:
+          <ul style="list-style-type: none; color: #00A9D4;">
+            <li>Reinforcement Learning (RL) – Dynamic adaptability</li>
+            <li>Predictive Models (e.g., LSTM, GRU) – Forecast human behavior</li>
+            <li>Socially Aware Navigation – Respect human comfort zones</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="fragment" style="flex: 0 0 50%; text-align: center;">
+      <table style="font-size: 0.9em; color: white; width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr style="background-color: #003087;">
+            <th style="padding: 8px; border: 1px solid white;">Method</th>
+            <th style="padding: 8px; border: 1px solid white;">Strength</th>
+            <th style="padding: 8px; border: 1px solid white;">Limitation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="fragment">
+            <td style="padding: 8px; border: 1px solid white;">Path Planning (A*)</td>
+            <td style="padding: 8px; border: 1px solid white;">Efficient in static settings</td>
+            <td style="padding: 8px; border: 1px solid white;">Fails with human unpredictability</td>
+          </tr>
+          <tr class="fragment">
+            <td style="padding: 8px; border: 1px solid white;">Social Force Models</td>
+            <td style="padding: 8px; border: 1px solid white;">Models crowd behavior</td>
+            <td style="padding: 8px; border: 1px solid white;">Limited to predefined rules</td>
+          </tr>
+          <tr class="fragment" style="color: #00A9D4;">
+            <td style="padding: 8px; border: 1px solid white;">Reinforcement Learning</td>
+            <td style="padding: 8px; border: 1px solid white;">Adapts to dynamic environments</td>
+            <td style="padding: 8px; border: 1px solid white;">Requires extensive training</td>
+          </tr>
+          <tr class="fragment">
+            <td style="padding: 8px; border: 1px solid white;">World Models</td>
+            <td style="padding: 8px; border: 1px solid white;">Efficient training in simulation</td>
+            <td style="padding: 8px; border: 1px solid white;">Computationally intensive</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
 
             <!-- Section Title: Foundations of Social Robot Navigation -->
             <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
