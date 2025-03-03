@@ -371,8 +371,8 @@
 
             <!-- Predictive Models in Social Robot Navigation -->
             <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive Models in Social Robot Navigation</h2>
-                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 80px;">
+                <h2 style="color: white; text-align: center; margin-bottom: 10px;">Predictive Models in Social Robot Navigation</h2>
+                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 60px;">
                     <ul>
                         <li class="fragment">Role: Enhance robot decision-making by forecasting human behavior and dynamics (Chapter 5, p. 83).</li>
                         <li class="fragment">Key Models:
@@ -395,6 +395,13 @@
                                         <td style="padding: 4px; border: 1px solid white;">Struggles with long-term dependencies</td>
                                     </tr>
                                     <tr class="fragment">
+                                        <td style="padding: 4px; border: 1px solid white;">Recurrent</td>
+                                        <td style="padding: 4px; border: 1px solid white;">Gated Recurrent Unit (GRU)</td>
+                                        <td style="padding: 4px; border: 1px solid white;">Predicts human trajectories in SocNavGym (Chapter 5, p. 83; Chapter 6, p. 103).</td>
+                                        <td style="padding: 4px; border: 1px solid white;">Faster and simpler than LSTM</td>
+                                        <td style="padding: 4px; border: 1px solid white;">Less expressive for complex sequences</td>
+                                    </tr>
+                                    <tr class="fragment">
                                         <td style="padding: 4px; border: 1px solid white;">Transformer</td>
                                         <td style="padding: 4px; border: 1px solid white;">Transformer-based Model</td>
                                         <td style="padding: 4px; border: 1px solid white;">Forecasts human behavior in dynamic settings (Chapter 5, p. 84).</td>
@@ -410,7 +417,7 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    Introduce predictive models as key to enhancing robot decision-making, focusing on standard recurrent models (LSTM) and transformers commonly used in social navigation. Highlight their applications, strengths, and weaknesses, setting up for your original contributions later (e.g., Chapters 5–6). Use the diagram to illustrate their role in social navigation or SocNavGym.
+                    Introduce predictive models as key to enhancing robot decision-making, focusing on standard recurrent models (LSTM, GRU) and transformers commonly used in social navigation. Highlight their applications, strengths, and weaknesses, setting up for your original contributions later (e.g., Chapters 5–6). Use the diagram to illustrate their role in social navigation or SocNavGym.
                 </aside>
             </section>
 
