@@ -1,577 +1,597 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<title>research - Goodluck Oguzie</title>
-		<link rel="stylesheet" href="dist/reset.css" />
-		<link rel="stylesheet" href="dist/reveal.css" />
-		<link rel="stylesheet" href="dist/theme/white.css" />
-		<link rel="stylesheet" href="plugin/highlight/monokai.css" />
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>research - Goodluck Oguzie</title>
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" />
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script src="plugin/math/math.js"></script>
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/math/math.js"></script>
 
-		<link rel="stylesheet" href="mycss.css" />
+    <link rel="stylesheet" href="mycss.css" />
 
-		<script type="text/javascript">
-			window.addEventListener("load", function() {
-			  var revealDiv = document.querySelector("body div.reveal");
-			  var footer = document.querySelector(".footer");
-			  revealDiv.appendChild(footer);
-			});
-		</script>
+    <script type="text/javascript">
+        window.addEventListener("load", function() {
+            var revealDiv = document.querySelector("body div.reveal");
+            var footer = document.querySelector(".footer");
+            revealDiv.appendChild(footer);
+        });
+    </script>
 
-		<style>
-			.reveal .slide-number {
-				font-size: 24pt;
-				color: #000000;
-			}
-			video::-webkit-media-controls-panel {
-         		background-image: linear-gradient(transparent, transparent) !important;
-    		}
-			.reveal section div ul li span {
-				line-height: 1.2;
-			}
-		</style>
+    <style>
+        .reveal .slide-number {
+            font-size: 24pt;
+            color: #000000;
+        }
+        video::-webkit-media-controls-panel {
+            background-image: linear-gradient(transparent, transparent) !important;
+        }
+        .reveal section div ul li span {
+            line-height: 1.2;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Title Slide -->
+            <section data-background="img/aston_title_background.jpg" data-background-size="cover" data-background-position="0 20px" style="color: white;">
+                <div style="text-align: left; margin: 0 auto; width: 100%; font-size: 1em;">
+                      Enhancing Robot Social Navigation with<br>
+                      Reinforcement Learning and Advanced <br>
+                            Predictive Models
+                </div>
+                <div style="text-align: left; margin: 0 auto; width: 100%; font-size: 0.9em;">
+                      Goodluck Oguzie
+                </div>
+                <div style="text-align: left; margin: 0 auto; width: 100%; font-size: 0.9em;">
+                      190212683@aston.ac.uk
+                </div>
+            </section>
 
-	</head>
-	<body>
-		
-		<div class="reveal">
-			<div class="slides">
-				<!-- =========== TITLE SLIDE (UPDATED BACKGROUND) =========== -->
-				<section data-background="img/aston_title_background.jpg" data-background-size="cover" data-background-position="0 20px" style="color: white;">
-					<div style="text-align: left; margin: 0 auto; width: 100%; font-size: 1em;">
-						  Enhancing Robot Social Navigation with<br>
-						  Reinforcement Learning and Advanced <br>
-						        Predictive Models
-					</div>
-					<div style="text-align: left; margin: 0 auto; width: 100%; font-size: 0.9em;">
-						  Goodluck Oguzie
-					</div>
-					<div style="text-align: left; margin: 0 auto; width: 100%; font-size: 0.9em;">
-						  190212683@aston.ac.uk
-					</div>
-				</section>
-				
-				<!-- =========== CONTENT SLIDE (UPDATED, CENTERED, WHITE TEXT, NUMBERED, FIXED BACKGROUND) =========== -->
-				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
-				  <h2 style="color: white; text-align: center; margin-bottom: 20px;">Presentation Outline</h2>
-				  <div style="display: flex; justify-content: center; align-items: flex-start; padding-top: 50px; font-size: 1em; color: white;">
-				    <!-- Left Column -->
-				    <div style="flex: 0 0 40%; text-align: left; padding-right: 40px;">
-				      <ol style="list-style-position: inside;">
-				        <li class="fragment">Context and Scope</li>
-				        <li class="fragment">Social Robot Navigation</li>
-				        <li class="fragment">Reinforcement Learning</li>
-				        <li class="fragment">Environments Used</li>
-				      </ol>
-				    </div>
-				    <!-- Right Column -->
-				    <div style="flex: 0 0 40%; text-align: left; padding-left: 40px;">
-				      <ol start="5" style="list-style-position: inside;">
-				        <li class="fragment">Predictive World Models *</li>
-				        <li class="fragment">Cosine-Gated LSTM (CGLSTM) *</li>
-				        <li class="fragment">Adaptive Prediction Horizons *</li>
-				        <li class="fragment">Conclusion</li>
-				      </ol>
-				    </div>
-				  </div>
-				  <!-- SVG Timeline -->
-				  <div class="fragment" style="text-align: center; padding-top: 30px;">
-				    <svg width="800" height="150" xmlns="http://www.w3.org/2000/svg">
-				      <!-- Dashed Line -->
-				      <line x1="50" y1="50" x2="750" y2="50" stroke="white" stroke-width="2" stroke-dasharray="5,5" />
-				      <!-- Circles -->
-				      <circle cx="50" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
-				      <circle cx="150" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
-				      <circle cx="250" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
-				      <circle cx="350" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
-				      <circle cx="450" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
-				      <circle cx="550" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
-				      <circle cx="650" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
-				      <circle cx="750" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
-				      <!-- Numbers -->
-				      <text x="50" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">1</text>
-				      <text x="150" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">2</text>
-				      <text x="250" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">3</text>
-				      <text x="350" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">4</text>
-				      <text x="450" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">5</text>
-				      <text x="550" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">6</text>
-				      <text x="650" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">7</text>
-				      <text x="750" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">8</text>
-				      <!-- Arrows -->
-				      <path d="M80 50 L130 50 M135 45 L130 50 L135 55" stroke="white" stroke-width="1" fill="none" />
-				      <path d="M180 50 L230 50 M235 45 L230 50 L235 55" stroke="white" stroke-width="1" fill="none" />
-				      <path d="M280 50 L330 50 M335 45 L330 50 L335 55" stroke="white" stroke-width="1" fill="none" />
-				      <path d="M380 50 L430 50 M435 45 L430 50 L435 55" stroke="white" stroke-width="1" fill="none" />
-				      <path d="M480 50 L530 50 M535 45 L530 50 L535 55" stroke="white" stroke-width="1" fill="none" />
-				      <path d="M580 50 L630 50 M635 45 L630 50 L635 55" stroke="white" stroke-width="1" fill="none" />
-				      <path d="M680 50 L730 50 M735 45 L730 50 L735 55" stroke="white" stroke-width="1" fill="none" />
-				      <!-- Labels -->
-				      <text x="50" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Context</text>
-				      <text x="150" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">SocNav</text>
-				      <text x="250" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">RL</text>
-				      <text x="350" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Enviro</text>
-				      <text x="450" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Pred.Models *</text>
-				      <text x="550" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">CGLSTM *</text>
-				      <text x="650" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Adapt.Horiz *</text>
-				      <text x="750" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Conclusion</text>
-				      <!-- Footnote -->
-				      <text x="400" y="130" font-family="Arial" font-size="10" fill="white" text-anchor="middle">* My Original Contributions</text>
-				    </svg>
-				  </div>
-				  <aside class="notes">
-				    Introduce the structure briefly: Start with context and foundational topics (1–4), then detail my three main contributions (5–7)—predictive models, CGLSTM, and adaptive horizons, marked with asterisks as my original work—each tackling unique challenges with innovative methods and results, before wrapping up with conclusions (8). The SVG timeline visually ties it all together, with the footnote clarifying my contributions.
-				  </aside>
-				</section>
+            <!-- Presentation Outline -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
+                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Presentation Outline</h2>
+                <div style="display: flex; justify-content: center; align-items: flex-start; padding-top: 50px; font-size: 1em; color: white;">
+                    <div style="flex: 0 0 40%; text-align: left; padding-right: 40px;">
+                        <ol style="list-style-position: inside;">
+                            <li class="fragment">Context and Scope</li>
+                            <li class="fragment">Foundations of Social Robot Navigation</li>
+                            <li class="fragment">Reinforcement Learning</li>
+                            <li class="fragment">Environments Used</li>
+                        </ol>
+                    </div>
+                    <div style="flex: 0 0 40%; text-align: left; padding-left: 40px;">
+                        <ol start="5" style="list-style-position: inside;">
+                            <li class="fragment">Predictive World Models *</li>
+                            <li class="fragment">Cosine-Gated LSTM (CGLSTM) *</li>
+                            <li class="fragment">Adaptive Prediction Horizons *</li>
+                            <li class="fragment">Conclusion</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="fragment" style="text-align: center; padding-top: 30px;">
+                    <svg width="800" height="150" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="50" y1="50" x2="750" y2="50" stroke="white" stroke-width="2" stroke-dasharray="5,5" />
+                        <circle cx="50" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
+                        <circle cx="150" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
+                        <circle cx="250" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
+                        <circle cx="350" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
+                        <circle cx="450" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
+                        <circle cx="550" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
+                        <circle cx="650" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
+                        <circle cx="750" cy="50" r="15" fill="white" stroke="black" stroke-width="1" />
+                        <text x="50" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">1</text>
+                        <text x="150" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">2</text>
+                        <text x="250" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">3</text>
+                        <text x="350" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">4</text>
+                        <text x="450" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">5</text>
+                        <text x="550" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">6</text>
+                        <text x="650" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">7</text>
+                        <text x="750" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="black" text-anchor="middle">8</text>
+                        <path d="M80 50 L130 50 M135 45 L130 50 L135 55" stroke="white" stroke-width="1" fill="none" />
+                        <path d="M180 50 L230 50 M235 45 L230 50 L235 55" stroke="white" stroke-width="1" fill="none" />
+                        <path d="M280 50 L330 50 M335 45 L330 50 L335 55" stroke="white" stroke-width="1" fill="none" />
+                        <path d="M380 50 L430 50 M435 45 L430 50 L435 55" stroke="white" stroke-width="1" fill="none" />
+                        <path d="M480 50 L530 50 M535 45 L530 50 L535 55" stroke="white" stroke-width="1" fill="none" />
+                        <path d="M580 50 L630 50 M635 45 L630 50 L635 55" stroke="white" stroke-width="1" fill="none" />
+                        <path d="M680 50 L730 50 M735 45 L730 50 L735 55" stroke="white" stroke-width="1" fill="none" />
+                        <text x="50" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Context</text>
+                        <text x="150" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Foundations of SocNav</text>
+                        <text x="250" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">RL</text>
+                        <text x="350" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Environments</text>
+                        <text x="450" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Pred. Models</text>
+                        <text x="550" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">CGLSTM</text>
+                        <text x="650" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Adapt. Horizons</text>
+                        <text x="750" y="90" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Conclusion</text>
+                        <text x="400" y="130" font-family="Arial" font-size="10" fill="white" text-anchor="middle">* My Original Contributions</text>
+                    </svg>
+                </div>
+                <aside class="notes">
+                    Introduce the structure briefly: Start with context and foundational topics (1–4), then detail my three main contributions (5–7)—predictive models, CGLSTM, and adaptive horizons, marked with asterisks as my original work—before wrapping up with conclusions (8). The SVG timeline visually ties it all together.
+                </aside>
+            </section>
 
+            <!-- Section Title: Context and Scope -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
+                <h2 style="color: white; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Context and Scope</h2>
+            </section>
 
-			<!-- =========== CONTEXT AND SCOPE: SLIDE 3 - WHAT IS SOCIAL ROBOT NAVIGATION? (UPDATED BACKGROUND) =========== -->
-			<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-			  <h2 style="color: white; text-align: center; margin-bottom: 20px;">What is Social Robot Navigation?</h2>
-			  <div style="text-align: center; padding-top: 50px;">
-			    <!-- Video (Plays on Slide Load) -->
-			    <div style="padding-bottom: 20px;">
-			      <video muted data-autoplay src="img/socialrobot.mp4" width="60%"></video>
-			    </div>
-			    <!-- Single Text Element -->
-			    <div style="font-size: 1em; color: white;">
-			      <p id="textDisplay" style="margin: 0;"></p>
-			    </div>
-			  </div>
-			  <!-- Fragment Triggers -->
-			  <div style="display: none;">
-			    <span class="fragment" data-fragment-index="0"></span>
-			    <span class="fragment" data-fragment-index="1"></span>
-			    <span class="fragment" data-fragment-index="2"></span>
-			  </div>
-			  <script>
-			    Reveal.addEventListener('fragmentshown', function(event) {
-			      var textDisplay = document.getElementById('textDisplay');
-			      if (event.fragment.dataset.fragmentIndex === '0') {
-			        textDisplay.textContent = 'Definition: Robots navigating safely in human-populated environments, respecting social norms.';
-			      } else if (event.fragment.dataset.fragmentIndex === '1') {
-			        textDisplay.textContent = 'Importance: Critical for seamless integration into daily life, ensuring safety and social acceptance.';
-			      } else if (event.fragment.dataset.fragmentIndex === '2') {
-			        textDisplay.textContent = 'Applications: Healthcare robots, hospitality robots, public space navigation.';
-			      }
-			    });
-			  </script>
-			  <aside class="notes">
-			    The video plays as the slide loads. On the first down arrow, show the Definition. On the next press, replace it with Importance. On the final press, replace it with Applications, narrating each step as it appears.
-			  </aside>
-			</section>
-				
-<!-- =========== CONTEXT AND SCOPE: SLIDE 4 - APPROACHES TO SOCIAL ROBOT NAVIGATION (UPDATED WITH TABLE) =========== -->
-<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">Approaches to Social Robot Navigation</h2>
-  <div style="display: flex; justify-content: center; align-items: flex-start; padding-top: 50px;">
-    <div style="flex: 0 0 50%; text-align: left; font-size: 1em; color: white; padding-right: 40px;">
-      <p class="fragment" style="font-size: 0.9em; margin-bottom: 10px;">Existing methods include:</p>
-      <ul>
-        <li class="fragment">Traditional:
-          <ul style="list-style-type: none;">
-            <li>Path planning (A*, Dijkstra’s) – Static focus</li>
-            <li>Social force models – Crowd dynamics</li>
-            <li>Rule-based – Limited adaptability</li>
-          </ul>
-        </li>
-        <li class="fragment">Modern:
-          <ul style="list-style-type: none; color: #00A9D4;">
-            <li>Reinforcement Learning (RL) – Dynamic adaptability</li>
-            <li>Deep RL (DQN, PPO) – Complex environments</li>
-          </ul>
-        </li>
-      </ul>
+            <!-- What is Social Robot Navigation? -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+                <h2 style="color: white; text-align: center; margin-bottom: 20px;">What is Social Robot Navigation?</h2>
+                <div style="text-align: center; padding-top: 50px;">
+                    <div style="padding-bottom: 20px;">
+                        <video muted data-autoplay src="img/socialrobot.mp4" width="60%"></video>
+                    </div>
+                    <div style="font-size: 1em; color: white;">
+                        <p id="textDisplay" style="margin: 0;"></p>
+                    </div>
+                </div>
+                <div style="display: none;">
+                    <span class="fragment" data-fragment-index="0"></span>
+                    <span class="fragment" data-fragment-index="1"></span>
+                    <span class="fragment" data-fragment-index="2"></span>
+                </div>
+                <script>
+                    Reveal.addEventListener('fragmentshown', function(event) {
+                        var textDisplay = document.getElementById('textDisplay');
+                        if (event.fragment.dataset.fragmentIndex === '0') {
+                            textDisplay.textContent = 'Definition: Robots navigating safely in human-populated environments, respecting social norms.';
+                        } else if (event.fragment.dataset.fragmentIndex === '1') {
+                            textDisplay.textContent = 'Importance: Critical for seamless integration into daily life, ensuring safety and social acceptance.';
+                        } else if (event.fragment.dataset.fragmentIndex === '2') {
+                            textDisplay.textContent = 'Applications: Healthcare robots, hospitality robots, public space navigation.';
+                        }
+                    });
+                </script>
+                <aside class="notes">
+                    The video plays on load. Use fragments to cycle through Definition, Importance, and Applications, narrating each step.
+                </aside>
+            </section>
+
+            <!-- Approaches to Social Robot Navigation -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Approaches to Social Robot Navigation</h2>
+                <div style="display: flex; justify-content: center; align-items: flex-start; padding-top: 50px;">
+                    <div style="flex: 0 0 50%; text-align: left; font-size: 1em; color: white; padding-right: 40px;">
+                        <p class="fragment" style="font-size: 0.9em; margin-bottom: 10px;">Existing methods include:</p>
+                        <ul>
+                            <li class="fragment">Traditional:
+                                <ul style="list-style-type: none;">
+                                    <li>Path planning (A*, Dijkstra’s) – Static focus</li>
+                                    <li>Social force models – Crowd dynamics</li>
+                                    <li>Rule-based – Limited adaptability</li>
+                                </ul>
+                            </li>
+                            <li class="fragment">Modern:
+                                <ul style="list-style-type: none; color: #00A9D4;">
+                                    <li>Reinforcement Learning (RL) – Dynamic adaptability</li>
+                                    <li>Deep RL (DQN, PPO) – Complex environments</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="fragment" style="flex: 0 0 50%; text-align: center;">
+                        <table style="font-size: 0.9em; color: white; width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="background-color: #003087;">
+                                    <th style="padding: 8px; border: 1px solid white;">Method</th>
+                                    <th style="padding: 8px; border: 1px solid white;">Strength</th>
+                                    <th style="padding: 8px; border: 1px solid white;">Limitation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="fragment">
+                                    <td style="padding: 8px; border: 1px solid white;">Path Planning (A*)</td>
+                                    <td style="padding: 8px; border: 1px solid white;">Efficient in static settings</td>
+                                    <td style="padding: 8px; border: 1px solid white;">Fails with human unpredictability</td>
+                                </tr>
+                                <tr class="fragment">
+                                    <td style="padding: 8px; border: 1px solid white;">Social Force Models</td>
+                                    <td style="padding: 8px; border: 1px solid white;">Models crowd behavior</td>
+                                    <td style="padding: 8px; border: 1px solid white;">Limited to predefined rules</td>
+                                </tr>
+                                <tr class="fragment" style="color: #00A9D4;">
+                                    <td style="padding: 8px; border: 1px solid white;">Deep RL (DQN, PPO)</td>
+                                    <td style="padding: 8px; border: 1px solid white;">Adapts to dynamic environments</td>
+                                    <td style="padding: 8px; border: 1px solid white;">Requires extensive training</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <aside class="notes">
+                    Discuss traditional methods (static focus, crowd dynamics, limited adaptability) and modern RL methods (dynamic adaptability, complex environments). Use the table to compare strengths and limitations.
+                </aside>
+            </section>
+
+            <!-- Section Title: Foundations of Social Robot Navigation -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
+                <h2 style="color: white; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Foundations of Social Robot Navigation</h2>
+            </section>
+
+            <!-- Foundations of Social Robot Navigation -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Foundations of Social Robot Navigation</h2>
+                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                    <ul>
+                        <li class="fragment">Historical Overview: Evolved from classical path planning to ML-based methods (Chapter 4, p. 58).</li>
+                        <li class="fragment">Approaches:
+                            <ul style="list-style-type: none;">
+                                <li>Classical: Path planning (A*, Dijkstra’s), rule-based systems (Chapter 4, p. 60).</li>
+                                <li>Machine Learning: RL, predictive models for dynamic settings (Chapter 4, p. 61).</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">SocNavGym: A benchmark environment for testing social navigation (Chapter 4, p. 63).</li>
+                        <div class="fragment" style="padding-top: 20px;">
+                            <img src="img/social_navigation_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                        </div>
+                    </ul>
+                </div>
+                <aside class="notes">
+                    Cover the evolution from classical to ML-based methods and introduce SocNavGym, using the diagram to illustrate these foundations.
+                </aside>
+            </section>
+
+            <!-- Section Title: Reinforcement Learning -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
+                <h2 style="color: white; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Reinforcement Learning</h2>
+            </section>
+
+            <!-- Reinforcement Learning -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Reinforcement Learning</h2>
+                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                    <ul>
+                        <li class="fragment">Overview: RL enables robots to learn optimal navigation strategies via trial and error, maximizing rewards (Chapter 3, p. 34).</li>
+                        <li class="fragment">Key Concepts:
+                            <ul style="list-style-type: none;">
+                                <li>History: Originated in the 1950s, evolved with dynamic programming (Chapter 3, p. 32).</li>
+                                <li>RL Problem: Agent learns through trial and error (Chapter 3, p. 34).</li>
+                                <li>Model-Free (e.g., Q-learning, SAC): Learn from experience (Chapter 3, p. 36).</li>
+                                <li>Model-Based (e.g., DreamerV3): Use world models (Chapter 3, p. 36).</li>
+                                <li>Policy Learning: Optimize policies for actions (Chapter 3, p. 39).</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">Algorithms Used: DQN, DDPG, PPO, A2C, SAC, DreamerV3 for social navigation (Chapter 3, p. 40–51).</li>
+                        <div class="fragment" style="padding-top: 20px;">
+                            <img src="img/rl_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                        </div>
+                    </ul>
+                </div>
+                <aside class="notes">
+                    Explain RL’s core concepts, history, and algorithms, using the diagram to show frameworks or SocNavGym integration.
+                </aside>
+            </section>
+
+            <!-- Section Title: Environments Used -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
+                <h2 style="color: white; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Environments Used</h2>
+            </section>
+
+            <!-- Environments Used in This Research -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Environments Used in This Research</h2>
+                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                    <ul>
+                        <li class="fragment">SocNavGym: Benchmark for social navigation, testing RL and predictive models (Chapter 4, p. 63; Chapter 7, p. 132).</li>
+                        <li class="fragment">FallingBallEnv: Synthetic environment for sequence prediction (Chapter 6, p. 103; Chapter 7, p. 132).</li>
+                        <li class="fragment">LunarLander-v2: Continuous control task for RL (Chapter 7, p. 132; Chapter 8, p. 150).</li>
+                        <div class="fragment" style="padding-top: 20px;">
+                            <img src="img/environments_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                        </div>
+                    </ul>
+                </div>
+                <aside class="notes">
+                    Describe the three environments and their roles, using the diagram to illustrate setups.
+                </aside>
+            </section>
+
+            <!-- Section Title: Predictive World Models -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
+                <h2 style="color: white; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Predictive World Models</h2>
+            </section>
+
+            <!-- Predictive World Models: Challenges/Limitations -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive World Models for Social Navigation</h2>
+                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                    <h3 style="color: white; margin-bottom: 10px;">Challenges/Limitations</h3>
+                    <ul>
+                        <li class="fragment">Fixed Prediction Horizons: Limited adaptability in dynamic environments (Chapter 5, p. 86).</li>
+                        <li class="fragment">Computational Overhead: Increased processing demands (Chapter 5, p. 84).</li>
+                        <li class="fragment">Sparse Data: Difficulty predicting human behavior (Chapter 5, p. 87).</li>
+                        <div class="fragment" style="padding-top: 20px;">
+                            <img src="img/predictive_world_challenges_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                        </div>
+                    </ul>
+                </div>
+                <aside class="notes">
+                    Highlight challenges using the diagram to show SocNavGym examples.
+                </aside>
+            </section>
+
+            <!-- Predictive World Models: Methods -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive World Models for Social Navigation</h2>
+                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                    <h3 style="color: white; margin-bottom: 10px;">Methods</h3>
+                    <ul>
+                        <li class="fragment">2StepAhead: Fixed two-step horizon model (Chapter 5, p. 83).</li>
+                        <li class="fragment">MASPM: Multi-action state prediction model (Chapter 5, p. 84).</li>
+                        <li class="fragment">2StepAhead-MASPM: Combined approach (Chapter 5, p. 85).</li>
+                        <div class="fragment" style="padding-top: 20px;">
+                            <img src="img/predictive_world_methods_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                        </div>
+                    </ul>
+                </div>
+                <aside class="notes">
+                    Describe methods, using the diagram to illustrate RL integration.
+                </aside>
+            </section>
+
+            <!-- Predictive World Models: Evaluation -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive World Models for Social Navigation</h2>
+                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                    <h3 style="color: white; margin-bottom: 10px;">Evaluation</h3>
+                    <ul>
+                        <li class="fragment">Environments: Tested in SocNavGym (Chapter 5, p. 86).</li>
+                        <li class="fragment">Metrics: MSE, MAE, accuracy (Chapter 5, p. 87–88).</li>
+                        <li class="fragment">Approach: Compared 2StepAhead, MASPM, and combined model (Chapter 5, p. 86).</li>
+                        <div class="fragment" style="padding-top: 20px;">
+                            <img src="img/predictive_world_evaluation_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                        </div>
+                    </ul>
+                </div>
+                <aside class="notes">
+                    Explain evaluation, using the diagram for performance visuals.
+                </aside>
+            </section>
+
+            <!-- Predictive World Models: Results -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive World Models for Social Navigation</h2>
+                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                    <h3 style="color: white; margin-bottom: 10px;">Results</h3>
+                    <ul>
+                        <li class="fragment">Training Phase: 20% lower MSE with 2StepAhead-MASPM (Chapter 5, p. 87).</li>
+                        <li class="fragment">Testing Phase: 15% MAE reduction in SocNavGym (Chapter 5, p. 88).</li>
+                        <li class="fragment">Impact: Improved RL robustness (Chapter 5, p. 86).</li>
+                        <div class="fragment" style="padding-top: 20px;">
+                            <img src="img/predictive_world_results_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                        </div>
+                    </ul>
+                </div>
+                <aside class="notes">
+                    Highlight results, using the diagram to show MSE/MAE improvements.
+                </aside>
+            </section>
+
+            <!-- Section Title: Cosine-Gated LSTM (CGLSTM) -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
+                <h2 style="color: white; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Cosine-Gated LSTM (CGLSTM)</h2>
+            </section>
+
+            <!-- CGLSTM: Challenges/Limitations -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Cosine-Gated LSTM (CGLSTM) for Prediction</h2>
+                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                    <h3 style="color: white; margin-bottom: 10px;">Challenges/Limitations</h3>
+                    <ul>
+                        <li class="fragment">Prediction Accuracy: Struggles with long-term sequences (Chapter 6, p. 94).</li>
+                        <li class="fragment">Sparse Data: Limited data affects performance (Chapter 6, p. 113).</li>
+                        <li class="fragment">Computational Complexity: Higher demands (Chapter 6, p. 98).</li>
+                        <div class="fragment" style="padding-top: 20px;">
+                            <img src="img/cglstm_challenges_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                        </div>
+                    </ul>
+                </div>
+                <aside class="notes">
+                    Discuss challenges, using the diagram for illustration.
+                </aside>
+            </section>
+
+            <!-- CGLSTM: Methods -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Cosine-Gated LSTM (CGLSTM) for Prediction</h2>
+                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                    <h3 style="color: white; margin-bottom: 10px;">Methods</h3>
+                    <ul>
+                        <li class="fragment">Architecture: Cosine similarity-based gating (Chapter 6, p. 96).</li>
+                        <li class="fragment">Training: BPTT in SocNavGym and FallingBallEnv (Chapter 6, p. 98).</li>
+                        <li class="fragment">Integration: Combined with DreamerV3 and SAC (Chapter 6, p. 114).</li>
+                        <div class="fragment" style="padding-top: 20px;">
+                            <img src="img/cglstm_methods_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                        </div>
+                    </ul>
+                </div>
+                <aside class="notes">
+                    Describe methods, using the diagram to show structure.
+                </aside>
+            </section>
+
+            <!-- CGLSTM: Evaluation -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Cosine-Gated LSTM (CGLSTM) for Prediction</h2>
+                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                    <h3 style="color: white; margin-bottom: 10px;">Evaluation</h3>
+                    <ul>
+                        <li class="fragment">Environments: SocNavGym, FallingBallEnv, and more (Chapter 6, p. 103–114).</li>
+                        <li class="fragment">Metrics: MAE, MSE, accuracy (Chapter 6, p. 103).</li>
+                        <li class="fragment">Comparison: Against LSTM, GRU, RAU (Chapter 6, p. 103).</li>
+                        <div class="fragment" style="padding-top: 20px;">
+                            <img src="img/cglstm_evaluation_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                        </div>
+                    </ul>
+                </div>
+                <aside class="notes">
+                    Explain evaluation, using the diagram for performance.
+                </aside>
+            </section>
+
+            <!-- CGLSTM: Results -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Cosine-Gated LSTM (CGLSTM) for Prediction</h2>
+                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                    <h3 style="color: white; margin-bottom: 10px;">Results</h3>
+                    <ul>
+                        <li class="fragment">FallingBallEnv: 30% MAE reduction (Chapter 6, p. 103).</li>
+                        <li class="fragment">SocNavGym: 5% reward improvement (Chapter 6, p. 113–114).</li>
+                        <li class="fragment">Additional Tasks: Outperformed baselines (Chapter 6, p. 108–111).</li>
+                        <div class="fragment" style="padding-top: 20px;">
+                            <img src="img/cglstm_results_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                        </div>
+                    </ul>
+                </div>
+                <aside class="notes">
+                    Highlight results, using the diagram for visuals.
+                </aside>
+            </section>
+
+            <!-- Section Title: Adaptive Prediction Horizons -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
+                <h2 style="color: white; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Adaptive Prediction Horizons</h2>
+            </section>
+
+            <!-- Adaptive Prediction Horizons: Challenges/Limitations -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons in RL</h2>
+                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                    <h3 style="color: white; margin-bottom: 10px;">Challenges/Limitations</h3>
+                    <ul>
+                        <li class="fragment">Fixed Horizons: Lack adaptability (Chapter 7, p. 122).</li>
+                        <li class="fragment">Computational Cost: Higher demands (Chapter 7, p. 125).</li>
+                        <li class="fragment">Exploration Uncertainty: Balancing challenges (Chapter 7, p. 121).</li>
+                        <div class="fragment" style="padding-top: 20px;">
+                            <img src="img/adaptive_horizons_challenges_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                        </div>
+                    </ul>
+                </div>
+                <aside class="notes">
+                    Discuss challenges, using the diagram for examples.
+                </aside>
+            </section>
+
+            <!-- Adaptive Prediction Horizons: Methods -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons in RL</h2>
+                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                    <h3 style="color: white; margin-bottom: 10px;">Methods</h3>
+                    <ul>
+                        <li class="fragment">Entropy-Driven Adaptation: Adjusts horizons dynamically (Chapter 7, p. 125).</li>
+                        <li class="fragment">Integration: With CGLSTM and SAC (Chapter 7, p. 124).</li>
+                        <li class="fragment">Framework: Entropy-based selection (Chapter 7, p. 127–128).</li>
+                        <div class="fragment" style="padding-top: 20px;">
+                            <img src="img/adaptive_horizons_methods_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                        </div>
+                    </ul>
+                </div>
+                <aside class="notes">
+                    Describe methods, using the diagram for mechanism.
+                </aside>
+            </section>
+
+            <!-- Adaptive Prediction Horizons: Evaluation -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons in RL</h2>
+                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                    <h3 style="color: white; margin-bottom: 10px;">Evaluation</h3>
+                    <ul>
+                        <li class="fragment">Environments: SocNavGym, FallingBallEnv, LunarLander-v2 (Chapter 7, p. 132).</li>
+                        <li class="fragment">Metrics: Success rates, rewards, inference time (Chapter 7, p. 136).</li>
+                        <li class="fragment">Comparison: Against fixed-horizon models (Chapter 7, p. 138).</li>
+                        <div class="fragment" style="padding-top: 20px;">
+                            <img src="img/adaptive_horizons_evaluation_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                        </div>
+                    </ul>
+                </div>
+                <aside class="notes">
+                    Explain evaluation, using the diagram for performance.
+                </aside>
+            </section>
+
+            <!-- Adaptive Prediction Horizons: Results -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons in RL</h2>
+                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                    <h3 style="color: white; margin-bottom: 10px;">Results</h3>
+                    <ul>
+                        <li class="fragment">SocNavGym: 15% success rate improvement (Chapter 7, p. 138).</li>
+                        <li class="fragment">FallingBallEnv: 10% MAE reduction (Chapter 7, p. 141).</li>
+                        <li class="fragment">LunarLander-v2: 8% reward improvement (Chapter 7, p. 141).</li>
+                        <div class="fragment" style="padding-top: 20px;">
+                            <img src="img/adaptive_horizons_results_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                        </div>
+                    </ul>
+                </div>
+                <aside class="notes">
+                    Highlight results, using the diagram for visuals.
+                </aside>
+            </section>
+
+            <!-- Section Title: Conclusion -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
+                <h2 style="color: white; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Conclusion</h2>
+            </section>
+
+            <!-- Conclusion -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Conclusion</h2>
+                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                    <ul>
+                        <li class="fragment">Contributions: CGLSTM, adaptive horizons, RL integration (Chapter 8, p. 147–149).</li>
+                        <li class="fragment">Impact: Improved success rates and efficiency (Chapter 8, p. 150–151).</li>
+                        <li class="fragment">Future Work: Real-world deployment, sensor noise (Chapter 8, p. 151–153).</li>
+                        <div class="fragment" style="padding-top: 20px;">
+                            <img src="img/conclusion_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                        </div>
+                    </ul>
+                </div>
+                <aside class="notes">
+                    Summarize contributions and future work, using the diagram.
+                </aside>
+            </section>
+
+            <!-- About Me -->
+            <section data-background="img/aston_background.jpg" data-transition="slide">
+                <h3>About Me</h3>
+                <div style="text-align: left; font-size: 0.85em;">
+                    <ul>
+                        <li class="fragment">Goodluck Oguzie</li>
+                        <li class="fragment">PhD in Robotics, <a href="https://robolab.unex.es/">Universidad de Extremadura</a>, Cáceres, Spain
+                            <div class="fragment" style="text-align: center;">
+                                <img src="img/caceres.jpg" width="70%" style="border: 2px solid white;"/>
+                            </div>
+                        </li>
+                        <li class="fragment">PhD Focus: Robotics, Active Perception, POMDP & Particle Filters</li>
+                        <li class="fragment">Career: Senior Lecturer at Aston University since 2018</li>
+                        <li class="fragment">Lab: <a href="https://arp-lab.com">Autonomous Robotics and Perception Lab</a></li>
+                    </ul>
+                </div>
+                <aside class="notes">
+                    Highlight your journey and tie it to social navigation research.
+                </aside>
+            </section>
+        </div>
     </div>
-    <div class="fragment" style="flex: 0 0 50%; text-align: center;">
-      <table style="font-size: 0.9em; color: white; width: 100%; border-collapse: collapse;">
-        <thead>
-          <tr style="background-color: #003087;">
-            <th style="padding: 8px; border: 1px solid white;">Method</th>
-            <th style="padding: 8px; border: 1px solid white;">Strength</th>
-            <th style="padding: 8px; border: 1px solid white;">Limitation</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="fragment">
-            <td style="padding: 8px; border: 1px solid white;">Path Planning (A*)</td>
-            <td style="padding: 8px; border: 1px solid white;">Efficient in static settings</td>
-            <td style="padding: 8px; border: 1px solid white;">Fails with human unpredictability</td>
-          </tr>
-          <tr class="fragment">
-            <td style="padding: 8px; border: 1px solid white;">Social Force Models</td>
-            <td style="padding: 8px; border: 1px solid white;">Models crowd behavior</td>
-            <td style="padding: 8px; border: 1px solid white;">Limited to predefined rules</td>
-          </tr>
-          <tr class="fragment" style="color: #00A9D4;">
-            <td style="padding: 8px; border: 1px solid white;">Deep RL (DQN, PPO)</td>
-            <td style="padding: 8px; border: 1px solid white;">Adapts to dynamic environments</td>
-            <td style="padding: 8px; border: 1px solid white;">Requires extensive training</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <aside class="notes">
-    Start with traditional methods: path planning (A*, Dijkstra’s) excels in static settings, social force models handle crowds, and rule-based systems offer simplicity but lack adaptability. Then highlight modern RL and Deep RL (e.g., DQN, PPO) for dynamic environments. The table compares these, showing strengths and limitations. These gaps, especially in handling human unpredictability, inspired my RL research, detailed later.
-  </aside>
-</section>
 
-<!-- =========== FOUNDATIONS: SLIDE 5 - FOUNDATIONS OF SOCIAL ROBOT NAVIGATION =========== -->
-<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">Foundations of Social Robot Navigation</h2>
-  <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
-    <ul>
-      <li class="fragment">Historical Overview: Evolved from classical path planning to ML-based methods (Chapter 4, p. 58).</li>
-      <li class="fragment">Approaches:
-        <ul style="list-style-type: none;">
-          <li>Classical: Path planning (A*, Dijkstra’s), rule-based systems (Chapter 4, p. 60).</li>
-          <li>Machine Learning: RL, predictive models for dynamic settings (Chapter 4, p. 61).</li>
-        </ul>
-      </li>
-      <li class="fragment">SocNavGym: A benchmark environment for testing social navigation (Chapter 4, p. 63).</li>
-      <div class="fragment" style="padding-top: 20px;">
-        <img src="img/social_navigation_diagram.jpg" width="70%" style="border: 2px solid white;" />
-      </div>
-    </ul>
-  </div>
-  <aside class="notes">
-    Provide a historical overview of social robot navigation, detailing its evolution from classical methods to machine learning approaches, and introduce SocNavGym as a key testing environment, referencing the diagram illustrating these foundations.
-  </aside>
-</section>
-
-				<!-- =========== FOUNDATIONS: SLIDE 6 - REINFORCEMENT LEARNING =========== -->
-				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Reinforcement Learning</h2>
-					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
-						<ul>
-							<li class="fragment">Overview: RL enables robots to learn optimal navigation strategies via trial and error, maximizing rewards (Chapter 3, p. 34).</li>
-							<li class="fragment">Key Concepts:
-								<ul style="list-style-type: none;">
-									<li>History: Originated in the 1950s, evolved with dynamic programming (Chapter 3, p. 32).</li>
-									<li>RL Problem: Agent learns through trial and error (Chapter 3, p. 34).</li>
-									<li>Model-Free (e.g., Q-learning, SAC): Learn from experience (Chapter 3, p. 36).</li>
-									<li>Model-Based (e.g., DreamerV3): Use world models (Chapter 3, p. 36).</li>
-									<li>Policy Learning: Optimize policies for actions (Chapter 3, p. 39).</li>
-								</ul>
-							</li>
-							<li class="fragment">Algorithms Used: DQN, DDPG, PPO, A2C, SAC, DreamerV3 for social navigation (Chapter 3, p. 40–51).</li>
-							<div class="fragment" style="padding-top: 20px;">
-								<img src="img/rl_diagram.jpg" width="70%" style="border: 2px solid white;" />
-							</div>
-						</ul>
-					</div>
-					<aside class="notes">
-						Explain RL’s core concepts, history, problem, model-free vs. model-based approaches, policy learning, and algorithms, emphasizing their application in social navigation, referencing the diagram illustrating RL frameworks or SocNavGym integration.
-					</aside>
-				</section>
-
-				<!-- =========== CONTEXT AND SCOPE: SLIDE 7 - ENVIRONMENTS USED IN THIS RESEARCH =========== -->
-				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Environments Used in This Research</h2>
-					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
-						<ul>
-							<li class="fragment">SocNavGym: Benchmark for social navigation, testing RL and predictive models in dynamic, human-populated scenarios (Chapter 4, p. 63; Chapter 7, p. 132).</li>
-							<li class="fragment">FallingBallEnv: Synthetic environment for sequence prediction, evaluating CGLSTM performance (Chapter 6, p. 103; Chapter 7, p. 132).</li>
-							<li class="fragment">LunarLander-v2: Continuous control task for RL, assessing robustness and efficiency (Chapter 7, p. 132; Chapter 8, p. 150).</li>
-							<div class="fragment" style="padding-top: 20px;">
-								<img src="img/environments_diagram.jpg" width="70%" style="border: 2px solid white;" />
-							</div>
-						</ul>
-					</div>
-					<aside class="notes">
-						Describe SocNavGym, FallingBallEnv, and LunarLander-v2, their roles in evaluating your RL and predictive models, and how the diagram illustrates these environments or their setups.
-					</aside>
-				</section>
-
-				<!-- =========== METHODOLOGY: SLIDE 8 - PREDICTIVE WORLD MODELS FOR SOCIAL NAVIGATION: CHALLENGES/LIMITATIONS =========== -->
-				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive World Models for Social Navigation</h2>
-					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
-						<h3 style="color: white; margin-bottom: 10px;">Challenges/Limitations</h3>
-						<ul>
-							<li class="fragment">Fixed Prediction Horizons: 2StepAhead and MASPM limited by inflexibility in dynamic environments, reducing adaptability (Chapter 5, p. 86).</li>
-							<li class="fragment">Computational Overhead: MASPM’s multi-agent prediction increases processing demands, impacting efficiency (Chapter 5, p. 84).</li>
-							<li class="fragment">Sparse Data: Difficulty predicting human behavior in SocNavGym due to limited training data, affecting accuracy (Chapter 5, p. 87).</li>
-							<div class="fragment" style="padding-top: 20px;">
-								<img src="img/predictive_world_challenges_diagram.jpg" width="70%" style="border: 2px solid white;" />
-							</div>
-						</ul>
-					</div>
-					<aside class="notes">
-						Highlight the challenges and limitations of predictive world models, emphasizing fixed horizons, computational overhead, and sparse data issues, referencing the diagram illustrating these in SocNavGym.
-					</aside>
-				</section>
-
-				<!-- =========== METHODOLOGY: SLIDE 9 - PREDICTIVE WORLD MODELS FOR SOCIAL NAVIGATION: METHODS =========== -->
-				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive World Models for Social Navigation</h2>
-					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
-						<h3 style="color: white; margin-bottom: 10px;">Methods</h3>
-						<ul>
-							<li class="fragment">2StepAhead: Fixed two-step horizon model predicting short-term states for RL integration (Chapter 5, p. 83).</li>
-							<li class="fragment">MASPM: Multi-action state prediction model for human-robot interactions, using RL state transitions (Chapter 5, p. 84).</li>
-							<li class="fragment">2StepAhead-MASPM: Combined approach enhancing prediction accuracy in SocNavGym (Chapter 5, p. 85).</li>
-							<div class="fragment" style="padding-top: 20px;">
-								<img src="img/predictive_world_methods_diagram.jpg" width="70%" style="border: 2px solid white;" />
-							</div>
-						</ul>
-					</div>
-					<aside class="notes">
-						Describe the methods of 2StepAhead, MASPM, and their combination, referencing the diagram illustrating their integration with RL in SocNavGym.
-					</aside>
-				</section>
-
-				<!-- =========== METHODOLOGY: SLIDE 10 - PREDICTIVE WORLD MODELS FOR SOCIAL NAVIGATION: EVALUATION =========== -->
-				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive World Models for Social Navigation</h2>
-					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
-						<h3 style="color: white; margin-bottom: 10px;">Evaluation</h3>
-						<ul>
-							<li class="fragment">Environments: Tested in SocNavGym, focusing on dynamic human-robot interactions (Chapter 5, p. 86).</li>
-							<li class="fragment">Metrics: Training phase evaluated with MSE, testing phase with MAE and accuracy (Chapter 5, p. 87–88).</li>
-							<li class="fragment">Approach: Compared 2StepAhead, MASPM, and 2StepAhead-MASPM for prediction robustness (Chapter 5, p. 86).</li>
-							<div class="fragment" style="padding-top: 20px;">
-								<img src="img/predictive_world_evaluation_diagram.jpg" width="70%" style="border: 2px solid white;" />
-							</div>
-						</ul>
-					</div>
-					<aside class="notes">
-						Explain the evaluation of predictive world models in SocNavGym, detailing metrics and comparisons, referencing the diagram showing performance or environment setups.
-					</aside>
-				</section>
-
-				<!-- =========== METHODOLOGY: SLIDE 11 - PREDICTIVE WORLD MODELS FOR SOCIAL NAVIGATION: RESULTS =========== -->
-				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive World Models for Social Navigation</h2>
-					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
-						<h3 style="color: white; margin-bottom: 10px;">Results</h3>
-						<ul>
-							<li class="fragment">Training Phase: 2StepAhead-MASPM achieved 20% lower MSE than standalone models, improving prediction stability (Chapter 5, p. 87).</li>
-							<li class="fragment">Testing Phase: 2StepAhead-MASPM reduced MAE by 15% in SocNavGym, enhancing RL decision-making (Chapter 5, p. 88).</li>
-							<li class="fragment">Impact: Improved RL robustness, but limited by fixed horizons (Chapter 5, p. 86).</li>
-							<div class="fragment" style="padding-top: 20px;">
-								<img src="img/predictive_world_results_diagram.jpg" width="70%" style="border: 2px solid white;" />
-							</div>
-						</ul>
-					</div>
-					<aside class="notes">
-						Highlight the results of predictive world models, emphasizing 2StepAhead-MASPM performance and fixed horizon limitations, referencing the diagram showing MSE/MAE improvements in SocNavGym.
-					</aside>
-				</section>
-
-				<!-- =========== METHODOLOGY: SLIDE 12 - COSINE-GATED LSTM (CGLSTM) FOR PREDICTION: CHALLENGES/LIMITATIONS =========== -->
-				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Cosine-Gated LSTM (CGLSTM) for Prediction</h2>
-					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
-						<h3 style="color: white; margin-bottom: 10px;">Challenges/Limitations</h3>
-						<ul>
-							<li class="fragment">Prediction Accuracy: Traditional LSTMs, GRUs, and RAUs struggle with long-term sequence prediction in dynamic environments (Chapter 6, p. 94).</li>
-							<li class="fragment">Sparse Data: Limited training data in SocNavGym affects CGLSTM performance, reducing generalization (Chapter 6, p. 113).</li>
-							<li class="fragment">Computational Complexity: Higher processing demands for cosine gating compared to baseline models (Chapter 6, p. 98).</li>
-							<div class="fragment" style="padding-top: 20px;">
-								<img src="img/cglstm_challenges_diagram.jpg" width="70%" style="border: 2px solid white;" />
-							</div>
-						</ul>
-					</div>
-					<aside class="notes">
-						Highlight the challenges and limitations of CGLSTM, emphasizing prediction accuracy, sparse data, and computational complexity, referencing the diagram illustrating these in SocNavGym or FallingBallEnv.
-					</aside>
-				</section>
-
-				<!-- =========== METHODOLOGY: SLIDE 13 - COSINE-GATED LSTM (CGLSTM) FOR PREDICTION: METHODS =========== -->
-				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Cosine-Gated LSTM (CGLSTM) for Prediction</h2>
-					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
-						<h3 style="color: white; margin-bottom: 10px;">Methods</h3>
-						<ul>
-							<li class="fragment">Architecture: Integrated cosine similarity-based gating into LSTM, enhancing long-term dependency modeling (Chapter 6, p. 96).</li>
-							<li class="fragment">Training: Utilized backpropagation through time (BPTT) in SocNavGym and FallingBallEnv, optimizing for sequence prediction (Chapter 6, p. 98).</li>
-							<li class="fragment">Integration: Combined with DreamerV3 and SAC for RL enhancement (Chapter 6, p. 114; Chapter 7, p. 124).</li>
-							<div class="fragment" style="padding-top: 20px;">
-								<img src="img/cglstm_methods_diagram.jpg" width="70%" style="border: 2px solid white;" />
-							</div>
-						</ul>
-					</div>
-					<aside class="notes">
-						Describe the CGLSTM architecture, training process, and integration with RL, referencing the diagram showing its structure or integration in SocNavGym.
-					</aside>
-				</section>
-
-				<!-- =========== METHODOLOGY: SLIDE 14 - COSINE-GATED LSTM (CGLSTM) FOR PREDICTION: EVALUATION =========== -->
-				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Cosine-Gated LSTM (CGLSTM) for Prediction</h2>
-					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
-						<h3 style="color: white; margin-bottom: 10px;">Evaluation</h3>
-						<ul>
-							<li class="fragment">Environments: Tested in SocNavGym, FallingBallEnv, and additional tasks (e.g., Adding Problem, Row-wise MNIST) (Chapter 6, p. 103–114).</li>
-							<li class="fragment">Metrics: Evaluated with Mean Absolute Error (MAE), Mean Squared Error (MSE), and accuracy (Chapter 6, p. 103).</li>
-							<li class="fragment">Comparison: Compared against LSTM, GRU, and RAU for sequence prediction performance (Chapter 6, p. 103).</li>
-							<div class="fragment" style="padding-top: 20px;">
-								<img src="img/cglstm_evaluation_diagram.jpg" width="70%" style="border: 2px solid white;" />
-							</div>
-						</ul>
-					</div>
-					<aside class="notes">
-						Explain the evaluation of CGLSTM across environments, detailing metrics and comparisons, referencing the diagram showing performance or environment setups.
-					</aside>
-				</section>
-
-				<!-- =========== METHODOLOGY: SLIDE 15 - COSINE-GATED LSTM (CGLSTM) FOR PREDICTION: RESULTS =========== -->
-				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Cosine-Gated LSTM (CGLSTM) for Prediction</h2>
-					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
-						<h3 style="color: white; margin-bottom: 10px;">Results</h3>
-						<ul>
-							<li class="fragment">FallingBallEnv: 30% MAE reduction compared to LSTM, GRU, and RAU (Chapter 6, p. 103).</li>
-							<li class="fragment">SocNavGym: Improved sequence prediction, enhancing RL decision-making by 5% in cumulative rewards (Chapter 6, p. 113–114).</li>
-							<li class="fragment">Additional Tasks: Outperformed baselines in Adding Problem, MNIST, FashionMNIST, IMDB, and Penn Treebank (Chapter 6, p. 108–111).</li>
-							<div class="fragment" style="padding-top: 20px;">
-								<img src="img/cglstm_results_diagram.jpg" width="70%" style="border: 2px solid white;" />
-							</div>
-						</ul>
-					</div>
-					<aside class="notes">
-						Highlight CGLSTM results, emphasizing MAE reduction and reward improvements, referencing the diagram showing performance graphs or comparisons in SocNavGym.
-					</aside>
-				</section>
-
-				<!-- =========== METHODOLOGY: SLIDE 16 - ADAPTIVE PREDICTION HORIZONS IN RL: CHALLENGES/LIMITATIONS =========== -->
-				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons in RL</h2>
-					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
-						<h3 style="color: white; margin-bottom: 10px;">Challenges/Limitations</h3>
-						<ul>
-							<li class="fragment">Fixed Horizons: Current RL and predictive models (e.g., 2StepAhead) lack adaptability, reducing performance in dynamic environments (Chapter 7, p. 122).</li>
-							<li class="fragment">Computational Cost: Entropy-based adaptation increases processing demands, potentially impacting real-time performance (Chapter 7, p. 125).</li>
-							<li class="fragment">Exploration Uncertainty: Challenges in balancing exploration and exploitation in continuous action spaces (Chapter 7, p. 121).</li>
-							<div class="fragment" style="padding-top: 20px;">
-								<img src="img/adaptive_horizons_challenges_diagram.jpg" width="70%" style="border: 2px solid white;" />
-							</div>
-						</ul>
-					</div>
-					<aside class="notes">
-						Highlight the challenges and limitations of adaptive prediction horizons in RL, emphasizing fixed horizons, computational cost, and exploration uncertainty, referencing the diagram illustrating these in SocNavGym.
-					</aside>
-				</section>
-
-				<!-- =========== METHODOLOGY: SLIDE 17 - ADAPTIVE PREDICTION HORIZONS IN RL: METHODS =========== -->
-				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons in RL</h2>
-					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
-						<h3 style="color: white; margin-bottom: 10px;">Methods</h3>
-						<ul>
-							<li class="fragment">Entropy-Driven Adaptation: Dynamically adjusts prediction horizons based on policy entropy, enhancing RL adaptability (Chapter 7, p. 125).</li>
-							<li class="fragment">Integration: Combined with CGLSTM and SAC, optimizing for continuous action spaces (Chapter 7, p. 124).</li>
-							<li class="fragment">Framework: Proposed adaptive horizon selection using entropy measures, integrated into DreamerV3 for comparison (Chapter 7, p. 127–128).</li>
-							<div class="fragment" style="padding-top: 20px;">
-								<img src="img/adaptive_horizons_methods_diagram.jpg" width="70%" style="border: 2px solid white;" />
-							</div>
-						</ul>
-					</div>
-					<aside class="notes">
-						Describe the entropy-driven adaptive horizon methods in RL, integration with RL, and framework, referencing the diagram showing the mechanism or integration in SocNavGym.
-					</aside>
-				</section>
-
-				<!-- =========== METHODOLOGY: SLIDE 18 - ADAPTIVE PREDICTION HORIZONS IN RL: EVALUATION =========== -->
-				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons in RL</h2>
-					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
-						<h3 style="color: white; margin-bottom: 10px;">Evaluation</h3>
-						<ul>
-							<li class="fragment">Environments: Tested in SocNavGym, FallingBallEnv, and LunarLander-v2, focusing on dynamic scenarios (Chapter 7, p. 132).</li>
-							<li class="fragment">Metrics: Evaluated success rates, cumulative rewards, and inference time (Chapter 7, p. 136).</li>
-							<li class="fragment">Comparison: Compared against fixed-horizon models (e.g., 2StepAhead) and baseline RL (SAC, DreamerV3) (Chapter 7, p. 138).</li>
-							<div class="fragment" style="padding-top: 20px;">
-								<img src="img/adaptive_horizons_evaluation_diagram.jpg" width="70%" style="border: 2px solid white;" />
-							</div>
-						</ul>
-					</div>
-					<aside class="notes">
-						Explain the evaluation of adaptive prediction horizons in RL across environments, detailing metrics and comparisons, referencing the diagram showing performance or environment setups.
-					</aside>
-				</section>
-
-				<!-- =========== METHODOLOGY: SLIDE 19 - ADAPTIVE PREDICTION HORIZONS IN RL: RESULTS =========== -->
-				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons in RL</h2>
-					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
-						<h3 style="color: white; margin-bottom: 10px;">Results</h3>
-						<ul>
-							<li class="fragment">SocNavGym: 15% improvement in success rates in high-entropy scenarios, addressing adaptability limitations (Chapter 7, p. 138).</li>
-							<li class="fragment">FallingBallEnv: Enhanced prediction accuracy, reducing MAE by 10% with adaptive horizons (Chapter 7, p. 141).</li>
-							<li class="fragment">LunarLander-v2: Improved cumulative rewards by 8%, maintaining 2% increase in inference time (Chapter 7, p. 141).</li>
-							<div class="fragment" style="padding-top: 20px;">
-								<img src="img/adaptive_horizons_results_diagram.jpg" width="70%" style="border: 2px solid white;" />
-							</div>
-						</ul>
-					</div>
-					<aside class="notes">
-						Highlight adaptive prediction horizon results in RL, emphasizing success rate improvements and efficiency, referencing the diagram showing performance graphs or comparisons in SocNavGym.
-					</aside>
-				</section>
-
-				<!-- =========== CONCLUSION AND FUTURE WORK: SLIDE 20 - CONCLUSION =========== -->
-				<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-					<h2 style="color: white; text-align: center; margin-bottom: 20px;">Conclusion</h2>
-					<div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
-						<ul>
-							<li class="fragment">Contributions: Developed CGLSTM, adaptive prediction horizons, and integrated RL (SAC, DreamerV3, DQN, DDPG, PPO, A2C) to address sample efficiency, fixed horizons, and exploration challenges (Chapter 8, p. 147–149).</li>
-							<li class="fragment">Impact: Improved success rates, efficiency, and social compliance in SocNavGym, FallingBallEnv, and LunarLander-v2, overcoming current limitations (Chapter 8, p. 150–151).</li>
-							<li class="fragment">Future Work: Extend to real-world deployment, address sensor noise, and explore broader applications like multi-robot systems (Chapter 8, p. 151–153).</li>
-							<div class="fragment" style="padding-top: 20px;">
-								<img src="img/conclusion_diagram.jpg" width="70%" style="border: 2px solid white;" />
-							</div>
-						</ul>
-					</div>
-					<aside class="notes">
-						Summarize your thesis contributions, impact, and future directions, referencing the diagram illustrating contributions or future research paths, preparing for Q&A.
-					</aside>
-				</section>
-
-				<!-- =========== PERSONAL: SLIDE 21 - ABOUT ME =========== -->
-				<section data-background="img/aston_background.jpg" data-transition="slide">
-					<h3>About Me</h3>
-					<div style="text-align: left; font-size: 0.85em;">
-						<ul>
-							<li class="fragment">Goodluck Oguzie</li>
-							<li class="fragment">PhD in Robotics, <a href="https://robolab.unex.es/">Universidad de Extremadura</a>, Cáceres, Spain
-								<div class="fragment" style="text-align: center;">
-									<img src="img/caceres.jpg" width="70%" style="border: 2px solid white;"/>
-								</div>
-							</li>
-							<li class="fragment">PhD Focus: Robotics, Active Perception, POMDP & Particle Filters</li>
-							<li class="fragment">Career: Joined Aston University in August 2018 as Lecturer, now Senior Lecturer</li>
-							<li class="fragment">Lab: <a href="https://arp-lab.com">Autonomous Robotics and Perception Lab</a></li>
-						</ul>
-					</div>
-					<aside class="notes">
-						Highlight your journey from PhD to current role, and briefly mention how it ties to social navigation research.
-					</aside>
-				</section>
-
-			</div>
-		</div>
-
-		<script>
-			Reveal.initialize({
-				hash: true,
-				width: 1600,
-				height: 900,
-				slideNumber: true,
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
-			});
-		</script>
-
-		<!-- <div class="footer">
-			<span style="font-size: 0.7em;">https://ljmanso.github.io/r</span>
-		</div> -->
-	</body>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            width: 1600,
+            height: 900,
+            slideNumber: true,
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+        });
+    </script>
+</body>
 </html>
