@@ -36,6 +36,9 @@
         .reveal section div ul li span {
             line-height: 1.2;
         }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -313,125 +316,154 @@
             <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
                 <h2 style="color: white; text-align: center; margin-bottom: 20px;">RL in Social Robot Navigation</h2>
                 <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 80px;">
-                    <!-- Initial View (Fragment Index 0) -->
-                    <p class="fragment" data-fragment-index="0">Role: Enables robots to navigate dynamically in human-populated environments (Chapter 4, p. 61).</p>
-                    <p class="fragment" data-fragment-index="0">Challenges: Human unpredictability, computational cost, and action space complexity (Chapter 3, p. 40–51).</p>
-
-                    <!-- First Down Press (Fragment Index 1): Table with Category and Algorithm Only -->
-                    <div class="fragment" data-fragment-index="1" style="display: none;">
-                        <h3 style="color: white; margin-bottom: 10px;">Key Algorithms</h3>
-                        <table style="font-size: 0.8em; color: white; width: 60%; margin: 10px auto; border-collapse: collapse;">
-                            <thead>
-                                <tr style="background-color: #003087;">
-                                    <th style="padding: 6px; border: 1px solid white;">Category</th>
-                                    <th style="padding: 6px; border: 1px solid white;">Algorithm (Full Name)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td style="padding: 6px; border: 1px solid white;">Model-Free</td>
-                                    <td style="padding: 6px; border: 1px solid white;">Deep Q-Network (DQN)</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 6px; border: 1px solid white;">Model-Free</td>
-                                    <td style="padding: 6px; border: 1px solid white;">Proximal Policy Optimization (PPO)</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 6px; border: 1px solid white;">Model-Free</td>
-                                    <td style="padding: 6px; border: 1px solid white;">Soft Actor-Critic (SAC)</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 6px; border: 1px solid white;">Model-Based</td>
-                                    <td style="padding: 6px; border: 1px solid white;">DreamerV3</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <!-- Second Down Press (Fragment Index 2): Table with Category, Algorithm, Strength, and Weakness -->
-                    <div class="fragment" data-fragment-index="2" style="display: none;">
-                        <h3 style="color: white; margin-bottom: 10px;">Key Algorithms</h3>
-                        <table style="font-size: 0.7em; color: white; width: 80%; margin: 10px auto; border-collapse: collapse;">
-                            <thead>
-                                <tr style="background-color: #003087;">
-                                    <th style="padding: 4px; border: 1px solid white;">Category</th>
-                                    <th style="padding: 4px; border: 1px solid white;">Algorithm (Full Name)</th>
-                                    <th style="padding: 4px; border: 1px solid white;">Strength</th>
-                                    <th style="padding: 4px; border: 1px solid white;">Weakness</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td style="padding: 4px; border: 1px solid white;">Model-Free</td>
-                                    <td style="padding: 4px; border: 1px solid white;">Deep Q-Network (DQN)</td>
-                                    <td style="padding: 4px; border: 1px solid white;">Effective for discrete actions</td>
-                                    <td style="padding: 4px; border: 1px solid white;">Struggles with continuous actions</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 4px; border: 1px solid white;">Model-Free</td>
-                                    <td style="padding: 4px; border: 1px solid white;">Proximal Policy Optimization (PPO)</td>
-                                    <td style="padding: 4px; border: 1px solid white;">Stable and sample-efficient</td>
-                                    <td style="padding: 4px; border: 1px solid white;">Requires careful hyperparameter tuning</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 4px; border: 1px solid white;">Model-Free</td>
-                                    <td style="padding: 4px; border: 1px solid white;">Soft Actor-Critic (SAC)</td>
-                                    <td style="padding: 4px; border: 1px solid white;">Robust exploration and continuous actions</td>
-                                    <td style="padding: 4px; border: 1px solid white;">Higher computational cost</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 4px; border: 1px solid white;">Model-Based</td>
-                                    <td style="padding: 4px; border: 1px solid white;">DreamerV3</td>
-                                    <td style="padding: 4px; border: 1px solid white;">Efficient simulation-based learning</td>
-                                    <td style="padding: 4px; border: 1px solid white;">Requires accurate world model</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <!-- Third Down Press (Fragment Index 3): Table with Category, Algorithm, and Application -->
-                    <div class="fragment" data-fragment-index="3" style="display: none;">
-                        <h3 style="color: white; margin-bottom: 10px;">Key Algorithms</h3>
-                        <table style="font-size: 0.7em; color: white; width: 80%; margin: 10px auto; border-collapse: collapse;">
-                            <thead>
-                                <tr style="background-color: #003087;">
-                                    <th style="padding: 4px; border: 1px solid white;">Category</th>
-                                    <th style="padding: 4px; border: 1px solid white;">Algorithm (Full Name)</th>
-                                    <th style="padding: 4px; border: 1px solid white;">Application</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td style="padding: 4px; border: 1px solid white;">Model-Free</td>
-                                    <td style="padding: 4px; border: 1px solid white;">Deep Q-Network (DQN)</td>
-                                    <td style="padding: 4px; border: 1px solid white;">Handles complex state spaces in SocNavGym (Chapter 3, p. 40).</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 4px; border: 1px solid white;">Model-Free</td>
-                                    <td style="padding: 4px; border: 1px solid white;">Proximal Policy Optimization (PPO)</td>
-                                    <td style="padding: 4px; border: 1px solid white;">Stable navigation in dynamic settings (Chapter 3, p. 40).</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 4px; border: 1px solid white;">Model-Free</td>
-                                    <td style="padding: 4px; border: 1px solid white;">Soft Actor-Critic (SAC)</td>
-                                    <td style="padding: 4px; border: 1px solid white;">Robust exploration for human interactions (Chapter 3, p. 40).</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 4px; border: 1px solid white;">Model-Based</td>
-                                    <td style="padding: 4px; border: 1px solid white;">DreamerV3</td>
-                                    <td style="padding: 4px; border: 1px solid white;">Efficient planning using world models (Chapter 3, p. 36).</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <!-- Diagram (Visible in All Views, Fragment Index 4) -->
-                    <div class="fragment" data-fragment-index="4" style="padding-top: 20px;">
+                    <ul>
+                        <li class="fragment" data-fragment-index="1">Role: Enables robots to navigate dynamically in human-populated environments (Chapter 4, p. 61).</li>
+                        <li class="fragment" data-fragment-index="1">Challenges: Human unpredictability, computational cost, and action space complexity (Chapter 3, p. 40–51).</li>
+                        <li class="fragment" data-fragment-index="2">
+                            <table style="font-size: 0.8em; color: white; width: 60%; margin: 10px auto; border-collapse: collapse;">
+                                <thead>
+                                    <tr style="background-color: #003087;">
+                                        <th style="padding: 6px; border: 1px solid white;">Category</th>
+                                        <th style="padding: 6px; border: 1px solid white;">Algorithm (Full Name)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 6px; border: 1px solid white;">Model-Free</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Deep Q-Network (DQN)</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 6px; border: 1px solid white;">Model-Free</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Proximal Policy Optimization (PPO)</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 6px; border: 1px solid white;">Model-Free</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Soft Actor-Critic (SAC)</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 6px; border: 1px solid white;">Model-Based</td>
+                                        <td style="padding: 6px; border: 1px solid white;">DreamerV3</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </li>
+                        <li class="fragment" data-fragment-index="3" style="display: none;">
+                            <table style="font-size: 0.8em; color: white; width: 60%; margin: 10px auto; border-collapse: collapse;">
+                                <thead>
+                                    <tr style="background-color: #003087;">
+                                        <th style="padding: 6px; border: 1px solid white;">Category</th>
+                                        <th style="padding: 6px; border: 1px solid white;">Algorithm (Full Name)</th>
+                                        <th style="padding: 6px; border: 1px solid white;">Strength</th>
+                                        <th style="padding: 6px; border: 1px solid white;">Weakness</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 6px; border: 1px solid white;">Model-Free</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Deep Q-Network (DQN)</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Effective for discrete actions</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Struggles with continuous actions</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 6px; border: 1px solid white;">Model-Free</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Proximal Policy Optimization (PPO)</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Stable and sample-efficient</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Requires careful hyperparameter tuning</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 6px; border: 1px solid white;">Model-Free</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Soft Actor-Critic (SAC)</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Robust exploration and continuous actions</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Higher computational cost</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 6px; border: 1px solid white;">Model-Based</td>
+                                        <td style="padding: 6px; border: 1px solid white;">DreamerV3</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Efficient simulation-based learning</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Requires accurate world model</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </li>
+                        <li class="fragment" data-fragment-index="4" style="display: none;">
+                            <table style="font-size: 0.8em; color: white; width: 60%; margin: 10px auto; border-collapse: collapse;">
+                                <thead>
+                                    <tr style="background-color: #003087;">
+                                        <th style="padding: 6px; border: 1px solid white;">Category</th>
+                                        <th style="padding: 6px; border: 1px solid white;">Algorithm (Full Name)</th>
+                                        <th style="padding: 6px; border: 1px solid white;">Application</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 6px; border: 1px solid white;">Model-Free</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Deep Q-Network (DQN)</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Handles complex state spaces in SocNavGym (Chapter 3, p. 40).</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 6px; border: 1px solid white;">Model-Free</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Proximal Policy Optimization (PPO)</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Stable navigation in dynamic settings (Chapter 3, p. 40).</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 6px; border: 1px solid white;">Model-Free</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Soft Actor-Critic (SAC)</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Robust exploration for human interactions (Chapter 3, p. 40).</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 6px; border: 1px solid white;">Model-Based</td>
+                                        <td style="padding: 6px; border: 1px solid white;">DreamerV3</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Efficient planning using world models (Chapter 3, p. 36).</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </li>
+                    </ul>
+                    <div class="fragment" data-fragment-index="5" style="padding-top: 20px;">
                         <img src="img/rl_social_diagram.jpg" width="70%" style="border: 2px solid white;" />
                     </div>
                 </div>
+                <script>
+                    Reveal.addEventListener('fragmentshown', function(event) {
+                        if (event.fragment.dataset.fragmentIndex === '2') {
+                            // Hide Role and Challenges when showing the first table
+                            document.querySelectorAll('.fragment[data-fragment-index="1"]').forEach(el => el.classList.add('hidden'));
+                        } else if (event.fragment.dataset.fragmentIndex === '3') {
+                            // Hide the first table when showing Strength/Weakness
+                            document.querySelector('.fragment[data-fragment-index="2"]').classList.add('hidden');
+                            document.querySelector('.fragment[data-strength-weakness]').classList.remove('hidden');
+                        } else if (event.fragment.dataset.fragmentIndex === '4') {
+                            // Hide Strength/Weakness when showing Application
+                            document.querySelector('.fragment[data-fragment-index="3"]').classList.add('hidden');
+                            document.querySelector('.fragment[data-fragment-index="4"]').classList.remove('hidden');
+                        } else if (event.fragment.dataset.fragmentIndex === '5') {
+                            // Show diagram, hide Application table
+                            document.querySelector('.fragment[data-fragment-index="4"]').classList.add('hidden');
+                        }
+                    });
+
+                    Reveal.addEventListener('fragmenthidden', function(event) {
+                        if (event.fragment.dataset.fragmentIndex === '2') {
+                            // Show Role and Challenges when hiding the first table
+                            document.querySelectorAll('.fragment[data-fragment-index="1"]').forEach(el => el.classList.remove('hidden'));
+                            document.querySelector('.fragment[data-fragment-index="3"]').classList.add('hidden');
+                            document.querySelector('.fragment[data-fragment-index="4"]').classList.add('hidden');
+                        } else if (event.fragment.dataset.fragmentIndex === '3') {
+                            // Show the first table when hiding Strength/Weakness
+                            document.querySelector('.fragment[data-fragment-index="2"]').classList.remove('hidden');
+                            document.querySelector('.fragment[data-fragment-index="4"]').classList.add('hidden');
+                        } else if (event.fragment.dataset.fragmentIndex === '4') {
+                            // Show Strength/Weakness when hiding Application
+                            document.querySelector('.fragment[data-fragment-index="3"]').classList.remove('hidden');
+                            document.querySelector('.fragment[data-fragment-index="2"]').classList.add('hidden');
+                        } else if (event.fragment.dataset.fragmentIndex === '5') {
+                            // Hide diagram, show Application table
+                            document.querySelector('.fragment[data-fragment-index="4"]').classList.remove('hidden');
+                        }
+                    });
+                </script>
                 <aside class="notes">
-                    Simplify the slide to show an interactive flow: start with the role and challenges, then reveal tables progressively with down presses—first showing only categories and algorithms, then strengths and weaknesses, and finally applications. Use the diagram to illustrate RL’s application in social navigation or SocNavGym, preparing for FAQ Q9 and Q12.
+                    Simplify RL’s role and challenges in social navigation, then use up/down arrow keys to scroll through tables showing Model-Free and Model-Based algorithms: first by Category and Algorithm, then by Strength/Weakness, and finally by Application. Use the diagram to illustrate RL’s application in SocNavGym or human-robot interaction, preparing for FAQ Q9 and Q12.
                 </aside>
             </section>
 
