@@ -247,54 +247,82 @@
                 </aside>
             </section>
 
-<!-- Research Questions Slide -->
-<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-    <h2 style="color: white; text-align: center; margin-top: 50px; margin-bottom: 10px;">RESEARCH QUESTIONS</h2>
-    <div style="text-align: center; font-size: 0.9em; color: white; padding-top: 20px;">
-        <ul style="list-style: none; padding: 0;">
-            <li class="fragment" style="margin-bottom: 20px;">
-                <span style="color: #00A9D4; margin-right: 10px;">🔍</span>
-                Q1: How do predictive world models improve decision-making in Social Robot Navigation?
-            </li>
-            <li class="fragment">
-                <span style="color: #00A9D4; margin-right: 10px;">🔍</span>
-                Q2: What challenges arise when transitioning from discrete to continuous action spaces, and how do we address them?
-            </li>
-        </ul>
-    </div>
-    <aside class="notes">
-        Present the research questions guiding this thesis. For Q1, explain how predictive models enhance decision-making, setting up later discussions (e.g., Chapter 5). For Q2, highlight challenges in action space transitions and solutions (e.g., Chapter 7). These questions frame the research contributions.
-    </aside>
-</section>
+            <!-- Research Questions Slide -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+                <h2 style="color: white; text-align: center; margin-top: 50px; margin-bottom: 10px;">RESEARCH QUESTIONS</h2>
+                <div style="text-align: center; font-size: 0.9em; color: white; padding-top: 20px;">
+                    <ul style="list-style: none; padding: 0;">
+                        <li class="fragment" style="margin-bottom: 20px;">
+                            <span style="color: #00A9D4; margin-right: 10px;">🔍</span>
+                            Q1: How do predictive world models improve decision-making in Social Robot Navigation?
+                        </li>
+                        <li class="fragment">
+                            <span style="color: #00A9D4; margin-right: 10px;">🔍</span>
+                            Q2: What challenges arise when transitioning from discrete to continuous action spaces, and how do we address them?
+                        </li>
+                    </ul>
+                </div>
+                <aside class="notes">
+                    Present the research questions guiding this thesis. For Q1, explain how predictive models enhance decision-making, setting up later discussions (e.g., Chapter 5). For Q2, highlight challenges in action space transitions and solutions (e.g., Chapter 7). These questions frame the research contributions.
+                </aside>
+            </section>
 
             <!-- Section Title: Reinforcement Learning -->
             <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
                 <h2 style="color: white; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Reinforcement Learning</h2>
             </section>
 
-            <!-- Reinforcement Learning -->
+            <!-- Reinforcement Learning Basics -->
             <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Reinforcement Learning</h2>
+                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Reinforcement Learning Basics</h2>
                 <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
                     <ul>
-                        <li class="fragment">Overview: RL enables robots to learn optimal navigation strategies via trial and error, maximizing rewards (Chapter 3, p. 34).</li>
-                        <li class="fragment">Key Concepts:
-                            <ul style="list-style-type: none;">
-                                <li>History: Originated in the 1950s, evolved with dynamic programming (Chapter 3, p. 32).</li>
-                                <li>RL Problem: Agent learns through trial and error (Chapter 3, p. 34).</li>
-                                <li>Model-Free (e.g., Q-learning, SAC): Learn from experience (Chapter 3, p. 36).</li>
-                                <li>Model-Based (e.g., DreamerV3): Use world models (Chapter 3, p. 36).</li>
-                                <li>Policy Learning: Optimize policies for actions (Chapter 3, p. 39).</li>
-                            </ul>
-                        </li>
-                        <li class="fragment">Algorithms Used: DQN, DDPG, PPO, A2C, SAC, DreamerV3 for social navigation (Chapter 3, p. 40–51).</li>
-                        <div class="fragment" style="padding-top: 20px;">
-                            <img src="img/rl_diagram.jpg" width="70%" style="border: 2px solid white;" />
-                        </div>
+                        <li class="fragment">Overview: RL learns optimal actions through trial-and-error, maximizing rewards (Chapter 3, p. 34).</li>
+                        <li class="fragment">Key Concepts: Model-Free (e.g., Q-learning) learns from experience; Model-Based (e.g., DreamerV3) uses world models (Chapter 3, p. 36).</li>
+                        <li class="fragment">Goal: Adapt to dynamic environments, like social navigation.</li>
                     </ul>
+                    <div class="fragment" style="padding-top: 20px;">
+                        <img src="img/rl_basics_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                    </div>
                 </div>
                 <aside class="notes">
-                    Explain RL’s core concepts, history, and algorithms, using the diagram to show frameworks or SocNavGym integration.
+                    Introduce RL as a learning paradigm, emphasizing its adaptability for social navigation. Use the diagram to show the agent-environment loop or model-free/model-based distinction.
+                </aside>
+            </section>
+
+            <!-- RL in Social Robot Navigation -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+                <h2 style="color: white; text-align: center; margin-bottom: 20px;">RL in Social Robot Navigation</h2>
+                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                    <ul>
+                        <li class="fragment">Role: Enables robots to navigate dynamically in human-populated environments (Chapter 4, p. 61).</li>
+                        <li class="fragment">Challenges: Human unpredictability, computational cost, and action space complexity (Chapter 3, p. 40–51).</li>
+                        <li class="fragment">Algorithms: DQN, PPO, SAC, DreamerV3—used for adaptive navigation (Chapter 3, p. 40–51).</li>
+                        <li class="fragment">Sets up my work: Links to predictive models and action space solutions (Chapters 5–7).</li>
+                    </ul>
+                    <div class="fragment" style="padding-top: 20px;">
+                        <img src="img/rl_social_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                    </div>
+                </div>
+                <aside class="notes">
+                    Explain how RL addresses social navigation gaps, foreshadowing my contributions (e.g., Q1 and Q2). Use the diagram to show RL’s application in SocNavGym or human-robot interaction.
+                </aside>
+            </section>
+
+            <!-- My RL Contributions (Teaser) -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+                <h2 style="color: white; text-align: center; margin-bottom: 20px;">My RL Contributions</h2>
+                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                    <ul>
+                        <li class="fragment">Integrates predictive world models for better decision-making (Q1, Chapter 5).</li>
+                        <li class="fragment">Addresses discrete-to-continuous action space challenges (Q2, Chapter 7).</li>
+                    </ul>
+                    <div class="fragment" style="padding-top: 20px;">
+                        <img src="img/rl_contribution_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                    </div>
+                </div>
+                <aside class="notes">
+                    Briefly introduce my innovations to build anticipation, deferring details to later slides (e.g., Predictive World Models, Adaptive Prediction Horizons).
                 </aside>
             </section>
 
@@ -311,10 +339,10 @@
                         <li class="fragment">SocNavGym: Benchmark for social navigation, testing RL and predictive models (Chapter 4, p. 63; Chapter 7, p. 132).</li>
                         <li class="fragment">FallingBallEnv: Synthetic environment for sequence prediction (Chapter 6, p. 103; Chapter 7, p. 132).</li>
                         <li class="fragment">LunarLander-v2: Continuous control task for RL (Chapter 7, p. 132; Chapter 8, p. 150).</li>
-                        <div class="fragment" style="padding-top: 20px;">
-                            <img src="img/environments_diagram.jpg" width="70%" style="border: 2px solid white;" />
-                        </div>
                     </ul>
+                    <div class="fragment" style="padding-top: 20px;">
+                        <img src="img/environments_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                    </div>
                 </div>
                 <aside class="notes">
                     Describe the three environments and their roles, using the diagram to illustrate setups.
@@ -335,10 +363,10 @@
                         <li class="fragment">Fixed Prediction Horizons: Limited adaptability in dynamic environments (Chapter 5, p. 86).</li>
                         <li class="fragment">Computational Overhead: Increased processing demands (Chapter 5, p. 84).</li>
                         <li class="fragment">Sparse Data: Difficulty predicting human behavior (Chapter 5, p. 87).</li>
-                        <div class="fragment" style="padding-top: 20px;">
-                            <img src="img/predictive_world_challenges_diagram.jpg" width="70%" style="border: 2px solid white;" />
-                        </div>
                     </ul>
+                    <div class="fragment" style="padding-top: 20px;">
+                        <img src="img/predictive_world_challenges_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                    </div>
                 </div>
                 <aside class="notes">
                     Highlight challenges using the diagram to show SocNavGym examples.
@@ -354,10 +382,10 @@
                         <li class="fragment">2StepAhead: Fixed two-step horizon model (Chapter 5, p. 83).</li>
                         <li class="fragment">MASPM: Multi-action state prediction model (Chapter 5, p. 84).</li>
                         <li class="fragment">2StepAhead-MASPM: Combined approach (Chapter 5, p. 85).</li>
-                        <div class="fragment" style="padding-top: 20px;">
-                            <img src="img/predictive_world_methods_diagram.jpg" width="70%" style="border: 2px solid white;" />
-                        </div>
                     </ul>
+                    <div class="fragment" style="padding-top: 20px;">
+                        <img src="img/predictive_world_methods_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                    </div>
                 </div>
                 <aside class="notes">
                     Describe methods, using the diagram to illustrate RL integration.
@@ -373,10 +401,10 @@
                         <li class="fragment">Environments: Tested in SocNavGym (Chapter 5, p. 86).</li>
                         <li class="fragment">Metrics: MSE, MAE, accuracy (Chapter 5, p. 87–88).</li>
                         <li class="fragment">Approach: Compared 2StepAhead, MASPM, and combined model (Chapter 5, p. 86).</li>
-                        <div class="fragment" style="padding-top: 20px;">
-                            <img src="img/predictive_world_evaluation_diagram.jpg" width="70%" style="border: 2px solid white;" />
-                        </div>
                     </ul>
+                    <div class="fragment" style="padding-top: 20px;">
+                        <img src="img/predictive_world_evaluation_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                    </div>
                 </div>
                 <aside class="notes">
                     Explain evaluation, using the diagram for performance visuals.
@@ -392,10 +420,10 @@
                         <li class="fragment">Training Phase: 20% lower MSE with 2StepAhead-MASPM (Chapter 5, p. 87).</li>
                         <li class="fragment">Testing Phase: 15% MAE reduction in SocNavGym (Chapter 5, p. 88).</li>
                         <li class="fragment">Impact: Improved RL robustness (Chapter 5, p. 86).</li>
-                        <div class="fragment" style="padding-top: 20px;">
-                            <img src="img/predictive_world_results_diagram.jpg" width="70%" style="border: 2px solid white;" />
-                        </div>
                     </ul>
+                    <div class="fragment" style="padding-top: 20px;">
+                        <img src="img/predictive_world_results_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                    </div>
                 </div>
                 <aside class="notes">
                     Highlight results, using the diagram to show MSE/MAE improvements.
@@ -416,10 +444,10 @@
                         <li class="fragment">Prediction Accuracy: Struggles with long-term sequences (Chapter 6, p. 94).</li>
                         <li class="fragment">Sparse Data: Limited data affects performance (Chapter 6, p. 113).</li>
                         <li class="fragment">Computational Complexity: Higher demands (Chapter 6, p. 98).</li>
-                        <div class="fragment" style="padding-top: 20px;">
-                            <img src="img/cglstm_challenges_diagram.jpg" width="70%" style="border: 2px solid white;" />
-                        </div>
                     </ul>
+                    <div class="fragment" style="padding-top: 20px;">
+                        <img src="img/cglstm_challenges_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                    </div>
                 </div>
                 <aside class="notes">
                     Discuss challenges, using the diagram for illustration.
@@ -435,10 +463,10 @@
                         <li class="fragment">Architecture: Cosine similarity-based gating (Chapter 6, p. 96).</li>
                         <li class="fragment">Training: BPTT in SocNavGym and FallingBallEnv (Chapter 6, p. 98).</li>
                         <li class="fragment">Integration: Combined with DreamerV3 and SAC (Chapter 6, p. 114).</li>
-                        <div class="fragment" style="padding-top: 20px;">
-                            <img src="img/cglstm_methods_diagram.jpg" width="70%" style="border: 2px solid white;" />
-                        </div>
                     </ul>
+                    <div class="fragment" style="padding-top: 20px;">
+                        <img src="img/cglstm_methods_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                    </div>
                 </div>
                 <aside class="notes">
                     Describe methods, using the diagram to show structure.
@@ -454,10 +482,10 @@
                         <li class="fragment">Environments: SocNavGym, FallingBallEnv, and more (Chapter 6, p. 103–114).</li>
                         <li class="fragment">Metrics: MAE, MSE, accuracy (Chapter 6, p. 103).</li>
                         <li class="fragment">Comparison: Against LSTM, GRU, RAU (Chapter 6, p. 103).</li>
-                        <div class="fragment" style="padding-top: 20px;">
-                            <img src="img/cglstm_evaluation_diagram.jpg" width="70%" style="border: 2px solid white;" />
-                        </div>
                     </ul>
+                    <div class="fragment" style="padding-top: 20px;">
+                        <img src="img/cglstm_evaluation_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                    </div>
                 </div>
                 <aside class="notes">
                     Explain evaluation, using the diagram for performance.
@@ -473,10 +501,10 @@
                         <li class="fragment">FallingBallEnv: 30% MAE reduction (Chapter 6, p. 103).</li>
                         <li class="fragment">SocNavGym: 5% reward improvement (Chapter 6, p. 113–114).</li>
                         <li class="fragment">Additional Tasks: Outperformed baselines (Chapter 6, p. 108–111).</li>
-                        <div class="fragment" style="padding-top: 20px;">
-                            <img src="img/cglstm_results_diagram.jpg" width="70%" style="border: 2px solid white;" />
-                        </div>
                     </ul>
+                    <div class="fragment" style="padding-top: 20px;">
+                        <img src="img/cglstm_results_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                    </div>
                 </div>
                 <aside class="notes">
                     Highlight results, using the diagram for visuals.
@@ -497,10 +525,10 @@
                         <li class="fragment">Fixed Horizons: Lack adaptability (Chapter 7, p. 122).</li>
                         <li class="fragment">Computational Cost: Higher demands (Chapter 7, p. 125).</li>
                         <li class="fragment">Exploration Uncertainty: Balancing challenges (Chapter 7, p. 121).</li>
-                        <div class="fragment" style="padding-top: 20px;">
-                            <img src="img/adaptive_horizons_challenges_diagram.jpg" width="70%" style="border: 2px solid white;" />
-                        </div>
                     </ul>
+                    <div class="fragment" style="padding-top: 20px;">
+                        <img src="img/adaptive_horizons_challenges_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                    </div>
                 </div>
                 <aside class="notes">
                     Discuss challenges, using the diagram for examples.
@@ -516,10 +544,10 @@
                         <li class="fragment">Entropy-Driven Adaptation: Adjusts horizons dynamically (Chapter 7, p. 125).</li>
                         <li class="fragment">Integration: With CGLSTM and SAC (Chapter 7, p. 124).</li>
                         <li class="fragment">Framework: Entropy-based selection (Chapter 7, p. 127–128).</li>
-                        <div class="fragment" style="padding-top: 20px;">
-                            <img src="img/adaptive_horizons_methods_diagram.jpg" width="70%" style="border: 2px solid white;" />
-                        </div>
                     </ul>
+                    <div class="fragment" style="padding-top: 20px;">
+                        <img src="img/adaptive_horizons_methods_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                    </div>
                 </div>
                 <aside class="notes">
                     Describe methods, using the diagram for mechanism.
@@ -535,10 +563,10 @@
                         <li class="fragment">Environments: SocNavGym, FallingBallEnv, LunarLander-v2 (Chapter 7, p. 132).</li>
                         <li class="fragment">Metrics: Success rates, rewards, inference time (Chapter 7, p. 136).</li>
                         <li class="fragment">Comparison: Against fixed-horizon models (Chapter 7, p. 138).</li>
-                        <div class="fragment" style="padding-top: 20px;">
-                            <img src="img/adaptive_horizons_evaluation_diagram.jpg" width="70%" style="border: 2px solid white;" />
-                        </div>
                     </ul>
+                    <div class="fragment" style="padding-top: 20px;">
+                        <img src="img/adaptive_horizons_evaluation_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                    </div>
                 </div>
                 <aside class="notes">
                     Explain evaluation, using the diagram for performance.
@@ -554,10 +582,10 @@
                         <li class="fragment">SocNavGym: 15% success rate improvement (Chapter 7, p. 138).</li>
                         <li class="fragment">FallingBallEnv: 10% MAE reduction (Chapter 7, p. 141).</li>
                         <li class="fragment">LunarLander-v2: 8% reward improvement (Chapter 7, p. 141).</li>
-                        <div class="fragment" style="padding-top: 20px;">
-                            <img src="img/adaptive_horizons_results_diagram.jpg" width="70%" style="border: 2px solid white;" />
-                        </div>
                     </ul>
+                    <div class="fragment" style="padding-top: 20px;">
+                        <img src="img/adaptive_horizons_results_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                    </div>
                 </div>
                 <aside class="notes">
                     Highlight results, using the diagram for visuals.
@@ -577,10 +605,10 @@
                         <li class="fragment">Contributions: CGLSTM, adaptive horizons, RL integration (Chapter 8, p. 147–149).</li>
                         <li class="fragment">Impact: Improved success rates and efficiency (Chapter 8, p. 150–151).</li>
                         <li class="fragment">Future Work: Real-world deployment, sensor noise (Chapter 8, p. 151–153).</li>
-                        <div class="fragment" style="padding-top: 20px;">
-                            <img src="img/conclusion_diagram.jpg" width="70%" style="border: 2px solid white;" />
-                        </div>
                     </ul>
+                    <div class="fragment" style="padding-top: 20px;">
+                        <img src="img/conclusion_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                    </div>
                 </div>
                 <aside class="notes">
                     Summarize contributions and future work, using the diagram.
