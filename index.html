@@ -237,10 +237,10 @@
                             </ul>
                         </li>
                         <li class="fragment">SocNavGym: A benchmark environment for testing social navigation (Chapter 4, p. 63).</li>
-                        <div class="fragment" style="padding-top: 20px;">
-                            <img src="img/social_navigation_diagram.jpg" width="70%" style="border: 2px solid white;" />
-                        </div>
                     </ul>
+                    <div class="fragment" style="padding-top: 20px;">
+                        <img src="img/social_navigation_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                    </div>
                 </div>
                 <aside class="notes">
                     Cover the evolution from classical to ML-based methods and introduce SocNavGym, using the diagram to illustrate these foundations.
@@ -278,7 +278,50 @@
                 <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
                     <ul>
                         <li class="fragment">Overview: RL learns optimal actions through trial-and-error, maximizing rewards (Chapter 3, p. 34).</li>
-                        <li class="fragment">Key Concepts: Model-Free (e.g., Q-learning) learns from experience; Model-Based (e.g., DreamerV3) uses world models (Chapter 3, p. 36).</li>
+                        <li class="fragment">Key Concepts:
+                            <ul style="list-style-type: none;">
+                                <li>Model-Free: Learn directly from experience without a world model (Chapter 3, p. 36).</li>
+                                <li>Model-Based: Use a learned or simulated world model for planning (Chapter 3, p. 36).</li>
+                            </ul>
+                            <div class="fragment" style="padding-top: 20px;">
+                                <svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Root Node: Reinforcement Learning -->
+                                    <circle cx="400" cy="50" r="20" fill="white" stroke="black" stroke-width="2" />
+                                    <text x="400" y="55" font-family="Arial" font-size="12" fill="black" text-anchor="middle">Reinforcement Learning</text>
+
+                                    <!-- Model-Free Branch -->
+                                    <line x1="400" y1="70" x2="250" y2="150" stroke="white" stroke-width="2" />
+                                    <circle cx="250" cy="150" r="20" fill="white" stroke="black" stroke-width="2" />
+                                    <text x="250" y="155" font-family="Arial" font-size="12" fill="black" text-anchor="middle">Model-Free</text>
+                                    <line x1="250" y1="170" x2="150" y2="250" stroke="white" stroke-width="2" />
+                                    <circle cx="150" cy="250" r="15" fill="white" stroke="black" stroke-width="2" />
+                                    <text x="150" y="255" font-family="Arial" font-size="10" fill="black" text-anchor="middle">Q-learning</text>
+                                    <line x1="250" y1="170" x2="200" y2="250" stroke="white" stroke-width="2" />
+                                    <circle cx="200" cy="250" r="15" fill="white" stroke="black" stroke-width="2" />
+                                    <text x="200" y="255" font-family="Arial" font-size="10" fill="black" text-anchor="middle">DQN</text>
+                                    <line x1="250" y1="170" x2="250" y2="250" stroke="white" stroke-width="2" />
+                                    <circle cx="250" cy="250" r="15" fill="white" stroke="black" stroke-width="2" />
+                                    <text x="250" y="255" font-family="Arial" font-size="10" fill="black" text-anchor="middle">DDPG</text>
+                                    <line x1="250" y1="170" x2="300" y2="250" stroke="white" stroke-width="2" />
+                                    <circle cx="300" cy="250" r="15" fill="white" stroke="black" stroke-width="2" />
+                                    <text x="300" y="255" font-family="Arial" font-size="10" fill="black" text-anchor="middle">PPO</text>
+                                    <line x1="250" y1="170" x2="350" y2="250" stroke="white" stroke-width="2" />
+                                    <circle cx="350" cy="250" r="15" fill="white" stroke="black" stroke-width="2" />
+                                    <text x="350" y="255" font-family="Arial" font-size="10" fill="black" text-anchor="middle">A2C</text>
+                                    <line x1="250" y1="170" x2="400" y2="250" stroke="white" stroke-width="2" />
+                                    <circle cx="400" cy="250" r="15" fill="white" stroke="black" stroke-width="2" />
+                                    <text x="400" y="255" font-family="Arial" font-size="10" fill="black" text-anchor="middle">SAC</text>
+
+                                    <!-- Model-Based Branch -->
+                                    <line x1="400" y1="70" x2="550" y2="150" stroke="white" stroke-width="2" />
+                                    <circle cx="550" cy="150" r="20" fill="white" stroke="black" stroke-width="2" />
+                                    <text x="550" y="155" font-family="Arial" font-size="12" fill="black" text-anchor="middle">Model-Based</text>
+                                    <line x1="550" y1="170" x2="500" y2="250" stroke="white" stroke-width="2" />
+                                    <circle cx="500" cy="250" r="15" fill="white" stroke="black" stroke-width="2" />
+                                    <text x="500" y="255" font-family="Arial" font-size="10" fill="black" text-anchor="middle">DreamerV3</text>
+                                </svg>
+                            </div>
+                        </li>
                         <li class="fragment">Goal: Adapt to dynamic environments, like social navigation.</li>
                     </ul>
                     <div class="fragment" style="padding-top: 20px;">
@@ -286,7 +329,7 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    Introduce RL as a learning paradigm, emphasizing its adaptability for social navigation. Use the diagram to show the agent-environment loop or model-free/model-based distinction.
+                    Introduce RL as a learning paradigm, emphasizing its adaptability for social navigation. Use the SVG tree to show model-free (e.g., Q-learning, DQN, DDPG, PPO, A2C, SAC) and model-based (e.g., DreamerV3) distinctions, and the image to illustrate the agent-environment loop or broader context.
                 </aside>
             </section>
 
@@ -444,197 +487,197 @@
                         <li class="fragment">Prediction Accuracy: Struggles with long-term sequences (Chapter 6, p. 94).</li>
                         <li class="fragment">Sparse Data: Limited data affects performance (Chapter 6, p. 113).</li>
                         <li class="fragment">Computational Complexity: Higher demands (Chapter 6, p. 98).</li>
-                    </ul>
-                    <div class="fragment" style="padding-top: 20px;">
-                        <img src="img/cglstm_challenges_diagram.jpg" width="70%" style="border: 2px solid white;" />
-                    </div>
+                </ul>
+                <div class="fragment" style="padding-top: 20px;">
+                    <img src="img/cglstm_challenges_diagram.jpg" width="70%" style="border: 2px solid white;" />
                 </div>
-                <aside class="notes">
-                    Discuss challenges, using the diagram for illustration.
-                </aside>
-            </section>
+            </div>
+            <aside class="notes">
+                Discuss challenges, using the diagram for illustration.
+            </aside>
+        </section>
 
-            <!-- CGLSTM: Methods -->
-            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Cosine-Gated LSTM (CGLSTM) for Prediction</h2>
-                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
-                    <h3 style="color: white; margin-bottom: 10px;">Methods</h3>
-                    <ul>
-                        <li class="fragment">Architecture: Cosine similarity-based gating (Chapter 6, p. 96).</li>
-                        <li class="fragment">Training: BPTT in SocNavGym and FallingBallEnv (Chapter 6, p. 98).</li>
-                        <li class="fragment">Integration: Combined with DreamerV3 and SAC (Chapter 6, p. 114).</li>
-                    </ul>
-                    <div class="fragment" style="padding-top: 20px;">
-                        <img src="img/cglstm_methods_diagram.jpg" width="70%" style="border: 2px solid white;" />
-                    </div>
+        <!-- CGLSTM: Methods -->
+        <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+            <h2 style="color: white; text-align: center; margin-bottom: 20px;">Cosine-Gated LSTM (CGLSTM) for Prediction</h2>
+            <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                <h3 style="color: white; margin-bottom: 10px;">Methods</h3>
+                <ul>
+                    <li class="fragment">Architecture: Cosine similarity-based gating (Chapter 6, p. 96).</li>
+                    <li class="fragment">Training: BPTT in SocNavGym and FallingBallEnv (Chapter 6, p. 98).</li>
+                    <li class="fragment">Integration: Combined with DreamerV3 and SAC (Chapter 6, p. 114).</li>
+                </ul>
+                <div class="fragment" style="padding-top: 20px;">
+                    <img src="img/cglstm_methods_diagram.jpg" width="70%" style="border: 2px solid white;" />
                 </div>
-                <aside class="notes">
-                    Describe methods, using the diagram to show structure.
-                </aside>
-            </section>
+            </div>
+            <aside class="notes">
+                Describe methods, using the diagram to show structure.
+            </aside>
+        </section>
 
-            <!-- CGLSTM: Evaluation -->
-            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Cosine-Gated LSTM (CGLSTM) for Prediction</h2>
-                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
-                    <h3 style="color: white; margin-bottom: 10px;">Evaluation</h3>
-                    <ul>
-                        <li class="fragment">Environments: SocNavGym, FallingBallEnv, and more (Chapter 6, p. 103–114).</li>
-                        <li class="fragment">Metrics: MAE, MSE, accuracy (Chapter 6, p. 103).</li>
-                        <li class="fragment">Comparison: Against LSTM, GRU, RAU (Chapter 6, p. 103).</li>
-                    </ul>
-                    <div class="fragment" style="padding-top: 20px;">
-                        <img src="img/cglstm_evaluation_diagram.jpg" width="70%" style="border: 2px solid white;" />
-                    </div>
+        <!-- CGLSTM: Evaluation -->
+        <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+            <h2 style="color: white; text-align: center; margin-bottom: 20px;">Cosine-Gated LSTM (CGLSTM) for Prediction</h2>
+            <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                <h3 style="color: white; margin-bottom: 10px;">Evaluation</h3>
+                <ul>
+                    <li class="fragment">Environments: SocNavGym, FallingBallEnv, and more (Chapter 6, p. 103–114).</li>
+                    <li class="fragment">Metrics: MAE, MSE, accuracy (Chapter 6, p. 103).</li>
+                    <li class="fragment">Comparison: Against LSTM, GRU, RAU (Chapter 6, p. 103).</li>
+                </ul>
+                <div class="fragment" style="padding-top: 20px;">
+                    <img src="img/cglstm_evaluation_diagram.jpg" width="70%" style="border: 2px solid white;" />
                 </div>
-                <aside class="notes">
-                    Explain evaluation, using the diagram for performance.
-                </aside>
-            </section>
+            </div>
+            <aside class="notes">
+                Explain evaluation, using the diagram for performance.
+            </aside>
+        </section>
 
-            <!-- CGLSTM: Results -->
-            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Cosine-Gated LSTM (CGLSTM) for Prediction</h2>
-                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
-                    <h3 style="color: white; margin-bottom: 10px;">Results</h3>
-                    <ul>
-                        <li class="fragment">FallingBallEnv: 30% MAE reduction (Chapter 6, p. 103).</li>
-                        <li class="fragment">SocNavGym: 5% reward improvement (Chapter 6, p. 113–114).</li>
-                        <li class="fragment">Additional Tasks: Outperformed baselines (Chapter 6, p. 108–111).</li>
-                    </ul>
-                    <div class="fragment" style="padding-top: 20px;">
-                        <img src="img/cglstm_results_diagram.jpg" width="70%" style="border: 2px solid white;" />
-                    </div>
+        <!-- CGLSTM: Results -->
+        <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+            <h2 style="color: white; text-align: center; margin-bottom: 20px;">Cosine-Gated LSTM (CGLSTM) for Prediction</h2>
+            <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                <h3 style="color: white; margin-bottom: 10px;">Results</h3>
+                <ul>
+                    <li class="fragment">FallingBallEnv: 30% MAE reduction (Chapter 6, p. 103).</li>
+                    <li class="fragment">SocNavGym: 5% reward improvement (Chapter 6, p. 113–114).</li>
+                    <li class="fragment">Additional Tasks: Outperformed baselines (Chapter 6, p. 108–111).</li>
+                </ul>
+                <div class="fragment" style="padding-top: 20px;">
+                    <img src="img/cglstm_results_diagram.jpg" width="70%" style="border: 2px solid white;" />
                 </div>
-                <aside class="notes">
-                    Highlight results, using the diagram for visuals.
-                </aside>
-            </section>
+            </div>
+            <aside class="notes">
+                Highlight results, using the diagram for visuals.
+            </aside>
+        </section>
 
-            <!-- Section Title: Adaptive Prediction Horizons -->
-            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
-                <h2 style="color: white; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Adaptive Prediction Horizons</h2>
-            </section>
+        <!-- Section Title: Adaptive Prediction Horizons -->
+        <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
+            <h2 style="color: white; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Adaptive Prediction Horizons</h2>
+        </section>
 
-            <!-- Adaptive Prediction Horizons: Challenges/Limitations -->
-            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons in RL</h2>
-                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
-                    <h3 style="color: white; margin-bottom: 10px;">Challenges/Limitations</h3>
-                    <ul>
-                        <li class="fragment">Fixed Horizons: Lack adaptability (Chapter 7, p. 122).</li>
-                        <li class="fragment">Computational Cost: Higher demands (Chapter 7, p. 125).</li>
-                        <li class="fragment">Exploration Uncertainty: Balancing challenges (Chapter 7, p. 121).</li>
-                    </ul>
-                    <div class="fragment" style="padding-top: 20px;">
-                        <img src="img/adaptive_horizons_challenges_diagram.jpg" width="70%" style="border: 2px solid white;" />
-                    </div>
+        <!-- Adaptive Prediction Horizons: Challenges/Limitations -->
+        <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+            <h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons in RL</h2>
+            <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                <h3 style="color: white; margin-bottom: 10px;">Challenges/Limitations</h3>
+                <ul>
+                    <li class="fragment">Fixed Horizons: Lack adaptability (Chapter 7, p. 122).</li>
+                    <li class="fragment">Computational Cost: Higher demands (Chapter 7, p. 125).</li>
+                    <li class="fragment">Exploration Uncertainty: Balancing challenges (Chapter 7, p. 121).</li>
+                </ul>
+                <div class="fragment" style="padding-top: 20px;">
+                    <img src="img/adaptive_horizons_challenges_diagram.jpg" width="70%" style="border: 2px solid white;" />
                 </div>
-                <aside class="notes">
-                    Discuss challenges, using the diagram for examples.
-                </aside>
-            </section>
+            </div>
+            <aside class="notes">
+                Discuss challenges, using the diagram for examples.
+            </aside>
+        </section>
 
-            <!-- Adaptive Prediction Horizons: Methods -->
-            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons in RL</h2>
-                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
-                    <h3 style="color: white; margin-bottom: 10px;">Methods</h3>
-                    <ul>
-                        <li class="fragment">Entropy-Driven Adaptation: Adjusts horizons dynamically (Chapter 7, p. 125).</li>
-                        <li class="fragment">Integration: With CGLSTM and SAC (Chapter 7, p. 124).</li>
-                        <li class="fragment">Framework: Entropy-based selection (Chapter 7, p. 127–128).</li>
-                    </ul>
-                    <div class="fragment" style="padding-top: 20px;">
-                        <img src="img/adaptive_horizons_methods_diagram.jpg" width="70%" style="border: 2px solid white;" />
-                    </div>
+        <!-- Adaptive Prediction Horizons: Methods -->
+        <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+            <h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons in RL</h2>
+            <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                <h3 style="color: white; margin-bottom: 10px;">Methods</h3>
+                <ul>
+                    <li class="fragment">Entropy-Driven Adaptation: Adjusts horizons dynamically (Chapter 7, p. 125).</li>
+                    <li class="fragment">Integration: With CGLSTM and SAC (Chapter 7, p. 124).</li>
+                    <li class="fragment">Framework: Entropy-based selection (Chapter 7, p. 127–128).</li>
+                </ul>
+                <div class="fragment" style="padding-top: 20px;">
+                    <img src="img/adaptive_horizons_methods_diagram.jpg" width="70%" style="border: 2px solid white;" />
                 </div>
-                <aside class="notes">
-                    Describe methods, using the diagram for mechanism.
-                </aside>
-            </section>
+            </div>
+            <aside class="notes">
+                Describe methods, using the diagram for mechanism.
+            </aside>
+        </section>
 
-            <!-- Adaptive Prediction Horizons: Evaluation -->
-            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons in RL</h2>
-                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
-                    <h3 style="color: white; margin-bottom: 10px;">Evaluation</h3>
-                    <ul>
-                        <li class="fragment">Environments: SocNavGym, FallingBallEnv, LunarLander-v2 (Chapter 7, p. 132).</li>
-                        <li class="fragment">Metrics: Success rates, rewards, inference time (Chapter 7, p. 136).</li>
-                        <li class="fragment">Comparison: Against fixed-horizon models (Chapter 7, p. 138).</li>
-                    </ul>
-                    <div class="fragment" style="padding-top: 20px;">
-                        <img src="img/adaptive_horizons_evaluation_diagram.jpg" width="70%" style="border: 2px solid white;" />
-                    </div>
+        <!-- Adaptive Prediction Horizons: Evaluation -->
+        <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+            <h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons in RL</h2>
+            <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                <h3 style="color: white; margin-bottom: 10px;">Evaluation</h3>
+                <ul>
+                    <li class="fragment">Environments: SocNavGym, FallingBallEnv, LunarLander-v2 (Chapter 7, p. 132).</li>
+                    <li class="fragment">Metrics: Success rates, rewards, inference time (Chapter 7, p. 136).</li>
+                    <li class="fragment">Comparison: Against fixed-horizon models (Chapter 7, p. 138).</li>
+                </ul>
+                <div class="fragment" style="padding-top: 20px;">
+                    <img src="img/adaptive_horizons_evaluation_diagram.jpg" width="70%" style="border: 2px solid white;" />
                 </div>
-                <aside class="notes">
-                    Explain evaluation, using the diagram for performance.
-                </aside>
-            </section>
+            </div>
+            <aside class="notes">
+                Explain evaluation, using the diagram for performance.
+            </aside>
+        </section>
 
-            <!-- Adaptive Prediction Horizons: Results -->
-            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons in RL</h2>
-                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
-                    <h3 style="color: white; margin-bottom: 10px;">Results</h3>
-                    <ul>
-                        <li class="fragment">SocNavGym: 15% success rate improvement (Chapter 7, p. 138).</li>
-                        <li class="fragment">FallingBallEnv: 10% MAE reduction (Chapter 7, p. 141).</li>
-                        <li class="fragment">LunarLander-v2: 8% reward improvement (Chapter 7, p. 141).</li>
-                    </ul>
-                    <div class="fragment" style="padding-top: 20px;">
-                        <img src="img/adaptive_horizons_results_diagram.jpg" width="70%" style="border: 2px solid white;" />
-                    </div>
+        <!-- Adaptive Prediction Horizons: Results -->
+        <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+            <h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons in RL</h2>
+            <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                <h3 style="color: white; margin-bottom: 10px;">Results</h3>
+                <ul>
+                    <li class="fragment">SocNavGym: 15% success rate improvement (Chapter 7, p. 138).</li>
+                    <li class="fragment">FallingBallEnv: 10% MAE reduction (Chapter 7, p. 141).</li>
+                    <li class="fragment">LunarLander-v2: 8% reward improvement (Chapter 7, p. 141).</li>
+                </ul>
+                <div class="fragment" style="padding-top: 20px;">
+                    <img src="img/adaptive_horizons_results_diagram.jpg" width="70%" style="border: 2px solid white;" />
                 </div>
-                <aside class="notes">
-                    Highlight results, using the diagram for visuals.
-                </aside>
-            </section>
+            </div>
+            <aside class="notes">
+                Highlight results, using the diagram for visuals.
+            </aside>
+        </section>
 
-            <!-- Section Title: Conclusion -->
-            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
-                <h2 style="color: white; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Conclusion</h2>
-            </section>
+        <!-- Section Title: Conclusion -->
+        <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
+            <h2 style="color: white; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Conclusion</h2>
+        </section>
 
-            <!-- Conclusion -->
-            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Conclusion</h2>
-                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
-                    <ul>
-                        <li class="fragment">Contributions: CGLSTM, adaptive horizons, RL integration (Chapter 8, p. 147–149).</li>
-                        <li class="fragment">Impact: Improved success rates and efficiency (Chapter 8, p. 150–151).</li>
-                        <li class="fragment">Future Work: Real-world deployment, sensor noise (Chapter 8, p. 151–153).</li>
-                    </ul>
-                    <div class="fragment" style="padding-top: 20px;">
-                        <img src="img/conclusion_diagram.jpg" width="70%" style="border: 2px solid white;" />
-                    </div>
+        <!-- Conclusion -->
+        <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+            <h2 style="color: white; text-align: center; margin-bottom: 20px;">Conclusion</h2>
+            <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                <ul>
+                    <li class="fragment">Contributions: CGLSTM, adaptive horizons, RL integration (Chapter 8, p. 147–149).</li>
+                    <li class="fragment">Impact: Improved success rates and efficiency (Chapter 8, p. 150–151).</li>
+                    <li class="fragment">Future Work: Real-world deployment, sensor noise (Chapter 8, p. 151–153).</li>
+                </ul>
+                <div class="fragment" style="padding-top: 20px;">
+                    <img src="img/conclusion_diagram.jpg" width="70%" style="border: 2px solid white;" />
                 </div>
-                <aside class="notes">
-                    Summarize contributions and future work, using the diagram.
-                </aside>
-            </section>
+            </div>
+            <aside class="notes">
+                Summarize contributions and future work, using the diagram.
+            </aside>
+        </section>
 
-            <!-- About Me -->
-            <section data-background="img/aston_background.jpg" data-transition="slide">
-                <h3>About Me</h3>
-                <div style="text-align: left; font-size: 0.85em;">
-                    <ul>
-                        <li class="fragment">Goodluck Oguzie</li>
-                        <li class="fragment">PhD in Robotics, <a href="https://robolab.unex.es/">Universidad de Extremadura</a>, Cáceres, Spain
-                            <div class="fragment" style="text-align: center;">
-                                <img src="img/caceres.jpg" width="70%" style="border: 2px solid white;"/>
-                            </div>
-                        </li>
-                        <li class="fragment">PhD Focus: Robotics, Active Perception, POMDP & Particle Filters</li>
-                        <li class="fragment">Career: Senior Lecturer at Aston University since 2018</li>
-                        <li class="fragment">Lab: <a href="https://arp-lab.com">Autonomous Robotics and Perception Lab</a></li>
-                    </ul>
-                </div>
-                <aside class="notes">
-                    Highlight your journey and tie it to social navigation research.
-                </aside>
-            </section>
+        <!-- About Me -->
+        <section data-background="img/aston_background.jpg" data-transition="slide">
+            <h3>About Me</h3>
+            <div style="text-align: left; font-size: 0.85em;">
+                <ul>
+                    <li class="fragment">Goodluck Oguzie</li>
+                    <li class="fragment">PhD in Robotics, <a href="https://robolab.unex.es/">Universidad de Extremadura</a>, Cáceres, Spain
+                        <div class="fragment" style="text-align: center;">
+                            <img src="img/caceres.jpg" width="70%" style="border: 2px solid white;"/>
+                        </div>
+                    </li>
+                    <li class="fragment">PhD Focus: Robotics, Active Perception, POMDP & Particle Filters</li>
+                    <li class="fragment">Career: Senior Lecturer at Aston University since 2018</li>
+                    <li class="fragment">Lab: <a href="https://arp-lab.com">Autonomous Robotics and Perception Lab</a></li>
+                </ul>
+            </div>
+            <aside class="notes">
+                Highlight your journey and tie it to social navigation research.
+            </aside>
+        </section>
         </div>
     </div>
 
