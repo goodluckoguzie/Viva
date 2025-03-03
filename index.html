@@ -279,49 +279,21 @@
                     <ul>
                         <li class="fragment">Overview: RL learns optimal actions through trial-and-error, maximizing rewards (Chapter 3, p. 34).</li>
                         <li class="fragment">Key Concepts:
-                            <table style="font-size: 0.7em; color: white; width: 60%; margin: 10px auto; border-collapse: collapse;">
+                            <table style="font-size: 0.8em; color: white; width: 60%; margin: 10px auto; border-collapse: collapse;">
                                 <thead>
                                     <tr style="background-color: #003087;">
-                                        <th style="padding: 4px; border: 1px solid white;">Category</th>
-                                        <th style="padding: 4px; border: 1px solid white;">Algorithm (Full Name)</th>
-                                        <th style="padding: 4px; border: 1px solid white;">Description</th>
+                                        <th style="padding: 6px; border: 1px solid white;">Category</th>
+                                        <th style="padding: 6px; border: 1px solid white;">Description</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr class="fragment">
-                                        <td style="padding: 4px; border: 1px solid white;">Model-Free</td>
-                                        <td style="padding: 4px; border: 1px solid white;">Q-Learning</td>
-                                        <td style="padding: 4px; border: 1px solid white;">Learns from experience using value functions (Chapter 3, p. 36).</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Model-Free</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Learns directly from experience without a world model (Chapter 3, p. 36).</td>
                                     </tr>
                                     <tr class="fragment">
-                                        <td style="padding: 4px; border: 1px solid white;">Model-Free</td>
-                                        <td style="padding: 4px; border: 1px solid white;">Deep Q-Network (DQN)</td>
-                                        <td style="padding: 4px; border: 1px solid white;">Deep learning for Q-learning in complex environments (Chapter 3, p. 40).</td>
-                                    </tr>
-                                    <tr class="fragment">
-                                        <td style="padding: 4px; border: 1px solid white;">Model-Free</td>
-                                        <td style="padding: 4px; border: 1px solid white;">Deep Deterministic Policy Gradient (DDPG)</td>
-                                        <td style="padding: 4px; border: 1px solid white;">Continuous action learning using policy gradients (Chapter 3, p. 40).</td>
-                                    </tr>
-                                    <tr class="fragment">
-                                        <td style="padding: 4px; border: 1px solid white;">Model-Free</td>
-                                        <td style="padding: 4px; border: 1px solid white;">Proximal Policy Optimization (PPO)</td>
-                                        <td style="padding: 4px; border: 1px solid white;">Stable policy optimization for complex tasks (Chapter 3, p. 40).</td>
-                                    </tr>
-                                    <tr class="fragment">
-                                        <td style="padding: 4px; border: 1px solid white;">Model-Free</td>
-                                        <td style="padding: 4px; border: 1px solid white;">Advantage Actor-Critic (A2C)</td>
-                                        <td style="padding: 4px; border: 1px solid white;">Combines value and policy learning (Chapter 3, p. 40).</td>
-                                    </tr>
-                                    <tr class="fragment">
-                                        <td style="padding: 4px; border: 1px solid white;">Model-Free</td>
-                                        <td style="padding: 4px; border: 1px solid white;">Soft Actor-Critic (SAC)</td>
-                                        <td style="padding: 4px; border: 1px solid white;">Maximizes entropy for robust exploration (Chapter 3, p. 40).</td>
-                                    </tr>
-                                    <tr class="fragment">
-                                        <td style="padding: 4px; border: 1px solid white;">Model-Based</td>
-                                        <td style="padding: 4px; border: 1px solid white;">DreamerV3</td>
-                                        <td style="padding: 4px; border: 1px solid white;">Uses world models for efficient planning (Chapter 3, p. 36).</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Model-Based</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Uses a learned or simulated world model for planning (Chapter 3, p. 36).</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -333,18 +305,50 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    Introduce RL as a learning paradigm, emphasizing its adaptability for social navigation. Use the table to clearly list model-free (e.g., Q-Learning, DQN, DDPG, PPO, A2C, SAC) and model-based (e.g., DreamerV3) algorithms with descriptions, and the image to illustrate the agent-environment loop or broader context.
+                    Introduce RL as a learning paradigm, emphasizing its adaptability for social navigation. Use the simplified table to highlight model-free and model-based concepts, setting up deeper discussion later, and the image to illustrate the agent-environment loop or broader context.
                 </aside>
             </section>
 
             <!-- RL in Social Robot Navigation -->
             <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
                 <h2 style="color: white; text-align: center; margin-bottom: 20px;">RL in Social Robot Navigation</h2>
-                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 80px;">
                     <ul>
                         <li class="fragment">Role: Enables robots to navigate dynamically in human-populated environments (Chapter 4, p. 61).</li>
                         <li class="fragment">Challenges: Human unpredictability, computational cost, and action space complexity (Chapter 3, p. 40–51).</li>
-                        <li class="fragment">Algorithms: DQN, PPO, SAC, DreamerV3—used for adaptive navigation (Chapter 3, p. 40–51).</li>
+                        <li class="fragment">Key Algorithms:
+                            <table style="font-size: 0.7em; color: white; width: 70%; margin: 10px auto; border-collapse: collapse;">
+                                <thead>
+                                    <tr style="background-color: #003087;">
+                                        <th style="padding: 4px; border: 1px solid white;">Category</th>
+                                        <th style="padding: 4px; border: 1px solid white;">Algorithm (Full Name)</th>
+                                        <th style="padding: 4px; border: 1px solid white;">Application</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="fragment">
+                                        <td style="padding: 4px; border: 1px solid white;">Model-Free</td>
+                                        <td style="padding: 4px; border: 1px solid white;">Deep Q-Network (DQN)</td>
+                                        <td style="padding: 4px; border: 1px solid white;">Handles complex state spaces in SocNavGym (Chapter 3, p. 40).</td>
+                                    </tr>
+                                    <tr class="fragment">
+                                        <td style="padding: 4px; border: 1px solid white;">Model-Free</td>
+                                        <td style="padding: 4px; border: 1px solid white;">Proximal Policy Optimization (PPO)</td>
+                                        <td style="padding: 4px; border: 1px solid white;">Stable navigation in dynamic settings (Chapter 3, p. 40).</td>
+                                    </tr>
+                                    <tr class="fragment">
+                                        <td style="padding: 4px; border: 1px solid white;">Model-Free</td>
+                                        <td style="padding: 4px; border: 1px solid white;">Soft Actor-Critic (SAC)</td>
+                                        <td style="padding: 4px; border: 1px solid white;">Robust exploration for human interactions (Chapter 3, p. 40).</td>
+                                    </tr>
+                                    <tr class="fragment">
+                                        <td style="padding: 4px; border: 1px solid white;">Model-Based</td>
+                                        <td style="padding: 4px; border: 1px solid white;">DreamerV3</td>
+                                        <td style="padding: 4px; border: 1px solid white;">Efficient planning using world models (Chapter 3, p. 36).</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </li>
                         <li class="fragment">Sets up my work: Links to predictive models and action space solutions (Chapters 5–7).</li>
                     </ul>
                     <div class="fragment" style="padding-top: 20px;">
@@ -352,7 +356,7 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    Explain how RL addresses social navigation gaps, foreshadowing my contributions (e.g., Q1 and Q2). Use the diagram to show RL’s application in SocNavGym or human-robot interaction.
+                    Explain how RL addresses social navigation gaps, introducing key algorithms relevant to your research (e.g., DQN, PPO, SAC, DreamerV3) and their applications, foreshadowing my contributions (e.g., Q1 and Q2). Use the diagram to show RL’s application in SocNavGym or human-robot interaction.
                 </aside>
             </section>
 
