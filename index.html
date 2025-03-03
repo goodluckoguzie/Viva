@@ -323,7 +323,47 @@
                 </aside>
             </section>
 
-            <!-- RL in Social Robot Navigation - Slide 2: Models with Application -->
+            <!-- RL in Social Robot Navigation - Slide 2: Models Only -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+                <h2 style="color: white; text-align: center; margin-bottom: 20px;">RL in Social Robot Navigation</h2>
+                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                    <ul>
+                        <li class="fragment" data-fragment-index="0">Key Algorithms Used in This Research:
+                            <table style="font-size: 0.8em; color: white; width: 60%; margin: 10px auto; border-collapse: collapse;">
+                                <thead>
+                                    <tr style="background-color: #003087;">
+                                        <th style="padding: 6px; border: 1px solid white;">Category</th>
+                                        <th style="padding: 6px; border: 1px solid white;">Algorithm</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="fragment" data-fragment-index="1">
+                                        <td style="padding: 6px; border: 1px solid white;">Model-Free</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Deep Q-Network</td>
+                                    </tr>
+                                    <tr class="fragment" data-fragment-index="2">
+                                        <td style="padding: 6px; border: 1px solid white;">Model-Free</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Proximal Policy Optimization</td>
+                                    </tr>
+                                    <tr class="fragment" data-fragment-index="3">
+                                        <td style="padding: 6px; border: 1px solid white;">Model-Free</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Soft Actor-Critic</td>
+                                    </tr>
+                                    <tr class="fragment" data-fragment-index="4">
+                                        <td style="padding: 6px; border: 1px solid white;">Model-Based</td>
+                                        <td style="padding: 6px; border: 1px solid white;">DreamerV3</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </li>
+                    </ul>
+                </div>
+                <aside class="notes">
+                    List key RL algorithms (Model-Free: DQN, PPO, SAC; Model-Based: DreamerV3) used in this research, preparing for applications in the next slide. Align with Chapter 3 (p. 36, 40–51) for viva readiness.
+                </aside>
+            </section>
+
+            <!-- RL in Social Robot Navigation - Slide 3: Models with Application -->
             <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
                 <h2 style="color: white; text-align: center; margin-bottom: 20px;">RL in Social Robot Navigation</h2>
                 <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
@@ -340,17 +380,17 @@
                                 <tbody>
                                     <tr class="fragment" data-fragment-index="1">
                                         <td style="padding: 6px; border: 1px solid white;">Model-Free</td>
-                                        <td style="padding: 6px; border: 1px solid white;">Deep Q-Network (DQN)</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Deep Q-Network</td>
                                         <td style="padding: 6px; border: 1px solid white;">Handles complex state spaces in SocNavGym (Chapter 3, p. 40).</td>
                                     </tr>
                                     <tr class="fragment" data-fragment-index="2">
                                         <td style="padding: 6px; border: 1px solid white;">Model-Free</td>
-                                        <td style="padding: 6px; border: 1px solid white;">Proximal Policy Optimization (PPO)</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Proximal Policy Optimization</td>
                                         <td style="padding: 6px; border: 1px solid white;">Stable navigation in dynamic settings (Chapter 3, p. 40).</td>
                                     </tr>
                                     <tr class="fragment" data-fragment-index="3">
                                         <td style="padding: 6px; border: 1px solid white;">Model-Free</td>
-                                        <td style="padding: 6px; border: 1px solid white;">Soft Actor-Critic (SAC)</td>
+                                        <td style="padding: 6px; border: 1px solid white;">Soft Actor-Critic</td>
                                         <td style="padding: 6px; border: 1px solid white;">Robust exploration for human interactions (Chapter 3, p. 40).</td>
                                     </tr>
                                     <tr class="fragment" data-fragment-index="4">
@@ -362,67 +402,12 @@
                             </table>
                         </li>
                     </ul>
-                </div>
-                <aside class="notes">
-                    List key RL algorithms (Model-Free: DQN, PPO, SAC; Model-Based: DreamerV3) used in this research, with their applications, preparing for deeper analysis in the next slide. Align with Chapter 3 (p. 36, 40–51) for viva readiness.
-                </aside>
-            </section>
-
-            <!-- RL in Social Robot Navigation - Slide 3: Models with Strengths and Weaknesses -->
-            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-                <h2 style="color: white; text-align: center; margin-bottom: 20px;">RL in Social Robot Navigation</h2>
-                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
-                    <ul>
-                        <li class="fragment" data-fragment-index="0">Key Algorithms Used in This Research:
-                            <table style="font-size: 0.7em; color: white; width: 80%; margin: 10px auto; border-collapse: collapse;">
-                                <thead>
-                                    <tr style="background-color: #003087;">
-                                        <th style="padding: 4px; border: 1px solid white;">Category</th>
-                                        <th style="padding: 4px; border: 1px solid white;">Algorithm</th>
-                                        <th style="padding: 4px; border: 1px solid white;">Application</th>
-                                        <th style="padding: 4px; border: 1px solid white;">Strength</th>
-                                        <th style="padding: 4px; border: 1px solid white;">Weakness</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="fragment" data-fragment-index="1">
-                                        <td style="padding: 4px; border: 1px solid white;">Model-Free</td>
-                                        <td style="padding: 4px; border: 1px solid white;">Deep Q-Network (DQN)</td>
-                                        <td style="padding: 4px; border: 1px solid white;">Handles complex state spaces in SocNavGym (Chapter 3, p. 40).</td>
-                                        <td style="padding: 4px; border: 1px solid white;">Effective for discrete actions</td>
-                                        <td style="padding: 4px; border: 1px solid white;">Struggles with continuous actions</td>
-                                    </tr>
-                                    <tr class="fragment" data-fragment-index="2">
-                                        <td style="padding: 4px; border: 1px solid white;">Model-Free</td>
-                                        <td style="padding: 4px; border: 1px solid white;">Proximal Policy Optimization (PPO)</td>
-                                        <td style="padding: 4px; border: 1px solid white;">Stable navigation in dynamic settings (Chapter 3, p. 40).</td>
-                                        <td style="padding: 4px; border: 1px solid white;">Stable and sample-efficient</td>
-                                        <td style="padding: 4px; border: 1px solid white;">Requires careful hyperparameter tuning</td>
-                                    </tr>
-                                    <tr class="fragment" data-fragment-index="3">
-                                        <td style="padding: 4px; border: 1px solid white;">Model-Free</td>
-                                        <td style="padding: 4px; border: 1px solid white;">Soft Actor-Critic (SAC)</td>
-                                        <td style="padding: 4px; border: 1px solid white;">Robust exploration for human interactions (Chapter 3, p. 40).</td>
-                                        <td style="padding: 4px; border: 1px solid white;">Robust exploration and continuous actions</td>
-                                        <td style="padding: 4px; border: 1px solid white;">Higher computational cost</td>
-                                    </tr>
-                                    <tr class="fragment" data-fragment-index="4">
-                                        <td style="padding: 4px; border: 1px solid white;">Model-Based</td>
-                                        <td style="padding: 4px; border: 1px solid white;">DreamerV3</td>
-                                        <td style="padding: 4px; border: 1px solid white;">Efficient planning using world models (Chapter 3, p. 36).</td>
-                                        <td style="padding: 4px; border: 1px solid white;">Efficient simulation-based learning</td>
-                                        <td style="padding: 4px; border: 1px solid white;">Requires accurate world model</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </li>
-                    </ul>
                     <div class="fragment" data-fragment-index="5" style="padding-top: 20px;">
                         <img src="img/rl_social_diagram.jpg" width="70%" style="border: 2px solid white;" />
                     </div>
                 </div>
                 <aside class="notes">
-                    Provide a detailed comparison of key RL algorithms (Model-Free: DQN, PPO, SAC; Model-Based: DreamerV3) used in this research, with their applications, strengths, and weaknesses, aligning with Chapter 3 (p. 40–51) for viva readiness (FAQ Q12). Use the diagram to illustrate RL’s application in SocNavGym or human-robot interaction.
+                    Provide applications of key RL algorithms (Model-Free: DQN, PPO, SAC; Model-Based: DreamerV3) used in this research, aligning with Chapter 3 (p. 40–51) for viva readiness (FAQ Q12). Use the diagram to illustrate RL’s application in SocNavGym or human-robot interaction.
                 </aside>
             </section>
 
