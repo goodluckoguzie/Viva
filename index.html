@@ -369,20 +369,48 @@
                 </aside>
             </section>
 
-            <!-- My RL Contributions (Teaser) -->
+            <!-- Predictive Models in Social Robot Navigation -->
             <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-                <h2 style="color: white; text-align: center; margin-bottom: 20px;">My RL Contributions</h2>
-                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
+                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive Models in Social Robot Navigation</h2>
+                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 80px;">
                     <ul>
-                        <li class="fragment">Integrates predictive world models for better decision-making (Q1, Chapter 5).</li>
-                        <li class="fragment">Addresses discrete-to-continuous action space challenges (Q2, Chapter 7).</li>
+                        <li class="fragment">Role: Enhance robot decision-making by forecasting human behavior and dynamics (Chapter 5, p. 83).</li>
+                        <li class="fragment">Key Models:
+                            <table style="font-size: 0.7em; color: white; width: 80%; margin: 10px auto; border-collapse: collapse;">
+                                <thead>
+                                    <tr style="background-color: #003087;">
+                                        <th style="padding: 4px; border: 1px solid white;">Type</th>
+                                        <th style="padding: 4px; border: 1px solid white;">Model (Full Name)</th>
+                                        <th style="padding: 4px; border: 1px solid white;">Application</th>
+                                        <th style="padding: 4px; border: 1px solid white;">Strength</th>
+                                        <th style="padding: 4px; border: 1px solid white;">Weakness</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="fragment">
+                                        <td style="padding: 4px; border: 1px solid white;">Recurrent</td>
+                                        <td style="padding: 4px; border: 1px solid white;">Long Short-Term Memory (LSTM)</td>
+                                        <td style="padding: 4px; border: 1px solid white;">Predicts human trajectories in SocNavGym (Chapter 5, p. 83).</td>
+                                        <td style="padding: 4px; border: 1px solid white;">Handles sequential data well</td>
+                                        <td style="padding: 4px; border: 1px solid white;">Struggles with long-term dependencies</td>
+                                    </tr>
+                                    <tr class="fragment">
+                                        <td style="padding: 4px; border: 1px solid white;">Transformer</td>
+                                        <td style="padding: 4px; border: 1px solid white;">Transformer-based Model</td>
+                                        <td style="padding: 4px; border: 1px solid white;">Forecasts human behavior in dynamic settings (Chapter 5, p. 84).</td>
+                                        <td style="padding: 4px; border: 1px solid white;">Captures complex patterns effectively</td>
+                                        <td style="padding: 4px; border: 1px solid white;">Requires large datasets</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </li>
                     </ul>
                     <div class="fragment" style="padding-top: 20px;">
-                        <img src="img/rl_contribution_diagram.jpg" width="70%" style="border: 2px solid white;" />
+                        <img src="img/predictive_models_diagram.jpg" width="70%" style="border: 2px solid white;" />
                     </div>
                 </div>
                 <aside class="notes">
-                    Briefly introduce my innovations to build anticipation, deferring details to later slides (e.g., Predictive World Models, Adaptive Prediction Horizons).
+                    Introduce predictive models as key to enhancing robot decision-making, focusing on standard recurrent models (LSTM) and transformers commonly used in social navigation. Highlight their applications, strengths, and weaknesses, setting up for your original contributions later (e.g., Chapters 5–6). Use the diagram to illustrate their role in social navigation or SocNavGym.
                 </aside>
             </section>
 
