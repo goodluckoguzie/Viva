@@ -555,79 +555,90 @@
                 <h2 style="color: white; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Predictive World Models *</h2>
             </section>
 
-            <!-- Predictive World Models: Challenges/Limitations -->
+            <!-- Slide 13: Introduction to Predictive World Models -->
             <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
                 <h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive World Models for Social Navigation</h2>
                 <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
-                    <h3 style="color: white; margin-bottom: 10px;">Challenges/Limitations</h3>
+                    <h3 style="color: white; margin-bottom: 10px;">Overview</h3>
                     <ul>
-                        <li class="fragment fade-in" data-fragment-index="0">⚠️ Fixed Prediction Horizons: Limited adaptability in dynamic environments (e.g., SocNavGym, Chapter 5, p. 86).</li>
-                        <li class="fragment fade-in" data-fragment-index="1">⚠️ Computational Overhead: Increased processing demands (Chapter 5, p. 84).</li>
-                        <li class="fragment fade-in" data-fragment-index="2">⚠️ Sparse Data: Difficulty predicting human behavior (Chapter 5, p. 87).</li>
+                        <li class="fragment fade-in" data-fragment-index="0">🔍 Predictive world models forecast human behavior and environmental dynamics to enhance robot social navigation in dynamic, human-populated environments (Chapter 5, p. 83).</li>
+                        <li class="fragment fade-in" data-fragment-index="1">🎯 Goal: Improve safety, efficiency, and social acceptability using reinforcement learning and advanced prediction in SocNavGym (Chapter 5, p. 83).</li>
+                        <li class="fragment fade-in" data-fragment-index="2">🛠 Tested in SocNavGym, a simulation environment for human-robot interactions (Chapter 5, p. 87).</li>
                     </ul>
-                    <div class="fragment fade-in" data-fragment-index="3" style="padding-top: 20px;">
+                </div>
+                <aside class="notes">
+                    Introduce predictive world models as the focus of Chapter 5, explaining their role in forecasting human behavior for safer robot navigation in SocNavGym. Prepare for viva question Q1: “How do predictive world models improve decision-making in social navigation?” Be ready to discuss SocNavGym and reinforcement learning context.
+                </aside>
+            </section>
+
+            <!-- Slide 14: Proposed Methods -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive World Models for Social Navigation</h2>
+                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+                    <h3 style="color: white; margin-bottom: 10px;">Our Proposed Methods</h3>
+                    <ul>
+                        <li class="fragment fade-in" data-fragment-index="0">📌 <b>2StepAhead</b>: Baseline model with a fixed two-step prediction horizon for lightweight human trajectory forecasting in SocNavGym (Chapter 5, p. 83–84).</li>
+                        <li class="fragment fade-in" data-fragment-index="1">📌 <b>MASPM (Multi-Action State Prediction Model)</b>: Advanced model predicting multiple future states and actions for adaptability to dynamic human behavior (Chapter 5, p. 84–85).</li>
+                        <li class="fragment fade-in" data-fragment-index="2">📌 <b>2StepAhead-MASPM</b>: Hybrid approach combining 2StepAhead’s simplicity with MASPM’s adaptability for balanced performance (Chapter 5, p. 85).</li>
+                    </ul>
+                </div>
+                <aside class="notes">
+                    Present the three methods proposed in Chapter 5—2StepAhead, MASPM, and 2StepAhead-MASPM—explaining their roles in predictive world models. Prepare for viva question Q12: “Why did you propose 2StepAhead, MASPM, and 2StepAhead-MASPM, and what challenges do they address?” Be ready to discuss their design and SocNavGym testing.
+                </aside>
+            </section>
+
+            <!-- Slide 15: Challenges Mitigated -->
+            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive World Models for Social Navigation</h2>
+                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+                    <h3 style="color: white; margin-bottom: 10px;">Challenges Mitigated by Our Methods</h3>
+                    <ul>
+                        <li class="fragment fade-in" data-fragment-index="0">⚠️ <b>Inflexibility of Fixed Prediction Horizons</b>: Fixed horizons (e.g., 2StepAhead’s two-step window) fail to adapt to unpredictable human movements in SocNavGym, risking unsafe navigation (Chapter 5, p. 86).</li>
+                        <li class="fragment fade-in" data-fragment-index="1">⚠️ <b>High Computational Cost</b>: Complex predictions impose significant demands, hindering real-time navigation on resource-constrained robots (Chapter 5, p. 84).</li>
+                        <li class="fragment fade-in" data-fragment-index="2">⚠️ <b>Inaccuracy from Sparse/Noisy Sensor Data</b>: Sparse or noisy data (e.g., LIDAR, cameras) leads to unreliable predictions, increasing navigation errors (Chapter 5, p. 87).</li>
+                        <li class="fragment fade-in" data-fragment-index="3">📌 Our methods (2StepAhead, MASPM, 2StepAhead-MASPM) address these to enhance safety, efficiency, and social acceptability (Chapter 5, p. 87–88).</li>
+                    </ul>
+                    <div class="fragment fade-in" data-fragment-index="4" style="padding-top: 20px;">
                         <img src="img/predictive_world_challenges_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
                     </div>
                 </div>
                 <aside class="notes">
-                    Highlight challenges that drove your research, explaining how they led to methods like 2StepAhead-MASPM (Chapter 5, p. 86). Prepare for viva question Q1: “How do predictive world models improve decision-making?”
+                    Highlight the three challenges driving our research—inflexibility, computational cost, and inaccuracy—and explain how 2StepAhead, MASPM, and 2StepAhead-MASPM mitigate them for better social navigation in SocNavGym (Chapter 5, p. 84–87). Prepare for viva questions Q1 and Q12, and be ready to discuss sensor data (e.g., LIDAR, cameras) and SocNavGym examples.
                 </aside>
             </section>
 
-            <!-- Predictive World Models: Methods -->
+            <!-- Slide 16: Evaluation in SocNavGym -->
             <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
                 <h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive World Models for Social Navigation</h2>
                 <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
-                    <h3 style="color: white; margin-bottom: 10px;">Methods</h3>
+                    <h3 style="color: white; margin-bottom: 10px;">Evaluation in SocNavGym</h3>
                     <ul>
-                        <li class="fragment fade-in" data-fragment-index="0">➡️ 2StepAhead: Fixed two-step horizon model for initial prediction (Chapter 5, p. 83).</li>
-                        <li class="fragment fade-in" data-fragment-index="1">➡️ MASPM: Multi-action state prediction model for dynamic adaptability (Chapter 5, p. 84).</li>
-                        <li class="fragment fade-in" data-fragment-index="2">➡️ 2StepAhead-MASPM: Combined approach for robust prediction (Chapter 5, p. 85).</li>
+                        <li class="fragment fade-in" data-fragment-index="0">🧪 Tested 2StepAhead, MASPM, and 2StepAhead-MASPM in SocNavGym to assess adaptability, computational efficiency, and prediction accuracy (Chapter 5, p. 87–88).</li>
+                        <li class="fragment fade-in" data-fragment-index="1">📈 Results: 2StepAhead-MASPM outperforms others, balancing adaptability to dynamic human behavior, real-time efficiency, and accuracy under sparse/noisy data (Chapter 5, p. 88).</li>
+                        <li class="fragment fade-in" data-fragment-index="2">🎯 Key metrics: Navigation success, collision avoidance, and adherence to social norms in crowded scenarios (Chapter 5, p. 87).</li>
                     </ul>
                     <div class="fragment fade-in" data-fragment-index="3" style="padding-top: 20px;">
-                        <img src="img/predictive_world_methods_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
+                        <img src="img/socnavgym_evaluation_graph.jpg" width="80%" style="border: 2px solid white;" />
                     </div>
                 </div>
                 <aside class="notes">
-                    Describe how these methods address challenges, such as combining fixed and multi-action predictions (Chapter 5, p. 85). Prepare for viva question Q1: “How do predictive world models improve decision-making?”
+                    Describe the evaluation of our methods in SocNavGym, focusing on how 2StepAhead-MASPM performs best in adaptability, efficiency, and accuracy. Prepare for viva question Q13: “What were the key results of your evaluation in SocNavGym?” Be ready to discuss metrics (e.g., collision avoidance, social norms) and the graph or data visualization.
                 </aside>
             </section>
 
-            <!-- Predictive World Models: Evaluation -->
+            <!-- Slide 17: Conclusion and Implications -->
             <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
                 <h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive World Models for Social Navigation</h2>
                 <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
-                    <h3 style="color: white; margin-bottom: 10px;">Evaluation</h3>
+                    <h3 style="color: white; margin-bottom: 10px;">Conclusion and Implications</h3>
                     <ul>
-                        <li class="fragment fade-in" data-fragment-index="0">📊 Environments: Tested in SocNavGym (Chapter 5, p. 86).</li>
-                        <li class="fragment fade-in" data-fragment-index="1">📊 Metrics: MSE, MAE, accuracy (e.g., MSE reduced by 20% with 2StepAhead-MASPM, Chapter 5, p. 87–88).</li>
-                        <li class="fragment fade-in" data-fragment-index="2">📊 Approach: Compared 2StepAhead, MASPM, and combined model (Chapter 5, p. 86).</li>
+                        <li class="fragment fade-in" data-fragment-index="0">✅ 2StepAhead, MASPM, and 2StepAhead-MASPM significantly enhance predictive world models, addressing key challenges in social navigation (Chapter 5, p. 87–88).</li>
+                        <li class="fragment fade-in" data-fragment-index="1">🌍 Implications: Improved robot navigation for real-world deployment in human-populated environments, enhancing safety and social acceptance (Chapter 5, p. 88).</li>
+                        <li class="fragment fade-in" data-fragment-index="2">🔮 Future work: Refine models for real-time hardware constraints and expand to diverse social scenarios beyond SocNavGym (Chapter 5, p. 88).</li>
                     </ul>
-                    <div class="fragment fade-in" data-fragment-index="3" style="padding-top: 20px;">
-                        <img src="img/predictive_world_evaluation_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
-                    </div>
                 </div>
                 <aside class="notes">
-                    Explain how evaluation metrics (MSE, MAE, accuracy) validate your methods in SocNavGym (Chapter 5, p. 87–88). Prepare for viva question Q1: “How do predictive world models improve decision-making?”
-                </aside>
-            </section>
-
-            <!-- Predictive World Models: Results -->
-            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive World Models for Social Navigation</h2>
-                <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
-                    <h3 style="color: white; margin-bottom: 10px;">Results</h3>
-                    <ul>
-                        <li class="fragment grow" data-fragment-index="0">✅ Training Phase: 20% lower MSE with 2StepAhead-MASPM, enhancing RL robustness (Chapter 5, p. 87).</li>
-                        <li class="fragment grow" data-fragment-index="1">✅ Testing Phase: 15% MAE reduction in SocNavGym, improving prediction accuracy (Chapter 5, p. 88).</li>
-                        <li class="fragment grow" data-fragment-index="2">✅ Impact: Improved RL robustness in dynamic environments (Chapter 5, p. 86).</li>
-                    </ul>
-                    <div class="fragment grow" data-fragment-index="3" style="padding-top: 20px;">
-                        <img src="img/predictive_world_results_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
-                    </div>
-                </div>
-                <aside class="notes">
-                    Highlight how results demonstrate the effectiveness of your methods (Chapter 5, p. 86–88). Prepare for viva question Q1: “How do predictive world models improve decision-making?”
+                    Conclude by summarizing how our methods improve predictive world models, their implications for robot navigation, and future research directions. Prepare for viva question Q14: “What are the implications and future directions of your work?” Be ready to discuss real-world applications and SocNavGym limitations.
                 </aside>
             </section>
 
