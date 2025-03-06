@@ -611,18 +611,19 @@
             <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
                 <h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive World Models for Social Navigation</h2>
                 <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
-                    <h3 style="color: white; margin-bottom: 10px;">Evaluation in SocNavGym</h3>
+                    <h3 style="color: white; margin-bottom: 10px;">Evaluation</h3>
                     <ul>
-                        <li class="fragment fade-in" data-fragment-index="0">🧪 Tested 2StepAhead, MASPM, and 2StepAhead-MASPM in SocNavGym to assess adaptability, computational efficiency, and prediction accuracy (Chapter 5, p. 87–88).</li>
-                        <li class="fragment fade-in" data-fragment-index="1">📈 Results: 2StepAhead-MASPM outperforms others, balancing adaptability to dynamic human behavior, real-time efficiency, and accuracy under sparse/noisy data (Chapter 5, p. 88).</li>
-                        <li class="fragment fade-in" data-fragment-index="2">🎯 Key metrics: Navigation success, collision avoidance, and adherence to social norms in crowded scenarios (Chapter 5, p. 87).</li>
+                        <li class="fragment fade-in" data-fragment-index="0">📊 Environments: Tested in SocNavGym (Chapter 5, p. 87).</li>
+                        <li class="fragment fade-in" data-fragment-index="1">📊 Metrics: Cumulative reward, human discomfort, collisions, success rate, personal space compliance, distance travelled, simulation time, idle time, and max steps (Chapter 5, p. 87–89).</li>
+                        <li class="fragment fade-in" data-fragment-index="2">📊 Comparison: Against Vanilla Dueling DQN, Dueling DQN + Hidden State, RVO2, Social Force Model, and WM Dueling DQN (Chapter 5, p. 87–90).</li>
+                        <li class="fragment fade-in" data-fragment-index="3">📈 Results: 2StepAhead-MASPM outperforms baselines, balancing adaptability to dynamic environments, computational efficiency, and prediction accuracy with sparse/noisy data (e.g., 15% success rate improvement, 4% higher cumulative reward, Chapter 5, p. 88–90).</li>
                     </ul>
-                    <div class="fragment fade-in" data-fragment-index="3" style="padding-top: 20px;">
-                        <img src="img/socnavgym_evaluation_graph.jpg" width="80%" style="border: 2px solid white;" />
+                    <div class="fragment fade-in" data-fragment-index="4" style="padding-top: 20px;">
+                        <img src="img/predictive_world_evaluation_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
                     </div>
                 </div>
                 <aside class="notes">
-                    Describe the evaluation of our methods in SocNavGym, focusing on how 2StepAhead-MASPM performs best in adaptability, efficiency, and accuracy. Prepare for viva question Q13: “What were the key results of your evaluation in SocNavGym?” Be ready to discuss metrics (e.g., collision avoidance, social norms) and the graph or data visualization.
+                    Explain how evaluation metrics (e.g., cumulative reward, human discomfort, collisions, success rate) validate your methods in SocNavGym, comparing 2StepAhead, MASPM, and 2StepAhead-MASPM against Vanilla Dueling DQN, Dueling DQN + Hidden State, RVO2, Social Force Model, and WM Dueling DQN (Chapter 5, p. 87–90). Highlight how your methods address adaptability to dynamic human interactions, computational intensity, and prediction accuracy with sparse/noisy sensor data (e.g., LIDAR, cameras). Prepare for viva question Q1: “How do predictive world models improve decision-making in social navigation?” and Q13: “What were the key results of your evaluation in SocNavGym?” Be ready to discuss SocNavGym examples, specific metrics (e.g., 15% success rate, personal space compliance), and the diagram’s visualization (e.g., histograms from Figs. 5.6 and 5.7).
                 </aside>
             </section>
 
@@ -824,27 +825,6 @@
                 </div>
                 <aside class="notes">
                     Summarize contributions and future work, using the diagram. Prepare for viva question Q1: “What are the key contributions of your research?” and Q12: “What are the future directions for your work?”
-                </aside>
-            </section>
-
-            <!-- About Me -->
-            <section data-background="img/aston_background.jpg" data-transition="slide">
-                <h3>About Me</h3>
-                <div style="text-align: left; font-size: 0.85em;">
-                    <ul>
-                        <li class="fragment">Goodluck Oguzie</li>
-                        <li class="fragment">PhD in Robotics, <a href="https://robolab.unex.es/">Universidad de Extremadura</a>, Cáceres, Spain
-                            <div class="fragment" style="text-align: center;">
-                                <img src="img/caceres.jpg" width="70%" style="border: 2px solid white;"/>
-                            </div>
-                        </li>
-                        <li class="fragment">PhD Focus: Robotics, Active Perception, POMDP & Particle Filters</li>
-                        <li class="fragment">Career: Senior Lecturer at Aston University since 2018</li>
-                        <li class="fragment">Lab: <a href="https://arp-lab.com">Autonomous Robotics and Perception Lab</a></li>
-                    </ul>
-                </div>
-                <aside class="notes">
-                    Highlight your journey and tie it to social navigation research. Prepare for viva question Q12: “Can you tell us about your background and how it relates to this research?”
                 </aside>
             </section>
         </div>
