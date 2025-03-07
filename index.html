@@ -556,15 +556,16 @@
             </section>
 
             <!-- Slide 13: Predictive World Models for Social Navigation - Overview -->
-            <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-                <h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive World Models for Social Navigation</h2>
+            <section data-background="#800080" data-transition="slide">
+                <div style="position: absolute; top: 10px; left: 10px;">
+                    <img src="img/aston_logo.png" alt="Aston Logo" style="height: 50px;">
+                </div>
+                <h2 style="color: white; text-align: center; margin-top: 20px;">Predictive World Models for Social Navigation</h2>
                 <div style="text-align: center; padding-top: 50px;">
-                    <div style="padding-bottom: 20px;">
-                        <video muted data-autoplay src="img/socialrobot.mp4" width="60%"></video>
-                    </div>
-                    <div style="font-size: 1em; color: white;">
-                        <p id="textDisplay" style="margin: 0;"></p>
-                    </div>
+                    <img src="img/robot_image.jpg" width="40%" style="border: 2px solid white;">
+                </div>
+                <div style="text-align: center; font-size: 1em; color: white; padding-top: 20px;">
+                    <p id="textDisplay" style="margin: 0;">Waiting for fragment transition...</p>
                 </div>
                 <div style="display: none;">
                     <span class="fragment slide-in" data-fragment-index="0"></span>
@@ -574,6 +575,11 @@
                 <script>
                     Reveal.addEventListener('fragmentshown', function(event) {
                         var textDisplay = document.getElementById('textDisplay');
+                        if (!textDisplay) {
+                            console.error("textDisplay element not found!");
+                            return;
+                        }
+                        console.log("Fragment shown, index:", event.fragment.dataset.fragmentIndex);
                         if (event.fragment.dataset.fragmentIndex === '0') {
                             textDisplay.textContent = '🔍 Predictive world models forecast human behavior and environmental dynamics to enhance robot social navigation in dynamic, human-populated environments (Chapter 5, p. 83).';
                         } else if (event.fragment.dataset.fragmentIndex === '1') {
@@ -582,9 +588,15 @@
                             textDisplay.textContent = '🛠 Tested in SocNavGym, a simulation environment for human-robot interactions (Chapter 5, p. 87).';
                         }
                     });
+                    document.addEventListener('DOMContentLoaded', function() {
+                        var textDisplay = document.getElementById('textDisplay');
+                        if (textDisplay) {
+                            textDisplay.textContent = 'Waiting for fragment transition...';
+                        }
+                    });
                 </script>
                 <aside class="notes">
-                    Introduce predictive world models as the focus of Chapter 5, explaining their role in forecasting human behavior for safer robot navigation in SocNavGym. Use the video to visually demonstrate social navigation context (e.g., robot navigating among humans). Prepare for viva question Q1: “How do predictive world models improve decision-making in social navigation?” Be ready to discuss SocNavGym and reinforcement learning context.
+                    Introduce predictive world models as the focus of Chapter 5, explaining their role in forecasting human behavior for safer robot navigation in SocNavGym. Use the image to visually demonstrate the robot context. Prepare for viva question Q1: “How do predictive world models improve decision-making in social navigation?” Be ready to discuss SocNavGym and reinforcement learning context.
                 </aside>
             </section>
 
