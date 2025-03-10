@@ -52,19 +52,27 @@
     .fragment.grow.visible {
       transform: scale(1);
     }
+    /* Slide-in effect for text fragments */
     .fragment.slide-in {
-      transform: translateX(-100%);
+      transform: translateY(100%);
       transition: transform 0.5s ease-in-out;
     }
     .fragment.slide-in.visible {
-      transform: translateX(0);
+      transform: translateY(0);
     }
-    .fragment.zoom-in {
-      transform: scale(0.5);
-      transition: transform 0.5s ease-in-out;
-    }
-    .fragment.zoom-in.visible {
-      transform: scale(1);
+    /* Style for the writeup at the bottom */
+    .writeup {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0,0,0,0.7);
+      color: white;
+      padding: 15px;
+      border-radius: 5px;
+      max-width: 80%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      font-size: 1em;
     }
   </style>
 </head>
@@ -145,7 +153,7 @@
           </svg>
         </div>
         <aside class="notes">
-          Introduce the structure briefly: Start with context and foundational topics (1–4), then detail my three main contributions (5–7)—predictive models, CGLSTM, and adaptive horizons, marked as original work—before wrapping up with conclusions (8).
+          Introduce the structure briefly: Context & Foundations (slides 1–4), then your contributions (slides 5–7) before concluding (slide 8).
         </aside>
       </section>
 
@@ -162,7 +170,7 @@
             <video muted data-autoplay src="img/socialrobot.mp4" width="60%" style="position: relative; z-index: 1;"></video>
           </div>
           <div style="font-size: 1em; color: white; position: relative; z-index: 10; padding-top: 10px; margin-top: -40px; text-align: center;">
-            <p id="textDisplaySlide4" style="margin: 0 auto; line-height: 1.5; background-color: rgba(0, 0, 0, 0.7); padding: 15px; border-radius: 5px; display: inline-block; max-width: 80%; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);"></p>
+            <p id="textDisplaySlide4" style="margin: 0 auto; line-height: 1.5; background-color: rgba(0,0,0,0.7); padding: 15px; border-radius: 5px; display: inline-block; max-width: 80%; box-shadow: 0 0 10px rgba(0,0,0,0.5);"></p>
           </div>
         </div>
         <div style="display: none;">
@@ -173,18 +181,15 @@
         <script>
           document.addEventListener('DOMContentLoaded', function() {
             var textDisplaySlide4 = document.getElementById('textDisplaySlide4');
-            if (!textDisplaySlide4) {
-              console.error('textDisplaySlide4 element not found!');
-              return;
-            }
+            if (!textDisplaySlide4) return;
             Reveal.addEventListener('fragmentshown', function(event) {
               if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide4')) {
                 if (event.fragment.dataset.fragmentIndex === '0') {
                   textDisplaySlide4.textContent = 'Definition: Robots navigating safely in human-populated environments, respecting social norms.';
                 } else if (event.fragment.dataset.fragmentIndex === '1') {
-                  textDisplaySlide4.textContent = 'Importance: Critical for seamless integration into daily life, ensuring safety and social acceptance.';
+                  textDisplaySlide4.textContent = 'Importance: Critical for seamless integration and social acceptance.';
                 } else if (event.fragment.dataset.fragmentIndex === '2') {
-                  textDisplaySlide4.textContent = 'Applications: Healthcare robots, hospitality robots, public space navigation.';
+                  textDisplaySlide4.textContent = 'Applications: Healthcare, hospitality, and public space navigation.';
                 } else {
                   textDisplaySlide4.textContent = '';
                 }
@@ -193,7 +198,7 @@
           });
         </script>
         <aside class="notes">
-          The video plays on load. Use fragments to cycle through Definition, Importance, and Applications. Prepare for viva question Q9.
+          Use fragments to cycle through key points. Prepare for viva Q9.
         </aside>
       </section>
 
@@ -255,16 +260,16 @@
           </div>
         </div>
         <aside class="notes">
-          Discuss traditional and modern approaches, setting up research gaps. Prepare for viva question Q9.
+          Discuss both traditional and modern approaches. Prepare for viva Q9.
         </aside>
       </section>
 
-      <!-- Section Title: Foundations of Social Robot Navigation -->
+      <!-- Foundations of Social Robot Navigation -->
       <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
         <h2 style="color: white; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Foundations of Social Robot Navigation</h2>
       </section>
 
-      <!-- Foundations of Social Robot Navigation -->
+      <!-- Foundations of Social Robot Navigation Content -->
       <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
         <h2 style="color: white; text-align: center; margin-bottom: 20px;">Foundations of Social Robot Navigation</h2>
         <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 100px;">
@@ -273,17 +278,17 @@
             <li class="fragment">Approaches:
               <ul style="list-style-type: none;">
                 <li>Classical: Path planning (A*, Dijkstra’s), rule-based systems (Chapter 4, p. 60).</li>
-                <li>Machine Learning: RL, predictive models for dynamic settings (Chapter 4, p. 61).</li>
+                <li>Machine Learning: RL, predictive models (Chapter 4, p. 61).</li>
               </ul>
             </li>
-            <li class="fragment">SocNavGym: A benchmark environment for testing social navigation (Chapter 4, p. 63).</li>
+            <li class="fragment">SocNavGym: Benchmark for testing social navigation (Chapter 4, p. 63).</li>
           </ul>
           <div class="fragment" style="padding-top: 20px;">
             <img src="img/social_navigation_diagram.jpg" width="70%" style="border: 2px solid white;" />
           </div>
         </div>
         <aside class="notes">
-          Cover the evolution from classical to ML-based methods and introduce SocNavGym. Prepare for viva question Q9.
+          Cover the evolution from classical to ML-based methods and introduce SocNavGym. Prepare for viva Q9.
         </aside>
       </section>
 
@@ -294,16 +299,16 @@
           <ul style="list-style: none; padding: 0;">
             <li class="fragment" style="margin-bottom: 20px;">
               <span style="color: #00A9D4; margin-right: 10px;">🔍</span>
-              Q1: How do predictive world models improve decision-making in Social Robot Navigation?
+              Q1: How do predictive world models improve decision-making?
             </li>
             <li class="fragment">
               <span style="color: #00A9D4; margin-right: 10px;">🔍</span>
-              Q2: What challenges arise when transitioning from discrete to continuous action spaces, and how do we address them?
+              Q2: What challenges arise in transitioning from discrete to continuous action spaces?
             </li>
           </ul>
         </div>
         <aside class="notes">
-          Present the research questions guiding this thesis. Prepare for viva questions Q1 and Q2.
+          Present the research questions. Prepare for viva Q1 and Q2.
         </aside>
       </section>
 
@@ -317,7 +322,7 @@
         <h2 style="color: white; text-align: center; margin-bottom: 20px;">Reinforcement Learning Basics</h2>
         <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 80px;">
           <ul>
-            <li class="fragment">Overview: RL learns optimal actions through trial-and-error, maximizing rewards (Chapter 3, p. 34).</li>
+            <li class="fragment">Overview: RL learns optimal actions through trial-and-error (Chapter 3, p. 34).</li>
             <li class="fragment">Key Concepts:
               <table style="font-size: 0.8em; color: white; width: 60%; margin: 10px auto; border-collapse: collapse;">
                 <thead>
@@ -329,23 +334,23 @@
                 <tbody>
                   <tr class="fragment">
                     <td style="padding: 6px; border: 1px solid white;">Model-Free</td>
-                    <td style="padding: 6px; border: 1px solid white;">Learns directly from experience without a world model (Chapter 3, p. 36).</td>
+                    <td style="padding: 6px; border: 1px solid white;">Learns from experience without a world model (Chapter 3, p. 36).</td>
                   </tr>
                   <tr class="fragment">
                     <td style="padding: 6px; border: 1px solid white;">Model-Based</td>
-                    <td style="padding: 6px; border: 1px solid white;">Uses a learned or simulated world model for planning (Chapter 3, p. 36).</td>
+                    <td style="padding: 6px; border: 1px solid white;">Uses a simulated world model for planning (Chapter 3, p. 36).</td>
                   </tr>
                 </tbody>
               </table>
             </li>
-            <li class="fragment">Goal: Adapt to dynamic environments, like social navigation.</li>
+            <li class="fragment">Goal: Adapt to dynamic environments.</li>
           </ul>
           <div class="fragment" style="padding-top: 20px;">
             <img src="img/rl_basics_diagram.jpg" width="70%" style="border: 2px solid white;" />
           </div>
         </div>
         <aside class="notes">
-          Introduce RL and its key concepts. Prepare for viva question Q9.
+          Introduce RL and its key concepts. Prepare for viva Q9.
         </aside>
       </section>
 
@@ -354,8 +359,8 @@
         <h2 style="color: white; text-align: center; margin-bottom: 20px;">RL in Social Robot Navigation</h2>
         <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 80px;">
           <ul>
-            <li class="fragment" data-fragment-index="0">Role: Enables robots to navigate dynamically (Chapter 4, p. 61).</li>
-            <li class="fragment" data-fragment-index="1">Challenges: Unpredictability, computational cost (Chapter 3, p. 40–51).</li>
+            <li class="fragment" data-fragment-index="0">Role: Enables dynamic navigation (Chapter 4, p. 61).</li>
+            <li class="fragment" data-fragment-index="1">Challenges: Unpredictability and computational cost (Chapter 3, p. 40–51).</li>
             <li class="fragment" data-fragment-index="2">Key Algorithms:
               <ul>
                 <li class="fragment" data-fragment-index="3">Model-Free: DQN, PPO, SAC</li>
@@ -365,7 +370,7 @@
           </ul>
         </div>
         <aside class="notes">
-          Prepare for viva questions on RL applications and algorithms.
+          Prepare for viva on RL applications and algorithms.
         </aside>
       </section>
 
@@ -392,7 +397,7 @@
                   <tr class="fragment" data-fragment-index="2">
                     <td style="padding: 4px; border: 1px solid white;">PPO</td>
                     <td style="padding: 4px; border: 1px solid white;">Stable, sample-efficient</td>
-                    <td style="padding: 4px; border: 1px solid white;">Hyperparameter tuning required</td>
+                    <td style="padding: 4px; border: 1px solid white;">Requires hyperparameter tuning</td>
                   </tr>
                   <tr class="fragment" data-fragment-index="3">
                     <td style="padding: 4px; border: 1px solid white;">SAC</td>
@@ -453,7 +458,7 @@
           </div>
         </div>
         <aside class="notes">
-          Use the diagram to illustrate RL applications. Prepare for viva question Q12.
+          Use the diagram to illustrate RL applications. Prepare for viva Q12.
         </aside>
       </section>
 
@@ -472,7 +477,7 @@
           <div style="font-size: 0.85em; color: white; padding-top: 20px;">
             <ul>
               <li class="fragment">Purpose: Synthetic environment for sequence prediction (Chapter 6, p. 103; Chapter 7, p. 132).</li>
-              <li class="fragment">Role: Evaluates trajectory prediction and adaptation in social navigation.</li>
+              <li class="fragment">Role: Evaluates trajectory prediction and adaptation.</li>
             </ul>
           </div>
           <div class="fragment" style="padding-top: 20px;">
@@ -480,7 +485,7 @@
           </div>
         </div>
         <aside class="notes">
-          Explain FallingBallEnv’s role and development. Prepare for viva question Q12.
+          Explain FallingBallEnv’s development and role. Prepare for viva Q12.
         </aside>
       </section>
 
@@ -502,7 +507,7 @@
           </div>
         </div>
         <aside class="notes">
-          Describe LunarLander-v2. Prepare for viva question Q12.
+          Describe LunarLander-v2. Prepare for viva Q12.
         </aside>
       </section>
 
@@ -516,7 +521,7 @@
           <div style="font-size: 0.85em; color: white; padding-top: 20px;">
             <ul>
               <li class="fragment">Purpose: Benchmark environment for testing RL and predictive models (Chapter 4, p. 63; Chapter 7, p. 132).</li>
-              <li class="fragment">Role: Simulates human-populated environments for evaluating robot navigation strategies.</li>
+              <li class="fragment">Role: Simulates human-populated environments for evaluating navigation strategies.</li>
             </ul>
           </div>
           <div class="fragment" style="padding-top: 20px;">
@@ -524,7 +529,7 @@
           </div>
         </div>
         <aside class="notes">
-          Describe SocNavGym and its importance. Prepare for viva question Q12.
+          Describe SocNavGym and its importance. Prepare for viva Q12.
         </aside>
       </section>
 
@@ -538,7 +543,7 @@
           <div style="font-size: 0.85em; color: white; padding-top: 20px;">
             <ul>
               <li class="fragment">Purpose: Lightweight version for efficient RL testing (Chapter 7, p. 132).</li>
-              <li class="fragment">Role: Optimizes computational resources while evaluating social navigation.</li>
+              <li class="fragment">Role: Optimizes computational resources while evaluating navigation.</li>
             </ul>
           </div>
           <div class="fragment" style="padding-top: 20px;">
@@ -546,7 +551,7 @@
           </div>
         </div>
         <aside class="notes">
-          Explain LiteSocNavGym’s role. Prepare for viva question Q12.
+          Explain LiteSocNavGym’s role. Prepare for viva Q12.
         </aside>
       </section>
 
@@ -554,7 +559,7 @@
       <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
         <h2 style="color: white; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Predictive World Models *</h2>
       </section>
-      
+
       <!-- Slide 19: Predictive World Models Overview -->
       <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
         <h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive World Models for Social Navigation</h2>
@@ -578,7 +583,7 @@
             Reveal.addEventListener('fragmentshown', function(event) {
               if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide19')) {
                 if (event.fragment.dataset.fragmentIndex === '0') {
-                  textDisplaySlide19.textContent = '🔍 Predictive world models forecast human behavior to enhance robot navigation (Chapter 5, p. 83).';
+                  textDisplaySlide19.textContent = '🔍 Predictive world models forecast human behavior (Chapter 5, p. 83).';
                 } else if (event.fragment.dataset.fragmentIndex === '1') {
                   textDisplaySlide19.textContent = '🎯 Goal: Improve safety, efficiency, and social acceptability (Chapter 5, p. 83).';
                 } else if (event.fragment.dataset.fragmentIndex === '2') {
@@ -591,7 +596,7 @@
           });
         </script>
         <aside class="notes">
-          Use fragments to reveal key points. Prepare for viva question Q1.
+          Use fragments to reveal key points. Prepare for viva Q1.
         </aside>
       </section>
 
@@ -601,22 +606,24 @@
         <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
           <h3 style="color: white; margin-bottom: 10px;">Our Proposed Methods</h3>
           <ul>
-            <li class="fragment fade-in" data-fragment-index="0">📌 <b>2StepAhead</b>: Baseline model with fixed two-step horizon (Chapter 5, p. 83–84).</li>
-            <li class="fragment fade-in" data-fragment-index="1">📌 <b>MASPM</b>: Predicts multiple future states for adaptability (Chapter 5, p. 84–85).</li>
-            <li class="fragment fade-in" data-fragment-index="2">📌 <b>2StepAhead-MASPM</b>: Hybrid approach combining the above (Chapter 5, p. 85).</li>
+            <li class="fragment fade-in" data-fragment-index="0">📌 <b>2StepAhead</b>: Fixed two-step horizon (Chapter 5, p. 83–84).</li>
+            <li class="fragment fade-in" data-fragment-index="1">📌 <b>MASPM</b>: Predicts multiple future states (Chapter 5, p. 84–85).</li>
+            <li class="fragment fade-in" data-fragment-index="2">📌 <b>2StepAhead-MASPM</b>: Hybrid approach (Chapter 5, p. 85).</li>
           </ul>
         </div>
         <aside class="notes">
-          Introduce the three methods briefly. Prepare for viva question Q12.
+          Briefly introduce the three methods. Prepare for viva Q12.
         </aside>
       </section>
 
-      <!-- New Slide 22: 2StepAhead Detailed (Image centered with sliding text) -->
+      <!-- New Slide 22: 2StepAhead Detailed -->
       <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
         <h2 style="color: white; text-align: center;">2StepAhead (Baseline Model)</h2>
         <div style="text-align: center; position: relative; min-height: 300px;">
-          <img src="img/2stepahead_diagram.jpg" width="60%" style="display: block; margin: 0 auto;" />
-          <p id="textDisplay2StepAhead" style="margin-top: 20px; line-height: 1.5; background-color: rgba(0,0,0,0.7); padding: 15px; border-radius: 5px; display: inline-block; max-width: 80%; box-shadow: 0 0 10px rgba(0,0,0,0.5);"></p>
+          <!-- Centered image -->
+          <img src="classical.PNG" width="60%" style="display: block; margin: 0 auto;" />
+          <!-- Writeup at the bottom -->
+          <p id="textDisplay2StepAhead" class="writeup"></p>
         </div>
         <div style="display: none;">
           <span class="fragment slide-in" data-fragment-index="0"></span>
@@ -629,9 +636,9 @@
             Reveal.addEventListener('fragmentshown', function(event) {
               if (Reveal.getCurrentSlide().querySelector('#textDisplay2StepAhead')) {
                 if (event.fragment.dataset.fragmentIndex === '0') {
-                  display.textContent = "2StepAhead predicts two steps ahead with a fixed horizon, ensuring low computational cost.";
+                  display.textContent = "2StepAhead predicts two steps ahead with a fixed horizon.";
                 } else if (event.fragment.dataset.fragmentIndex === '1') {
-                  display.textContent = "This fixed horizon allows for quick decision-making in real time.";
+                  display.textContent = "This fixed horizon ensures low computational cost and rapid decision-making.";
                 } else if (event.fragment.dataset.fragmentIndex === '2') {
                   display.textContent = "However, its rigidity can limit adaptability in unpredictable scenarios.";
                 }
@@ -645,7 +652,7 @@
           });
         </script>
         <aside class="notes">
-          Describe 2StepAhead’s efficiency and limitations. Prepare for viva Q12.
+          Explain 2StepAhead’s efficiency and trade-offs. Prepare for viva Q12.
         </aside>
       </section>
 
@@ -653,8 +660,8 @@
       <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
         <h2 style="color: white; text-align: center;">MASPM (Multi-Action State Prediction Model)</h2>
         <div style="text-align: center; position: relative; min-height: 300px;">
-          <img src="img/maspm_diagram.jpg" width="60%" style="display: block; margin: 0 auto;" />
-          <p id="textDisplayMASPM" style="margin-top: 20px; line-height: 1.5; background-color: rgba(0,0,0,0.7); padding: 15px; border-radius: 5px; display: inline-block; max-width: 80%; box-shadow: 0 0 10px rgba(0,0,0,0.5);"></p>
+          <img src="classical.PNG" width="60%" style="display: block; margin: 0 auto;" />
+          <p id="textDisplayMASPM" class="writeup"></p>
         </div>
         <div style="display: none;">
           <span class="fragment slide-in" data-fragment-index="0"></span>
@@ -669,9 +676,9 @@
                 if (event.fragment.dataset.fragmentIndex === '0') {
                   display.textContent = "MASPM predicts multiple future trajectories and actions simultaneously.";
                 } else if (event.fragment.dataset.fragmentIndex === '1') {
-                  display.textContent = "This multi-action forecast enhances adaptability in dynamic environments.";
+                  display.textContent = "This enhances adaptability in dynamic environments.";
                 } else if (event.fragment.dataset.fragmentIndex === '2') {
-                  display.textContent = "The trade-off is a higher computational cost compared to fixed-horizon models.";
+                  display.textContent = "The trade-off is a higher computational demand.";
                 }
               }
             });
@@ -683,7 +690,7 @@
           });
         </script>
         <aside class="notes">
-          Emphasize MASPM's advanced adaptability and trade-offs. Prepare for viva Q12.
+          Emphasize MASPM's adaptability and computational trade-off. Prepare for viva Q12.
         </aside>
       </section>
 
@@ -691,8 +698,8 @@
       <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
         <h2 style="color: white; text-align: center;">2StepAhead-MASPM (Hybrid Method)</h2>
         <div style="text-align: center; position: relative; min-height: 300px;">
-          <img src="img/hybrid_method_diagram.jpg" width="65%" style="display: block; margin: 0 auto;" />
-          <p id="textDisplayHybrid" style="margin-top: 20px; line-height: 1.5; background-color: rgba(0,0,0,0.7); padding: 15px; border-radius: 5px; display: inline-block; max-width: 80%; box-shadow: 0 0 10px rgba(0,0,0,0.5);"></p>
+          <img src="classical.PNG" width="65%" style="display: block; margin: 0 auto;" />
+          <p id="textDisplayHybrid" class="writeup"></p>
         </div>
         <div style="display: none;">
           <span class="fragment slide-in" data-fragment-index="0"></span>
@@ -705,11 +712,11 @@
             Reveal.addEventListener('fragmentshown', function(event) {
               if (Reveal.getCurrentSlide().querySelector('#textDisplayHybrid')) {
                 if (event.fragment.dataset.fragmentIndex === '0') {
-                  display.textContent = "The hybrid 2StepAhead-MASPM combines the efficiency of 2StepAhead with the adaptability of MASPM.";
+                  display.textContent = "The hybrid model combines 2StepAhead's efficiency with MASPM's adaptability.";
                 } else if (event.fragment.dataset.fragmentIndex === '1') {
-                  display.textContent = "It dynamically balances computational cost and prediction flexibility for real-time applications.";
+                  display.textContent = "It balances computational cost and prediction flexibility dynamically.";
                 } else if (event.fragment.dataset.fragmentIndex === '2') {
-                  display.textContent = "This integration results in improved overall performance in complex social navigation scenarios.";
+                  display.textContent = "This results in improved overall performance in complex navigation scenarios.";
                 }
               }
             });
@@ -721,7 +728,7 @@
           });
         </script>
         <aside class="notes">
-          Explain the hybrid approach and its benefits. Prepare for viva Q12.
+          Explain the benefits of the hybrid approach. Prepare for viva Q12.
         </aside>
       </section>
 
@@ -734,14 +741,14 @@
             <li class="fragment fade-in" data-fragment-index="0">⚠️ <b>Inflexibility:</b> Fixed horizons struggle with unpredictable movements (Chapter 5, p. 86).</li>
             <li class="fragment fade-in" data-fragment-index="1">⚠️ <b>Computational Cost:</b> Advanced predictions require more resources (Chapter 5, p. 84).</li>
             <li class="fragment fade-in" data-fragment-index="2">⚠️ <b>Data Inaccuracy:</b> Sparse/noisy sensor data increases errors (Chapter 5, p. 87).</li>
-            <li class="fragment fade-in" data-fragment-index="3">📌 Our methods address these challenges, enhancing safety and efficiency (Chapter 5, p. 87–88).</li>
+            <li class="fragment fade-in" data-fragment-index="3">📌 Our methods address these challenges (Chapter 5, p. 87–88).</li>
           </ul>
           <div class="fragment fade-in" data-fragment-index="4" style="padding-top: 20px;">
             <img src="img/predictive_world_challenges_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
           </div>
         </div>
         <aside class="notes">
-          Highlight how our methods mitigate key challenges. Prepare for viva questions on sensor data and design choices.
+          Explain how our methods mitigate key challenges. Prepare for viva questions on design choices.
         </aside>
       </section>
 
@@ -751,10 +758,10 @@
         <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
           <h3 style="color: white; margin-bottom: 10px;">Evaluation</h3>
           <ul>
-            <li class="fragment fade-in" data-fragment-index="0">📊 Environments: Tested in SocNavGym (Chapter 5, p. 87).</li>
-            <li class="fragment fade-in" data-fragment-index="1">📊 Metrics: Cumulative reward, human discomfort, collisions, success rate, etc. (Chapter 5, p. 87–89).</li>
-            <li class="fragment fade-in" data-fragment-index="2">📊 Comparison: Against baseline methods (Chapter 5, p. 87–90).</li>
-            <li class="fragment fade-in" data-fragment-index="3">📈 Results: Hybrid model shows ~15% success rate improvement and 4% higher reward (Chapter 5, p. 88–90).</li>
+            <li class="fragment fade-in" data-fragment-index="0">📊 Tested in SocNavGym (Chapter 5, p. 87).</li>
+            <li class="fragment fade-in" data-fragment-index="1">📊 Metrics: Cumulative reward, human discomfort, collisions (Chapter 5, p. 87–89).</li>
+            <li class="fragment fade-in" data-fragment-index="2">📊 Compared against baseline methods (Chapter 5, p. 87–90).</li>
+            <li class="fragment fade-in" data-fragment-index="3">📈 Hybrid model shows ~15% success rate improvement and 4% higher reward (Chapter 5, p. 88–90).</li>
           </ul>
           <div class="fragment fade-in" data-fragment-index="4" style="padding-top: 20px;">
             <img src="img/predictive_world_evaluation_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
@@ -771,9 +778,9 @@
         <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
           <h3 style="color: white; margin-bottom: 10px;">Conclusion and Implications</h3>
           <ul>
-            <li class="fragment fade-in" data-fragment-index="0">✅ Our methods significantly enhance predictive performance (Chapter 5, p. 87–88).</li>
-            <li class="fragment fade-in" data-fragment-index="1">🌍 Implications: Improved navigation for real-world applications (Chapter 5, p. 88).</li>
-            <li class="fragment fade-in" data-fragment-index="2">🔮 Future Work: Refinement for real-time constraints and diverse environments (Chapter 5, p. 88).</li>
+            <li class="fragment fade-in" data-fragment-index="0">✅ Our methods significantly improve predictive performance (Chapter 5, p. 87–88).</li>
+            <li class="fragment fade-in" data-fragment-index="1">🌍 Implications: Enhanced navigation for real-world applications (Chapter 5, p. 88).</li>
+            <li class="fragment fade-in" data-fragment-index="2">🔮 Future Work: Refinement for real-time constraints (Chapter 5, p. 88).</li>
           </ul>
         </div>
         <aside class="notes">
