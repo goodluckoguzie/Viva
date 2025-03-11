@@ -617,44 +617,21 @@
       </section>
 
       <!-- New Slide 22: 2StepAhead Detailed -->
-      <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-        <h2 style="color: white; text-align: center;">2StepAhead (Baseline Model)</h2>
-        <div style="text-align: center; position: relative; min-height: 300px;">
-          <!-- Centered image -->
-          <img src="classical.PNG" width="60%" style="display: block; margin: 0 auto;" />
-          <!-- Writeup at the bottom -->
-          <p id="textDisplay2StepAhead" class="writeup"></p>
-        </div>
-        <div style="display: none;">
-          <span class="fragment slide-in" data-fragment-index="0"></span>
-          <span class="fragment slide-in" data-fragment-index="1"></span>
-          <span class="fragment slide-in" data-fragment-index="2"></span>
-        </div>
-        <script>
-          document.addEventListener('DOMContentLoaded', function() {
-            var display = document.getElementById('textDisplay2StepAhead');
-            Reveal.addEventListener('fragmentshown', function(event) {
-              if (Reveal.getCurrentSlide().querySelector('#textDisplay2StepAhead')) {
-                if (event.fragment.dataset.fragmentIndex === '0') {
-                  display.textContent = "2StepAhead predicts two steps ahead with a fixed horizon.";
-                } else if (event.fragment.dataset.fragmentIndex === '1') {
-                  display.textContent = "This fixed horizon ensures low computational cost and rapid decision-making.";
-                } else if (event.fragment.dataset.fragmentIndex === '2') {
-                  display.textContent = "However, its rigidity can limit adaptability in unpredictable scenarios.";
-                }
-              }
-            });
-            Reveal.addEventListener('fragmenthidden', function(event) {
-              if (Reveal.getCurrentSlide().querySelector('#textDisplay2StepAhead')) {
-                display.textContent = "";
-              }
-            });
-          });
-        </script>
-        <aside class="notes">
-          Explain 2StepAhead’s efficiency and trade-offs. Prepare for viva Q12.
-        </aside>
-      </section>
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">2StepAhead (Baseline Model)</h2>
+  <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+    <h3 style="color: white; margin-bottom: 10px;">2StepAhead (Baseline Model)</h3>
+    <ul>
+      <li class="fragment fade-in" data-fragment-index="0">📌 Predicts two steps ahead with a fixed prediction horizon (Chapter 5, p. 83–84).</li>
+      <li class="fragment fade-in" data-fragment-index="1">⚙️ Ensures low computational cost and rapid decision-making.</li>
+      <li class="fragment fade-in" data-fragment-index="2">🚧 Its rigidity may limit adaptability in unpredictable scenarios.</li>
+    </ul>
+  </div>
+  <aside class="notes">
+    Explain 2StepAhead’s efficiency and trade-offs. Prepare for viva Q12.
+  </aside>
+</section>
+
 
       <!-- New Slide 23: MASPM Detailed -->
       <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
