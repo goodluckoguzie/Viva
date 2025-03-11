@@ -466,26 +466,51 @@
       </section>
 
       <!-- FallingBallEnv -->
-      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">FallingBallEnv *</h2>
-        <div style="text-align: center; padding-top: 50px;">
-          <div style="padding-bottom: 20px;">
-            <video muted data-autoplay src="img/fallingballenv.mp4" width="60%"></video>
-          </div>
-          <div style="font-size: 0.85em; color: white; padding-top: 20px;">
-            <ul>
-              <li class="fragment">Purpose: Synthetic environment for sequence prediction (Chapter 6, p. 103; Chapter 7, p. 132).</li>
-              <li class="fragment">Role: Evaluates trajectory prediction and adaptation.</li>
-            </ul>
-          </div>
-          <div class="fragment" style="padding-top: 20px;">
-            <img src="img/fallingballenv_diagram.jpg" width="70%" style="border: 2px solid white;" />
-          </div>
-        </div>
-        <aside class="notes">
-          Explain FallingBallEnv’s development and role. Prepare for viva Q12.
-        </aside>
-      </section>
+<!-- Updated FallingBallEnv Slide using Template -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">FallingBallEnv</h2>
+  <div style="text-align: center; padding-top: 50px; position: relative; min-height: 300px;">
+    <div style="padding-bottom: 20px;">
+      <video muted data-autoplay src="FallingBallEnv.mp4" width="60%" style="position: relative; z-index: 1;"></video>
+    </div>
+    <div style="font-size: 1em; color: white; position: relative; z-index: 10; padding-top: 10px; margin-top: -40px; text-align: center;">
+      <p id="textDisplayFallingBall" class="writeup"></p>
+    </div>
+  </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var textDisplayFallingBall = document.getElementById('textDisplayFallingBall');
+      if (!textDisplayFallingBall) return;
+      Reveal.addEventListener('fragmentshown', function(event) {
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayFallingBall')) {
+          if (event.fragment.dataset.fragmentIndex === '0') {
+            textDisplayFallingBall.textContent = 'Purpose: Synthetic environment for sequence prediction.';
+          } else if (event.fragment.dataset.fragmentIndex === '1') {
+            textDisplayFallingBall.textContent = 'Role: Evaluates trajectory prediction and adaptation.';
+          } else if (event.fragment.dataset.fragmentIndex === '2') {
+            textDisplayFallingBall.textContent = 'Developed for testing RL and predictive models.';
+          } else {
+            textDisplayFallingBall.textContent = '';
+          }
+        }
+      });
+      Reveal.addEventListener('fragmenthidden', function(event) {
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayFallingBall')) {
+          textDisplayFallingBall.textContent = '';
+        }
+      });
+    });
+  </script>
+  <aside class="notes">
+    Use fragments to reveal key points about FallingBallEnv. Prepare for viva questions on its purpose and role.
+  </aside>
+</section>
+
 
       <!-- LunarLander-v2 -->
       <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
