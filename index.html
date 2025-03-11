@@ -624,7 +624,7 @@
       <video muted data-autoplay src="img/socialrobot.mp4" width="60%" style="position: relative; z-index: 1;"></video>
     </div>
     <div style="font-size: 1em; color: white; position: relative; z-index: 10; padding-top: 10px; margin-top: -40px; text-align: center;">
-      <p id="textDisplaySlide19" style="margin: 0 auto; line-height: 1.5; background-color: rgba(0,0,0,0.7); padding: 15px; border-radius: 5px; display: inline-block; max-width: 80%; box-shadow: 0 0 10px rgba(0,0,0,0.5);"></p>
+      <p id="textDisplaySlide22" style="margin: 0 auto; line-height: 1.5; background-color: rgba(0,0,0,0.7); padding: 15px; border-radius: 5px; display: inline-block; max-width: 80%; box-shadow: 0 0 10px rgba(0,0,0,0.5);"></p>
     </div>
   </div>
   <div style="display: none;">
@@ -634,19 +634,24 @@
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      var textDisplaySlide19 = document.getElementById('textDisplaySlide19');
-      if (!textDisplaySlide19) return;
+      var textDisplaySlide22 = document.getElementById('textDisplaySlide22');
+      if (!textDisplaySlide22) return;
       Reveal.addEventListener('fragmentshown', function(event) {
-        if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide19')) {
+        if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide22')) {
           if (event.fragment.dataset.fragmentIndex === '0') {
-            textDisplaySlide19.textContent = '📌 Predicts two steps ahead with a fixed prediction horizon (Chapter 5, p. 83–84).';
+            textDisplaySlide22.textContent = '📌 Predicts two steps ahead with a fixed prediction horizon (Chapter 5, p. 83–84).';
           } else if (event.fragment.dataset.fragmentIndex === '1') {
-            textDisplaySlide19.textContent = '⚙️ Ensures low computational cost and rapid decision-making.';
+            textDisplaySlide22.textContent = '⚙️ Ensures low computational cost and rapid decision-making.';
           } else if (event.fragment.dataset.fragmentIndex === '2') {
-            textDisplaySlide19.textContent = '🚧 Its rigidity may limit adaptability in unpredictable scenarios.';
+            textDisplaySlide22.textContent = '🚧 Its rigidity may limit adaptability in unpredictable scenarios.';
           } else {
-            textDisplaySlide19.textContent = '';
+            textDisplaySlide22.textContent = '';
           }
+        }
+      });
+      Reveal.addEventListener('fragmenthidden', function(event) {
+        if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide22')) {
+          textDisplaySlide22.textContent = '';
         }
       });
     });
@@ -655,7 +660,6 @@
     Explain 2StepAhead’s efficiency and trade-offs. Prepare for viva Q12.
   </aside>
 </section>
-
 
 
 
