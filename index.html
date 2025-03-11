@@ -21,7 +21,7 @@
     window.addEventListener("load", function() {
       var revealDiv = document.querySelector("body div.reveal");
       var footer = document.querySelector(".footer");
-      if(footer) revealDiv.appendChild(footer);
+      revealDiv.appendChild(footer);
     });
   </script>
 
@@ -60,7 +60,7 @@
     .fragment.slide-in.visible {
       transform: translateY(0);
     }
-    /* Style for the black box text */
+    /* Style for the writeup at the bottom */
     .writeup {
       position: absolute;
       bottom: 20px;
@@ -79,10 +79,6 @@
 <body>
   <div class="reveal">
     <div class="slides">
-      <!-- ============================
-           Slides 1–21 (Original Content)
-           ============================ -->
-      
       <!-- Title Slide -->
       <section data-background="img/aston_title_background.jpg" data-background-size="cover" data-background-position="0 20px" style="color: white;">
         <div style="text-align: left; margin: 0 auto; width: 100%; font-size: 1em;">
@@ -97,7 +93,7 @@
             190212683@aston.ac.uk
         </div>
       </section>
-      
+
       <!-- Presentation Outline -->
       <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
         <h2 style="color: white; text-align: center; margin-bottom: 20px;">Presentation Outline</h2>
@@ -157,7 +153,7 @@
           </svg>
         </div>
         <aside class="notes">
-          Introduce the overall structure briefly.
+          Introduce the structure briefly: Context & Foundations (slides 1–4), then your contributions (slides 5–7) before concluding (slide 8).
         </aside>
       </section>
 
@@ -202,7 +198,7 @@
           });
         </script>
         <aside class="notes">
-          Cycle through key points. Prepare for viva Q9.
+          Use fragments to cycle through key points. Prepare for viva Q9.
         </aside>
       </section>
 
@@ -524,7 +520,7 @@
           </div>
           <div style="font-size: 0.85em; color: white; padding-top: 20px;">
             <ul>
-              <li class="fragment">Purpose: Benchmark environment for testing RL and predictive models (Chapter 4, p. 63; Chapter 7, p. 132).</li>
+              <li class="fragment">Purpose: Benchmark for testing RL and predictive models (Chapter 4, p. 63; Chapter 7, p. 132).</li>
               <li class="fragment">Role: Simulates human-populated environments for evaluating navigation strategies.</li>
             </ul>
           </div>
@@ -620,13 +616,9 @@
         </aside>
       </section>
 
-      <!-- =============================
-           Starting Slide 22 Onward (Using Same Template)
-           ============================= -->
-
-      <!-- Slide 22: MASPM (Multi-Action State Prediction Model) -->
+      <!-- Slide 22: 2StepAhead (Baseline Model) -->
       <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">MASPM (Multi-Action State Prediction Model)</h2>
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">2StepAhead (Baseline Model)</h2>
         <div style="text-align: center; padding-top: 50px; position: relative; min-height: 300px;">
           <div style="padding-bottom: 20px;">
             <video muted data-autoplay src="img/socialrobot.mp4" width="60%" style="position: relative; z-index: 1;"></video>
@@ -642,36 +634,36 @@
         </div>
         <script>
           document.addEventListener('DOMContentLoaded', function() {
-            var slide22text = document.getElementById('textDisplaySlide22');
-            if (!slide22text) return;
+            var textDisplaySlide22 = document.getElementById('textDisplaySlide22');
+            if (!textDisplaySlide22) return;
             Reveal.addEventListener('fragmentshown', function(event) {
               if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide22')) {
                 if (event.fragment.dataset.fragmentIndex === '0') {
-                  slide22text.textContent = 'MASPM predicts multiple future trajectories and actions for adaptability (Chapter 5, p. 84–85).';
+                  textDisplaySlide22.textContent = '📌 Predicts two steps ahead with a fixed prediction horizon (Chapter 5, p. 83–84).';
                 } else if (event.fragment.dataset.fragmentIndex === '1') {
-                  slide22text.textContent = 'Enhances dynamic behavior forecasting but increases computational demand.';
+                  textDisplaySlide22.textContent = '⚙️ Ensures low computational cost and rapid decision-making.';
                 } else if (event.fragment.dataset.fragmentIndex === '2') {
-                  slide22text.textContent = 'Trade-off: More accurate predictions but higher resource usage.';
+                  textDisplaySlide22.textContent = '🚧 Its rigidity may limit adaptability in unpredictable scenarios.';
                 } else {
-                  slide22text.textContent = '';
+                  textDisplaySlide22.textContent = '';
                 }
               }
             });
             Reveal.addEventListener('fragmenthidden', function(event) {
               if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide22')) {
-                slide22text.textContent = '';
+                textDisplaySlide22.textContent = '';
               }
             });
           });
         </script>
         <aside class="notes">
-          Emphasize MASPM’s advanced adaptability and trade-offs. Prepare for viva Q12.
+          Explain 2StepAhead’s efficiency and trade-offs. Prepare for viva Q12.
         </aside>
       </section>
 
-      <!-- Slide 23: 2StepAhead-MASPM (Hybrid Method) -->
+      <!-- Slide 23: MASPM (Multi-Action State Prediction Model) -->
       <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">2StepAhead-MASPM (Hybrid Method)</h2>
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">MASPM (Multi-Action State Prediction Model)</h2>
         <div style="text-align: center; padding-top: 50px; position: relative; min-height: 300px;">
           <div style="padding-bottom: 20px;">
             <video muted data-autoplay src="img/socialrobot.mp4" width="60%" style="position: relative; z-index: 1;"></video>
@@ -687,36 +679,36 @@
         </div>
         <script>
           document.addEventListener('DOMContentLoaded', function() {
-            var slide23text = document.getElementById('textDisplaySlide23');
-            if (!slide23text) return;
+            var textDisplaySlide23 = document.getElementById('textDisplaySlide23');
+            if (!textDisplaySlide23) return;
             Reveal.addEventListener('fragmentshown', function(event) {
               if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide23')) {
                 if (event.fragment.dataset.fragmentIndex === '0') {
-                  slide23text.textContent = 'Combines 2StepAhead’s simplicity with MASPM’s adaptability (Chapter 5, p. 85).';
+                  textDisplaySlide23.textContent = "MASPM predicts multiple future trajectories and actions simultaneously.";
                 } else if (event.fragment.dataset.fragmentIndex === '1') {
-                  slide23text.textContent = 'Balances computational cost and prediction flexibility in real time.';
+                  textDisplaySlide23.textContent = "This enhances adaptability in dynamic environments.";
                 } else if (event.fragment.dataset.fragmentIndex === '2') {
-                  slide23text.textContent = 'Results in improved overall performance in dynamic navigation scenarios.';
+                  textDisplaySlide23.textContent = "The trade-off is a higher computational demand.";
                 } else {
-                  slide23text.textContent = '';
+                  textDisplaySlide23.textContent = '';
                 }
               }
             });
             Reveal.addEventListener('fragmenthidden', function(event) {
               if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide23')) {
-                slide23text.textContent = '';
+                textDisplaySlide23.textContent = '';
               }
             });
           });
         </script>
         <aside class="notes">
-          Explain how the hybrid approach integrates both models. Prepare for viva Q12.
+          Emphasize MASPM's adaptability and trade-off. Prepare for viva Q12.
         </aside>
       </section>
 
-      <!-- Slide 24: Challenges Mitigated by Our Methods -->
+      <!-- Slide 24: 2StepAhead-MASPM (Hybrid Method) -->
       <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Challenges Mitigated by Our Methods</h2>
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">2StepAhead-MASPM (Hybrid Method)</h2>
         <div style="text-align: center; padding-top: 50px; position: relative; min-height: 300px;">
           <div style="padding-bottom: 20px;">
             <video muted data-autoplay src="img/socialrobot.mp4" width="60%" style="position: relative; z-index: 1;"></video>
@@ -729,133 +721,625 @@
           <span class="fragment" data-fragment-index="0"></span>
           <span class="fragment" data-fragment-index="1"></span>
           <span class="fragment" data-fragment-index="2"></span>
-          <span class="fragment" data-fragment-index="3"></span>
         </div>
         <script>
           document.addEventListener('DOMContentLoaded', function() {
-            var slide24text = document.getElementById('textDisplaySlide24');
-            if (!slide24text) return;
+            var textDisplaySlide24 = document.getElementById('textDisplaySlide24');
+            if (!textDisplaySlide24) return;
             Reveal.addEventListener('fragmentshown', function(event) {
               if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide24')) {
                 if (event.fragment.dataset.fragmentIndex === '0') {
-                  slide24text.textContent = '⚠️ Fixed horizons lack adaptability (2StepAhead’s two-step window).';
+                  textDisplaySlide24.textContent = "The hybrid model combines 2StepAhead's efficiency with MASPM's adaptability.";
                 } else if (event.fragment.dataset.fragmentIndex === '1') {
-                  slide24text.textContent = '⚠️ Advanced models have high computational cost.';
+                  textDisplaySlide24.textContent = "It balances computational cost and prediction flexibility dynamically.";
                 } else if (event.fragment.dataset.fragmentIndex === '2') {
-                  slide24text.textContent = '⚠️ Sparse/noisy sensor data leads to increased errors.';
-                } else if (event.fragment.dataset.fragmentIndex === '3') {
-                  slide24text.textContent = '📌 Our methods (2StepAhead, MASPM, Hybrid) mitigate these issues for safer, more efficient navigation.';
+                  textDisplaySlide24.textContent = "This results in improved overall performance in complex navigation scenarios.";
                 } else {
-                  slide24text.textContent = '';
+                  textDisplaySlide24.textContent = '';
                 }
               }
             });
             Reveal.addEventListener('fragmenthidden', function(event) {
               if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide24')) {
-                slide24text.textContent = '';
+                textDisplaySlide24.textContent = '';
               }
             });
           });
         </script>
         <aside class="notes">
-          Highlight how each method mitigates these challenges. Prepare for viva Q1.
+          Explain the benefits of the hybrid approach. Prepare for viva Q12.
         </aside>
       </section>
 
-      <!-- Slide 25: Evaluation in SocNavGym -->
+      <!-- Slide 15: Challenges Mitigated -->
       <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Evaluation in SocNavGym</h2>
-        <div style="text-align: center; padding-top: 50px; position: relative; min-height: 300px;">
-          <div style="padding-bottom: 20px;">
-            <video muted data-autoplay src="img/socialrobot.mp4" width="60%" style="position: relative; z-index: 1;"></video>
-          </div>
-          <div style="font-size: 1em; color: white; position: relative; z-index: 10; padding-top: 10px; margin-top: -40px; text-align: center;">
-            <p id="textDisplaySlide25" style="margin: 0 auto; line-height: 1.5; background-color: rgba(0,0,0,0.7); padding: 15px; border-radius: 5px; display: inline-block; max-width: 80%; box-shadow: 0 0 10px rgba(0,0,0,0.5);"></p>
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive World Models for Social Navigation</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Challenges Mitigated by Our Methods</h3>
+          <ul>
+            <li class="fragment fade-in" data-fragment-index="0">⚠️ <b>Inflexibility:</b> Fixed horizons struggle with unpredictable movements (Chapter 5, p. 86).</li>
+            <li class="fragment fade-in" data-fragment-index="1">⚠️ <b>Computational Cost:</b> Advanced predictions require more resources (Chapter 5, p. 84).</li>
+            <li class="fragment fade-in" data-fragment-index="2">⚠️ <b>Data Inaccuracy:</b> Sparse/noisy sensor data increases errors (Chapter 5, p. 87).</li>
+            <li class="fragment fade-in" data-fragment-index="3">📌 Our methods address these challenges (Chapter 5, p. 87–88).</li>
+          </ul>
+          <div class="fragment fade-in" data-fragment-index="4" style="padding-top: 20px;">
+            <img src="img/predictive_world_challenges_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
           </div>
         </div>
-        <div style="display: none;">
-          <span class="fragment" data-fragment-index="0"></span>
-          <span class="fragment" data-fragment-index="1"></span>
-          <span class="fragment" data-fragment-index="2"></span>
-          <span class="fragment" data-fragment-index="3"></span>
-        </div>
-        <script>
-          document.addEventListener('DOMContentLoaded', function() {
-            var slide25text = document.getElementById('textDisplaySlide25');
-            if (!slide25text) return;
-            Reveal.addEventListener('fragmentshown', function(event) {
-              if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide25')) {
-                if (event.fragment.dataset.fragmentIndex === '0') {
-                  slide25text.textContent = '📊 Environments: Tested in SocNavGym (Chapter 5, p. 87).';
-                } else if (event.fragment.dataset.fragmentIndex === '1') {
-                  slide25text.textContent = '📊 Metrics: Cumulative reward, collisions, success rate, etc.';
-                } else if (event.fragment.dataset.fragmentIndex === '2') {
-                  slide25text.textContent = '📊 Baselines: RVO2, Social Force, Dueling DQN variants.';
-                } else if (event.fragment.dataset.fragmentIndex === '3') {
-                  slide25text.textContent = '📈 2StepAhead-MASPM outperforms in adaptability and efficiency.';
-                } else {
-                  slide25text.textContent = '';
-                }
-              }
-            });
-            Reveal.addEventListener('fragmenthidden', function(event) {
-              if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide25')) {
-                slide25text.textContent = '';
-              }
-            });
-          });
-        </script>
         <aside class="notes">
-          Explain how the methods were evaluated in SocNavGym. Prepare for viva Q1 and Q13.
+          Explain how our methods mitigate key challenges. Prepare for viva questions on design choices.
         </aside>
       </section>
 
-      <!-- Slide 26: Conclusion and Implications -->
+      <!-- Slide 16: Evaluation in SocNavGym -->
       <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Conclusion and Implications</h2>
-        <div style="text-align: center; padding-top: 50px; position: relative; min-height: 300px;">
-          <div style="padding-bottom: 20px;">
-            <video muted data-autoplay src="img/socialrobot.mp4" width="60%" style="position: relative; z-index: 1;"></video>
-          </div>
-          <div style="font-size: 1em; color: white; position: relative; z-index: 10; padding-top: 10px; margin-top: -40px; text-align: center;">
-            <p id="textDisplaySlide26" style="margin: 0 auto; line-height: 1.5; background-color: rgba(0,0,0,0.7); padding: 15px; border-radius: 5px; display: inline-block; max-width: 80%; box-shadow: 0 0 10px rgba(0,0,0,0.5);"></p>
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive World Models for Social Navigation</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Evaluation</h3>
+          <ul>
+            <li class="fragment fade-in" data-fragment-index="0">📊 Tested in SocNavGym (Chapter 5, p. 87).</li>
+            <li class="fragment fade-in" data-fragment-index="1">📊 Metrics: Cumulative reward, human discomfort, collisions (Chapter 5, p. 87–89).</li>
+            <li class="fragment fade-in" data-fragment-index="2">📊 Compared against baseline methods (Chapter 5, p. 87–90).</li>
+            <li class="fragment fade-in" data-fragment-index="3">📈 Hybrid model shows ~15% success rate improvement and 4% higher reward (Chapter 5, p. 88–90).</li>
+          </ul>
+          <div class="fragment fade-in" data-fragment-index="4" style="padding-top: 20px;">
+            <img src="img/predictive_world_evaluation_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
           </div>
         </div>
-        <div style="display: none;">
-          <span class="fragment" data-fragment-index="0"></span>
-          <span class="fragment" data-fragment-index="1"></span>
-          <span class="fragment" data-fragment-index="2"></span>
-        </div>
-        <script>
-          document.addEventListener('DOMContentLoaded', function() {
-            var slide26text = document.getElementById('textDisplaySlide26');
-            if (!slide26text) return;
-            Reveal.addEventListener('fragmentshown', function(event) {
-              if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide26')) {
-                if (event.fragment.dataset.fragmentIndex === '0') {
-                  slide26text.textContent = '✅ 2StepAhead, MASPM, and their Hybrid significantly enhance predictive world models.';
-                } else if (event.fragment.dataset.fragmentIndex === '1') {
-                  slide26text.textContent = '🌍 Implications: Enhanced navigation for real-world applications.';
-                } else if (event.fragment.dataset.fragmentIndex === '2') {
-                  slide26text.textContent = '🔮 Future Work: Extend to diverse scenarios and real-time constraints.';
-                } else {
-                  slide26text.textContent = '';
-                }
-              }
-            });
-            Reveal.addEventListener('fragmenthidden', function(event) {
-              if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide26')) {
-                slide26text.textContent = '';
-              }
-            });
-          });
-        </script>
         <aside class="notes">
-          Summarize contributions and future directions. Prepare for viva Q14.
+          Explain evaluation metrics and improvements. Prepare for viva questions on evaluation results.
         </aside>
       </section>
 
-      <!-- (Remaining slides for CGLSTM, Adaptive Horizons, etc. can be added below following the same template) -->
+      <!-- Slide 17: Conclusion and Implications -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive World Models for Social Navigation</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Conclusion and Implications</h3>
+          <ul>
+            <li class="fragment fade-in" data-fragment-index="0">✅ Our methods significantly improve predictive performance (Chapter 5, p. 87–88).</li>
+            <li class="fragment fade-in" data-fragment-index="1">🌍 Implications: Enhanced navigation for real-world applications (Chapter 5, p. 88).</li>
+            <li class="fragment fade-in" data-fragment-index="2">🔮 Future Work: Refinement for real-time constraints and diverse scenarios (Chapter 5, p. 88).</li>
+          </ul>
+        </div>
+        <aside class="notes">
+          Summarize contributions and future directions. Prepare for viva questions on research impact.
+        </aside>
+      </section>
+
+      <!-- Section Title: Cosine-Gated LSTM (CGLSTM) -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
+        <h2 style="color: white; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Cosine-Gated LSTM (CGLSTM) *</h2>
+      </section>
+
+      <!-- CGLSTM: Challenges/Limitations -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Cosine-Gated LSTM (CGLSTM) for Prediction</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Challenges/Limitations</h3>
+          <ul>
+            <li class="fragment fade-in" data-fragment-index="0">⚠️ Long-term prediction challenges (Chapter 6, p. 94).</li>
+            <li class="fragment fade-in" data-fragment-index="1">⚠️ Sparse data issues (Chapter 6, p. 113).</li>
+            <li class="fragment fade-in" data-fragment-index="2">⚠️ High computational complexity (Chapter 6, p. 98).</li>
+          </ul>
+          <div class="fragment fade-in" data-fragment-index="3" style="padding-top: 20px;">
+            <img src="img/cglstm_challenges_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
+          </div>
+        </div>
+        <aside class="notes">
+          Explain challenges that led to the development of CGLSTM. Prepare for viva Q1.
+        </aside>
+      </section>
+
+      <!-- CGLSTM: Methods -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Cosine-Gated LSTM (CGLSTM) for Prediction</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Methods</h3>
+          <ul>
+            <li class="fragment fade-in" data-fragment-index="0">➡️ Uses cosine similarity-based gating (Chapter 6, p. 96).</li>
+            <li class="fragment fade-in" data-fragment-index="1">➡️ Trained with BPTT in SocNavGym and FallingBallEnv (Chapter 6, p. 98).</li>
+            <li class="fragment fade-in" data-fragment-index="2">➡️ Integrated with DreamerV3 and SAC (Chapter 6, p. 114).</li>
+          </ul>
+          <div class="fragment fade-in" data-fragment-index="3" style="padding-top: 20px;">
+            <img src="img/cglstm_methods_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
+          </div>
+        </div>
+        <aside class="notes">
+          Describe the CGLSTM architecture and training. Prepare for viva Q1.
+        </aside>
+      </section>
+
+      <!-- CGLSTM: Evaluation -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Cosine-Gated LSTM (CGLSTM) for Prediction</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Evaluation</h3>
+          <ul>
+            <li class="fragment fade-in" data-fragment-index="0">📊 Evaluated in SocNavGym, FallingBallEnv, etc. (Chapter 6, p. 103–114).</li>
+            <li class="fragment fade-in" data-fragment-index="1">📊 Metrics: MAE, MSE, accuracy (e.g., 30% MAE reduction, Chapter 6, p. 103).</li>
+            <li class="fragment fade-in" data-fragment-index="2">📊 Compared against LSTM, GRU, RAU (Chapter 6, p. 103).</li>
+          </ul>
+          <div class="fragment fade-in" data-fragment-index="3" style="padding-top: 20px;">
+            <img src="img/cglstm_evaluation_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
+          </div>
+        </div>
+        <aside class="notes">
+          Explain how evaluation validates CGLSTM’s effectiveness. Prepare for viva Q1.
+        </aside>
+      </section>
+
+      <!-- CGLSTM: Results -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Cosine-Gated LSTM (CGLSTM) for Prediction</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Results</h3>
+          <ul>
+            <li class="fragment grow" data-fragment-index="0">✅ FallingBallEnv: 30% MAE reduction (Chapter 6, p. 103).</li>
+            <li class="fragment grow" data-fragment-index="1">✅ SocNavGym: 5% reward improvement (Chapter 6, p. 113–114).</li>
+            <li class="fragment grow" data-fragment-index="2">✅ Outperformed baselines in additional tasks (Chapter 6, p. 108–111).</li>
+          </ul>
+          <div class="fragment grow" data-fragment-index="3" style="padding-top: 20px;">
+            <img src="img/cglstm_results_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
+          </div>
+        </div>
+        <aside class="notes">
+          Highlight key results and improvements. Prepare for viva Q1.
+        </aside>
+      </section>
+
+      <!-- Section Title: Adaptive Prediction Horizons -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
+        <h2 style="color: white; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Adaptive Prediction Horizons *</h2>
+      </section>
+
+      <!-- Adaptive Prediction Horizons: Challenges/Limitations -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons in RL</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Challenges/Limitations</h3>
+          <ul>
+            <li class="fragment fade-in" data-fragment-index="0">⚠️ Fixed horizons lack adaptability (Chapter 7, p. 122).</li>
+            <li class="fragment fade-in" data-fragment-index="1">⚠️ Advanced models have high computational cost (Chapter 7, p. 125).</li>
+            <li class="fragment fade-in" data-fragment-index="2">⚠️ Sparse/noisy data increases errors (Chapter 7, p. 121).</li>
+          </ul>
+          <div class="fragment fade-in" data-fragment-index="3" style="padding-top: 20px;">
+            <img src="img/adaptive_horizons_challenges_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
+          </div>
+        </div>
+        <aside class="notes">
+          Explain challenges that motivated adaptive horizons. Prepare for viva Q1.
+        </aside>
+      </section>
+
+      <!-- Adaptive Prediction Horizons: Methods -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons in RL</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Methods</h3>
+          <ul>
+            <li class="fragment fade-in" data-fragment-index="0">➡️ Entropy-driven adaptation adjusts horizons dynamically (Chapter 7, p. 125).</li>
+            <li class="fragment fade-in" data-fragment-index="1">➡️ Integrated with CGLSTM and SAC for robust performance (Chapter 7, p. 124).</li>
+            <li class="fragment fade-in" data-fragment-index="2">➡️ Framework employs entropy-based selection for optimal adjustment (Chapter 7, p. 127–128).</li>
+          </ul>
+          <div class="fragment fade-in" data-fragment-index="3" style="padding-top: 20px;">
+            <img src="img/adaptive_horizons_methods_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
+          </div>
+        </div>
+        <aside class="notes">
+          Describe how entropy-driven adaptation works. Prepare for viva Q1.
+        </aside>
+      </section>
+
+      <!-- Adaptive Prediction Horizons: Evaluation -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons in RL</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Evaluation</h3>
+          <ul>
+            <li class="fragment fade-in" data-fragment-index="0">📊 Tested in SocNavGym, FallingBallEnv, LunarLander-v2 (Chapter 7, p. 132).</li>
+            <li class="fragment fade-in" data-fragment-index="1">📊 Metrics: Success rates, rewards, inference time (e.g., 15% improvement, Chapter 7, p. 136).</li>
+            <li class="fragment fade-in" data-fragment-index="2">📊 Compared against fixed-horizon models (Chapter 7, p. 138).</li>
+          </ul>
+          <div class="fragment fade-in" data-fragment-index="3" style="padding-top: 20px;">
+            <img src="img/adaptive_horizons_evaluation_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
+          </div>
+        </div>
+        <aside class="notes">
+          Explain evaluation metrics and improvements. Prepare for viva Q1.
+        </aside>
+      </section>
+
+      <!-- Adaptive Prediction Horizons: Results -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons in RL</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Results</h3>
+          <ul>
+            <li class="fragment grow" data-fragment-index="0">✅ SocNavGym: 15% success rate improvement (Chapter 7, p. 138).</li>
+            <li class="fragment grow" data-fragment-index="1">✅ FallingBallEnv: 10% MAE reduction (Chapter 7, p. 141).</li>
+            <li class="fragment grow" data-fragment-index="2">✅ LunarLander-v2: 8% reward improvement (Chapter 7, p. 141).</li>
+          </ul>
+          <div class="fragment grow" data-fragment-index="3" style="padding-top: 20px;">
+            <img src="img/adaptive_horizons_results_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
+          </div>
+        </div>
+        <aside class="notes">
+          Highlight key results. Prepare for viva Q1.
+        </aside>
+      </section>
+
+      <!-- Slide 17: Conclusion and Implications -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive World Models for Social Navigation</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Conclusion and Implications</h3>
+          <ul>
+            <li class="fragment fade-in" data-fragment-index="0">✅ Our methods significantly improve predictive performance (Chapter 5, p. 87–88).</li>
+            <li class="fragment fade-in" data-fragment-index="1">🌍 Implications: Enhanced navigation for real-world applications (Chapter 5, p. 88).</li>
+            <li class="fragment fade-in" data-fragment-index="2">🔮 Future Work: Refinement for real-time constraints and diverse scenarios (Chapter 5, p. 88).</li>
+          </ul>
+        </div>
+        <aside class="notes">
+          Summarize contributions and future directions. Prepare for viva questions on research impact.
+        </aside>
+      </section>
+
+      <!-- Section Title: Cosine-Gated LSTM (CGLSTM) -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
+        <h2 style="color: white; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Cosine-Gated LSTM (CGLSTM) *</h2>
+      </section>
+
+      <!-- CGLSTM: Challenges/Limitations -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Cosine-Gated LSTM (CGLSTM) for Prediction</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Challenges/Limitations</h3>
+          <ul>
+            <li class="fragment fade-in" data-fragment-index="0">⚠️ Long-term prediction challenges (Chapter 6, p. 94).</li>
+            <li class="fragment fade-in" data-fragment-index="1">⚠️ Sparse data issues (Chapter 6, p. 113).</li>
+            <li class="fragment fade-in" data-fragment-index="2">⚠️ High computational complexity (Chapter 6, p. 98).</li>
+          </ul>
+          <div class="fragment fade-in" data-fragment-index="3" style="padding-top: 20px;">
+            <img src="img/cglstm_challenges_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
+          </div>
+        </div>
+        <aside class="notes">
+          Explain challenges that led to the development of CGLSTM. Prepare for viva Q1.
+        </aside>
+      </section>
+
+      <!-- CGLSTM: Methods -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Cosine-Gated LSTM (CGLSTM) for Prediction</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Methods</h3>
+          <ul>
+            <li class="fragment fade-in" data-fragment-index="0">➡️ Uses cosine similarity-based gating (Chapter 6, p. 96).</li>
+            <li class="fragment fade-in" data-fragment-index="1">➡️ Trained with BPTT in SocNavGym and FallingBallEnv (Chapter 6, p. 98).</li>
+            <li class="fragment fade-in" data-fragment-index="2">➡️ Integrated with DreamerV3 and SAC (Chapter 6, p. 114).</li>
+          </ul>
+          <div class="fragment fade-in" data-fragment-index="3" style="padding-top: 20px;">
+            <img src="img/cglstm_methods_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
+          </div>
+        </div>
+        <aside class="notes">
+          Describe the CGLSTM architecture and training. Prepare for viva Q1.
+        </aside>
+      </section>
+
+      <!-- CGLSTM: Evaluation -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Cosine-Gated LSTM (CGLSTM) for Prediction</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Evaluation</h3>
+          <ul>
+            <li class="fragment fade-in" data-fragment-index="0">📊 Evaluated in SocNavGym, FallingBallEnv, etc. (Chapter 6, p. 103–114).</li>
+            <li class="fragment fade-in" data-fragment-index="1">📊 Metrics: MAE, MSE, accuracy (e.g., 30% MAE reduction, Chapter 6, p. 103).</li>
+            <li class="fragment fade-in" data-fragment-index="2">📊 Compared against LSTM, GRU, RAU (Chapter 6, p. 103).</li>
+          </ul>
+          <div class="fragment fade-in" data-fragment-index="3" style="padding-top: 20px;">
+            <img src="img/cglstm_evaluation_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
+          </div>
+        </div>
+        <aside class="notes">
+          Explain how evaluation validates CGLSTM’s effectiveness. Prepare for viva Q1.
+        </aside>
+      </section>
+
+      <!-- CGLSTM: Results -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Cosine-Gated LSTM (CGLSTM) for Prediction</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Results</h3>
+          <ul>
+            <li class="fragment grow" data-fragment-index="0">✅ FallingBallEnv: 30% MAE reduction (Chapter 6, p. 103).</li>
+            <li class="fragment grow" data-fragment-index="1">✅ SocNavGym: 5% reward improvement (Chapter 6, p. 113–114).</li>
+            <li class="fragment grow" data-fragment-index="2">✅ Outperformed baselines in additional tasks (Chapter 6, p. 108–111).</li>
+          </ul>
+          <div class="fragment grow" data-fragment-index="3" style="padding-top: 20px;">
+            <img src="img/cglstm_results_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
+          </div>
+        </div>
+        <aside class="notes">
+          Highlight key results and improvements. Prepare for viva Q1.
+        </aside>
+      </section>
+
+      <!-- Section Title: Adaptive Prediction Horizons -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
+        <h2 style="color: white; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Adaptive Prediction Horizons *</h2>
+      </section>
+
+      <!-- Adaptive Prediction Horizons: Challenges/Limitations -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons in RL</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Challenges/Limitations</h3>
+          <ul>
+            <li class="fragment fade-in" data-fragment-index="0">⚠️ Fixed horizons lack adaptability (Chapter 7, p. 122).</li>
+            <li class="fragment fade-in" data-fragment-index="1">⚠️ Advanced models have high computational cost (Chapter 7, p. 125).</li>
+            <li class="fragment fade-in" data-fragment-index="2">⚠️ Sparse/noisy data increases errors (Chapter 7, p. 121).</li>
+          </ul>
+          <div class="fragment fade-in" data-fragment-index="3" style="padding-top: 20px;">
+            <img src="img/adaptive_horizons_challenges_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
+          </div>
+        </div>
+        <aside class="notes">
+          Explain challenges that motivated adaptive horizons. Prepare for viva Q1.
+        </aside>
+      </section>
+
+      <!-- Adaptive Prediction Horizons: Methods -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons in RL</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Methods</h3>
+          <ul>
+            <li class="fragment fade-in" data-fragment-index="0">➡️ Entropy-driven adaptation adjusts horizons dynamically (Chapter 7, p. 125).</li>
+            <li class="fragment fade-in" data-fragment-index="1">➡️ Integrated with CGLSTM and SAC for robust performance (Chapter 7, p. 124).</li>
+            <li class="fragment fade-in" data-fragment-index="2">➡️ Framework employs entropy-based selection for optimal adjustment (Chapter 7, p. 127–128).</li>
+          </ul>
+          <div class="fragment fade-in" data-fragment-index="3" style="padding-top: 20px;">
+            <img src="img/adaptive_horizons_methods_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
+          </div>
+        </div>
+        <aside class="notes">
+          Describe how entropy-driven adaptation works. Prepare for viva Q1.
+        </aside>
+      </section>
+
+      <!-- Adaptive Prediction Horizons: Evaluation -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons in RL</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Evaluation</h3>
+          <ul>
+            <li class="fragment fade-in" data-fragment-index="0">📊 Tested in SocNavGym, FallingBallEnv, LunarLander-v2 (Chapter 7, p. 132).</li>
+            <li class="fragment fade-in" data-fragment-index="1">📊 Metrics: Success rates, rewards, inference time (e.g., 15% improvement, Chapter 7, p. 136).</li>
+            <li class="fragment fade-in" data-fragment-index="2">📊 Compared against fixed-horizon models (Chapter 7, p. 138).</li>
+          </ul>
+          <div class="fragment fade-in" data-fragment-index="3" style="padding-top: 20px;">
+            <img src="img/adaptive_horizons_evaluation_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
+          </div>
+        </div>
+        <aside class="notes">
+          Explain evaluation metrics and improvements. Prepare for viva Q1.
+        </aside>
+      </section>
+
+      <!-- Adaptive Prediction Horizons: Results -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons in RL</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Results</h3>
+          <ul>
+            <li class="fragment grow" data-fragment-index="0">✅ SocNavGym: 15% success rate improvement (Chapter 7, p. 138).</li>
+            <li class="fragment grow" data-fragment-index="1">✅ FallingBallEnv: 10% MAE reduction (Chapter 7, p. 141).</li>
+            <li class="fragment grow" data-fragment-index="2">✅ LunarLander-v2: 8% reward improvement (Chapter 7, p. 141).</li>
+          </ul>
+          <div class="fragment grow" data-fragment-index="3" style="padding-top: 20px;">
+            <img src="img/adaptive_horizons_results_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
+          </div>
+        </div>
+        <aside class="notes">
+          Highlight key results. Prepare for viva Q1.
+        </aside>
+      </section>
+
+      <!-- Slide 17: Conclusion and Implications -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive World Models for Social Navigation</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Conclusion and Implications</h3>
+          <ul>
+            <li class="fragment fade-in" data-fragment-index="0">✅ Our methods significantly improve predictive performance (Chapter 5, p. 87–88).</li>
+            <li class="fragment fade-in" data-fragment-index="1">🌍 Implications: Enhanced navigation for real-world applications (Chapter 5, p. 88).</li>
+            <li class="fragment fade-in" data-fragment-index="2">🔮 Future Work: Refinement for real-time constraints and diverse scenarios (Chapter 5, p. 88).</li>
+          </ul>
+        </div>
+        <aside class="notes">
+          Summarize contributions and future directions. Prepare for viva questions on research impact.
+        </aside>
+      </section>
+
+      <!-- Section Title: Cosine-Gated LSTM (CGLSTM) -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
+        <h2 style="color: white; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Cosine-Gated LSTM (CGLSTM) *</h2>
+      </section>
+
+      <!-- CGLSTM: Challenges/Limitations -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Cosine-Gated LSTM (CGLSTM) for Prediction</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Challenges/Limitations</h3>
+          <ul>
+            <li class="fragment fade-in" data-fragment-index="0">⚠️ Long-term prediction challenges (Chapter 6, p. 94).</li>
+            <li class="fragment fade-in" data-fragment-index="1">⚠️ Sparse data issues (Chapter 6, p. 113).</li>
+            <li class="fragment fade-in" data-fragment-index="2">⚠️ High computational complexity (Chapter 6, p. 98).</li>
+          </ul>
+          <div class="fragment fade-in" data-fragment-index="3" style="padding-top: 20px;">
+            <img src="img/cglstm_challenges_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
+          </div>
+        </div>
+        <aside class="notes">
+          Explain challenges that led to the development of CGLSTM. Prepare for viva Q1.
+        </aside>
+      </section>
+
+      <!-- CGLSTM: Methods -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Cosine-Gated LSTM (CGLSTM) for Prediction</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Methods</h3>
+          <ul>
+            <li class="fragment fade-in" data-fragment-index="0">➡️ Uses cosine similarity-based gating (Chapter 6, p. 96).</li>
+            <li class="fragment fade-in" data-fragment-index="1">➡️ Trained with BPTT in SocNavGym and FallingBallEnv (Chapter 6, p. 98).</li>
+            <li class="fragment fade-in" data-fragment-index="2">➡️ Integrated with DreamerV3 and SAC (Chapter 6, p. 114).</li>
+          </ul>
+          <div class="fragment fade-in" data-fragment-index="3" style="padding-top: 20px;">
+            <img src="img/cglstm_methods_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
+          </div>
+        </div>
+        <aside class="notes">
+          Describe the CGLSTM architecture and training. Prepare for viva Q1.
+        </aside>
+      </section>
+
+      <!-- CGLSTM: Evaluation -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Cosine-Gated LSTM (CGLSTM) for Prediction</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Evaluation</h3>
+          <ul>
+            <li class="fragment fade-in" data-fragment-index="0">📊 Evaluated in SocNavGym, FallingBallEnv, etc. (Chapter 6, p. 103–114).</li>
+            <li class="fragment fade-in" data-fragment-index="1">📊 Metrics: MAE, MSE, accuracy (e.g., 30% MAE reduction, Chapter 6, p. 103).</li>
+            <li class="fragment fade-in" data-fragment-index="2">📊 Compared against LSTM, GRU, RAU (Chapter 6, p. 103).</li>
+          </ul>
+          <div class="fragment fade-in" data-fragment-index="3" style="padding-top: 20px;">
+            <img src="img/cglstm_evaluation_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
+          </div>
+        </div>
+        <aside class="notes">
+          Explain how evaluation validates CGLSTM’s effectiveness. Prepare for viva Q1.
+        </aside>
+      </section>
+
+      <!-- CGLSTM: Results -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Cosine-Gated LSTM (CGLSTM) for Prediction</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Results</h3>
+          <ul>
+            <li class="fragment grow" data-fragment-index="0">✅ FallingBallEnv: 30% MAE reduction (Chapter 6, p. 103).</li>
+            <li class="fragment grow" data-fragment-index="1">✅ SocNavGym: 5% reward improvement (Chapter 6, p. 113–114).</li>
+            <li class="fragment grow" data-fragment-index="2">✅ Outperformed baselines in additional tasks (Chapter 6, p. 108–111).</li>
+          </ul>
+          <div class="fragment grow" data-fragment-index="3" style="padding-top: 20px;">
+            <img src="img/cglstm_results_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
+          </div>
+        </div>
+        <aside class="notes">
+          Highlight key results and improvements. Prepare for viva Q1.
+        </aside>
+      </section>
+
+      <!-- Section Title: Adaptive Prediction Horizons -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
+        <h2 style="color: white; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Adaptive Prediction Horizons *</h2>
+      </section>
+
+      <!-- Adaptive Prediction Horizons: Challenges/Limitations -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons in RL</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Challenges/Limitations</h3>
+          <ul>
+            <li class="fragment fade-in" data-fragment-index="0">⚠️ Fixed horizons lack adaptability (Chapter 7, p. 122).</li>
+            <li class="fragment fade-in" data-fragment-index="1">⚠️ Advanced models have high computational cost (Chapter 7, p. 125).</li>
+            <li class="fragment fade-in" data-fragment-index="2">⚠️ Sparse/noisy data increases errors (Chapter 7, p. 121).</li>
+          </ul>
+          <div class="fragment fade-in" data-fragment-index="3" style="padding-top: 20px;">
+            <img src="img/adaptive_horizons_challenges_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
+          </div>
+        </div>
+        <aside class="notes">
+          Explain challenges that motivated adaptive horizons. Prepare for viva Q1.
+        </aside>
+      </section>
+
+      <!-- Adaptive Prediction Horizons: Methods -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons in RL</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Methods</h3>
+          <ul>
+            <li class="fragment fade-in" data-fragment-index="0">➡️ Entropy-driven adaptation adjusts horizons dynamically (Chapter 7, p. 125).</li>
+            <li class="fragment fade-in" data-fragment-index="1">➡️ Integrated with CGLSTM and SAC for robust performance (Chapter 7, p. 124).</li>
+            <li class="fragment fade-in" data-fragment-index="2">➡️ Framework employs entropy-based selection for optimal adjustment (Chapter 7, p. 127–128).</li>
+          </ul>
+          <div class="fragment fade-in" data-fragment-index="3" style="padding-top: 20px;">
+            <img src="img/adaptive_horizons_methods_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
+          </div>
+        </div>
+        <aside class="notes">
+          Describe how entropy-driven adaptation works. Prepare for viva Q1.
+        </aside>
+      </section>
+
+      <!-- Adaptive Prediction Horizons: Evaluation -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons in RL</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Evaluation</h3>
+          <ul>
+            <li class="fragment fade-in" data-fragment-index="0">📊 Tested in SocNavGym, FallingBallEnv, LunarLander-v2 (Chapter 7, p. 132).</li>
+            <li class="fragment fade-in" data-fragment-index="1">📊 Metrics: Success rates, rewards, inference time (e.g., 15% improvement, Chapter 7, p. 136).</li>
+            <li class="fragment fade-in" data-fragment-index="2">📊 Compared against fixed-horizon models (Chapter 7, p. 138).</li>
+          </ul>
+          <div class="fragment fade-in" data-fragment-index="3" style="padding-top: 20px;">
+            <img src="img/adaptive_horizons_evaluation_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
+          </div>
+        </div>
+        <aside class="notes">
+          Explain evaluation metrics and improvements. Prepare for viva Q1.
+        </aside>
+      </section>
+
+      <!-- Adaptive Prediction Horizons: Results -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Adaptive Prediction Horizons in RL</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Results</h3>
+          <ul>
+            <li class="fragment grow" data-fragment-index="0">✅ SocNavGym: 15% success rate improvement (Chapter 7, p. 138).</li>
+            <li class="fragment grow" data-fragment-index="1">✅ FallingBallEnv: 10% MAE reduction (Chapter 7, p. 141).</li>
+            <li class="fragment grow" data-fragment-index="2">✅ LunarLander-v2: 8% reward improvement (Chapter 7, p. 141).</li>
+          </ul>
+          <div class="fragment grow" data-fragment-index="3" style="padding-top: 20px;">
+            <img src="img/adaptive_horizons_results_diagram_enhanced.jpg" width="80%" style="border: 2px solid white;" />
+          </div>
+        </div>
+        <aside class="notes">
+          Highlight key results. Prepare for viva Q1.
+        </aside>
+      </section>
+
+      <!-- Slide 17: Conclusion and Implications -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Predictive World Models for Social Navigation</h2>
+        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
+          <h3 style="color: white; margin-bottom: 10px;">Conclusion and Implications</h3>
+          <ul>
+            <li class="fragment fade-in" data-fragment-index="0">✅ Our methods significantly improve predictive performance (Chapter 5, p. 87–88).</li>
+            <li class="fragment fade-in" data-fragment-index="1">🌍 Implications: Enhanced navigation for real-world applications (Chapter 5, p. 88).</li>
+            <li class="fragment fade-in" data-fragment-index="2">🔮 Future Work: Refinement for real-time constraints and diverse scenarios (Chapter 5, p. 88).</li>
+          </ul>
+        </div>
+        <aside class="notes">
+          Summarize contributions and future directions. Prepare for viva questions on research impact.
+        </aside>
+      </section>
 
     </div>
   </div>
