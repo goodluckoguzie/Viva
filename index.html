@@ -29,7 +29,7 @@
   </script>
 
   <style>
-    /* Reveal.js slide number styling */
+    /* Slide number styling */
     .reveal .slide-number {
       font-size: 20pt;
       color: #000;
@@ -390,7 +390,7 @@
           <ul>
             <li class="fragment">GRU: Simpler gating, often faster</li>
             <li class="fragment">Others: RAU, Transformers for advanced sequence modeling</li>
-            <li class="fragment">Selection depends on data and computational limits</li>
+            <li class="fragment">Selection depends on data & computational limits</li>
           </ul>
         </div>
       </section>
@@ -721,167 +721,28 @@
         </script>
       </section>
 
-      <!-- Slide 30: Challenges Mitigated -->
-      <section data-background="img/aston_slides_background_22.png">
-        <h2 style="color: white; text-align: center;">⚠️ Challenges Mitigated</h2>
-        <div style="text-align: center; position: relative; min-height: 300px; padding-top: 50px;">
-          <div style="padding-bottom: 20px;">
-            <video muted data-autoplay src="img/socialrobot.mp4" width="60%"></video>
-          </div>
-          <div style="color: white; padding-top: 20px;">
-            <p id="textDisplaySlide30" class="textBlock"></p>
-          </div>
-        </div>
-        <div style="display:none;">
-          <span class="fragment" data-fragment-index="0"></span>
-          <span class="fragment" data-fragment-index="1"></span>
-          <span class="fragment" data-fragment-index="2"></span>
-          <span class="fragment" data-fragment-index="3"></span>
-        </div>
-        <script>
-          document.addEventListener('DOMContentLoaded', function(){
-            const t30 = document.getElementById('textDisplaySlide30');
-            Reveal.addEventListener('fragmentshown', function(ev){
-              if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide30')){
-                if (ev.fragment.dataset.fragmentIndex === '0'){
-                  t30.textContent = '🚫 Fixed horizons fail in dynamic settings.';
-                } else if (ev.fragment.dataset.fragmentIndex === '1'){
-                  t30.textContent = '⚙️ Large horizons increase computation cost.';
-                } else if (ev.fragment.dataset.fragmentIndex === '2'){
-                  t30.textContent = '🛑 Noise & data sparsity worsen performance.';
-                } else if (ev.fragment.dataset.fragmentIndex === '3'){
-                  t30.textContent = '📌 Our methods mitigate these issues.';
-                }
-              }
-            });
-          });
-        </script>
-      </section>
-
-      <!-- Slide 31: Evaluation -->
-      <section data-background="img/aston_slides_background_22.png">
-        <h2 style="color: white; text-align: center;">📊 Evaluation</h2>
-        <div style="text-align: center; color: white; font-size: 0.9em; padding-top: 40px;">
-          <ul>
-            <li class="fragment">Tested in SocNavGym (Ch. 5, p. 87)</li>
-            <li class="fragment">Metrics: reward, collisions, success rate</li>
-            <li class="fragment">2StepAhead-MASPM: ~15% success improvement, 4% higher reward</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Slide 32: Conclusion & Future Work -->
-      <section data-background="img/aston_slides_background_22.png">
-        <h2 style="color: white; text-align: center;">✅ Conclusion & Future Work</h2>
-        <div style="text-align: center; color: white; padding-top: 40px;">
-          <ul>
-            <li class="fragment">📌 Enhanced safety, efficiency & social acceptance</li>
-            <li class="fragment">🎯 Real-world potential: healthcare, hospitality, etc.</li>
-            <li class="fragment">✨ Future: refine for hardware constraints & extended social contexts</li>
-          </ul>
-        </div>
-        <div style="text-align: center; margin-top: 30px;">
-          <a href="https://goodluckoguzie.github.io/Viva" target="_blank" class="final-link">https://goodluckoguzie.github.io/Viva</a>
-        </div>
-      </section>
-
-      <!-- ========================================= -->
-      <!-- 8. COSINE-GATED LSTM (CGLSTM)             -->
-      <!-- ========================================= -->
-
-      <!-- Slide 33: Section Title: CGLSTM -->
+      <!-- EXTRA Slide 29.5: Methodology Details for Custom Models -->
       <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-        <h2 class="section-title">Cosine-Gated LSTM (CGLSTM) *</h2>
-      </section>
-
-      <!-- Slide 34: CGLSTM: Challenges/Limitations -->
-      <section data-background="img/aston_slides_background_22.png">
-        <h2 style="color: white; text-align: center;">⚠️ CGLSTM: Challenges</h2>
-        <div style="text-align: center; position: relative; min-height: 300px; padding-top: 40px;">
-          <div style="padding-bottom: 20px;">
-            <video muted data-autoplay src="img/socialrobot.mp4" width="40%"></video>
-          </div>
-          <div style="color: white;">
-            <p id="textDisplayCGLSTMChallenges" class="textBlock"></p>
-          </div>
-        </div>
-        <div style="display:none;">
-          <span class="fragment" data-fragment-index="0"></span>
-          <span class="fragment" data-fragment-index="1"></span>
-          <span class="fragment" data-fragment-index="2"></span>
-        </div>
-        <script>
-          document.addEventListener('DOMContentLoaded', function(){
-            const tC = document.getElementById('textDisplayCGLSTMChallenges');
-            Reveal.addEventListener('fragmentshown', function(ev){
-              if (Reveal.getCurrentSlide().querySelector('#textDisplayCGLSTMChallenges')){
-                if (ev.fragment.dataset.fragmentIndex === '0'){
-                  tC.textContent = '🚫 Long-sequence prediction complexity (Ch. 6, p. 94).';
-                } else if (ev.fragment.dataset.fragmentIndex === '1'){
-                  tC.textContent = '🛑 Sparse data issues (Ch. 6, p. 113).';
-                } else if (ev.fragment.dataset.fragmentIndex === '2'){
-                  tC.textContent = '⚙️ High computational load (Ch. 6, p. 98).';
-                }
-              }
-            });
-          });
-        </script>
-      </section>
-
-      <!-- Slide 35: CGLSTM: Methods -->
-      <section data-background="img/aston_slides_background_22.png">
-        <h2 style="color: white; text-align: center;">🧩 CGLSTM: Methods</h2>
-        <div style="text-align: center; position: relative; min-height: 300px; padding-top: 40px;">
-          <div style="padding-bottom: 20px;">
-            <video muted data-autoplay src="img/socialrobot.mp4" width="40%"></video>
-          </div>
-          <div style="color: white;">
-            <p id="textDisplayCGLSTMMethods" class="textBlock"></p>
-          </div>
-        </div>
-        <div style="display:none;">
-          <span class="fragment" data-fragment-index="0"></span>
-          <span class="fragment" data-fragment-index="1"></span>
-          <span class="fragment" data-fragment-index="2"></span>
-        </div>
-        <script>
-          document.addEventListener('DOMContentLoaded', function(){
-            const tM = document.getElementById('textDisplayCGLSTMMethods');
-            Reveal.addEventListener('fragmentshown', function(ev){
-              if (Reveal.getCurrentSlide().querySelector('#textDisplayCGLSTMMethods')){
-                if (ev.fragment.dataset.fragmentIndex === '0'){
-                  tM.textContent = '📌 Uses cosine similarity-based gating (Ch. 6, p. 96).';
-                } else if (ev.fragment.dataset.fragmentIndex === '1'){
-                  tM.textContent = '🎯 Trained with BPTT in SocNavGym & FallingBallEnv (Ch. 6, p. 98).';
-                } else if (ev.fragment.dataset.fragmentIndex === '2'){
-                  tM.textContent = '🔗 Integrated with DreamerV3 & SAC (Ch. 6, p. 114).';
-                }
-              }
-            });
-          });
-        </script>
-      </section>
-
-      <!-- Slide 36: CGLSTM: Evaluation -->
-      <section data-background="img/aston_slides_background_22.png">
-        <h2 style="color: white; text-align: center;">📊 CGLSTM: Evaluation</h2>
-        <div style="text-align: center; font-size: 0.9em; color: white; padding-top: 40px;">
-          <ul>
-            <li class="fragment">Tested in SocNavGym, FallingBallEnv, etc. (Ch. 6, p. 103–114)</li>
-            <li class="fragment">Metrics: MAE, MSE, accuracy (~30% MAE reduction)</li>
-            <li class="fragment">Compared to LSTM, GRU, RAU</li>
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">📋 Methodology Details: Custom Models</h2>
+        <div style="text-align: center; color: white; padding-top: 40px;">
+          <ul style="font-size: 0.9em;">
+            <li class="fragment fade-in">Loss Function: MAE / MSE</li>
+            <li class="fragment fade-in">Hyperparameters: LR = 0.001, Batch Size = 32</li>
+            <li class="fragment fade-in">Data Split: 80% training, 20% validation</li>
+            <li class="fragment fade-in">Design Choice: Trade-off between computation and accuracy</li>
           </ul>
         </div>
       </section>
 
-      <!-- Slide 37: CGLSTM: Results -->
-      <section data-background="img/aston_slides_background_22.png">
-        <h2 style="color: white; text-align: center;">✅ CGLSTM: Results</h2>
-        <div style="text-align: center; font-size: 0.9em; color: white; padding-top: 40px;">
-          <ul>
-            <li class="fragment">FallingBallEnv: ~30% MAE reduction</li>
-            <li class="fragment">SocNavGym: ~5% reward improvement</li>
-            <li class="fragment">Outperforms baselines in additional tasks</li>
+      <!-- EXTRA Slide 32.5: Limitations & Future Challenges -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">⚠️ Limitations & Future Challenges</h2>
+        <div style="text-align: center; color: white; padding-top: 40px;">
+          <ul style="font-size: 0.9em;">
+            <li class="fragment fade-in">Limited hardware testing – mostly simulation-based</li>
+            <li class="fragment fade-in">Assumptions about sensor noise may not hold in real-world</li>
+            <li class="fragment fade-in">Scalability to multi-agent interactions needs further study</li>
+            <li class="fragment fade-in">Opportunities exist for refining real-time performance</li>
           </ul>
         </div>
       </section>
