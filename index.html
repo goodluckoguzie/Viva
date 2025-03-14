@@ -516,7 +516,7 @@
 
 
 <!-- LunarLander-v2 -->
-<!-- Updated LunarLander-v2 Slide using FallingBallEnv Template -->
+<!-- Updated LunarLander‑v2 Slide using FallingBallEnv Template with Unique Identity -->
 <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">LunarLander‑v2</h2>
   <div style="text-align: center; padding-top: 50px; position: relative; min-height: 300px;">
@@ -524,9 +524,9 @@
       <!-- Using the same video as FallingBallEnv -->
       <video muted data-autoplay src="img/FallingBallEnv.mp4" width="40%" style="display: block; margin: 0 auto;"></video>
     </div>
-    <!-- Text writeup positioned as in the FallingBallEnv template -->
-    <div style="font-size: 1em; color: white; position: relative; z-index: 10; padding-top: 10px; margin-top: -40px; text-align: center;">
-      <p id="textDisplayLunar" class="writeup"></p>
+    <!-- Text writeup positioned below the video -->
+    <div style="font-size: 1em; color: white; position: relative; z-index: 10; padding-top: 20px; text-align: center;">
+      <p id="textDisplayLunar" style="margin: 0 auto; line-height: 1.5; padding: 15px; border-radius: 5px; display: inline-block; max-width: 80%;"></p>
     </div>
   </div>
   <div style="display: none;">
@@ -543,7 +543,7 @@
           if (event.fragment.dataset.fragmentIndex === '0') {
             textDisplayLunar.textContent = 'Purpose: Continuous control task for RL testing (Chapter 7, p. 132; Chapter 8, p. 150).';
           } else if (event.fragment.dataset.fragmentIndex === '1') {
-            textDisplayLunar.textContent = 'Role: Assesses RL performance in dynamic, physics‑based environments.';
+            textDisplayLunar.textContent = 'Role: Assesses performance in dynamic, physics‑based environments.';
           } else if (event.fragment.dataset.fragmentIndex === '2') {
             textDisplayLunar.textContent = 'Used for evaluating predictive models in simulation scenarios.';
           } else {
@@ -562,6 +562,7 @@
     Use fragments to reveal key points about LunarLander‑v2. Prepare for viva questions on its purpose and role.
   </aside>
 </section>
+
 
 
       <!-- SocNavGym -->
