@@ -515,27 +515,53 @@
 
 
 
-      <!-- LunarLander-v2 -->
-      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">LunarLander-v2</h2>
-        <div style="text-align: center; padding-top: 50px;">
-          <div style="padding-bottom: 20px;">
-            <video muted data-autoplay src="img/lunarlanderv2.mp4" width="60%"></video>
-          </div>
-          <div style="font-size: 0.85em; color: white; padding-top: 20px;">
-            <ul>
-              <li class="fragment">Purpose: Continuous control task for RL testing (Chapter 7, p. 132; Chapter 8, p. 150).</li>
-              <li class="fragment">Role: Assesses RL performance in dynamic, physics-based environments.</li>
-            </ul>
-          </div>
-          <div class="fragment" style="padding-top: 20px;">
-            <img src="img/lunarlanderv2_diagram.jpg" width="70%" style="border: 2px solid white;" />
-          </div>
-        </div>
-        <aside class="notes">
-          Describe LunarLander-v2. Prepare for viva Q12.
-        </aside>
-      </section>
+<!-- LunarLander-v2 -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">LunarLander-v2</h2>
+  <div style="text-align: center; padding-top: 50px; position: relative; min-height: 300px;">
+    <div style="padding-bottom: 20px;">
+      <!-- Using the same video as FallingBallEnv -->
+      <video muted data-autoplay src="img/FallingBallEnv.mp4" width="40%" style="display: block; margin: 0 auto;"></video>
+    </div>
+    <!-- Text writeup positioned below the video -->
+    <div style="font-size: 1em; color: white; position: relative; z-index: 10; padding-top: 20px; text-align: center;">
+      <p id="textDisplayLunar" class="writeup"></p>
+    </div>
+  </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var textDisplayLunar = document.getElementById('textDisplayLunar');
+      if (!textDisplayLunar) return;
+      Reveal.addEventListener('fragmentshown', function(event) {
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayLunar')) {
+          if (event.fragment.dataset.fragmentIndex === '0') {
+            textDisplayLunar.textContent = 'Purpose: Continuous control task for RL testing.';
+          } else if (event.fragment.dataset.fragmentIndex === '1') {
+            textDisplayLunar.textContent = 'Role: Assesses performance in dynamic, physics-based environments.';
+          } else if (event.fragment.dataset.fragmentIndex === '2') {
+            textDisplayLunar.textContent = 'Used for evaluating predictive models in simulation scenarios.';
+          } else {
+            textDisplayLunar.textContent = '';
+          }
+        }
+      });
+      Reveal.addEventListener('fragmenthidden', function(event) {
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayLunar')) {
+          textDisplayLunar.textContent = '';
+        }
+      });
+    });
+  </script>
+  <aside class="notes">
+    Use fragments to reveal key points about LunarLander-v2. Prepare for viva questions on its purpose and role.
+  </aside>
+</section>
+
 
       <!-- SocNavGym -->
       <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px" data-transition="slide">
