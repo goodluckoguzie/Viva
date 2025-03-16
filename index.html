@@ -717,48 +717,35 @@
   </script>
 </section>
 
-<!-- Slide 31: Experimental Setup & Metrics (Part 1) -->
+<!-- Slide 31: Experimental Setup & Metrics -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📋 Experimental Setup & Metrics</h2>
-  <div style="text-align: center; padding-top: 50px; min-height: 300px;">
-    <div class="textBlock" style="color: white; text-align: center;">
-      <!-- Criteria for Performance -->
-      <p class="fragment fade-in" style="margin-bottom: 10px;">
-        <strong>Criteria for Performance:</strong>
-      </p>
-      <ul class="fragment fade-in" style="list-style-type: none; margin: 0 auto; text-align: left; display: inline-block;">
-        <li>• Human discomfort</li>
-        <li>• Distance travelled</li>
-        <li>• Simulation time</li>
-        <li>• Human collisions</li>
-        <li>• Max steps</li>
-        <li>• Reward</li>
-        <li>• Successful run</li>
-        <li>• Idle time</li>
-        <li>• Personal space compliance rate</li>
-      </ul>
-    </div>
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🧪 Experimental Setup & Metrics</h2>
+  <div style="text-align: center; padding-top: 50px; position: relative; min-height: 250px;">
+    <p id="textDisplaySlide31" class="textBlock"></p>
+    <!-- Optionally, display a small screenshot of the experimental setup -->
+    <img src="Images/WMDQN2STEP.png" alt="Training Reward Curve" style="width:40%; border: 2px solid white; margin-top: 20px;">
   </div>
-</section>
-
-<!-- Slide 32: Experimental Setup & Metrics (Part 2) -->
-<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📋 Additional Notes</h2>
-  <div style="text-align: center; padding-top: 50px; min-height: 300px;">
-    <ul class="textBlock" style="color: white; list-style-type: none;">
-      <li class="fragment fade-in">
-        <strong>Base Models &amp; Environment:</strong><br>
-        • Dueling DQN in SocNavEnv [1]<br>
-        • Social Force Model<br>
-        • RVO2
-      </li>
-      <li class="fragment fade-in" style="margin-top: 15px;">
-        <strong>Remarks:</strong><br>
-        • Discrete action space (stop, forward, rotate left/right).<br>
-        • Convergence in ~3200 episodes for best model.
-      </li>
-    </ul>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const t31 = document.getElementById('textDisplaySlide31');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide31')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            t31.textContent = '📌 Base Models: Dueling DQN, Social Force, RVO2 in SocNavGym (discrete actions: stop, forward, rotate left/right).';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            t31.textContent = '🎯 Performance Criteria: Human discomfort, distance travelled, simulation time, collisions, max steps, reward, success rate, idle time, personal space compliance.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            t31.textContent = '⏱ ~3200 episodes for best model (2StepAhead-MASPM), balancing multiple metrics effectively.';
+          }
+        }
+      });
+    });
+  </script>
 </section>
 
 
