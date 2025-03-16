@@ -748,7 +748,8 @@
 </section>
 
 
-<!-- Slide 32: Experimental Results -->
+<!-- REMOVE or COMMENT OUT the old "Slide 32: Experimental Results" section -->
+<!--
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">📈 Experimental Results</h2>
   <div style="text-align: center; padding-top: 50px; min-height: 300px;">
@@ -759,6 +760,120 @@
     </ul>
   </div>
 </section>
+-->
+
+<!-- ========================================= -->
+<!-- REPLACEMENT: 3-SLIDE Experimental Results -->
+<!-- ========================================= -->
+
+<!-- Slide 32: Training Metrics -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">⏱ Training Metrics</h2>
+  <div style="text-align: center; padding-top: 50px; position: relative; min-height: 300px;">
+    <!-- Replace with your actual training-metrics image filename -->
+    <div style="padding-bottom: 20px;">
+      <img src="img/TrainingMetrics.jpg" width="60%" style="display: block; margin: 0 auto;" />
+    </div>
+    <div style="font-size: 1em; color: white; position: relative; z-index: 10; text-align: center;">
+      <p id="textDisplayTraining" class="textBlock" style="margin: 0 auto; line-height: 1.5;"></p>
+    </div>
+  </div>
+  <!-- Fragments for bullet reveals -->
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var textDisplayTraining = document.getElementById('textDisplayTraining');
+      Reveal.addEventListener('fragmentshown', function(event) {
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayTraining')) {
+          if (event.fragment.dataset.fragmentIndex === '0') {
+            textDisplayTraining.textContent = '📌 Cumulative reward trends across episodes.';
+          } else if (event.fragment.dataset.fragmentIndex === '1') {
+            textDisplayTraining.textContent = '🎯 2StepAhead & MASPM converge faster & higher than baseline.';
+          } else if (event.fragment.dataset.fragmentIndex === '2') {
+            textDisplayTraining.textContent = '⏱ ~200k episodes for full convergence, top reward ~0.75.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide 33: Testing Metrics (1) -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎯 Testing Metrics (1)</h2>
+  <div style="text-align: center; padding-top: 50px; position: relative; min-height: 300px;">
+    <!-- Replace with your actual testing-metrics1 image filename -->
+    <div style="padding-bottom: 20px;">
+      <img src="img/TestingMetrics1.jpg" width="60%" style="display: block; margin: 0 auto;" />
+    </div>
+    <div style="font-size: 1em; color: white; position: relative; z-index: 10; text-align: center;">
+      <p id="textDisplayTest1" class="textBlock" style="margin: 0 auto; line-height: 1.5;"></p>
+    </div>
+  </div>
+  <!-- Fragments for bullet reveals -->
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var textDisplayTest1 = document.getElementById('textDisplayTest1');
+      Reveal.addEventListener('fragmentshown', function(event) {
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayTest1')) {
+          if (event.fragment.dataset.fragmentIndex === '0') {
+            textDisplayTest1.textContent = '✅ 2StepAhead & MASPM improve success rate & reduce collisions vs. baseline.';
+          } else if (event.fragment.dataset.fragmentIndex === '1') {
+            textDisplayTest1.textContent = '📊 Gains in distance traveled, simulation time, idle time, etc.';
+          } else if (event.fragment.dataset.fragmentIndex === '2') {
+            textDisplayTest1.textContent = '🔍 Balanced approach: avoids extremes in personal space or speed.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide 34: Testing Metrics (2) -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎯 Testing Metrics (2)</h2>
+  <div style="text-align: center; padding-top: 50px; position: relative; min-height: 300px;">
+    <!-- Replace with your actual testing-metrics2 image filename -->
+    <div style="padding-bottom: 20px;">
+      <img src="img/TestingMetrics2.jpg" width="60%" style="display: block; margin: 0 auto;" />
+    </div>
+    <div style="font-size: 1em; color: white; position: relative; z-index: 10; text-align: center;">
+      <p id="textDisplayTest2" class="textBlock" style="margin: 0 auto; line-height: 1.5;"></p>
+    </div>
+  </div>
+  <!-- Fragments for bullet reveals -->
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var textDisplayTest2 = document.getElementById('textDisplayTest2');
+      Reveal.addEventListener('fragmentshown', function(event) {
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayTest2')) {
+          if (event.fragment.dataset.fragmentIndex === '0') {
+            textDisplayTest2.textContent = '📌 Additional comparisons: RVO2, Social Force, etc.';
+          } else if (event.fragment.dataset.fragmentIndex === '1') {
+            textDisplayTest2.textContent = '🎯 2StepAhead-MASPM stands out in multi-metric performance.';
+          } else if (event.fragment.dataset.fragmentIndex === '2') {
+            textDisplayTest2.textContent = '✨ Future improvements needed for personal space compliance.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
 
 <!-- Slide 33: Conclusion & Future Work -->
 <section data-background="img/aston_slides_background_22.png">
