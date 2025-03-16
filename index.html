@@ -564,188 +564,199 @@
         </script>
       </section>
 
-      <!-- ========================================= -->
-      <!-- 7. PREDICTIVE WORLD MODELS (YOUR METHODS) -->
-      <!-- ========================================= -->
+<!-- ========================================= -->
+<!-- 7. PREDICTIVE WORLD MODELS (YOUR METHODS)  -->
+<!-- ========================================= -->
 
-      <!-- Slide 24: Section Title: Predictive World Models -->
-      <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-        <h2 class="section-title">Predictive World Models *</h2>
-      </section>
+<!-- Slide 24: Section Title: Predictive World Models -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <h2 class="section-title" style="color: white;">Predictive World Models *</h2>
+</section>
 
-      <!-- Slide 25: Overview -->
-      <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">🌍 Predictive World Models for Social Nav</h2>
-        <div style="text-align: center; position: relative; min-height: 300px;">
-          <div style="padding-bottom: 20px;">
-            <video muted data-autoplay src="img/socialrobot.mp4" width="60%"></video>
-          </div>
-          <div style="margin-top: -40px; color: white;">
-            <p id="textDisplaySlide25" class="textBlock"></p>
-          </div>
-        </div>
-        <div style="display: none;">
-          <span class="fragment" data-fragment-index="0"></span>
-          <span class="fragment" data-fragment-index="1"></span>
-          <span class="fragment" data-fragment-index="2"></span>
-        </div>
-        <script>
-          document.addEventListener('DOMContentLoaded', function(){
-            const t25 = document.getElementById('textDisplaySlide25');
-            Reveal.addEventListener('fragmentshown', function(ev){
-              if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide25')){
-                if (ev.fragment.dataset.fragmentIndex === '0'){
-                  t25.textContent = '🔍 Forecasts human behavior & environmental dynamics (Ch. 5, p. 83).';
-                } else if (ev.fragment.dataset.fragmentIndex === '1'){
-                  t25.textContent = '🎯 Goal: Enhance safety, efficiency, & social acceptance.';
-                } else if (ev.fragment.dataset.fragmentIndex === '2'){
-                  t25.textContent = '🛠 Extensively validated in SocNavGym.';
-                }
-              }
-            });
-          });
-        </script>
-      </section>
+<!-- Slide 25: Why Predictive World Models? -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔎 Why Predictive World Models?</h2>
+  <div style="text-align: center; padding-top: 50px; min-height: 300px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">📌 Address limitations of traditional navigation strategies.</li>
+      <li class="fragment fade-in">🔍 Enhance dynamic prediction of human behavior.</li>
+      <li class="fragment fade-in">🎯 Improve RL decision-making by anticipating future states.</li>
+    </ul>
+  </div>
+</section>
 
-      <!-- Slide 26: Our Proposed Methods -->
-      <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-        <h2 style="color: white; text-align: center;">🛠 Our Proposed Methods</h2>
-        <div style="text-align: center; padding-top: 40px;">
-          <ul style="color: white; font-size: 0.9em;">
-            <li class="fragment fade-in">📌 <b>2StepAhead</b>: Fixed two-step horizon (baseline)</li>
-            <li class="fragment fade-in">📌 <b>MASPM</b>: Predicts multiple future states</li>
-            <li class="fragment fade-in">📌 <b>2StepAhead-MASPM</b>: Hybrid for balanced performance</li>
-          </ul>
-        </div>
-      </section>
+<!-- Slide 26: Limitations of Current Approaches -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">⚠️ Limitations of Current Approaches</h2>
+  <div style="text-align: center; padding-top: 50px; min-height: 300px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">🚫 Inability to capture complex social dynamics.</li>
+      <li class="fragment fade-in">⚠️ Insufficient modeling of human interactions.</li>
+      <li class="fragment fade-in">🔒 Over-reliance on static, handcrafted rules.</li>
+    </ul>
+  </div>
+</section>
 
-      <!-- Slide 27: 2StepAhead (Baseline Model) -->
-      <section data-background="img/aston_slides_background_22.png">
-        <h2 style="color: white; text-align: center;">2StepAhead (Baseline Model)</h2>
-        <div style="text-align: center; position: relative; min-height: 300px; padding-top: 50px;">
-          <div style="padding-bottom: 20px; padding-top: 40px;">
-            <video muted data-autoplay src="img/socialrobot.mp4" width="60%"></video>
-          </div>
-          <div style="color: white; margin-top: -40px;">
-            <p id="textDisplaySlide27" class="textBlock"></p>
-          </div>
-        </div>
-        <div style="display:none;">
-          <span class="fragment" data-fragment-index="0"></span>
-          <span class="fragment" data-fragment-index="1"></span>
-          <span class="fragment" data-fragment-index="2"></span>
-        </div>
-        <script>
-          document.addEventListener('DOMContentLoaded', function(){
-            const t27 = document.getElementById('textDisplaySlide27');
-            Reveal.addEventListener('fragmentshown', function(ev){
-              if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide27')){
-                if (ev.fragment.dataset.fragmentIndex === '0'){
-                  t27.textContent = '📌 Predicts two steps ahead (Ch. 5, p. 83–84).';
-                } else if (ev.fragment.dataset.fragmentIndex === '1'){
-                  t27.textContent = '⚙️ Advantage: Low computation & rapid decisions.';
-                } else if (ev.fragment.dataset.fragmentIndex === '2'){
-                  t27.textContent = '🚧 Limitation: Rigid for unpredictable movements.';
-                }
-              }
-            });
-          });
-        </script>
-      </section>
+<!-- Slide 27: Introducing Our Contributions -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">✨ Introducing Our Contributions</h2>
+  <div style="text-align: center; padding-top: 50px; min-height: 300px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">📌 Research Objective: Enhance social navigation with predictive models.</li>
+      <li class="fragment fade-in">✨ Contributions:</li>
+      <ul style="list-style: none; color: white;">
+        <li class="fragment fade-in">1. 2StepAhead Predictive World Model</li>
+        <li class="fragment fade-in">2. Multi Action State Predictive Model (MASPM)</li>
+        <li class="fragment fade-in">3. Hybrid 2StepAhead-MASPM Model</li>
+      </ul>
+    </ul>
+  </div>
+</section>
 
-      <!-- Slide 28: MASPM (Multi-Action State Prediction Model) -->
-      <section data-background="img/aston_slides_background_22.png">
-        <h2 style="color: white; text-align: center;">MASPM (Multi-Action State Prediction Model)</h2>
-        <div style="text-align: center; position: relative; min-height: 300px; padding-top: 50px;">
-          <div style="padding-bottom: 20px; padding-top: 40px;">
-            <video muted data-autoplay src="img/socialrobot.mp4" width="60%"></video>
-          </div>
-          <div style="color: white; margin-top: -40px;">
-            <p id="textDisplaySlide28" class="textBlock"></p>
-          </div>
-        </div>
-        <div style="display:none;">
-          <span class="fragment" data-fragment-index="0"></span>
-          <span class="fragment" data-fragment-index="1"></span>
-          <span class="fragment" data-fragment-index="2"></span>
-        </div>
-        <script>
-          document.addEventListener('DOMContentLoaded', function(){
-            const t28 = document.getElementById('textDisplaySlide28');
-            Reveal.addEventListener('fragmentshown', function(ev){
-              if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide28')){
-                if (ev.fragment.dataset.fragmentIndex === '0'){
-                  t28.textContent = '🔍 Predicts multiple future states & actions.';
-                } else if (ev.fragment.dataset.fragmentIndex === '1'){
-                  t28.textContent = '🎯 Adaptable to dynamic scenarios.';
-                } else if (ev.fragment.dataset.fragmentIndex === '2'){
-                  t28.textContent = '⚠️ Higher computational demand.';
-                }
-              }
-            });
-          });
-        </script>
-      </section>
+<!-- Slide 28: 2StepAhead Predictive World Model -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🧩 2StepAhead Predictive World Model</h2>
+  <div style="text-align: center; padding-top: 50px; min-height: 300px;">
+    <!-- Replace video with Figure 1.2 image if available -->
+    <div style="padding-bottom: 20px;">
+      <img src="img/figure1.2_2StepAhead.jpg" width="40%" style="display: block; margin: 0 auto;">
+    </div>
+    <div style="margin-top: -40px; color: white;">
+      <p id="textDisplaySlide28" class="textBlock"></p>
+    </div>
+  </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const t28 = document.getElementById('textDisplaySlide28');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide28')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            t28.textContent = '🔍 Predicts hidden & latent states two steps ahead.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            t28.textContent = '🎯 Empirically optimal: 2 steps offer the best balance.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            t28.textContent = '⚙️ Integrated with Dueling DQN for enhanced decision-making.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
 
-      <!-- Slide 29: 2StepAhead-MASPM (Hybrid Method) -->
-      <section data-background="img/aston_slides_background_22.png">
-        <h2 style="color: white; text-align: center;">2StepAhead-MASPM (Hybrid)</h2>
-        <div style="text-align: center; position: relative; min-height: 300px; padding-top: 50px;">
-          <div style="padding-bottom: 20px; padding-top: 40px;">
-            <video muted data-autoplay src="img/socialrobot.mp4" width="60%"></video>
-          </div>
-          <div style="color: white; margin-top: -40px;">
-            <p id="textDisplaySlide29" class="textBlock"></p>
-          </div>
-        </div>
-        <div style="display:none;">
-          <span class="fragment" data-fragment-index="0"></span>
-          <span class="fragment" data-fragment-index="1"></span>
-          <span class="fragment" data-fragment-index="2"></span>
-        </div>
-        <script>
-          document.addEventListener('DOMContentLoaded', function(){
-            const t29 = document.getElementById('textDisplaySlide29');
-            Reveal.addEventListener('fragmentshown', function(ev){
-              if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide29')){
-                if (ev.fragment.dataset.fragmentIndex === '0'){
-                  t29.textContent = '🔗 Combines 2StepAhead’s efficiency & MASPM’s adaptability.';
-                } else if (ev.fragment.dataset.fragmentIndex === '1'){
-                  t29.textContent = '⚙️ Balances computation & prediction flexibility.';
-                } else if (ev.fragment.dataset.fragmentIndex === '2'){
-                  t29.textContent = '✅ Achieves improved performance in dynamic environments.';
-                }
-              }
-            });
-          });
-        </script>
-      </section>
+<!-- Slide 29: Multi Action State Predictive Model (MASPM) -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎛 Multi Action State Predictive Model (MASPM)</h2>
+  <div style="text-align: center; padding-top: 50px; min-height: 300px;">
+    <!-- Replace video with Figure 1.3 image if available -->
+    <div style="padding-bottom: 20px;">
+      <img src="img/figure1.3_MASPM.jpg" width="40%" style="display: block; margin: 0 auto;">
+    </div>
+    <div style="margin-top: -40px; color: white;">
+      <p id="textDisplaySlide29" class="textBlock"></p>
+    </div>
+  </div>
+  <div style="display:none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const t29 = document.getElementById('textDisplaySlide29');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide29')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            t29.textContent = '📌 Predicts outcomes for all available actions.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            t29.textContent = '🎯 Offers a comprehensive view of future state possibilities.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            t29.textContent = '⚠️ Comes with higher computational demand.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
 
-      <!-- EXTRA Slide 29.5: Methodology Details for Custom Models -->
-      <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">📋 Methodology Details: Custom Models</h2>
-        <div style="text-align: center; color: white; padding-top: 40px;">
-          <ul style="font-size: 0.9em;">
-            <li class="fragment fade-in">Loss Function: MAE / MSE</li>
-            <li class="fragment fade-in">Hyperparameters: LR = 0.001, Batch Size = 32</li>
-            <li class="fragment fade-in">Data Split: 80% training, 20% validation</li>
-            <li class="fragment fade-in">Design Choice: Trade-off between computation and accuracy</li>
-          </ul>
-        </div>
-      </section>
+<!-- Slide 30: Hybrid Model: 2StepAhead-MASPM -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔗 2StepAhead-MASPM (Hybrid Model)</h2>
+  <div style="text-align: center; padding-top: 50px; min-height: 300px;">
+    <!-- Replace video with Figure 1.4 image if available -->
+    <div style="padding-bottom: 20px;">
+      <img src="img/figure1.4_Hybrid.jpg" width="40%" style="display: block; margin: 0 auto;">
+    </div>
+    <div style="margin-top: -40px; color: white;">
+      <p id="textDisplaySlide30" class="textBlock"></p>
+    </div>
+  </div>
+  <div style="display:none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const t30 = document.getElementById('textDisplaySlide30');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide30')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            t30.textContent = '🔗 Combines 2StepAhead’s efficiency with MASPM’s comprehensive predictions.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            t30.textContent = '⚙️ Balances computational cost with prediction flexibility.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            t30.textContent = '✅ Achieves improved performance in dynamic environments.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
 
-      <!-- EXTRA Slide 32.5: Limitations & Future Challenges -->
-      <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">⚠️ Limitations & Future Challenges</h2>
-        <div style="text-align: center; color: white; padding-top: 40px;">
-          <ul style="font-size: 0.9em;">
-            <li class="fragment fade-in">Limited hardware testing – mostly simulation-based</li>
-            <li class="fragment fade-in">Assumptions about sensor noise may not hold in real-world</li>
-            <li class="fragment fade-in">Scalability to multi-agent interactions needs further study</li>
-            <li class="fragment fade-in">Opportunities exist for refining real-time performance</li>
-          </ul>
-        </div>
-      </section>
+<!-- Slide 31: Experimental Setup & Metrics -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📋 Experimental Setup & Metrics</h2>
+  <div style="text-align: center; padding-top: 50px; min-height: 300px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">🛠 Benchmarked in SocNavGym with discrete actions.</li>
+      <li class="fragment fade-in">📊 Metrics: Reward, human discomfort, collisions, etc.</li>
+      <li class="fragment fade-in">⏱ Convergence in ~3200 episodes.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Slide 32: Experimental Results -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📈 Experimental Results</h2>
+  <div style="text-align: center; padding-top: 50px; min-height: 300px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">✅ 2StepAhead-MASPM outperforms baseline Dueling DQN.</li>
+      <li class="fragment fade-in">📊 Gains in success rate & cumulative reward.</li>
+      <li class="fragment fade-in">🔍 Balanced performance across multiple metrics.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Slide 33: Conclusion & Future Work -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎉 Conclusion & Future Work</h2>
+  <div style="text-align: center; padding-top: 50px; min-height: 300px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">📌 Predictive models significantly enhance RL-based social navigation.</li>
+      <li class="fragment fade-in">🎯 Limitations: Personal space compliance & sensor noise.</li>
+      <li class="fragment fade-in">✨ Future: Explore continuous action spaces & hardware deployment.</li>
+    </ul>
+  </div>
+  <div style="text-align: center; margin-top: 30px;">
+    <a href="https://goodluckoguzie.github.io/Viva" target="_blank" class="final-link">https://goodluckoguzie.github.io/Viva</a>
+  </div>
+</section>
+
 
       <!-- ========================================= -->
       <!-- 7. ADAPTIVE PREDICTION HORIZONS           -->
