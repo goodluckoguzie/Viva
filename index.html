@@ -717,46 +717,46 @@
   </script>
 </section>
 
-<!-- Slide 31: Experimental Setup & Metrics -->
+<!-- Slide 31: Experimental Setup & Metrics (Multi-Fragment Version) -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">📋 Experimental Setup & Metrics</h2>
   <div style="text-align: center; padding-top: 50px; min-height: 300px;">
-    <div class="textBlock" style="color: white; text-align: left; max-width: 70%; margin: 0 auto;">
-      <ul>
-        <li class="fragment fade-in">
-          🏷 <strong>Benchmarks &amp; Scenarios</strong>:
-          <ul style="list-style-type: circle; margin-left: 1.5em;">
-            <li>Duelling DQN in <em>SocNavEnv</em> [1]</li>
-            <li>Social Force Model</li>
-            <li>RVO2</li>
-          </ul>
-        </li>
-        <li class="fragment fade-in">
-          🏹 <strong>Performance Criteria</strong>:
-          <ul style="list-style-type: circle; margin-left: 1.5em;">
-            <li>Human discomfort</li>
-            <li>Distance travelled</li>
-            <li>Simulation time</li>
-            <li>Human collisions</li>
-            <li>Max steps</li>
-            <li>Reward</li>
-            <li>Successful run</li>
-            <li>Idle time</li>
-            <li>Personal space compliance rate</li>
-          </ul>
-        </li>
-        <li class="fragment fade-in">
-          ⚙️ <strong>Experimental Details</strong>:
-          <ul style="list-style-type: circle; margin-left: 1.5em;">
-            <li>Discrete action space (stop, forward, rotate left/right)</li>
-            <li>Three moving humans in environment</li>
-            <li>~500 episodes tested per algorithm for final metrics</li>
-          </ul>
-        </li>
-      </ul>
-    </div>
+    <ul class="textBlock" style="color: white; text-align: left; max-width: 80%; margin: 0 auto;">
+      <!-- Fragment 0: Base Models & Environment -->
+      <li class="fragment fade-in" data-fragment-index="0">
+        <strong>⚙️ Base Models & Environment:</strong><br>
+        • Dueling DQN in SocNavEnv [1]<br>
+        • Social Force Model<br>
+        • RVO2
+      </li>
+      
+      <!-- Fragment 1: Criteria for Performance -->
+      <li class="fragment fade-in" data-fragment-index="1" style="margin-top: 15px;">
+        <strong>✅ Criteria for Performance:</strong>
+        <ul style="list-style-type: none; margin: 5px 0 0 15px;">
+          <li>• Human discomfort</li>
+          <li>• Distance travelled</li>
+          <li>• Simulation time</li>
+          <li>• Human collisions</li>
+          <li>• Max steps</li>
+          <li>• Reward</li>
+          <li>• Successful run</li>
+          <li>• Idle time</li>
+          <li>• Personal space compliance rate</li>
+        </ul>
+      </li>
+      
+      <!-- Fragment 2: Additional Notes -->
+      <li class="fragment fade-in" data-fragment-index="2" style="margin-top: 15px;">
+        <strong>📝 Additional Notes:</strong><br>
+        • Discrete action space: stop, forward, rotate left/right<br>
+        • Convergence achieved in ~3200 episodes<br>
+        • Evaluated across multiple metrics for balanced performance
+      </li>
+    </ul>
   </div>
 </section>
+
 
 
 <!-- Slide 32: Experimental Results -->
