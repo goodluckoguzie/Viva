@@ -1149,111 +1149,197 @@
 </section>
 
 
+<!-- ========================================= -->
+<!-- 7. ADAPTIVE PREDICTION HORIZONS           -->
+<!-- ========================================= -->
 
-      <!-- ========================================= -->
-      <!-- 7. ADAPTIVE PREDICTION HORIZONS           -->
-      <!-- ========================================= -->
+<!-- Slide A1: Section Title: Adaptive Prediction Horizons -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <h2 class="section-title" style="color: white;">Adaptive Prediction Horizons *</h2>
+</section>
 
-      <!-- Slide 38: Section Title: Adaptive Prediction Horizons -->
-      <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-        <h2 class="section-title">Adaptive Prediction Horizons *</h2>
-      </section>
+<!-- Slide A2: Introduction -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📌 Introduction</h2>
+  <div style="text-align: center; padding-top: 50px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">RL agents require long-term planning in continuous action spaces.</li>
+      <li class="fragment fade-in">Fixed horizons (e.g., in DreamerV3) lack adaptability.</li>
+      <li class="fragment fade-in">Adaptive horizons dynamically adjust based on policy entropy.</li>
+      <li class="fragment fade-in">Our approach integrates entropy-driven horizon adjustment within SAC.</li>
+    </ul>
+  </div>
+</section>
 
-      <!-- Slide 39: Adaptive Horizons: Challenges -->
-      <section data-background="img/aston_slides_background_22.png">
-        <h2 style="color: white; text-align: center;">⚠️ Adaptive Horizons: Challenges</h2>
-        <div style="text-align: center; position: relative; min-height: 300px; padding-top: 40px;">
-          <div style="padding-bottom: 20px;">
-            <video muted data-autoplay src="img/socialrobot.mp4" width="40%"></video>
-          </div>
-          <div style="color: white;">
-            <p id="textDisplayAHChallenges" class="textBlock"></p>
-          </div>
-        </div>
-        <div style="display:none;">
-          <span class="fragment" data-fragment-index="0"></span>
-          <span class="fragment" data-fragment-index="1"></span>
-          <span class="fragment" data-fragment-index="2"></span>
-          <span class="fragment" data-fragment-index="3"></span>
-        </div>
-        <script>
-          document.addEventListener('DOMContentLoaded', function(){
-            const tAHC = document.getElementById('textDisplayAHChallenges');
-            Reveal.addEventListener('fragmentshown', function(ev){
-              if (Reveal.getCurrentSlide().querySelector('#textDisplayAHChallenges')){
-                if (ev.fragment.dataset.fragmentIndex === '0'){
-                  tAHC.textContent = '🚫 Fixed horizons fail in dynamic settings.';
-                } else if (ev.fragment.dataset.fragmentIndex === '1'){
-                  tAHC.textContent = '⚙️ Large horizons increase compute cost.';
-                } else if (ev.fragment.dataset.fragmentIndex === '2'){
-                  tAHC.textContent = '🛑 Noise & sparsity worsen performance.';
-                } else if (ev.fragment.dataset.fragmentIndex === '3'){
-                  tAHC.textContent = '📌 Our methods mitigate these issues.';
-                }
-              }
-            });
-          });
-        </script>
-      </section>
+<!-- Slide A3: Literature Review & Motivation -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔍 Literature & Motivation</h2>
+  <div style="text-align: center; padding-top: 40px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">Model-free methods (SAC, PPO) struggle with long-term foresight.</li>
+      <li class="fragment fade-in">Model-based methods use fixed prediction horizons with limited flexibility.</li>
+      <li class="fragment fade-in">Adaptive horizons can adjust the planning depth based on uncertainty.</li>
+      <li class="fragment fade-in">Entropy-driven adjustment guides this dynamic planning.</li>
+    </ul>
+  </div>
+</section>
 
-      <!-- Slide 40: Adaptive Horizons: Methods -->
-      <section data-background="img/aston_slides_background_22.png">
-        <h2 style="color: white; text-align: center;">🧩 Adaptive Horizons: Methods</h2>
-        <div style="text-align: center; position: relative; min-height: 300px; padding-top: 40px;">
-          <div style="padding-bottom: 20px;">
-            <video muted data-autoplay src="img/socialrobot.mp4" width="40%"></video>
-          </div>
-          <div style="color: white;">
-            <p id="textDisplayAHMethods" class="textBlock"></p>
-          </div>
-        </div>
-        <div style="display:none;">
-          <span class="fragment" data-fragment-index="0"></span>
-          <span class="fragment" data-fragment-index="1"></span>
-          <span class="fragment" data-fragment-index="2"></span>
-          <span class="fragment" data-fragment-index="3"></span>
-        </div>
-        <script>
-          document.addEventListener('DOMContentLoaded', function(){
-            const tAHM = document.getElementById('textDisplayAHMethods');
-            Reveal.addEventListener('fragmentshown', function(ev){
-              if (Reveal.getCurrentSlide().querySelector('#textDisplayAHMethods')){
-                if (ev.fragment.dataset.fragmentIndex === '0'){
-                  tAHM.textContent = '🔍 Entropy-driven selection adjusts horizons dynamically (Ch. 7, p. 125).';
-                } else if (ev.fragment.dataset.fragmentIndex === '1'){
-                  tAHM.textContent = '🎯 Integrated with CGLSTM & SAC for robust performance (Ch. 7, p. 124).';
-                } else if (ev.fragment.dataset.fragmentIndex === '2'){
-                  tAHM.textContent = '⚖️ Balances accuracy vs. compute dynamically.';
-                }
-              }
-            });
-          });
-        </script>
-      </section>
+<!-- Slide A4: Proposed Method Overview -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">💡 Proposed Method</h2>
+  <div style="text-align: center; padding-top: 50px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">Integrates predictive modeling (using pre-trained CGLSTM) with SAC.</li>
+      <li class="fragment fade-in">Two variants: Fixed Prediction Horizons and Entropy-Driven Adaptive Horizons.</li>
+      <li class="fragment fade-in">Adaptive variant adjusts the horizon (1–4 steps) based on policy entropy.</li>
+    </ul>
+  </div>
+</section>
 
-      <!-- Slide 41: Adaptive Horizons: Evaluation -->
-      <section data-background="img/aston_slides_background_22.png">
-        <h2 style="color: white; text-align: center;">📊 Adaptive Horizons: Evaluation</h2>
-        <div style="text-align: center; font-size: 0.9em; color: white; padding-top: 40px;">
-          <ul>
-            <li class="fragment">Tested in SocNavGym, FallingBallEnv, LunarLander‑v2 (Ch. 7, p. 132)</li>
-            <li class="fragment">Metrics: Success rate, reward, inference time</li>
-            <li class="fragment">~15% improvement vs. fixed horizons</li>
-          </ul>
-        </div>
-      </section>
+<!-- Slide A5: Datasets & Evaluation Setup -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🧪 Datasets & Evaluation</h2>
+  <div style="text-align: center; padding-top: 50px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">FallingBallEnv: Tests fundamental motion prediction (balanced & unbalanced).</li>
+      <li class="fragment fade-in">Benchmark tasks: Adding Problem, row-wise MNIST, Fashion-MNIST, IMDB, PTB.</li>
+      <li class="fragment fade-in">SocNavGym: Real-world-like social navigation scenario with noise.</li>
+      <li class="fragment fade-in">Metrics: MAE/MSE, accuracy, perplexity, training/testing time, t-tests.</li>
+    </ul>
+  </div>
+</section>
 
-      <!-- Slide 42: Adaptive Horizons: Results -->
-      <section data-background="img/aston_slides_background_22.png">
-        <h2 style="color: white; text-align: center;">✅ Adaptive Horizons: Results</h2>
-        <div style="text-align: center; font-size: 0.9em; color: white; padding-top: 40px;">
-          <ul>
-            <li class="fragment">SocNavGym: +15% success rate</li>
-            <li class="fragment">FallingBallEnv: -10% MAE</li>
-            <li class="fragment">LunarLander‑v2: +8% reward improvement</li>
-          </ul>
-        </div>
-      </section>
+<!-- Slide A6: Baselines for Comparison -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📊 Baselines for Comparison</h2>
+  <div style="text-align: center; padding-top: 50px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">Vanilla SAC</li>
+      <li class="fragment fade-in">DreamerV3</li>
+      <li class="fragment fade-in">SAC without adaptive horizons</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Slide A7a: Adaptive Horizons – Training Metrics -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">⏱ Adaptive Horizons: Training Metrics</h2>
+  <div style="text-align: center; padding-top: 50px; position: relative; min-height: 300px;">
+    <!-- Replace with your actual training metrics image (JPG) -->
+    <div style="padding-bottom: 20px;">
+      <img src="img/AdaptiveTrainingMetrics.jpg" width="60%" style="display: block; margin: 0 auto;" />
+    </div>
+    <div style="font-size: 1em; color: white; text-align: center;">
+      <p id="textDisplayAdaptiveTrain" class="textBlock" style="line-height: 1.5;"></p>
+    </div>
+  </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const trainTxt = document.getElementById('textDisplayAdaptiveTrain');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayAdaptiveTrain')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            trainTxt.textContent = '📌 Training reward curves show faster convergence under adaptive horizons.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            trainTxt.textContent = '🎯 Improved exploration efficiency observed over ~200k episodes.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            trainTxt.textContent = '⏱ Reduced training time per episode compared to fixed horizons.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide A7b: Adaptive Horizons – Testing Metrics -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎯 Adaptive Horizons: Testing Metrics</h2>
+  <div style="text-align: center; padding-top: 50px; position: relative; min-height: 300px;">
+    <!-- Replace with your actual testing metrics image (JPG) -->
+    <div style="padding-bottom: 20px;">
+      <img src="img/AdaptiveTestingMetrics.jpg" width="60%" style="display: block; margin: 0 auto;" />
+    </div>
+    <div style="font-size: 1em; color: white; text-align: center;">
+      <p id="textDisplayAdaptiveTest" class="textBlock" style="line-height: 1.5;"></p>
+    </div>
+  </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const testTxt = document.getElementById('textDisplayAdaptiveTest');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayAdaptiveTest')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            testTxt.textContent = '✅ Testing results show higher episode rewards and success rates.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            testTxt.textContent = '📊 Significant improvements in MAE/MSE metrics compared to baselines.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            testTxt.textContent = '🔍 Adaptive horizons yield robust performance even with noise.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide A7c: Adaptive Horizons – Environment Performance -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🤖 Adaptive Horizons: Environment Performance</h2>
+  <div style="text-align: center; padding-top: 50px; position: relative; min-height: 300px;">
+    <!-- Replace with your actual environment performance image (JPG) -->
+    <div style="padding-bottom: 20px;">
+      <img src="img/AdaptiveEnvPerformance.jpg" width="70%" style="display: block; margin: 0 auto;" />
+    </div>
+    <div style="margin-top: 20px;">
+      <p id="textDisplayAdaptiveEnv" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const envTxt = document.getElementById('textDisplayAdaptiveEnv');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayAdaptiveEnv')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            envTxt.textContent = '📌 Environments: LunarLanderContinuous‑v2 and LiteSocNavGym with added noise.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            envTxt.textContent = '🔍 Adaptive horizons achieve the best balance of planning and efficiency in these settings.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide A8: Conclusion & Future Work for Adaptive Horizons -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎉 Conclusion & Future Work</h2>
+  <div style="text-align: center; padding-top: 40px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">Adaptive horizons significantly enhance long-term planning in continuous action spaces.</li>
+      <li class="fragment fade-in">Entropy-driven adjustment dynamically tailors the prediction horizon based on uncertainty.</li>
+      <li class="fragment fade-in">Future work: Optimize computational cost and extend to multi-agent systems.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Slide A9: Thank You / Q&A for Adaptive Horizons -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center; margin-top: 100px;">🙏 Thank You</h2>
+  <h4 style="color: white; text-align: center; margin-top: 30px;">Questions?</h4>
+</section>
 
       <!-- ========================================= -->
       <!-- 8. CONCLUSION                           -->
