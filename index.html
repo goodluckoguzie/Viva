@@ -716,16 +716,16 @@
     });
   </script>
 </section>
-
 <!-- Slide 31: Experimental Setup & Metrics -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🧪 Experimental Setup & Metrics</h2>
-  <div style="text-align: center; padding-top: 50px; position: relative; min-height: 250px;">
+  <div style="text-align: center; padding-top: 50px; position: relative; min-height: 300px;">
     <p id="textDisplaySlide31" class="textBlock"></p>
   </div>
   <div style="display: none;">
     <span class="fragment" data-fragment-index="0"></span>
     <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', function(){
@@ -733,9 +733,11 @@
       Reveal.addEventListener('fragmentshown', function(ev){
         if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide31')){
           if (ev.fragment.dataset.fragmentIndex === '0'){
-            t31.textContent = '📌 Base Models: Dueling DQN, Social Force, RVO2 in SocNavGym (discrete actions: stop, forward, rotate left/right).';
+            t31.textContent = '📌 Base Models: Duelling DQN in SocNavEnv [1], Social Force, ROV2.';
           } else if (ev.fragment.dataset.fragmentIndex === '1'){
-            t31.textContent = '🎯 Performance Criteria: Human discomfort, distance travelled, simulation time, collisions, max steps, reward, success rate, idle time, and personal space compliance.';
+            t31.textContent = '⏱ Training Metrics: Cumulative Reward, Training Duration, Episodes To Convergence.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            t31.textContent = '🎯 Testing Metrics: Human discomfort, Distance travelled, Simulation time, Human collisions, Max steps, Reward, Successful run, Idle time, Personal space compliance rate.';
           }
         }
       });
