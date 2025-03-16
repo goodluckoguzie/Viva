@@ -722,13 +722,10 @@
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🧪 Experimental Setup & Metrics</h2>
   <div style="text-align: center; padding-top: 50px; position: relative; min-height: 250px;">
     <p id="textDisplaySlide31" class="textBlock"></p>
-    <!-- Optionally, display a small screenshot of the experimental setup -->
-    <img src="Images/WMDQN2STEP.png" alt="Training Reward Curve" style="width:40%; border: 2px solid white; margin-top: 20px;">
   </div>
   <div style="display: none;">
     <span class="fragment" data-fragment-index="0"></span>
     <span class="fragment" data-fragment-index="1"></span>
-    <span class="fragment" data-fragment-index="2"></span>
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', function(){
@@ -738,16 +735,13 @@
           if (ev.fragment.dataset.fragmentIndex === '0'){
             t31.textContent = '📌 Base Models: Dueling DQN, Social Force, RVO2 in SocNavGym (discrete actions: stop, forward, rotate left/right).';
           } else if (ev.fragment.dataset.fragmentIndex === '1'){
-            t31.textContent = '🎯 Performance Criteria: Human discomfort, distance travelled, simulation time, collisions, max steps, reward, success rate, idle time, personal space compliance.';
-          } else if (ev.fragment.dataset.fragmentIndex === '2'){
-            t31.textContent = '⏱ ~3200 episodes for best model (2StepAhead-MASPM), balancing multiple metrics effectively.';
+            t31.textContent = '🎯 Performance Criteria: Human discomfort, distance travelled, simulation time, collisions, max steps, reward, success rate, idle time, and personal space compliance.';
           }
         }
       });
     });
   </script>
 </section>
-
 
 
 
