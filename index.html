@@ -721,13 +721,43 @@
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">📋 Experimental Setup & Metrics</h2>
   <div style="text-align: center; padding-top: 50px; min-height: 300px;">
-    <ul class="textBlock" style="color: white;">
-      <li class="fragment fade-in">🛠 Benchmarked in SocNavGym with discrete actions.</li>
-      <li class="fragment fade-in">📊 Metrics: Reward, human discomfort, collisions, etc.</li>
-      <li class="fragment fade-in">⏱ Convergence in ~3200 episodes.</li>
-    </ul>
+    <div class="textBlock" style="color: white; text-align: left; max-width: 70%; margin: 0 auto;">
+      <ul>
+        <li class="fragment fade-in">
+          🏷 <strong>Benchmarks &amp; Scenarios</strong>:
+          <ul style="list-style-type: circle; margin-left: 1.5em;">
+            <li>Duelling DQN in <em>SocNavEnv</em> [1]</li>
+            <li>Social Force Model</li>
+            <li>RVO2</li>
+          </ul>
+        </li>
+        <li class="fragment fade-in">
+          🏹 <strong>Performance Criteria</strong>:
+          <ul style="list-style-type: circle; margin-left: 1.5em;">
+            <li>Human discomfort</li>
+            <li>Distance travelled</li>
+            <li>Simulation time</li>
+            <li>Human collisions</li>
+            <li>Max steps</li>
+            <li>Reward</li>
+            <li>Successful run</li>
+            <li>Idle time</li>
+            <li>Personal space compliance rate</li>
+          </ul>
+        </li>
+        <li class="fragment fade-in">
+          ⚙️ <strong>Experimental Details</strong>:
+          <ul style="list-style-type: circle; margin-left: 1.5em;">
+            <li>Discrete action space (stop, forward, rotate left/right)</li>
+            <li>Three moving humans in environment</li>
+            <li>~500 episodes tested per algorithm for final metrics</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 </section>
+
 
 <!-- Slide 32: Experimental Results -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
