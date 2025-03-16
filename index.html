@@ -891,6 +891,249 @@
 </section>
 
 
+
+  <!-- ========================================= -->
+<!-- CGLSTM CHAPTER - Example Slide Deck       -->
+<!-- ========================================= -->
+
+<!-- Slide X: Section Title: Cosine-Gated LSTM -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <h2 class="section-title">Cosine-Gated LSTM (CGLSTM)</h2>
+</section>
+
+<!-- Slide X+1: Introduction -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📌 Introduction</h2>
+  <div style="text-align: center; padding-top: 50px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">Proposes a novel LSTM-based architecture with a cosine similarity gate.</li>
+      <li class="fragment fade-in">Aims to improve sequence prediction by focusing on directional alignment in data.</li>
+      <li class="fragment fade-in">Builds on limitations identified in previous LSTM-based experiments (SocNavGym, etc.).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Slide X+2: Fundamentals of LSTM & Limitations -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔍 Fundamentals & Limitations</h2>
+  <div style="text-align: center; padding-top: 40px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">LSTM addresses vanishing gradients but struggles with very long-term dependencies.</li>
+      <li class="fragment fade-in">Sensitivity to outliers and suboptimal gating in complex dynamic tasks (SocNavGym, etc.).</li>
+      <li class="fragment fade-in">Motivates an enhanced gating mechanism leveraging cosine similarity.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Slide X+3: Why Cosine-Gated LSTM -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">💡 Why Cosine-Gated LSTM?</h2>
+  <div style="text-align: center; padding-top: 50px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">Cosine similarity focuses on vector orientation rather than magnitude.</li>
+      <li class="fragment fade-in">Helps emphasize important sequence features & reduce noise/outlier impact.</li>
+      <li class="fragment fade-in">Provides more robust gating for long-term dependency modeling.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Slide X+4: CGLSTM Architecture (Diagram) -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🏗️ CGLSTM Architecture</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <!-- Replace with your actual figure or diagram for CGLSTM -->
+    <img src="img/cglstm_architecture.jpg" width="50%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplayCGLSTM" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const cglstmTxt = document.getElementById('textDisplayCGLSTM');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayCGLSTM')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            cglstmTxt.textContent = '🔗 Integrates cosine-similarity gates into vanilla LSTM structure.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            cglstmTxt.textContent = '⚙️ Dynamically weighs new input vs. existing hidden states based on orientation.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide X+5: Cosine Similarity Gate -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🌀 Cosine Similarity Gate</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <!-- Possibly a second figure or bullet points about gate details -->
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">Gate-ic: compares transformed input <i>vs.</i> previous output state alignment.</li>
+      <li class="fragment fade-in">Gate-co: measures alignment with current output state for final gating.</li>
+      <li class="fragment fade-in">Combined gating ensures relevant features are retained, irrelevant ones suppressed.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Slide X+6: Datasets & Evaluation Setup -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🧪 Datasets & Evaluation</h2>
+  <div style="text-align: center; padding-top: 50px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">FallingBallEnv for fundamental motion prediction (balanced/unbalanced sets).</li>
+      <li class="fragment fade-in">Benchmark tasks: Adding Problem, row-wise MNIST, Fashion-MNIST, IMDB, PTB.</li>
+      <li class="fragment fade-in">SocNavGym for real-world-like social navigation scenario.</li>
+      <li class="fragment fade-in">Metrics: MAE/MSE, accuracy, perplexity, training & testing time, t-tests.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Slide X+7: Experimental Results #1 (FallingBallEnv) -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">⏱ FallingBallEnv Results</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <!-- Possibly an image of a table or chart -->
+    <img src="img/fallingballenv_cglstm_results.jpg" width="60%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplayFBE" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const fbeTxt = document.getElementById('textDisplayFBE');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayFBE')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            fbeTxt.textContent = '📌 CGLSTM outperforms LSTM, GRU, Transformer in bounce predictions.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            fbeTxt.textContent = '🔍 Balanced dataset yields more robust predictions vs. unbalanced sets.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide X+8: Experimental Results #2 (Benchmarks) -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎯 Benchmark Tasks (MNIST, etc.)</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <!-- Insert a table or an image of the table summarizing accuracy/time -->
+    <img src="img/cglstm_benchmark_table.jpg" width="70%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplayBench" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const benchTxt = document.getElementById('textDisplayBench');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayBench')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            benchTxt.textContent = '✅ CGLSTM shows highest accuracy on row-wise MNIST (99.07%).';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            benchTxt.textContent = '📌 Achieves strong improvements on IMDB sentiment, ~86% accuracy.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            benchTxt.textContent = '⚖️ Slightly slower than GRU, but significantly more accurate.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide X+9: Experimental Results #3 (SocNavGym) -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🤖 SocNavGym: Realistic Scenario</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <img src="img/cglstm_socnavgym_table.jpg" width="70%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplaySocNav" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const snTxt = document.getElementById('textDisplaySocNav');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplaySocNav')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            snTxt.textContent = '📌 CGLSTM achieves lowest MAE across k=1..k=10 vs. LSTM, GRU, Transformer.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            snTxt.textContent = '🔎 Slightly higher compute than GRU, but 5% better predictive accuracy.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide X+10: SocNavGym Visual Comparison -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎨 SocNavGym Visual Comparison</h2>
+  <div style="text-align: center; padding-top: 40px;">
+    <img src="img/socnavgym_visual_cglstm.jpg" width="80%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplaySocNavVisual" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const snVisTxt = document.getElementById('textDisplaySocNavVisual');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplaySocNavVisual')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            snVisTxt.textContent = '🔍 Blue = correct predictions, Red = errors, Yellow = current state.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            snVisTxt.textContent = '📌 CGLSTM predominantly blue, LSTM & GRU more red, Transformer in-between.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide X+11: Conclusion & Future Work -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎉 Conclusion & Future Work</h2>
+  <div style="text-align: center; padding-top: 40px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">CGLSTM provides robust gating mechanism, outperforming LSTM/GRU in complex tasks.</li>
+      <li class="fragment fade-in">Excels in various domains (vision, NLP, social nav) with ~2–5% accuracy gains.</li>
+      <li class="fragment fade-in">Future: integrate with PPO, SAC, Dreamer for RL; investigate multi-step horizon.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Slide X+12: Thank You / Q&A -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center; margin-top: 100px;">🙏 Thank You</h2>
+  <h4 style="color: white; text-align: center; margin-top: 30px;">Questions?</h4>
+</section>
+
+
+
       <!-- ========================================= -->
       <!-- 7. ADAPTIVE PREDICTION HORIZONS           -->
       <!-- ========================================= -->
