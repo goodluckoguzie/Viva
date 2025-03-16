@@ -717,23 +717,22 @@
   </script>
 </section>
 
-<!-- Slide 31: Experimental Setup & Metrics (Multi-Fragment Version) -->
+<!-- Slide 31: Experimental Setup & Metrics (One-at-a-Time Fragments) -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">📋 Experimental Setup & Metrics</h2>
   <div style="text-align: center; padding-top: 50px; min-height: 300px;">
-    <ul class="textBlock" style="color: white; text-align: left; max-width: 80%; margin: 0 auto;">
-      <!-- Fragment 0: Base Models & Environment -->
-      <li class="fragment fade-in" data-fragment-index="0">
+    <div class="textBlock" style="text-align: left; max-width: 80%; margin: 0 auto;">
+      <!-- Fragment 1: Base Models & Environment -->
+      <p class="fragment" data-fragment-index="0">
         <strong>⚙️ Base Models & Environment:</strong><br>
         • Dueling DQN in SocNavEnv [1]<br>
         • Social Force Model<br>
         • RVO2
-      </li>
-      
-      <!-- Fragment 1: Criteria for Performance -->
-      <li class="fragment fade-in" data-fragment-index="1" style="margin-top: 15px;">
-        <strong>✅ Criteria for Performance:</strong>
-        <ul style="list-style-type: none; margin: 5px 0 0 15px;">
+      </p>
+      <!-- Fragment 2: Criteria for Performance -->
+      <p class="fragment" data-fragment-index="1" style="margin-top: 15px;">
+        <strong>✅ Criteria for Performance:</strong><br>
+        <ul style="list-style-type: none; margin: 5px 0 0 15px; padding: 0;">
           <li>• Human discomfort</li>
           <li>• Distance travelled</li>
           <li>• Simulation time</li>
@@ -744,18 +743,18 @@
           <li>• Idle time</li>
           <li>• Personal space compliance rate</li>
         </ul>
-      </li>
-      
-      <!-- Fragment 2: Additional Notes -->
-      <li class="fragment fade-in" data-fragment-index="2" style="margin-top: 15px;">
+      </p>
+      <!-- Fragment 3: Additional Notes -->
+      <p class="fragment" data-fragment-index="2" style="margin-top: 15px;">
         <strong>📝 Additional Notes:</strong><br>
         • Discrete action space: stop, forward, rotate left/right<br>
         • Convergence achieved in ~3200 episodes<br>
         • Evaluated across multiple metrics for balanced performance
-      </li>
-    </ul>
+      </p>
+    </div>
   </div>
 </section>
+
 
 
 
