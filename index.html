@@ -717,41 +717,47 @@
   </script>
 </section>
 
-<!-- Slide 31: Experimental Setup & Metrics (One-at-a-Time Fragments) -->
+<!-- Slide 31: Experimental Setup & Metrics (Part 1) -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">📋 Experimental Setup & Metrics</h2>
   <div style="text-align: center; padding-top: 50px; min-height: 300px;">
-    <div class="textBlock" style="text-align: left; max-width: 80%; margin: 0 auto;">
-      <!-- Fragment 1: Base Models & Environment -->
-      <p class="fragment" data-fragment-index="0">
-        <strong>⚙️ Base Models & Environment:</strong><br>
+    <div class="textBlock" style="color: white; text-align: center;">
+      <!-- Criteria for Performance -->
+      <p class="fragment fade-in" style="margin-bottom: 10px;">
+        <strong>Criteria for Performance:</strong>
+      </p>
+      <ul class="fragment fade-in" style="list-style-type: none; margin: 0 auto; text-align: left; display: inline-block;">
+        <li>• Human discomfort</li>
+        <li>• Distance travelled</li>
+        <li>• Simulation time</li>
+        <li>• Human collisions</li>
+        <li>• Max steps</li>
+        <li>• Reward</li>
+        <li>• Successful run</li>
+        <li>• Idle time</li>
+        <li>• Personal space compliance rate</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 32: Experimental Setup & Metrics (Part 2) -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📋 Additional Notes</h2>
+  <div style="text-align: center; padding-top: 50px; min-height: 300px;">
+    <ul class="textBlock" style="color: white; list-style-type: none;">
+      <li class="fragment fade-in">
+        <strong>Base Models &amp; Environment:</strong><br>
         • Dueling DQN in SocNavEnv [1]<br>
         • Social Force Model<br>
         • RVO2
-      </p>
-      <!-- Fragment 2: Criteria for Performance -->
-      <p class="fragment" data-fragment-index="1" style="margin-top: 15px;">
-        <strong>✅ Criteria for Performance:</strong><br>
-        <ul style="list-style-type: none; margin: 5px 0 0 15px; padding: 0;">
-          <li>• Human discomfort</li>
-          <li>• Distance travelled</li>
-          <li>• Simulation time</li>
-          <li>• Human collisions</li>
-          <li>• Max steps</li>
-          <li>• Reward</li>
-          <li>• Successful run</li>
-          <li>• Idle time</li>
-          <li>• Personal space compliance rate</li>
-        </ul>
-      </p>
-      <!-- Fragment 3: Additional Notes -->
-      <p class="fragment" data-fragment-index="2" style="margin-top: 15px;">
-        <strong>📝 Additional Notes:</strong><br>
-        • Discrete action space: stop, forward, rotate left/right<br>
-        • Convergence achieved in ~3200 episodes<br>
-        • Evaluated across multiple metrics for balanced performance
-      </p>
-    </div>
+      </li>
+      <li class="fragment fade-in" style="margin-top: 15px;">
+        <strong>Remarks:</strong><br>
+        • Discrete action space (stop, forward, rotate left/right).<br>
+        • Convergence in ~3200 episodes for best model.
+      </li>
+    </ul>
   </div>
 </section>
 
