@@ -1212,11 +1212,30 @@
   <div style="text-align: center; padding-top: 40px; min-height: 300px;">
     <img src="img/DreamerV3_CGLSTM.JPG" width="50%" style="display: block; margin: 0 auto;" />
     <div style="margin-top: 20px;">
-      <p class="textBlock" style="color: white;">
-        ✅ Replaces GRU cells with CGLSTM to enhance world model predictions and long-term state accuracy.
-      </p>
+      <p id="textDisplayA8" class="textBlock" style="color: white;"></p>
     </div>
   </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const tA8 = document.getElementById('textDisplayA8');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayA8')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            tA8.textContent = '✅ Replaces GRU cells with CGLSTM.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            tA8.textContent = '🔍 Enhances world model predictions.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            tA8.textContent = '🤖 Improves long-term state accuracy in dynamic environments.';
+          }
+        }
+      });
+    });
+  </script>
 </section>
 
 <!-- Slide A9: Proposed: 2StepAhead-MASPM (Fixed Horizon) -->
@@ -1225,11 +1244,30 @@
   <div style="text-align: center; padding-top: 40px; min-height: 300px;">
     <img src="img/figure1.4_Hybrid.jpg" width="50%" style="display: block; margin: 0 auto;" />
     <div style="margin-top: 20px;">
-      <p class="textBlock" style="color: white;">
-        🤖 Combines two-step ahead prediction with MASPM’s action evaluation using a fixed 8-step horizon.
-      </p>
+      <p id="textDisplayA9" class="textBlock" style="color: white;"></p>
     </div>
   </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const tA9 = document.getElementById('textDisplayA9');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayA9')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            tA9.textContent = '🤖 Combines two-step ahead prediction with MASPM.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            tA9.textContent = '🎯 Employs a fixed 8-step prediction horizon.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            tA9.textContent = '⚙️ Provides a robust baseline for adaptive horizon methods.';
+          }
+        }
+      });
+    });
+  </script>
 </section>
 
 <!-- Slide A10: Proposed: SAC + CGLSTM (Adaptive Horizon) -->
@@ -1238,12 +1276,32 @@
   <div style="text-align: center; padding-top: 40px; min-height: 300px;">
     <img src="img/SAC_CGLSTM_Adaptive.jpg" width="50%" style="display: block; margin: 0 auto;" />
     <div style="margin-top: 20px;">
-      <p class="textBlock" style="color: white;">
-        📌 Dynamically adjusts the prediction horizon based on policy entropy—planning further when uncertain.
-      </p>
+      <p id="textDisplayA10" class="textBlock" style="color: white;"></p>
     </div>
   </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const tA10 = document.getElementById('textDisplayA10');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayA10')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            tA10.textContent = '📌 Dynamically adjusts prediction horizons based on policy entropy.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            tA10.textContent = '🤖 Plans further ahead when uncertainty is high.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            tA10.textContent = '✅ Conserves computation when confident, yielding higher returns.';
+          }
+        }
+      });
+    });
+  </script>
 </section>
+
 
 <!-- ========================================= -->
 <!-- Preliminary Experiments Section (3 Slides) -->
