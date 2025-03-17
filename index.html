@@ -1239,40 +1239,47 @@
     </ul>
   </div>
 </section>
-
-<!-- Slide A9: Proposed Method 1: DreamerV3 + CGLSTM Integration -->
+      
+<!-- Slide A9: Proposed: DreamerV3 + CGLSTM -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🚀 Proposed: DreamerV3 + CGLSTM</h2>
-  <div style="text-align: center; padding-top: 50px;">
-    <ul class="textBlock" style="color: white;">
-      <li class="fragment fade-in">Replace GRU with CGLSTM in DreamerV3 for improved temporal modeling.</li>
-      <li class="fragment fade-in">Improves sequence prediction and state estimation under dynamic conditions.</li>
-      <li class="fragment fade-in">Leads to enhanced policy performance in continuous action spaces.</li>
-    </ul>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <!-- Replace with your actual image filename -->
+    <img src="img/DreamerV3_CGLSTM.jpg" width="50%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p class="textBlock" style="color: white;">
+        Enhances the world model by replacing GRU cells with CGLSTM, leading to improved temporal representation and state prediction accuracy in dynamic environments.
+      </p>
+    </div>
   </div>
 </section>
 
-<!-- Slide A10: Proposed Method 2: SAC + CGLSTM (Fixed Prediction Horizon) -->
+<!-- Slide A10: Proposed: 2StepAhead-MASPM (Fixed Horizon) -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔗 Proposed: SAC + CGLSTM (Fixed Horizon)</h2>
-  <div style="text-align: center; padding-top: 50px;">
-    <ul class="textBlock" style="color: white;">
-      <li class="fragment fade-in">Integrates a fixed prediction horizon (8 steps) within SAC.</li>
-      <li class="fragment fade-in">Uses CGLSTM to predict a fixed sequence of future states.</li>
-      <li class="fragment fade-in">Provides a baseline for evaluating adaptive horizon benefits.</li>
-    </ul>
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔗 Proposed: 2StepAhead-MASPM (Fixed Horizon)</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <!-- Replace with your actual image filename for the 2StepAhead-MASPM method -->
+    <img src="img/figure1.4_Hybrid.jpg" width="50%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p class="textBlock" style="color: white;">
+        Utilizes a fixed 8-step prediction horizon within the 2StepAhead-MASPM framework. This approach combines the efficiency of two-step ahead prediction with the comprehensive action evaluation of MASPM, providing a strong baseline for comparing adaptive horizon methods.
+      </p>
+    </div>
   </div>
 </section>
 
-<!-- Slide A11: Proposed Method 3: SAC + CGLSTM (Adaptive Prediction Horizon) -->
+
+<!-- Slide A11: Proposed: SAC + CGLSTM (Adaptive Horizon) -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🤖 Proposed: SAC + CGLSTM (Adaptive Horizon)</h2>
-  <div style="text-align: center; padding-top: 50px;">
-    <ul class="textBlock" style="color: white;">
-      <li class="fragment fade-in">Dynamically adjusts prediction horizon based on policy entropy.</li>
-      <li class="fragment fade-in">Allocates longer horizons when uncertainty is high and shorter when low.</li>
-      <li class="fragment fade-in">Achieves higher average returns and faster convergence.</li>
-    </ul>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <!-- Replace with your actual image filename -->
+    <img src="img/SAC_CGLSTM_Adaptive.jpg" width="50%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p class="textBlock" style="color: white;">
+        Dynamically adjusts the prediction horizon based on policy entropy, allowing the agent to plan further when uncertainty is high and conserve resources when confidence is high—resulting in higher returns and faster convergence.
+      </p>
+    </div>
   </div>
 </section>
 
