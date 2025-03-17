@@ -586,17 +586,39 @@
   </div>
 </section>
 
-<!-- Slide A26: Limitations of Current Approaches -->
+<!-- Slide: ⚠️ Limitations of Current Approaches with Video -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">⚠️ Limitations of Current Approaches</h2>
-  <div style="text-align: center; padding-top: 50px; min-height: 300px;">
-    <ul class="textBlock" style="color: white;">
-      <li class="fragment fade-in">🚫 Inability to capture complex, long-term social dynamics.</li>
-      <li class="fragment fade-in">🤖 Insufficient modeling of human interactions and uncertainties.</li>
-      <li class="fragment fade-in">🔒 Over-reliance on static, handcrafted rules limits flexibility.</li>
-    </ul>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <!-- Embedded video -->
+    <video src="video/whypredictivemodellimitation.mp4" width="60%" controls style="display: block; margin: 0 auto; border: 2px solid #fff; border-radius: 4px;"></video>
+    <div style="margin-top: 20px;">
+      <p id="textDisplayLimitations" class="textBlock" style="color: white; line-height: 1.5;"></p>
+    </div>
   </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const limTxt = document.getElementById('textDisplayLimitations');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayLimitations')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            limTxt.textContent = '🚫 Inability to capture complex social dynamics.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            limTxt.textContent = '⚠️ Insufficient modeling of human interactions.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            limTxt.textContent = '🔒 Over-reliance on static, handcrafted rules.';
+          }
+        }
+      });
+    });
+  </script>
 </section>
+
 
 <!-- Slide A27: Introducing Our Contributions -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
