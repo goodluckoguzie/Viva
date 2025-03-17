@@ -889,17 +889,42 @@
   </div>
 </section>
 
-<!-- Slide X+2: Fundamentals of LSTM & Limitations -->
+<!-- Slide X: Fundamentals & Limitations -->
 <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔍 Fundamentals & Limitations</h2>
-  <div style="text-align: center; padding-top: 40px;">
-    <ul class="textBlock" style="color: white;">
-      <li class="fragment fade-in">✅ LSTM overcomes vanishing gradients but struggles with long-term dependencies.</li>
-      <li class="fragment fade-in">🤖 Sensitive to outliers and may not gate optimally in dynamic environments.</li>
-      <li class="fragment fade-in">📌 Motivates enhancing the gating mechanism with cosine similarity.</li>
-    </ul>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <!-- Replace with your actual image filename -->
+    <img src="img/limitationforCGLSTM.jpg" width="50%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplayLimitations" class="textBlock" style="color: white;"></p>
+    </div>
   </div>
+
+  <!-- Hidden fragments for bullet reveals -->
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const limitTxt = document.getElementById('textDisplayLimitations');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayLimitations')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            limitTxt.textContent = '📌 LSTM handles vanishing gradients but may struggle with dynamic outliers.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            limitTxt.textContent = '🤖 GRU is simpler but can miss long-term dependencies in complex tasks.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            limitTxt.textContent = '🔍 Motivates an enhanced gating mechanism (CGLSTM) for robust sequence modeling.';
+          }
+        }
+      });
+    });
+  </script>
 </section>
+
 
 <!-- Slide X+3: Why Cosine-Gated LSTM -->
 <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px">
@@ -943,17 +968,42 @@
   </script>
 </section>
 
-<!-- Slide X+5: Cosine Similarity Gate -->
+<!-- Slide X: Cosine Similarity Gate -->
 <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🌀 Cosine Similarity Gate</h2>
   <div style="text-align: center; padding-top: 40px; min-height: 300px;">
-    <ul class="textBlock" style="color: white;">
-      <li class="fragment fade-in">✅ Gate-ic: Compares transformed input vs. previous output alignment.</li>
-      <li class="fragment fade-in">🤖 Gate-co: Measures alignment with the current output state.</li>
-      <li class="fragment fade-in">📌 Combined gating filters out noise and emphasizes relevant features.</li>
-    </ul>
+    <!-- Replace with your actual image filename for the cosine similarity equations -->
+    <img src="img/cosinesimilarity.JPG" width="40%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplayCosineGate" class="textBlock" style="color: white;"></p>
+    </div>
   </div>
+
+  <!-- Hidden fragments for bullet-point reveals -->
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const cgTxt = document.getElementById('textDisplayCosineGate');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayCosineGate')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            cgTxt.textContent = '📌 gate-ic: Measures alignment between transformed input (IM) & previous output.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            cgTxt.textContent = '🤖 gate-co: Measures alignment between IM & the current output state.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            cgTxt.textContent = '🔗 Helps emphasize relevant features and suppress noise, improving long-term dependency handling.';
+          }
+        }
+      });
+    });
+  </script>
 </section>
+
 
 <!-- Slide X+6: Datasets & Evaluation Setup -->
 <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px">
