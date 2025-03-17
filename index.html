@@ -1262,11 +1262,11 @@
       Reveal.addEventListener('fragmentshown', function(ev){
         if (Reveal.getCurrentSlide().querySelector('#textDisplayDreamer')){
           if (ev.fragment.dataset.fragmentIndex === '0'){
-            dreamerTxt.textContent = '🔹 Replaces GRU cells with CGLSTM in DreamerV3’s world model.';
+            dreamerTxt.textContent = '🔄 Replaces GRU cells with CGLSTM in DreamerV3’s world model.';
           } else if (ev.fragment.dataset.fragmentIndex === '1'){
-            dreamerTxt.textContent = '🔹 Enhances temporal representation and improves state prediction accuracy.';
+            dreamerTxt.textContent = '📊 Enhances temporal representation and improves state prediction accuracy.';
           } else if (ev.fragment.dataset.fragmentIndex === '2'){
-            dreamerTxt.textContent = '🔹 Yields superior performance in dynamic environments with high uncertainty.';
+            dreamerTxt.textContent = '🚀 Yields superior performance in dynamic environments with high uncertainty.';
           }
         }
       });
@@ -1296,11 +1296,11 @@
       Reveal.addEventListener('fragmentshown', function(ev){
         if (Reveal.getCurrentSlide().querySelector('#textDisplayHybrid')){
           if (ev.fragment.dataset.fragmentIndex === '0'){
-            hybridTxt.textContent = '🔹 Combines two-step ahead prediction with MASPM’s comprehensive action evaluation.';
+            hybridTxt.textContent = '🔗 Combines two-step ahead prediction with MASPM’s comprehensive action evaluation.';
           } else if (ev.fragment.dataset.fragmentIndex === '1'){
-            hybridTxt.textContent = '🔹 Utilizes a fixed 8-step prediction horizon to generate future state sequences.';
+            hybridTxt.textContent = '⏱ Utilizes a fixed 8-step prediction horizon to generate future state sequences.';
           } else if (ev.fragment.dataset.fragmentIndex === '2'){
-            hybridTxt.textContent = '🔹 Serves as a strong baseline for comparing adaptive horizon methods.';
+            hybridTxt.textContent = '✅ Serves as a strong baseline for comparing adaptive horizon methods.';
           }
         }
       });
@@ -1330,17 +1330,18 @@
       Reveal.addEventListener('fragmentshown', function(ev){
         if (Reveal.getCurrentSlide().querySelector('#textDisplayAdaptive')){
           if (ev.fragment.dataset.fragmentIndex === '0'){
-            adaptiveTxt.textContent = '🔹 Dynamically adjusts prediction horizon based on policy entropy.';
+            adaptiveTxt.textContent = '📌 Dynamically adjusts prediction horizon based on policy entropy.';
           } else if (ev.fragment.dataset.fragmentIndex === '1'){
-            adaptiveTxt.textContent = '🔹 Plans further ahead when uncertainty is high, conserving resources when low.';
+            adaptiveTxt.textContent = '🔍 Plans further ahead when uncertainty is high, and conserves resources when confidence is high.';
           } else if (ev.fragment.dataset.fragmentIndex === '2'){
-            adaptiveTxt.textContent = '🔹 Achieves higher returns and faster convergence compared to fixed horizons.';
+            adaptiveTxt.textContent = '🤖 Achieves higher returns and faster convergence compared to fixed horizons.';
           }
         }
       });
     });
   </script>
 </section>
+
 
 
 
