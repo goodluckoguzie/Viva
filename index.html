@@ -1144,9 +1144,13 @@
 <!-- Adaptive Horizons Chapter Slide Deck      -->
 <!-- ========================================= -->
 
+<!-- ========================================= -->
+<!-- Adaptive Horizons Chapter Slide Deck      -->
+<!-- ========================================= -->
+
 <!-- Slide A1: Chapter Title -->
 <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-  <h2 class="section-title" style="color: white;">Adaptive Predictive Reinforcement Learning: Entropy‐Driven Adaptive Prediction Horizons</h2>
+  <h2 class="section-title" style="color: white;">Adaptive Predictive Reinforcement Learning:<br>Entropy‐Driven Adaptive Prediction Horizons</h2>
 </section>
 
 <!-- Slide A2: Introduction -->
@@ -1155,8 +1159,8 @@
   <div style="text-align: center; padding-top: 50px;">
     <ul class="textBlock" style="color: white;">
       <li class="fragment fade-in">✅ Dynamically adjusts prediction horizons in continuous action spaces.</li>
-      <li class="fragment fade-in">🤖 Uses policy entropy to gauge uncertainty and set planning depth.</li>
-      <li class="fragment fade-in">📌 Extends our prior work on predictive world models for social navigation.</li>
+      <li class="fragment fade-in">🤖 Uses policy entropy to detect uncertainty and set planning depth.</li>
+      <li class="fragment fade-in">🔗 Builds on our previous predictive world models (for social navigation).</li>
     </ul>
   </div>
 </section>
@@ -1166,9 +1170,9 @@
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">💡 Motivation</h2>
   <div style="text-align: center; padding-top: 50px;">
     <ul class="textBlock" style="color: white;">
-      <li class="fragment fade-in">⚠️ Fixed horizons waste computation in simple settings and underperform in complex ones.</li>
-      <li class="fragment fade-in">🔍 Real-world tasks vary in uncertainty—requiring longer horizons when needed.</li>
-      <li class="fragment fade-in">🎯 Entropy provides a quantitative measure of action uncertainty for dynamic planning.</li>
+      <li class="fragment fade-in">⚠️ Fixed horizons waste computation in simple settings, underperform in complex ones.</li>
+      <li class="fragment fade-in">🎯 Real-world tasks vary in uncertainty—longer planning is crucial when needed.</li>
+      <li class="fragment fade-in">🔍 Entropy signals action uncertainty, enabling dynamic horizon shifts.</li>
     </ul>
   </div>
 </section>
@@ -1177,10 +1181,9 @@
 <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
   <h2 class="section-title" style="color: white;">Research Evolution</h2>
   <div style="text-align: center; padding-top: 50px;">
-    <!-- Replace with your actual evolution diagram image -->
     <img src="img/EntropyDrivenAdaptiveHorizonMechanism.jpg" width="60%" style="display: block; margin: 0 auto;" />
     <p class="textBlock" style="color: white; margin-top: 20px;">
-      🚀 From fixed horizons in discrete spaces to adaptive horizons in continuous domains.
+      🚀 From fixed-horizon methods in discrete spaces to adaptive horizons in continuous domains.
     </p>
   </div>
 </section>
@@ -1190,9 +1193,21 @@
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎯 Research Objectives & Contributions</h2>
   <div style="text-align: center; padding-top: 50px;">
     <ul class="textBlock" style="color: white;">
-      <li class="fragment fade-in">✅ Propose an entropy-driven adaptive horizon framework within SAC.</li>
-      <li class="fragment fade-in">🤖 Integrate CGLSTM into DreamerV3 for improved temporal modeling.</li>
-      <li class="fragment fade-in">📊 Benchmark our approach against SAC, PPO, TD3, DDPG, and DreamerV3 variants.</li>
+      <li class="fragment fade-in">✅ Propose an entropy-driven adaptive horizon within SAC.</li>
+      <li class="fragment fade-in">🤖 Integrate CGLSTM into DreamerV3 for enhanced predictive modeling.</li>
+      <li class="fragment fade-in">📊 Benchmark vs. SAC, PPO, TD3, DDPG, DreamerV3 variants.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Slide A6: Significance -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔑 Significance of the Research</h2>
+  <div style="text-align: center; padding-top: 50px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">📌 Balances exploration & computation in dynamic continuous-action tasks.</li>
+      <li class="fragment fade-in">🤖 Improves long-term planning & decision-making with variable horizons.</li>
+      <li class="fragment fade-in">✅ Applicable to real-world robotics & autonomous systems.</li>
     </ul>
   </div>
 </section>
@@ -1206,31 +1221,28 @@
   <h2 class="section-title" style="color: white;">Proposed Methods</h2>
 </section>
 
-<!-- Slide A8: Proposed: DreamerV3 + CGLSTM -->
+<!-- Slide A8: Proposed: DreamerV3 + CGLSTM (Bullet by bullet) -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🚀 Proposed: DreamerV3 + CGLSTM</h2>
   <div style="text-align: center; padding-top: 40px; min-height: 300px;">
     <img src="img/DreamerV3_CGLSTM.JPG" width="50%" style="display: block; margin: 0 auto;" />
     <div style="margin-top: 20px;">
-      <p id="textDisplayA8" class="textBlock" style="color: white;"></p>
+      <p id="textDisplayDreamerCGLSTM" class="textBlock" style="color: white;"></p>
     </div>
   </div>
   <div style="display: none;">
     <span class="fragment" data-fragment-index="0"></span>
     <span class="fragment" data-fragment-index="1"></span>
-    <span class="fragment" data-fragment-index="2"></span>
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', function(){
-      const tA8 = document.getElementById('textDisplayA8');
+      const dreamerTxt = document.getElementById('textDisplayDreamerCGLSTM');
       Reveal.addEventListener('fragmentshown', function(ev){
-        if (Reveal.getCurrentSlide().querySelector('#textDisplayA8')){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayDreamerCGLSTM')){
           if (ev.fragment.dataset.fragmentIndex === '0'){
-            tA8.textContent = '✅ Replaces GRU cells with CGLSTM.';
+            dreamerTxt.textContent = '✅ Replaces GRU with CGLSTM to improve world-model predictions.';
           } else if (ev.fragment.dataset.fragmentIndex === '1'){
-            tA8.textContent = '🔍 Enhances world model predictions.';
-          } else if (ev.fragment.dataset.fragmentIndex === '2'){
-            tA8.textContent = '🤖 Improves long-term state accuracy in dynamic environments.';
+            dreamerTxt.textContent = '🤖 Enhances temporal representation & long-term state accuracy.';
           }
         }
       });
@@ -1244,25 +1256,22 @@
   <div style="text-align: center; padding-top: 40px; min-height: 300px;">
     <img src="img/figure1.4_Hybrid.jpg" width="50%" style="display: block; margin: 0 auto;" />
     <div style="margin-top: 20px;">
-      <p id="textDisplayA9" class="textBlock" style="color: white;"></p>
+      <p id="textDisplayFixedHorizon" class="textBlock" style="color: white;"></p>
     </div>
   </div>
-  <div style="display: none;">
+  <div style="display:none;">
     <span class="fragment" data-fragment-index="0"></span>
     <span class="fragment" data-fragment-index="1"></span>
-    <span class="fragment" data-fragment-index="2"></span>
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', function(){
-      const tA9 = document.getElementById('textDisplayA9');
+      const fixedTxt = document.getElementById('textDisplayFixedHorizon');
       Reveal.addEventListener('fragmentshown', function(ev){
-        if (Reveal.getCurrentSlide().querySelector('#textDisplayA9')){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayFixedHorizon')){
           if (ev.fragment.dataset.fragmentIndex === '0'){
-            tA9.textContent = '🤖 Combines two-step ahead prediction with MASPM.';
+            fixedTxt.textContent = '🤖 Uses an 8-step fixed horizon combining 2-step ahead & MASPM.';
           } else if (ev.fragment.dataset.fragmentIndex === '1'){
-            tA9.textContent = '🎯 Employs a fixed 8-step prediction horizon.';
-          } else if (ev.fragment.dataset.fragmentIndex === '2'){
-            tA9.textContent = '⚙️ Provides a robust baseline for adaptive horizon methods.';
+            fixedTxt.textContent = '⚙️ Provides a strong baseline for adaptive horizon comparison.';
           }
         }
       });
@@ -1276,25 +1285,22 @@
   <div style="text-align: center; padding-top: 40px; min-height: 300px;">
     <img src="img/SAC_CGLSTM_Adaptive.jpg" width="50%" style="display: block; margin: 0 auto;" />
     <div style="margin-top: 20px;">
-      <p id="textDisplayA10" class="textBlock" style="color: white;"></p>
+      <p id="textDisplayAdaptiveHorizon" class="textBlock" style="color: white;"></p>
     </div>
   </div>
-  <div style="display: none;">
+  <div style="display:none;">
     <span class="fragment" data-fragment-index="0"></span>
     <span class="fragment" data-fragment-index="1"></span>
-    <span class="fragment" data-fragment-index="2"></span>
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', function(){
-      const tA10 = document.getElementById('textDisplayA10');
+      const adaptiveTxt = document.getElementById('textDisplayAdaptiveHorizon');
       Reveal.addEventListener('fragmentshown', function(ev){
-        if (Reveal.getCurrentSlide().querySelector('#textDisplayA10')){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayAdaptiveHorizon')){
           if (ev.fragment.dataset.fragmentIndex === '0'){
-            tA10.textContent = '📌 Dynamically adjusts prediction horizons based on policy entropy.';
+            adaptiveTxt.textContent = '📌 Dynamically adjusts horizon via policy entropy—longer when uncertain.';
           } else if (ev.fragment.dataset.fragmentIndex === '1'){
-            tA10.textContent = '🤖 Plans further ahead when uncertainty is high.';
-          } else if (ev.fragment.dataset.fragmentIndex === '2'){
-            tA10.textContent = '✅ Conserves computation when confident, yielding higher returns.';
+            adaptiveTxt.textContent = '⚡ Achieves higher returns & faster convergence in continuous tasks.';
           }
         }
       });
@@ -1307,49 +1313,40 @@
 <!-- Preliminary Experiments Section (3 Slides) -->
 <!-- ========================================= -->
 
-<!-- ========================================= -->
-<!-- Preliminary Experiments Section (4 Slides) -->
-<!-- ========================================= -->
-
-<!-- Slide A11: Preliminary Experiments Overview -->
+<!-- Slide A11: Preliminary Experiments Overview (No image) -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🧪 Preliminary Experiments Overview</h2>
   <div style="text-align: center; padding-top: 50px;">
     <ul class="textBlock" style="color: white;">
-      <li class="fragment fade-in">🔍 Evaluated in LunarLander‑v2 to optimize CGLSTM window-slide and horizon settings.</li>
-      <li class="fragment fade-in">⚙️ Tested window-slide sizes: 16, 32, 64 for balancing accuracy and cost.</li>
-      <li class="fragment fade-in">🎯 Compared adaptive horizon sets {1,2,3,4,5} vs. {1,2,4,6,8} against a fixed 8-step horizon.</li>
+      <li class="fragment fade-in">🔍 LunarLander‑v2 to optimize CGLSTM window-slide & horizon sets.</li>
+      <li class="fragment fade-in">⚙️ Tested window-slide sizes: 16, 32, 64 for trade-offs in cost vs. accuracy.</li>
+      <li class="fragment fade-in">🎯 Compared horizon sets {1,2,3,4,5} vs. {1,2,4,6,8} vs. fixed 8-step horizon.</li>
     </ul>
   </div>
 </section>
 
-<!-- Slide A12: Window-Slide Selection (Train Loss) -->
+<!-- Slide A12: Window-Slide Selection -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📊 Window-Slide Selection (Train Loss)</h2>
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📊 Window-Slide Selection</h2>
   <div style="text-align: center; padding-top: 40px; min-height: 300px;">
-    <!-- Train loss image -->
     <img src="img/WindowSlide_TrainLoss-1.jpg" width="60%" style="display: block; margin: 0 auto;" />
     <div style="margin-top: 20px;">
-      <p id="textDisplayTrainLoss" class="textBlock" style="color: white;"></p>
+      <p id="textDisplayWindowSlide" class="textBlock" style="color: white;"></p>
     </div>
   </div>
-  <!-- Fragment placeholders for bullet reveals -->
-  <div style="display: none;">
+  <div style="display:none;">
     <span class="fragment" data-fragment-index="0"></span>
     <span class="fragment" data-fragment-index="1"></span>
-    <span class="fragment" data-fragment-index="2"></span>
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', function(){
-      const trainLossTxt = document.getElementById('textDisplayTrainLoss');
+      const windowTxt = document.getElementById('textDisplayWindowSlide');
       Reveal.addEventListener('fragmentshown', function(ev){
-        if (Reveal.getCurrentSlide().querySelector('#textDisplayTrainLoss')){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayWindowSlide')){
           if (ev.fragment.dataset.fragmentIndex === '0'){
-            trainLossTxt.textContent = '✅ Window-slide of 64 achieves the lowest training loss.';
+            windowTxt.textContent = '✅ Slide=64 yields lowest training loss but is more expensive.';
           } else if (ev.fragment.dataset.fragmentIndex === '1'){
-            trainLossTxt.textContent = '🤖 However, 64 is more expensive computationally.';
-          } else if (ev.fragment.dataset.fragmentIndex === '2'){
-            trainLossTxt.textContent = '🎯 Chose 32 as an optimal trade-off between cost & accuracy.';
+            windowTxt.textContent = '🎯 Chose slide=32 for a better balance of speed vs. accuracy.';
           }
         }
       });
@@ -1357,64 +1354,31 @@
   </script>
 </section>
 
-<!-- Slide A13: Window-Slide Selection (Validation Loss) -->
+<!-- Slide A13: Adaptive Horizon Selection -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📊 Window-Slide Selection (Validation Loss)</h2>
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎯 Adaptive Horizon Selection</h2>
   <div style="text-align: center; padding-top: 40px; min-height: 300px;">
-    <!-- Val loss image -->
-    <img src="img/WindowSlide_ValLoss-1.jpg" width="60%" style="display: block; margin: 0 auto;" />
-    <div style="margin-top: 20px;">
-      <p id="textDisplayValLoss" class="textBlock" style="color: white;"></p>
-    </div>
-  </div>
-  <!-- Fragment placeholders for bullet reveals -->
-  <div style="display: none;">
-    <span class="fragment" data-fragment-index="0"></span>
-    <span class="fragment" data-fragment-index="1"></span>
-    <span class="fragment" data-fragment-index="2"></span>
-  </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', function(){
-      const valLossTxt = document.getElementById('textDisplayValLoss');
-      Reveal.addEventListener('fragmentshown', function(ev){
-        if (Reveal.getCurrentSlide().querySelector('#textDisplayValLoss')){
-          if (ev.fragment.dataset.fragmentIndex === '0'){
-            valLossTxt.textContent = '📌 Window-slide of 64 also leads to lowest validation loss.';
-          } else if (ev.fragment.dataset.fragmentIndex === '1'){
-            valLossTxt.textContent = '🤖 Window-slide of 16 insufficient for complex environment.';
-          } else if (ev.fragment.dataset.fragmentIndex === '2'){
-            valLossTxt.textContent = '⚖️ 32 remains the balanced choice for robust validation.';
-          }
-        }
-      });
-    });
-  </script>
-</section>
-
-<!-- Slide A14: Adaptive Horizon vs. Fixed Horizon -->
-<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎯 Adaptive Horizon vs. Fixed Horizon</h2>
-  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
-    <!-- Horizon comparison image -->
     <img src="img/Lunarlander_Horizon_Comparison-1.jpg" width="60%" style="display: block; margin: 0 auto;" />
     <div style="margin-top: 20px;">
-      <p id="textDisplayHorizons" class="textBlock" style="color: white;"></p>
+      <p id="textDisplayHorizonSets" class="textBlock" style="color: white;"></p>
     </div>
   </div>
-  <!-- Fragment placeholders for bullet reveals -->
-  <div style="display: none;">
+  <div style="display:none;">
     <span class="fragment" data-fragment-index="0"></span>
     <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', function(){
-      const horizonTxt = document.getElementById('textDisplayHorizons');
+      const horizonTxt = document.getElementById('textDisplayHorizonSets');
       Reveal.addEventListener('fragmentshown', function(ev){
-        if (Reveal.getCurrentSlide().querySelector('#textDisplayHorizons')){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayHorizonSets')){
           if (ev.fragment.dataset.fragmentIndex === '0'){
-            horizonTxt.textContent = '🔍 {1,2,4,6,8} converges to ~280 reward, outperforming {1,2,3,4,5} (~240-250).';
+            horizonTxt.textContent = '🔍 {1,2,4,6,8} eventually outperforms {1,2,3,4,5}.';
           } else if (ev.fragment.dataset.fragmentIndex === '1'){
-            horizonTxt.textContent = '⚡ Gains ~6 hours in training vs. fixed 8-step horizon to reach 500k steps.';
+            horizonTxt.textContent = '⚡ Saved ~6 hours vs. fixed 8-step horizon to reach 500k steps.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            horizonTxt.textContent = '📌 Adopted {1,2,4,6,8} & window-slide=32 for main experiments.';
           }
         }
       });
@@ -1422,96 +1386,35 @@
   </script>
 </section>
 
-<!-- (Optional) Slide A15: Time to 500k Steps (Fixed vs. Entropy) -->
+<!-- ========================================= -->
+<!-- Results & Discussion Section -->
+<!-- ========================================= -->
+
+<!-- Slide A14: Training Metrics - LunarLander -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">⏱ Time to 500k Steps: Fixed vs. Entropy Horizon</h2>
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">⏱ Training Results: LunarLander</h2>
   <div style="text-align: center; padding-top: 40px; min-height: 300px;">
-    <img src="img/Lunarlander_Fixed_vs_Entropy-1.jpg" width="60%" style="display: block; margin: 0 auto;" />
+    <img src="img/TrainingReturn_LunderLander-1.jpg" width="60%" style="display: block; margin: 0 auto;" />
     <div style="margin-top: 20px;">
-      <p id="textDisplayFixedEntropy" class="textBlock" style="color: white;"></p>
+      <p id="textDisplayTrainLL" class="textBlock" style="color: white;"></p>
     </div>
   </div>
-  <!-- Fragment placeholders for bullet reveals -->
-  <div style="display: none;">
-    <span class="fragment" data-fragment-index="0"></span>
-    <span class="fragment" data-fragment-index="1"></span>
-  </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', function(){
-      const fixedEntropyTxt = document.getElementById('textDisplayFixedEntropy');
-      Reveal.addEventListener('fragmentshown', function(ev){
-        if (Reveal.getCurrentSlide().querySelector('#textDisplayFixedEntropy')){
-          if (ev.fragment.dataset.fragmentIndex === '0'){
-            fixedEntropyTxt.textContent = '✅ Entropy horizon hits 500k steps in 53.48h, vs. 59.54h for fixed horizon.';
-          } else if (ev.fragment.dataset.fragmentIndex === '1'){
-            fixedEntropyTxt.textContent = '🎯 Demonstrates computational savings & better reward progression.';
-          }
-        }
-      });
-    });
-  </script>
-</section>
-
-
-
-<!-- ========================================= -->
-<!-- Environments & Baselines Section -->
-<!-- ========================================= -->
-
-<!-- Slide A14: Environments Used -->
-<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🏙 Environments Used</h2>
-  <div style="text-align: center; padding-top: 50px;">
-    <ul class="textBlock" style="color: white;">
-      <li class="fragment fade-in">🪂 LunarLander‑v2 with Gaussian noise added to observations.</li>
-      <li class="fragment fade-in">🏷 LiteSocNavGym: Custom social navigation environment with dynamic obstacles and noise.</li>
-    </ul>
-  </div>
-</section>
-
-<!-- Slide A15: Baselines for Comparison -->
-<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📊 Baselines for Comparison</h2>
-  <div style="text-align: center; padding-top: 50px;">
-    <ul class="textBlock" style="color: white;">
-      <li class="fragment fade-in">✅ Vanilla SAC</li>
-      <li class="fragment fade-in">🤖 PPO, TD3, DDPG</li>
-      <li class="fragment fade-in">📌 DreamerV3 (with GRU) & DreamerV3 + CGLSTM</li>
-      <li class="fragment fade-in">⚖ SAC + CGLSTM (Fixed: 2StepAhead-MASPM) vs. Adaptive Horizon</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ========================================= -->
-<!-- Results & Discussion Section (Adaptive Horizons Chapter) -->
-<!-- ========================================= -->
-
-<!-- Slide A16: Training Metrics -->
-<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">⏱ Adaptive Horizons: Training Metrics</h2>
-  <div style="text-align: center; padding-top: 50px; min-height: 300px;">
-    <!-- Replace with your training metrics image -->
-    <img src="img/AdaptiveTrainingMetrics.jpg" width="60%" style="display: block; margin: 0 auto;" />
-    <div style="margin-top: 20px;">
-      <p id="textDisplayAdaptiveTrain" class="textBlock" style="color: white;"></p>
-    </div>
-  </div>
-  <div style="display: none;">
+  <div style="display:none;">
     <span class="fragment" data-fragment-index="0"></span>
     <span class="fragment" data-fragment-index="1"></span>
     <span class="fragment" data-fragment-index="2"></span>
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', function(){
-      const trainTxt = document.getElementById('textDisplayAdaptiveTrain');
+      const llTxt = document.getElementById('textDisplayTrainLL');
       Reveal.addEventListener('fragmentshown', function(ev){
-        if (Reveal.getCurrentSlide().querySelector('#textDisplayAdaptiveTrain')){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayTrainLL')){
           if (ev.fragment.dataset.fragmentIndex === '0'){
-            trainTxt.textContent = '📌 Reward curves show faster convergence with adaptive horizons.';
+            llTxt.textContent = '📌 DreamerV3 variants converge quickly & reach higher final returns.';
           } else if (ev.fragment.dataset.fragmentIndex === '1'){
-            trainTxt.textContent = '🤖 Enhanced exploration efficiency observed over ~200k episodes.';
+            llTxt.textContent = '🤖 SAC with adaptive horizon surpasses fixed-horizon & baseline SAC.';
           } else if (ev.fragment.dataset.fragmentIndex === '2'){
-            trainTxt.textContent = '⚡ Reduced per-episode training time versus fixed-horizon setups.';
+            llTxt.textContent = '⚡ Overall shows stable learning & improved reward under noise.';
           }
         }
       });
@@ -1519,62 +1422,28 @@
   </script>
 </section>
 
-<!-- Slide A17: Testing Metrics -->
+<!-- Slide A15: Training Metrics - LiteSocNavGym -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎯 Adaptive Horizons: Testing Metrics</h2>
-  <div style="text-align: center; padding-top: 50px; min-height: 300px;">
-    <!-- Replace with your testing metrics image -->
-    <img src="img/AdaptiveTestingMetrics.jpg" width="60%" style="display: block; margin: 0 auto;" />
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">⏱ Training Results: LiteSocNavGym</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <img src="img/TrainingReturn_SocNavGym-1.jpg" width="60%" style="display: block; margin: 0 auto;" />
     <div style="margin-top: 20px;">
-      <p id="textDisplayAdaptiveTest" class="textBlock" style="color: white;"></p>
+      <p id="textDisplayTrainSoc" class="textBlock" style="color: white;"></p>
     </div>
   </div>
-  <div style="display: none;">
-    <span class="fragment" data-fragment-index="0"></span>
-    <span class="fragment" data-fragment-index="1"></span>
-    <span class="fragment" data-fragment-index="2"></span>
-  </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', function(){
-      const testTxt = document.getElementById('textDisplayAdaptiveTest');
-      Reveal.addEventListener('fragmentshown', function(ev){
-        if (Reveal.getCurrentSlide().querySelector('#textDisplayAdaptiveTest')){
-          if (ev.fragment.dataset.fragmentIndex === '0'){
-            testTxt.textContent = '✅ Testing shows higher rewards and 100% success in LunarLander.';
-          } else if (ev.fragment.dataset.fragmentIndex === '1'){
-            testTxt.textContent = '📊 Significant improvements in MAE/MSE compared to baselines.';
-          } else if (ev.fragment.dataset.fragmentIndex === '2'){
-            testTxt.textContent = '🔍 Adaptive horizons perform robustly under noise.';
-          }
-        }
-      });
-    });
-  </script>
-</section>
-
-<!-- Slide A18: Environment Performance -->
-<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🤖 Adaptive Horizons: Environment Performance</h2>
-  <div style="text-align: center; padding-top: 50px; min-height: 300px;">
-    <!-- Replace with your environment performance image -->
-    <img src="img/AdaptiveEnvPerformance.jpg" width="70%" style="display: block; margin: 0 auto;" />
-    <div style="margin-top: 20px;">
-      <p id="textDisplayAdaptiveEnv" class="textBlock" style="color: white;"></p>
-    </div>
-  </div>
-  <div style="display: none;">
+  <div style="display:none;">
     <span class="fragment" data-fragment-index="0"></span>
     <span class="fragment" data-fragment-index="1"></span>
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', function(){
-      const envTxt = document.getElementById('textDisplayAdaptiveEnv');
+      const socTxt = document.getElementById('textDisplayTrainSoc');
       Reveal.addEventListener('fragmentshown', function(ev){
-        if (Reveal.getCurrentSlide().querySelector('#textDisplayAdaptiveEnv')){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayTrainSoc')){
           if (ev.fragment.dataset.fragmentIndex === '0'){
-            envTxt.textContent = '📌 Tested in LunarLander‑v2 and LiteSocNavGym (with noise).';
+            socTxt.textContent = '✅ DreamerV3 & DreamerV3 + CGLSTM converge fastest, stable learning.';
           } else if (ev.fragment.dataset.fragmentIndex === '1'){
-            envTxt.textContent = '🤖 Adaptive horizons yield optimal planning and efficiency.';
+            socTxt.textContent = '🤖 Our adaptive horizon method achieves highest final reward overall.';
           }
         }
       });
@@ -1582,35 +1451,28 @@
   </script>
 </section>
 
-<!-- Slide A19: Quantitative Comparison & Baselines -->
+<!-- Slide A16: Table - LunarLander Results (Part 1) -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📊 Quantitative Comparison & Baselines</h2>
-  <div style="text-align: center; padding-top: 50px;">
-    <!-- Replace with your table images converted to one image if needed -->
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📊 LunarLander Results (1)</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
     <img src="img/lunarlander_results_part1.JPG" width="70%" style="display: block; margin: 0 auto;" />
-    <img src="img/lunarlander_results_part2.JPG" width="70%" style="display: block; margin: 20px auto;" />
-    <img src="img/socnav_results_part1.JPG" width="70%" style="display: block; margin: 20px auto;" />
-    <img src="img/socnav_results_part2.JPG" width="70%" style="display: block; margin: 20px auto;" />
     <div style="margin-top: 20px;">
-      <p id="textDisplayQuantComp" class="textBlock" style="color: white;"></p>
+      <p id="textDisplayLLp1" class="textBlock" style="color: white;"></p>
     </div>
   </div>
-  <div style="display: none;">
+  <div style="display:none;">
     <span class="fragment" data-fragment-index="0"></span>
     <span class="fragment" data-fragment-index="1"></span>
-    <span class="fragment" data-fragment-index="2"></span>
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', function(){
-      const quantTxt = document.getElementById('textDisplayQuantComp');
+      const llp1Txt = document.getElementById('textDisplayLLp1');
       Reveal.addEventListener('fragmentshown', function(ev){
-        if (Reveal.getCurrentSlide().querySelector('#textDisplayQuantComp')){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayLLp1')){
           if (ev.fragment.dataset.fragmentIndex === '0'){
-            quantTxt.textContent = '✅ Adaptive SAC + CGLSTM (Adaptive Horizon) outperforms fixed-horizon and baseline methods.';
+            llp1Txt.textContent = '✅ Our adaptive horizon SAC + CGLSTM hits 100% success & best returns.';
           } else if (ev.fragment.dataset.fragmentIndex === '1'){
-            quantTxt.textContent = '🤖 DreamerV3 variants have higher computational cost despite good performance.';
-          } else if (ev.fragment.dataset.fragmentIndex === '2'){
-            quantTxt.textContent = '📌 Our approach achieves high rewards and efficiency even under noisy conditions.';
+            llp1Txt.textContent = '🔍 Noise (σ=0.085) used only at test time, highlighting robust landings.';
           }
         }
       });
@@ -1618,23 +1480,109 @@
   </script>
 </section>
 
-<!-- ========================================= -->
-<!-- Conclusion & Next Steps for This Chapter -->
-<!-- ========================================= -->
-
-<!-- Slide A20: Summary & Discussion -->
-<section data-background="img/aston_slides_background_22.png">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎉 Summary & Discussion</h2>
+<!-- Slide A17: Table - LunarLander Results (Part 2) -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📊 LunarLander Results (2)</h2>
   <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <img src="img/lunarlander_results_part2.JPG" width="70%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplayLLp2" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <div style="display:none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const llp2Txt = document.getElementById('textDisplayLLp2');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayLLp2')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            llp2Txt.textContent = '⚙️ Weighted success/efficiency highest for adaptive horizon (99.73%).';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            llp2Txt.textContent = '🤖 DreamerV3 variants cost more inference time (26-27 ms).';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            llp2Txt.textContent = '📌 Proposed method maintains strong performance & moderate cost.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide A18: Table - LiteSocNavGym Results (Part 1) -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📊 LiteSocNavGym Results (1)</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <img src="img/socnav_results_part1.JPG" width="70%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplaySocNavp1" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <div style="display:none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const snp1Txt = document.getElementById('textDisplaySocNavp1');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplaySocNavp1')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            snp1Txt.textContent = '✅ DreamerV3 + CGLSTM leads with 96% success, 0.77 return.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            snp1Txt.textContent = '🤖 Our adaptive horizon hits 94% success, still robust in complex tasks.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide A19: Table - LiteSocNavGym Results (Part 2) -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📊 LiteSocNavGym Results (2)</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <img src="img/socnav_results_part2.JPG" width="70%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplaySocNavp2" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <div style="display:none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const snp2Txt = document.getElementById('textDisplaySocNavp2');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplaySocNavp2')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            snp2Txt.textContent = '⚙️ DreamerV3 + CGLSTM uses ~9.87 ms inference & 10 ms simulation.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            snp2Txt.textContent = '✅ Adaptive horizon has balanced success & computational cost.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide A20: Conclusion & Future Directions -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎉 Conclusion & Future Directions</h2>
+  <div style="text-align: center; padding-top: 40px;">
     <ul class="textBlock" style="color: white;">
-      <li class="fragment fade-in">📌 Adaptive horizons significantly enhance long-term planning.</li>
-      <li class="fragment fade-in">🤖 Entropy-driven adjustment balances exploration with efficiency.</li>
-      <li class="fragment fade-in">✅ Integration of CGLSTM into SAC and DreamerV3 improves predictions.</li>
-      <li class="fragment fade-in">✨ Opens avenues for further optimization in continuous action RL.</li>
+      <li class="fragment fade-in">📌 Entropy-driven adaptive horizons improve RL efficiency in continuous action spaces.</li>
+      <li class="fragment fade-in">🤖 Integration of CGLSTM boosts predictive power in DreamerV3 & SAC.</li>
+      <li class="fragment fade-in">⚠️ Limitations: Tuning entropy coefficient, horizon mapping in varied environments.</li>
+      <li class="fragment fade-in">✨ Future: Expand to multi-agent tasks, automated \(\alpha\) tuning, & real-world robotics.</li>
     </ul>
   </div>
   <div style="text-align: center; margin-top: 30px;">
-    <a href="https://goodluckoguzie.github.io/Viva" target="_blank" class="final-link">More details at: goodluckoguzie.github.io/Viva</a>
+    <a href="https://goodluckoguzie.github.io/Viva" target="_blank" class="final-link">https://goodluckoguzie.github.io/Viva</a>
   </div>
 </section>
 
