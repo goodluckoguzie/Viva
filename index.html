@@ -1483,13 +1483,14 @@
 </section>
 
 <!-- ========================================= -->
-<!-- Results & Discussion Section -->
+<!-- Results & Discussion Section (Adaptive Horizons Chapter) -->
 <!-- ========================================= -->
 
 <!-- Slide A16: Training Metrics -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">⏱ Adaptive Horizons: Training Metrics</h2>
   <div style="text-align: center; padding-top: 50px; min-height: 300px;">
+    <!-- Replace with your training metrics image -->
     <img src="img/AdaptiveTrainingMetrics.jpg" width="60%" style="display: block; margin: 0 auto;" />
     <div style="margin-top: 20px;">
       <p id="textDisplayAdaptiveTrain" class="textBlock" style="color: white;"></p>
@@ -1508,9 +1509,9 @@
           if (ev.fragment.dataset.fragmentIndex === '0'){
             trainTxt.textContent = '📌 Reward curves show faster convergence with adaptive horizons.';
           } else if (ev.fragment.dataset.fragmentIndex === '1'){
-            trainTxt.textContent = '🤖 Enhanced exploration efficiency over ~200k episodes.';
+            trainTxt.textContent = '🤖 Enhanced exploration efficiency observed over ~200k episodes.';
           } else if (ev.fragment.dataset.fragmentIndex === '2'){
-            trainTxt.textContent = '⚡ Reduced per-episode training time versus fixed horizons.';
+            trainTxt.textContent = '⚡ Reduced per-episode training time versus fixed-horizon setups.';
           }
         }
       });
@@ -1518,10 +1519,11 @@
   </script>
 </section>
 
-<!-- Slide A17: Testing Metrics (1) -->
+<!-- Slide A17: Testing Metrics -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎯 Adaptive Horizons: Testing Metrics (1)</h2>
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎯 Adaptive Horizons: Testing Metrics</h2>
   <div style="text-align: center; padding-top: 50px; min-height: 300px;">
+    <!-- Replace with your testing metrics image -->
     <img src="img/AdaptiveTestingMetrics.jpg" width="60%" style="display: block; margin: 0 auto;" />
     <div style="margin-top: 20px;">
       <p id="textDisplayAdaptiveTest" class="textBlock" style="color: white;"></p>
@@ -1554,6 +1556,7 @@
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🤖 Adaptive Horizons: Environment Performance</h2>
   <div style="text-align: center; padding-top: 50px; min-height: 300px;">
+    <!-- Replace with your environment performance image -->
     <img src="img/AdaptiveEnvPerformance.jpg" width="70%" style="display: block; margin: 0 auto;" />
     <div style="margin-top: 20px;">
       <p id="textDisplayAdaptiveEnv" class="textBlock" style="color: white;"></p>
@@ -1583,12 +1586,36 @@
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">📊 Quantitative Comparison & Baselines</h2>
   <div style="text-align: center; padding-top: 50px;">
-    <ul class="textBlock" style="color: white;">
-      <li class="fragment fade-in">✅ Adaptive SAC + CGLSTM outperforms fixed-horizon methods.</li>
-      <li class="fragment fade-in">🤖 Baselines: Vanilla SAC, PPO, TD3, DDPG, DreamerV3 (GRU & CGLSTM).</li>
-      <li class="fragment fade-in">📌 Achieves higher rewards and efficiency under noisy conditions.</li>
-    </ul>
+    <!-- Replace with your table images converted to one image if needed -->
+    <img src="img/lunarlander_results_part1.JPG" width="70%" style="display: block; margin: 0 auto;" />
+    <img src="img/lunarlander_results_part2.JPG" width="70%" style="display: block; margin: 20px auto;" />
+    <img src="img/socnav_results_part1.JPG" width="70%" style="display: block; margin: 20px auto;" />
+    <img src="img/socnav_results_part2.JPG" width="70%" style="display: block; margin: 20px auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplayQuantComp" class="textBlock" style="color: white;"></p>
+    </div>
   </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const quantTxt = document.getElementById('textDisplayQuantComp');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayQuantComp')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            quantTxt.textContent = '✅ Adaptive SAC + CGLSTM (Adaptive Horizon) outperforms fixed-horizon and baseline methods.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            quantTxt.textContent = '🤖 DreamerV3 variants have higher computational cost despite good performance.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            quantTxt.textContent = '📌 Our approach achieves high rewards and efficiency even under noisy conditions.';
+          }
+        }
+      });
+    });
+  </script>
 </section>
 
 <!-- ========================================= -->
