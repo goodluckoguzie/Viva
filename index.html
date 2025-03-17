@@ -1307,50 +1307,152 @@
 <!-- Preliminary Experiments Section (3 Slides) -->
 <!-- ========================================= -->
 
+<!-- ========================================= -->
+<!-- Preliminary Experiments Section (4 Slides) -->
+<!-- ========================================= -->
+
 <!-- Slide A11: Preliminary Experiments Overview -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🧪 Preliminary Experiments Overview</h2>
   <div style="text-align: center; padding-top: 50px;">
     <ul class="textBlock" style="color: white;">
-      <li class="fragment fade-in">🔍 Evaluated in LunarLander‑v2 to optimize window-slide and horizon settings.</li>
-      <li class="fragment fade-in">⚙️ Tested window-slide sizes: 16, 32, 64 to balance accuracy and cost.</li>
-      <li class="fragment fade-in">🎯 Compared adaptive horizon sets {1,2,3,4,5} vs. {1,2,4,6,8} against fixed 8-step horizon.</li>
+      <li class="fragment fade-in">🔍 Evaluated in LunarLander‑v2 to optimize CGLSTM window-slide and horizon settings.</li>
+      <li class="fragment fade-in">⚙️ Tested window-slide sizes: 16, 32, 64 for balancing accuracy and cost.</li>
+      <li class="fragment fade-in">🎯 Compared adaptive horizon sets {1,2,3,4,5} vs. {1,2,4,6,8} against a fixed 8-step horizon.</li>
     </ul>
-  </div>
-  <div style="text-align: center; padding-top: 30px;">
-    <img src="img/Prelim_Overview.jpg" width="50%" style="display: block; margin: 0 auto;" />
   </div>
 </section>
 
-<!-- Slide A12: Window-Slide Selection -->
+<!-- Slide A12: Window-Slide Selection (Train Loss) -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📊 Window-Slide Selection for CGLSTM</h2>
-  <div style="text-align: center; padding-top: 50px;">
-    <ul class="textBlock" style="color: white;">
-      <li class="fragment fade-in">✅ Window-slide of 64 achieved lowest losses but was too costly.</li>
-      <li class="fragment fade-in">🤖 Window-slide of 16 was insufficient for complex dynamics.</li>
-      <li class="fragment fade-in">🎯 Selected a window-slide of 32 as the optimal trade-off.</li>
-    </ul>
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📊 Window-Slide Selection (Train Loss)</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <!-- Train loss image -->
+    <img src="img/WindowSlide_TrainLoss-1.jpg" width="60%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplayTrainLoss" class="textBlock" style="color: white;"></p>
+    </div>
   </div>
-  <div style="text-align: center; padding-top: 30px;">
-    <img src="img/WindowSlide_TrainLoss.jpg" width="60%" style="display: block; margin: 0 auto;" />
+  <!-- Fragment placeholders for bullet reveals -->
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const trainLossTxt = document.getElementById('textDisplayTrainLoss');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayTrainLoss')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            trainLossTxt.textContent = '✅ Window-slide of 64 achieves the lowest training loss.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            trainLossTxt.textContent = '🤖 However, 64 is more expensive computationally.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            trainLossTxt.textContent = '🎯 Chose 32 as an optimal trade-off between cost & accuracy.';
+          }
+        }
+      });
+    });
+  </script>
 </section>
 
-<!-- Slide A13: Adaptive Horizon Selection -->
+<!-- Slide A13: Window-Slide Selection (Validation Loss) -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎯 Adaptive Horizon Selection</h2>
-  <div style="text-align: center; padding-top: 50px;">
-    <ul class="textBlock" style="color: white;">
-      <li class="fragment fade-in">🔍 Compared horizon sets: {1,2,3,4,5} vs. {1,2,4,6,8}.</li>
-      <li class="fragment fade-in">🤖 Set {1,2,4,6,8} achieved higher final rewards (~280) versus ~240–250.</li>
-      <li class="fragment fade-in">⚡ Adaptive horizons reached 500k steps ~6 hours faster than fixed 8-step.</li>
-    </ul>
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📊 Window-Slide Selection (Validation Loss)</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <!-- Val loss image -->
+    <img src="img/WindowSlide_ValLoss-1.jpg" width="60%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplayValLoss" class="textBlock" style="color: white;"></p>
+    </div>
   </div>
-  <div style="text-align: center; padding-top: 30px;">
-    <img src="img/Lunarlander_Horizon_Comparison.jpg" width="60%" style="display: block; margin: 0 auto;" />
+  <!-- Fragment placeholders for bullet reveals -->
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const valLossTxt = document.getElementById('textDisplayValLoss');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayValLoss')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            valLossTxt.textContent = '📌 Window-slide of 64 also leads to lowest validation loss.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            valLossTxt.textContent = '🤖 Window-slide of 16 insufficient for complex environment.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            valLossTxt.textContent = '⚖️ 32 remains the balanced choice for robust validation.';
+          }
+        }
+      });
+    });
+  </script>
 </section>
+
+<!-- Slide A14: Adaptive Horizon vs. Fixed Horizon -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎯 Adaptive Horizon vs. Fixed Horizon</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <!-- Horizon comparison image -->
+    <img src="img/Lunarlander_Horizon_Comparison-1.jpg" width="60%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplayHorizons" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <!-- Fragment placeholders for bullet reveals -->
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const horizonTxt = document.getElementById('textDisplayHorizons');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayHorizons')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            horizonTxt.textContent = '🔍 {1,2,4,6,8} converges to ~280 reward, outperforming {1,2,3,4,5} (~240-250).';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            horizonTxt.textContent = '⚡ Gains ~6 hours in training vs. fixed 8-step horizon to reach 500k steps.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- (Optional) Slide A15: Time to 500k Steps (Fixed vs. Entropy) -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">⏱ Time to 500k Steps: Fixed vs. Entropy Horizon</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <img src="img/Lunarlander_Fixed_vs_Entropy-1.jpg" width="60%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplayFixedEntropy" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <!-- Fragment placeholders for bullet reveals -->
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const fixedEntropyTxt = document.getElementById('textDisplayFixedEntropy');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayFixedEntropy')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            fixedEntropyTxt.textContent = '✅ Entropy horizon hits 500k steps in 53.48h, vs. 59.54h for fixed horizon.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            fixedEntropyTxt.textContent = '🎯 Demonstrates computational savings & better reward progression.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+
 
 <!-- ========================================= -->
 <!-- Environments & Baselines Section -->
