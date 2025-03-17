@@ -1149,12 +1149,12 @@
 </section>
 
 <!-- ========================================= -->
-<!-- Adaptive Horizons CHAPTER - Updated Slide Deck -->
+<!-- Adaptive Horizons Chapter Slide Deck      -->
 <!-- ========================================= -->
 
-<!-- Slide A1: Section Title: Adaptive Predictive Reinforcement Learning -->
+<!-- Slide A1: Chapter Title -->
 <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-  <h2 class="section-title" style="color: white;">Adaptive Predictive Reinforcement Learning: Entropy-Driven Adaptive Prediction Horizons</h2>
+  <h2 class="section-title" style="color: white;">Adaptive Predictive Reinforcement Learning: Entropy‐Driven Adaptive Prediction Horizons</h2>
 </section>
 
 <!-- Slide A2: Introduction -->
@@ -1162,9 +1162,9 @@
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">📌 Introduction</h2>
   <div style="text-align: center; padding-top: 50px;">
     <ul class="textBlock" style="color: white;">
-      <li class="fragment fade-in">Addresses limitations of fixed prediction horizons in continuous RL environments.</li>
-      <li class="fragment fade-in">Integrates entropy-driven adaptive horizons with advanced predictive modeling.</li>
-      <li class="fragment fade-in">Builds on our previous work in predictive world models for social navigation.</li>
+      <li class="fragment fade-in">✅ Enhances RL by dynamically adjusting prediction horizons in continuous action spaces.</li>
+      <li class="fragment fade-in">🤖 Leverages policy entropy to determine uncertainty and set the planning depth.</li>
+      <li class="fragment fade-in">📌 Builds on our previous predictive world models for social navigation.</li>
     </ul>
   </div>
 </section>
@@ -1174,99 +1174,203 @@
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">💡 Motivation</h2>
   <div style="text-align: center; padding-top: 50px;">
     <ul class="textBlock" style="color: white;">
-      <li class="fragment fade-in">Fixed horizons can waste computation in simple tasks and underperform in complex ones.</li>
-      <li class="fragment fade-in">Continuous environments exhibit variable uncertainty, requiring adaptable planning.</li>
-      <li class="fragment fade-in">Policy entropy provides a natural signal for dynamically adjusting prediction depth.</li>
+      <li class="fragment fade-in">⚠️ Fixed horizons waste computation in simple settings and underperform in complex ones.</li>
+      <li class="fragment fade-in">🔍 Real-world tasks vary in uncertainty—demanding longer planning when needed.</li>
+      <li class="fragment fade-in">🎯 Entropy measures the action uncertainty, enabling dynamic horizon adjustment.</li>
     </ul>
   </div>
 </section>
 
-<!-- Slide A4: Research Objectives & Contributions -->
+<!-- Slide A4: Research Evolution -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <h2 class="section-title" style="color: white;">Research Evolution</h2>
+  <div style="text-align: center; padding-top: 50px;">
+    <!-- Replace with your actual evolution diagram JPG -->
+    <img src="img/EntropyDrivenAdaptiveHorizonMechanism.jpg" width="60%" style="display: block; margin: 0 auto;" />
+    <p class="textBlock" style="color: white; margin-top: 20px;">
+      🚀 From fixed-horizon methods in discrete spaces to adaptive horizons in continuous domains.
+    </p>
+  </div>
+</section>
+
+<!-- Slide A5: Research Objectives & Contributions -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎯 Research Objectives & Contributions</h2>
   <div style="text-align: center; padding-top: 50px;">
     <ul class="textBlock" style="color: white;">
-      <li class="fragment fade-in">Develop an entropy-driven adaptive horizon mechanism within SAC.</li>
-      <li class="fragment fade-in">Integrate CGLSTM into DreamerV3 for enhanced predictive modeling.</li>
-      <li class="fragment fade-in">Benchmark against state-of-the-art RL algorithms (SAC, PPO, DDPG, TD3, DreamerV3 variants).</li>
+      <li class="fragment fade-in">✅ Propose an entropy-driven adaptive horizon framework within SAC.</li>
+      <li class="fragment fade-in">🤖 Integrate CGLSTM into DreamerV3 to enhance predictive modeling.</li>
+      <li class="fragment fade-in">📊 Benchmark against SAC, PPO, TD3, DDPG, and DreamerV3 variants.</li>
     </ul>
   </div>
 </section>
 
-<!-- Slide A5: Significance -->
+<!-- Slide A6: Significance -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🏆 Significance</h2>
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔑 Significance of the Research</h2>
   <div style="text-align: center; padding-top: 50px;">
     <ul class="textBlock" style="color: white;">
-      <li class="fragment fade-in">Adaptive horizons adjust in real time to environmental uncertainty.</li>
-      <li class="fragment fade-in">Enhances long-term planning and decision-making in continuous action spaces.</li>
-      <li class="fragment fade-in">Improves computational efficiency by avoiding unnecessary predictions.</li>
+      <li class="fragment fade-in">📌 Balances exploration and computational cost in dynamic environments.</li>
+      <li class="fragment fade-in">🤖 Enhances long-term planning and decision-making in continuous spaces.</li>
+      <li class="fragment fade-in">✅ Paves the way for robust, real-world RL applications in robotics and autonomous systems.</li>
     </ul>
   </div>
 </section>
 
-<!-- Slide A6: Environments & Evaluation Setup -->
+<!-- ========================================= -->
+<!-- Proposed Methods Section -->
+<!-- ========================================= -->
+
+<!-- Slide A7: Proposed Methods Overview -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <h2 class="section-title" style="color: white;">Proposed Methods</h2>
+</section>
+
+<!-- Slide A8: Proposed: DreamerV3 + CGLSTM -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🧪 Environments & Evaluation</h2>
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🚀 Proposed: DreamerV3 + CGLSTM</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <img src="img/DreamerV3_CGLSTM.JPG" width="50%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p class="textBlock" style="color: white;">
+        Enhances the world model by replacing GRU cells with CGLSTM, leading to improved temporal representation and state prediction accuracy in dynamic environments.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Slide A9: Proposed: 2StepAhead-MASPM (Fixed Horizon) -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔗 Proposed: 2StepAhead-MASPM (Fixed Horizon)</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <img src="img/figure1.4_Hybrid.jpg" width="50%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p class="textBlock" style="color: white;">
+        Combines two-step ahead prediction with MASPM's comprehensive action evaluation using a fixed 8-step horizon, offering a strong baseline for comparison.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Slide A10: Proposed: SAC + CGLSTM (Adaptive Horizon) -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🤖 Proposed: SAC + CGLSTM (Adaptive Horizon)</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <img src="img/SAC_CGLSTM_Adaptive.jpg" width="50%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p class="textBlock" style="color: white;">
+        Dynamically adjusts prediction horizons based on policy entropy—planning further ahead under uncertainty and conserving resources when confident—yielding higher returns and faster convergence.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================= -->
+<!-- Preliminary Experiments Section (3 Slides) -->
+<!-- ========================================= -->
+
+<!-- Slide A11: Preliminary Experiments Overview -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🧪 Preliminary Experiments Overview</h2>
   <div style="text-align: center; padding-top: 50px;">
     <ul class="textBlock" style="color: white;">
-      <li class="fragment fade-in">LunarLander‑v2: Continuous control with Gaussian noise added to observations.</li>
-      <li class="fragment fade-in">LiteSocNavGym: Social navigation environment with added noise to simulate real-world uncertainty.</li>
-      <li class="fragment fade-in">Metrics: Success rate, average return, path length, inference/simulation time, and t-tests.</li>
+      <li class="fragment fade-in">🔍 Evaluated in LunarLander‑v2 to optimize CGLSTM window-slide and horizon settings.</li>
+      <li class="fragment fade-in">⚙️ Tested window-slide sizes: 16, 32, and 64 to balance accuracy and cost.</li>
+      <li class="fragment fade-in">🎯 Compared adaptive horizon sets {1,2,3,4,5} vs. {1,2,4,6,8} against a fixed 8-step horizon.</li>
+    </ul>
+  </div>
+  <div style="text-align: center; padding-top: 30px;">
+    <img src="img/Prelim_Overview.jpg" width="50%" style="display: block; margin: 0 auto;" />
+  </div>
+</section>
+
+<!-- Slide A12: Window-Slide Selection -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📊 Window-Slide Selection for CGLSTM</h2>
+  <div style="text-align: center; padding-top: 50px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">✅ Window-slide of 64 achieved lowest losses but was computationally expensive.</li>
+      <li class="fragment fade-in">🤖 A slide of 16 was insufficient for capturing complex dynamics.</li>
+      <li class="fragment fade-in">🎯 Chose a slide of 32 as the optimal trade-off.</li>
+    </ul>
+  </div>
+  <div style="text-align: center; padding-top: 30px;">
+    <img src="img/WindowSlide_TrainLoss.jpg" width="60%" style="display: block; margin: 0 auto;" />
+  </div>
+</section>
+
+<!-- Slide A13: Adaptive Horizon Selection -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎯 Adaptive Horizon Selection</h2>
+  <div style="text-align: center; padding-top: 50px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">🔍 Compared horizon sets: {1,2,3,4,5} vs. {1,2,4,6,8}.</li>
+      <li class="fragment fade-in">🤖 Set {1,2,4,6,8} achieved higher final rewards (~280) than {1,2,3,4,5} (~240–250).</li>
+      <li class="fragment fade-in">⚡ Adaptive horizons reached 500k steps ~6 hours faster than a fixed 8-step horizon.</li>
+    </ul>
+  </div>
+  <div style="text-align: center; padding-top: 30px;">
+    <img src="img/Lunarlander_Horizon_Comparison.jpg" width="60%" style="display: block; margin: 0 auto;" />
+  </div>
+</section>
+
+<!-- ========================================= -->
+<!-- Environments & Baselines Section -->
+<!-- ========================================= -->
+
+<!-- Slide A14: Environments Used -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🏙 Environments Used</h2>
+  <div style="text-align: center; padding-top: 50px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">🪂 LunarLander‑v2 with Gaussian noise added to observations.</li>
+      <li class="fragment fade-in">🏷 LiteSocNavGym: A custom social navigation environment with dynamic obstacles and noise.</li>
     </ul>
   </div>
 </section>
 
-<!-- Slide A7: Baselines for Comparison -->
+<!-- Slide A15: Baselines for Comparison -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">📊 Baselines for Comparison</h2>
   <div style="text-align: center; padding-top: 50px;">
     <ul class="textBlock" style="color: white;">
-      <li class="fragment fade-in">Model-Free: Vanilla SAC, PPO, TD3, DDPG</li>
-      <li class="fragment fade-in">Model-Based: DreamerV3 (with GRU) & DreamerV3 + CGLSTM (Fixed Horizon)</li>
+      <li class="fragment fade-in">✅ Vanilla SAC</li>
+      <li class="fragment fade-in">🤖 PPO, TD3, DDPG</li>
+      <li class="fragment fade-in">📌 DreamerV3 (with GRU) & DreamerV3 + CGLSTM</li>
+      <li class="fragment fade-in">⚖ SAC + CGLSTM (Fixed Horizon: 2StepAhead-MASPM) vs. Adaptive Horizon</li>
     </ul>
   </div>
 </section>
 
-<!-- Slide A8: Proposed Methods Overview -->
+<!-- ========================================= -->
+<!-- Results & Discussion Section -->
+<!-- ========================================= -->
+
+<!-- Slide A16: Training Metrics -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🚀 Proposed Methods Overview</h2>
-  <div style="text-align: center; padding-top: 50px;">
-    <ul class="textBlock" style="color: white;">
-      <li class="fragment fade-in">DreamerV3 + CGLSTM Integration: Enhances world modeling by replacing GRU with CGLSTM.</li>
-      <li class="fragment fade-in">SAC + CGLSTM (Fixed Prediction Horizon): Uses a fixed 8-step horizon for baseline comparison.</li>
-      <li class="fragment fade-in">SAC + CGLSTM (Adaptive Prediction Horizon): Dynamically adjusts horizon based on policy entropy.</li>
-    </ul>
-  </div>
-</section>
-      
-<!-- Slide A9: Proposed: DreamerV3 + CGLSTM -->
-<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🚀 Proposed: DreamerV3 + CGLSTM</h2>
-  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
-    <!-- Replace with your actual image filename for DreamerV3 + CGLSTM -->
-    <img src="img/DreamerV3_CGLSTM.JPG" width="50%" style="display: block; margin: 0 auto;" />
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">⏱ Adaptive Horizons: Training Metrics</h2>
+  <div style="text-align: center; padding-top: 50px; min-height: 300px;">
+    <img src="img/AdaptiveTrainingMetrics.jpg" width="60%" style="display: block; margin: 0 auto;" />
     <div style="margin-top: 20px;">
-      <p id="textDisplayDreamer" class="textBlock" style="color: white;"></p>
+      <p id="textDisplayAdaptiveTrain" class="textBlock" style="color: white;"></p>
     </div>
   </div>
   <div style="display: none;">
-    <!-- Fragments for sequential replacement -->
     <span class="fragment" data-fragment-index="0"></span>
     <span class="fragment" data-fragment-index="1"></span>
     <span class="fragment" data-fragment-index="2"></span>
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', function(){
-      const dreamerTxt = document.getElementById('textDisplayDreamer');
+      const trainTxt = document.getElementById('textDisplayAdaptiveTrain');
       Reveal.addEventListener('fragmentshown', function(ev){
-        if (Reveal.getCurrentSlide().querySelector('#textDisplayDreamer')){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayAdaptiveTrain')){
           if (ev.fragment.dataset.fragmentIndex === '0'){
-            dreamerTxt.textContent = '🔄 Replaces GRU cells with CGLSTM in DreamerV3’s world model.';
+            trainTxt.textContent = '📌 Training reward curves show faster convergence with adaptive horizons.';
           } else if (ev.fragment.dataset.fragmentIndex === '1'){
-            dreamerTxt.textContent = '📊 Enhances temporal representation and improves state prediction accuracy.';
+            trainTxt.textContent = '🤖 Improved exploration efficiency observed over ~200k episodes.';
           } else if (ev.fragment.dataset.fragmentIndex === '2'){
-            dreamerTxt.textContent = '🚀 Yields superior performance in dynamic environments with high uncertainty.';
+            trainTxt.textContent = '⚡ Reduced training time per episode compared to fixed horizon setups.';
           }
         }
       });
@@ -1274,84 +1378,13 @@
   </script>
 </section>
 
-<!-- Slide A10: Proposed: 2StepAhead-MASPM (Fixed Horizon) -->
-<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔗 Proposed: 2StepAhead-MASPM (Fixed Horizon)</h2>
-  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
-    <!-- Replace with your actual image filename for the 2StepAhead-MASPM method -->
-    <img src="img/figure1.4_Hybrid.jpg" width="50%" style="display: block; margin: 0 auto;" />
-    <div style="margin-top: 20px;">
-      <p id="textDisplayHybrid" class="textBlock" style="color: white;"></p>
-    </div>
-  </div>
-  <div style="display: none;">
-    <!-- Fragments for sequential replacement -->
-    <span class="fragment" data-fragment-index="0"></span>
-    <span class="fragment" data-fragment-index="1"></span>
-    <span class="fragment" data-fragment-index="2"></span>
-  </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', function(){
-      const hybridTxt = document.getElementById('textDisplayHybrid');
-      Reveal.addEventListener('fragmentshown', function(ev){
-        if (Reveal.getCurrentSlide().querySelector('#textDisplayHybrid')){
-          if (ev.fragment.dataset.fragmentIndex === '0'){
-            hybridTxt.textContent = '🔗 Combines two-step ahead prediction with MASPM’s comprehensive action evaluation.';
-          } else if (ev.fragment.dataset.fragmentIndex === '1'){
-            hybridTxt.textContent = '⏱ Utilizes a fixed 8-step prediction horizon to generate future state sequences.';
-          } else if (ev.fragment.dataset.fragmentIndex === '2'){
-            hybridTxt.textContent = '✅ Serves as a strong baseline for comparing adaptive horizon methods.';
-          }
-        }
-      });
-    });
-  </script>
-</section>
-
-<!-- Slide A11: Proposed: SAC + CGLSTM (Adaptive Horizon) -->
-<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🤖 Proposed: SAC + CGLSTM (Adaptive Horizon)</h2>
-  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
-    <!-- Replace with your actual image filename for SAC + CGLSTM Adaptive Horizon -->
-    <img src="img/SAC_CGLSTM_Adaptive.jpg" width="50%" style="display: block; margin: 0 auto;" />
-    <div style="margin-top: 20px;">
-      <p id="textDisplayAdaptive" class="textBlock" style="color: white;"></p>
-    </div>
-  </div>
-  <div style="display: none;">
-    <!-- Fragments for sequential replacement -->
-    <span class="fragment" data-fragment-index="0"></span>
-    <span class="fragment" data-fragment-index="1"></span>
-    <span class="fragment" data-fragment-index="2"></span>
-  </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', function(){
-      const adaptiveTxt = document.getElementById('textDisplayAdaptive');
-      Reveal.addEventListener('fragmentshown', function(ev){
-        if (Reveal.getCurrentSlide().querySelector('#textDisplayAdaptive')){
-          if (ev.fragment.dataset.fragmentIndex === '0'){
-            adaptiveTxt.textContent = '📌 Dynamically adjusts prediction horizon based on policy entropy.';
-          } else if (ev.fragment.dataset.fragmentIndex === '1'){
-            adaptiveTxt.textContent = '🔍 Plans further ahead when uncertainty is high, and conserves resources when confidence is high.';
-          } else if (ev.fragment.dataset.fragmentIndex === '2'){
-            adaptiveTxt.textContent = '🤖 Achieves higher returns and faster convergence compared to fixed horizons.';
-          }
-        }
-      });
-    });
-  </script>
-</section>
-
-
-
-
-<!-- Slide A13: Adaptive Horizons – Testing Metrics -->
+<!-- Slide A17: Testing Metrics -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎯 Adaptive Horizons: Testing Metrics</h2>
   <div style="text-align: center; padding-top: 50px; min-height: 300px;">
     <img src="img/AdaptiveTestingMetrics.jpg" width="60%" style="display: block; margin: 0 auto;" />
-    <div style="font-size: 1em; color: white; text-align: center;">
-      <p id="textDisplayAdaptiveTest" class="textBlock" style="line-height: 1.5;"></p>
+    <div style="margin-top: 20px;">
+      <p id="textDisplayAdaptiveTest" class="textBlock" style="color: white;"></p>
     </div>
   </div>
   <div style="display: none;">
@@ -1365,11 +1398,11 @@
       Reveal.addEventListener('fragmentshown', function(ev){
         if (Reveal.getCurrentSlide().querySelector('#textDisplayAdaptiveTest')){
           if (ev.fragment.dataset.fragmentIndex === '0'){
-            testTxt.textContent = '✅ Testing results show higher episode rewards and success rates.';
+            testTxt.textContent = '✅ Testing results show higher episode rewards and 100% success in LunarLander.';
           } else if (ev.fragment.dataset.fragmentIndex === '1'){
-            testTxt.textContent = '📊 Significant improvements in MAE/MSE metrics compared to baselines.';
+            testTxt.textContent = '📊 Significant improvements in MAE/MSE metrics versus baselines.';
           } else if (ev.fragment.dataset.fragmentIndex === '2'){
-            testTxt.textContent = '🔍 Adaptive horizons yield robust performance even under noise.';
+            testTxt.textContent = '🔍 Adaptive horizons yield robust performance even under noisy observations.';
           }
         }
       });
@@ -1377,7 +1410,7 @@
   </script>
 </section>
 
-<!-- Slide A14: Adaptive Horizons – Environment Performance -->
+<!-- Slide A18: Environment Performance -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🤖 Adaptive Horizons: Environment Performance</h2>
   <div style="text-align: center; padding-top: 50px; min-height: 300px;">
@@ -1396,9 +1429,9 @@
       Reveal.addEventListener('fragmentshown', function(ev){
         if (Reveal.getCurrentSlide().querySelector('#textDisplayAdaptiveEnv')){
           if (ev.fragment.dataset.fragmentIndex === '0'){
-            envTxt.textContent = '📌 Environments: LunarLander‑v2 and LiteSocNavGym with added noise.';
+            envTxt.textContent = '📌 Environments: LunarLander‑v2 and LiteSocNavGym (with added noise).';
           } else if (ev.fragment.dataset.fragmentIndex === '1'){
-            envTxt.textContent = '🔍 Adaptive horizons achieve an optimal balance of planning and efficiency in these settings.';
+            envTxt.textContent = '🤖 Adaptive horizons achieve optimal planning and efficiency in these settings.';
           }
         }
       });
@@ -1406,27 +1439,31 @@
   </script>
 </section>
 
-<!-- Slide A15: Baseline & DreamerV3 Comparison -->
+<!-- Slide A19: Quantitative Comparison & Baseline Summary -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🌐 Baseline & DreamerV3 Comparison</h2>
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📊 Quantitative Comparison & Baselines</h2>
   <div style="text-align: center; padding-top: 50px;">
     <ul class="textBlock" style="color: white;">
-      <li class="fragment fade-in">Compared against Vanilla SAC, PPO, TD3, DDPG.</li>
-      <li class="fragment fade-in">Also compared with DreamerV3 (GRU) & DreamerV3 + CGLSTM (Fixed Horizon).</li>
-      <li class="fragment fade-in">Highlights benefits of adaptive horizons over fixed-horizon methods.</li>
+      <li class="fragment fade-in">✅ Our adaptive SAC + CGLSTM outperforms fixed-horizon methods.</li>
+      <li class="fragment fade-in">🤖 Baselines: Vanilla SAC, PPO, TD3, DDPG, DreamerV3 (with GRU and with CGLSTM).</li>
+      <li class="fragment fade-in">📌 Higher rewards and better efficiency under noisy conditions.</li>
     </ul>
   </div>
 </section>
 
-<!-- Slide A16: Conclusion & Future Work -->
+<!-- ========================================= -->
+<!-- Conclusion & Future Work -->
+<!-- ========================================= -->
+
+<!-- Slide A20: Conclusion & Future Work -->
 <section data-background="img/aston_slides_background_22.png">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎉 Conclusion & Future Work</h2>
   <div style="text-align: center; padding-top: 40px;">
     <ul class="textBlock" style="color: white;">
-      <li class="fragment fade-in">Adaptive horizons significantly enhance long-term planning in continuous spaces.</li>
-      <li class="fragment fade-in">Entropy-driven adjustment tailors prediction depth based on uncertainty.</li>
-      <li class="fragment fade-in">Integration of CGLSTM into SAC and DreamerV3 improves prediction accuracy.</li>
-      <li class="fragment fade-in">Future: Optimize computational cost and extend to multi-agent systems.</li>
+      <li class="fragment fade-in">📌 Adaptive horizons enhance long-term planning in continuous action spaces.</li>
+      <li class="fragment fade-in">🤖 Entropy-driven adjustments enable dynamic trade-offs between exploration and efficiency.</li>
+      <li class="fragment fade-in">✅ Integration of CGLSTM with SAC and DreamerV3 improves state prediction and policy performance.</li>
+      <li class="fragment fade-in">✨ Future work: Optimize computational overhead and extend to multi-agent systems.</li>
     </ul>
   </div>
   <div style="text-align: center; margin-top: 30px;">
@@ -1434,11 +1471,12 @@
   </div>
 </section>
 
-<!-- Slide A17: Thank You / Q&A -->
+<!-- Slide A21: Thank You / Q&A -->
 <section data-background="img/aston_slides_background_22.png">
   <h2 style="color: white; text-align: center; margin-top: 100px;">🙏 Thank You</h2>
   <h4 style="color: white; text-align: center; margin-top: 30px;">Questions?</h4>
 </section>
+
 
 
       <!-- ========================================= -->
