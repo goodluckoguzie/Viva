@@ -1244,12 +1244,14 @@
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🚀 Proposed: DreamerV3 + CGLSTM</h2>
   <div style="text-align: center; padding-top: 40px; min-height: 300px;">
-    <!-- Replace with your actual image filename -->
-    <img src="img/DreamerV3_CGLSTM.jpg" width="50%" style="display: block; margin: 0 auto;" />
+    <!-- Replace with your actual image filename for DreamerV3 + CGLSTM -->
+    <img src="img/DreamerV3_CGLSTM.JPG" width="50%" style="display: block; margin: 0 auto;" />
     <div style="margin-top: 20px;">
-      <p class="textBlock" style="color: white;">
-        Enhances the world model by replacing GRU cells with CGLSTM, leading to improved temporal representation and state prediction accuracy in dynamic environments.
-      </p>
+      <ul class="textBlock" style="color: white; list-style: none;">
+        <li class="fragment fade-in">🔹 Enhances the world model by replacing GRU cells with CGLSTM.</li>
+        <li class="fragment fade-in">🔹 Improves temporal representation and state prediction accuracy.</li>
+        <li class="fragment fade-in">🔹 Suitable for dynamic environments with high uncertainty.</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -1258,62 +1260,34 @@
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔗 Proposed: 2StepAhead-MASPM (Fixed Horizon)</h2>
   <div style="text-align: center; padding-top: 40px; min-height: 300px;">
-    <!-- Replace with your actual image filename for the 2StepAhead-MASPM method -->
+    <!-- Replace with your actual image filename for 2StepAhead-MASPM -->
     <img src="img/figure1.4_Hybrid.jpg" width="50%" style="display: block; margin: 0 auto;" />
     <div style="margin-top: 20px;">
-      <p class="textBlock" style="color: white;">
-        Utilizes a fixed 8-step prediction horizon within the 2StepAhead-MASPM framework. This approach combines the efficiency of two-step ahead prediction with the comprehensive action evaluation of MASPM, providing a strong baseline for comparing adaptive horizon methods.
-      </p>
+      <ul class="textBlock" style="color: white; list-style: none;">
+        <li class="fragment fade-in">🔹 Combines 2StepAhead’s efficient two-step predictions with MASPM’s multi-action evaluation.</li>
+        <li class="fragment fade-in">🔹 Uses a fixed 8-step prediction horizon to generate future state sequences.</li>
+        <li class="fragment fade-in">🔹 Serves as a strong baseline for comparing adaptive horizon techniques.</li>
+      </ul>
     </div>
   </div>
 </section>
-
 
 <!-- Slide A11: Proposed: SAC + CGLSTM (Adaptive Horizon) -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🤖 Proposed: SAC + CGLSTM (Adaptive Horizon)</h2>
   <div style="text-align: center; padding-top: 40px; min-height: 300px;">
-    <!-- Replace with your actual image filename -->
+    <!-- Replace with your actual image filename for SAC + CGLSTM Adaptive Horizon -->
     <img src="img/SAC_CGLSTM_Adaptive.jpg" width="50%" style="display: block; margin: 0 auto;" />
     <div style="margin-top: 20px;">
-      <p class="textBlock" style="color: white;">
-        Dynamically adjusts the prediction horizon based on policy entropy, allowing the agent to plan further when uncertainty is high and conserve resources when confidence is high—resulting in higher returns and faster convergence.
-      </p>
+      <ul class="textBlock" style="color: white; list-style: none;">
+        <li class="fragment fade-in">🔹 Dynamically adjusts the prediction horizon based on policy entropy.</li>
+        <li class="fragment fade-in">🔹 Plans further when uncertainty is high, and conserves resources when confident.</li>
+        <li class="fragment fade-in">🔹 Yields higher returns and faster convergence in continuous action spaces.</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- Slide A12: Adaptive Horizons – Training Metrics -->
-<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">⏱ Adaptive Horizons: Training Metrics</h2>
-  <div style="text-align: center; padding-top: 50px; min-height: 300px;">
-    <img src="img/AdaptiveTrainingMetrics.jpg" width="60%" style="display: block; margin: 0 auto;" />
-    <div style="margin-top: 20px;">
-      <p id="textDisplayAdaptiveTrain" class="textBlock" style="color: white;"></p>
-    </div>
-  </div>
-  <div style="display: none;">
-    <span class="fragment" data-fragment-index="0"></span>
-    <span class="fragment" data-fragment-index="1"></span>
-    <span class="fragment" data-fragment-index="2"></span>
-  </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', function(){
-      const trainTxt = document.getElementById('textDisplayAdaptiveTrain');
-      Reveal.addEventListener('fragmentshown', function(ev){
-        if (Reveal.getCurrentSlide().querySelector('#textDisplayAdaptiveTrain')){
-          if (ev.fragment.dataset.fragmentIndex === '0'){
-            trainTxt.textContent = '📌 Training reward curves show faster convergence under adaptive horizons.';
-          } else if (ev.fragment.dataset.fragmentIndex === '1'){
-            trainTxt.textContent = '🎯 Improved exploration efficiency observed over ~200k episodes.';
-          } else if (ev.fragment.dataset.fragmentIndex === '2'){
-            trainTxt.textContent = '⏱ Reduced training time per episode compared to fixed horizons.';
-          }
-        }
-      });
-    });
-  </script>
-</section>
 
 <!-- Slide A13: Adaptive Horizons – Testing Metrics -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
