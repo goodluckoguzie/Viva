@@ -429,29 +429,60 @@
   <h2 class="section-title" style="color: white;">Environments Used</h2>
 </section>
 
-<!-- Slide 20: LunarLander‑v2 -->
+<!-- Slide 20: FallingBallEnv -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🪂 LunarLander‑v2</h2>
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">⚗️ FallingBallEnv</h2>
   <div style="text-align: center; position: relative; min-height: 300px; padding-top: 50px;">
-    
-    <!-- 1) The visual (image or video) -->
     <div style="padding-bottom: 20px;">
-      <img src="img/LunarLander.jpg" width="40%" style="display: block; margin: 0 auto;" />
+      <!-- Replace with your FallingBallEnv video or screenshot -->
+      <video muted data-autoplay src="img/FallingBallEnv.mp4" width="40%"></video>
     </div>
-    
-    <!-- 2) The bullet text below it, revealed in fragments -->
     <div style="font-size: 1em; color: white; padding-top: 20px;">
-      <p id="textDisplayLunar" class="textBlock"></p>
+      <p id="textDisplayFallingBall" class="textBlock"></p>
     </div>
   </div>
-  
-  <!-- The hidden fragments that reveal line-by-line -->
+  <!-- Fragments for bullet reveals -->
   <div style="display: none;">
     <span class="fragment" data-fragment-index="0"></span>
     <span class="fragment" data-fragment-index="1"></span>
     <span class="fragment" data-fragment-index="2"></span>
   </div>
-  
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const txtFB = document.getElementById('textDisplayFallingBall');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayFallingBall')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            txtFB.textContent = '📌 Purpose: Synthetic environment for sequence prediction.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            txtFB.textContent = '🎯 Evaluates trajectory prediction & RL adaptation.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            txtFB.textContent = '✨ Used as an original testbed for validating our predictive models.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide 21: LunarLander‑v2 -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🪂 LunarLander‑v2</h2>
+  <div style="text-align: center; position: relative; min-height: 300px; padding-top: 50px;">
+    <div style="padding-bottom: 20px;">
+      <!-- Use an image for LunarLander if you prefer -->
+      <img src="img/LunarLander.jpg" width="40%" style="display: block; margin: 0 auto;" />
+    </div>
+    <div style="font-size: 1em; color: white; padding-top: 20px;">
+      <p id="textDisplayLunar" class="textBlock"></p>
+    </div>
+  </div>
+  <!-- Fragments for bullet reveals -->
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
   <script>
     document.addEventListener('DOMContentLoaded', function(){
       const txtLunar = document.getElementById('textDisplayLunar');
@@ -462,7 +493,7 @@
           } else if (ev.fragment.dataset.fragmentIndex === '1'){
             txtLunar.textContent = '🎯 Tests agent robustness under physics-based conditions.';
           } else if (ev.fragment.dataset.fragmentIndex === '2'){
-            txtLunar.textContent = '✨ Evaluates predictive models with observation noise.';
+            txtLunar.textContent = '✨ Evaluates predictive horizon methods under observation noise.';
           }
         }
       });
@@ -470,31 +501,24 @@
   </script>
 </section>
 
-
-<!-- Slide 21: SocNavGym -->
+<!-- Slide 22: SocNavGym -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🏙 SocNavGym</h2>
   <div style="text-align: center; position: relative; min-height: 300px; padding-top: 50px;">
-    
-    <!-- 1) The visual (image or video) -->
     <div style="padding-bottom: 20px;">
       <!-- Replace with your SocNavGym video or screenshot -->
       <video muted data-autoplay src="img/whypredictivemodellimitation.mp4" width="40%"></video>
     </div>
-    
-    <!-- 2) The bullet text below it, revealed in fragments -->
     <div style="font-size: 1em; color: white; padding-top: 20px;">
       <p id="textDisplaySocNav" class="textBlock"></p>
     </div>
   </div>
-  
-  <!-- The hidden fragments that reveal line-by-line -->
+  <!-- Fragments for bullet reveals -->
   <div style="display: none;">
     <span class="fragment" data-fragment-index="0"></span>
     <span class="fragment" data-fragment-index="1"></span>
     <span class="fragment" data-fragment-index="2"></span>
   </div>
-  
   <script>
     document.addEventListener('DOMContentLoaded', function(){
       const txtSoc = document.getElementById('textDisplaySocNav');
@@ -513,31 +537,24 @@
   </script>
 </section>
 
-
-<!-- Slide 22: LiteSocNavGym -->
+<!-- Slide 23: LiteSocNavGym -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🏷 LiteSocNavGym</h2>
   <div style="text-align: center; position: relative; min-height: 300px; padding-top: 50px;">
-    
-    <!-- 1) The visual (image or video) -->
     <div style="padding-bottom: 20px;">
       <!-- Replace with your LiteSocNavGym video or screenshot -->
       <video muted data-autoplay src="img/whypredictivemodellimitation.mp4" width="40%"></video>
     </div>
-    
-    <!-- 2) The bullet text below it, revealed in fragments -->
     <div style="font-size: 1em; color: white; padding-top: 20px;">
       <p id="textDisplayLiteSocNav" class="textBlock"></p>
     </div>
   </div>
-  
-  <!-- The hidden fragments that reveal line-by-line -->
+  <!-- Fragments for bullet reveals -->
   <div style="display: none;">
     <span class="fragment" data-fragment-index="0"></span>
     <span class="fragment" data-fragment-index="1"></span>
     <span class="fragment" data-fragment-index="2"></span>
   </div>
-  
   <script>
     document.addEventListener('DOMContentLoaded', function(){
       const txtLite = document.getElementById('textDisplayLiteSocNav');
