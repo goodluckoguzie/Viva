@@ -920,42 +920,41 @@
     </ul>
   </div>
 </section>
-
-<!-- Slide X: Fundamentals & Limitations -->
+<!-- Slide: 🔍 Fundamentals & Limitations -->
 <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔍 Fundamentals & Limitations</h2>
   <div style="text-align: center; padding-top: 40px; min-height: 300px;">
-    <!-- Replace with your actual image filename -->
+    <!-- Replace with your actual image file for limitations -->
     <img src="img/limitationforCGLSTM.jpg" width="50%" style="display: block; margin: 0 auto;" />
     <div style="margin-top: 20px;">
       <p id="textDisplayLimitations" class="textBlock" style="color: white;"></p>
     </div>
   </div>
-
-  <!-- Hidden fragments for bullet reveals -->
+  <!-- Hidden fragments for bullet point text reveals -->
   <div style="display: none;">
     <span class="fragment" data-fragment-index="0"></span>
     <span class="fragment" data-fragment-index="1"></span>
     <span class="fragment" data-fragment-index="2"></span>
   </div>
-
   <script>
     document.addEventListener('DOMContentLoaded', function(){
       const limitTxt = document.getElementById('textDisplayLimitations');
       Reveal.addEventListener('fragmentshown', function(ev){
-        if (Reveal.getCurrentSlide().querySelector('#textDisplayLimitations')){
+        // Ensure the current slide contains our target paragraph
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayLimitations')) {
           if (ev.fragment.dataset.fragmentIndex === '0'){
             limitTxt.textContent = '📌 LSTM handles vanishing gradients but may struggle with dynamic outliers.';
           } else if (ev.fragment.dataset.fragmentIndex === '1'){
             limitTxt.textContent = '🤖 GRU is simpler but can miss long-term dependencies in complex tasks.';
           } else if (ev.fragment.dataset.fragmentIndex === '2'){
-            limitTxt.textContent = '🔍 Motivates an enhanced gating mechanism (CGLSTM) for robust sequence modeling.';
+            limitTxt.textContent = '🔍 This motivates an enhanced gating mechanism (CGLSTM) for robust sequence modeling.';
           }
         }
       });
     });
   </script>
 </section>
+
 
 
 <!-- Slide X+3: Why Cosine-Gated LSTM -->
