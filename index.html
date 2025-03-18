@@ -920,6 +920,9 @@
     </ul>
   </div>
 </section>
+
+
+
 <!-- Slide: 🔍 Fundamentals & Limitations -->
 <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔍 Fundamentals & Limitations</h2>
@@ -927,7 +930,7 @@
     <!-- Replace with your actual image file for limitations -->
     <img src="img/limitationforCGLSTM.jpg" width="50%" style="display: block; margin: 0 auto;" />
     <div style="margin-top: 20px;">
-      <p id="textDisplayLimitations" class="textBlock" style="color: white;"></p>
+      <p id="textDisplayLimitationsCGLSTM" class="textBlock" style="color: white;"></p>
     </div>
   </div>
   <!-- Hidden fragments for bullet point text reveals -->
@@ -938,10 +941,10 @@
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', function(){
-      const limitTxt = document.getElementById('textDisplayLimitations');
+      const limitTxt = document.getElementById('textDisplayLimitationsCGLSTM');
       Reveal.addEventListener('fragmentshown', function(ev){
-        // Ensure the current slide contains our target paragraph
-        if (Reveal.getCurrentSlide().querySelector('#textDisplayLimitations')) {
+        const currentSlide = Reveal.getCurrentSlide();
+        if (currentSlide && currentSlide.querySelector('#textDisplayLimitationsCGLSTM')){
           if (ev.fragment.dataset.fragmentIndex === '0'){
             limitTxt.textContent = '📌 LSTM handles vanishing gradients but may struggle with dynamic outliers.';
           } else if (ev.fragment.dataset.fragmentIndex === '1'){
@@ -954,6 +957,7 @@
     });
   </script>
 </section>
+
 
 
 
