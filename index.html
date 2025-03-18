@@ -420,150 +420,123 @@
         </div>
       </section>
 
-      <!-- ========================================= -->
-      <!-- 6. ENVIRONMENTS USED                     -->
-      <!-- ========================================= -->
+<!-- ========================================= -->
+<!-- 6. ENVIRONMENTS USED                     -->
+<!-- ========================================= -->
 
-      <!-- Slide 19: Section Title: Environments Used -->
-      <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-        <h2 class="section-title">Environments Used</h2>
-      </section>
+<!-- Slide 19: Section Title: Environments Used -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <h2 class="section-title" style="color: white;">Environments Used</h2>
+</section>
 
-      <!-- Slide 20: FallingBallEnv * -->
-      <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">⚗️ FallingBallEnv *</h2>
-        <div style="text-align: center; position: relative; min-height: 300px; padding-top: 50px;">
-          <div style="padding-bottom: 20px;">
-            <video muted data-autoplay src="img/FallingBallEnv.mp4" width="40%"></video>
-          </div>
-          <div style="font-size: 1em; color: white; padding-top: 20px;">
-            <p id="textDisplayFallingBall" class="textBlock"></p>
-          </div>
-        </div>
-        <div style="display: none;">
-          <span class="fragment" data-fragment-index="0"></span>
-          <span class="fragment" data-fragment-index="1"></span>
-          <span class="fragment" data-fragment-index="2"></span>
-        </div>
-        <script>
-          document.addEventListener('DOMContentLoaded', function(){
-            const txtFB = document.getElementById('textDisplayFallingBall');
-            Reveal.addEventListener('fragmentshown', function(ev){
-              if (Reveal.getCurrentSlide().querySelector('#textDisplayFallingBall')){
-                if (ev.fragment.dataset.fragmentIndex === '0'){
-                  txtFB.textContent = '📌 Purpose: Synthetic environment for sequence prediction.';
-                } else if (ev.fragment.dataset.fragmentIndex === '1'){
-                  txtFB.textContent = '🎯 Role: Evaluates trajectory prediction & RL adaptation.';
-                } else if (ev.fragment.dataset.fragmentIndex === '2'){
-                  txtFB.textContent = '✨ Developed as an original testbed for predictive models.';
-                }
-              }
-            });
-          });
-        </script>
-      </section>
+<!-- Slide 20: LunarLander‑v2 -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🪂 LunarLander‑v2</h2>
+  <div style="text-align: center; position: relative; min-height: 300px; padding-top: 50px;">
+    <div style="padding-bottom: 20px;">
+      <!-- Use an image for LunarLander -->
+      <img src="img/LunarLander.jpg" width="40%" style="display: block; margin: 0 auto;" />
+    </div>
+    <div style="font-size: 1em; color: white; padding-top: 20px;">
+      <p id="textDisplayLunar" class="textBlock"></p>
+    </div>
+  </div>
+  <!-- Fragments for bullet reveals -->
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const txtLunar = document.getElementById('textDisplayLunar');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayLunar')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            txtLunar.textContent = '📌 Purpose: Continuous control task for RL.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            txtLunar.textContent = '🎯 Tests agent robustness under physics-based conditions.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            txtLunar.textContent = '✨ Evaluates predictive models with observation noise.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
 
-      <!-- Slide 21: LunarLander‑v2 -->
-      <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-        <h2 style="color: white; text-align: center;">🪂 LunarLander‑v2</h2>
-        <div style="text-align: center; position: relative; min-height: 300px; padding-top: 50px;">
-          <div style="padding-bottom: 20px;">
-            <video muted data-autoplay src="img/FallingBallEnv.mp4" width="40%"></video>
-          </div>
-          <div style="font-size: 1em; color: white; padding-top: 20px;">
-            <p id="textDisplayLunar" class="textBlock"></p>
-          </div>
-        </div>
-        <div style="display: none;">
-          <span class="fragment" data-fragment-index="0"></span>
-          <span class="fragment" data-fragment-index="1"></span>
-          <span class="fragment" data-fragment-index="2"></span>
-        </div>
-        <script>
-          document.addEventListener('DOMContentLoaded', function(){
-            const txtLunar = document.getElementById('textDisplayLunar');
-            Reveal.addEventListener('fragmentshown', function(ev){
-              if (Reveal.getCurrentSlide().querySelector('#textDisplayLunar')){
-                if (ev.fragment.dataset.fragmentIndex === '0'){
-                  txtLunar.textContent = '📌 Purpose: Continuous control task for RL (Ch. 7, p. 132).';
-                } else if (ev.fragment.dataset.fragmentIndex === '1'){
-                  txtLunar.textContent = '🎯 Role: Tests RL in physics-based environments.';
-                } else if (ev.fragment.dataset.fragmentIndex === '2'){
-                  txtLunar.textContent = '✨ Evaluates predictive models under dynamic conditions.';
-                }
-              }
-            });
-          });
-        </script>
-      </section>
+<!-- Slide 21: SocNavGym -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🏙 SocNavGym</h2>
+  <div style="text-align: center; position: relative; min-height: 300px; padding-top: 50px;">
+    <div style="padding-bottom: 20px;">
+      <!-- Replace with your SocNavGym video or screenshot -->
+      <video muted data-autoplay src="img/whypredictivemodellimitation.mp4" width="40%"></video>
+    </div>
+    <div style="font-size: 1em; color: white; padding-top: 20px;">
+      <p id="textDisplaySocNav" class="textBlock"></p>
+    </div>
+  </div>
+  <!-- Fragments for bullet reveals -->
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const txtSoc = document.getElementById('textDisplaySocNav');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplaySocNav')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            txtSoc.textContent = '📌 Purpose: Benchmark for social navigation tasks.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            txtSoc.textContent = '🎯 Simulates human-populated scenarios with dynamic interactions.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            txtSoc.textContent = '✨ Tests RL agents in socially aware path planning.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
 
-      <!-- Slide 22: SocNavGym -->
-      <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-        <h2 style="color: white; text-align: center;">🏙 SocNavGym</h2>
-        <div style="text-align: center; position: relative; min-height: 300px; padding-top: 50px;">
-          <div style="padding-bottom: 20px;">
-            <video muted data-autoplay src="img/FallingBallEnv.mp4" width="40%"></video>
-          </div>
-          <div style="font-size: 1em; color: white; padding-top: 20px;">
-            <p id="textDisplaySocNav" class="textBlock"></p>
-          </div>
-        </div>
-        <div style="display: none;">
-          <span class="fragment" data-fragment-index="0"></span>
-          <span class="fragment" data-fragment-index="1"></span>
-          <span class="fragment" data-fragment-index="2"></span>
-        </div>
-        <script>
-          document.addEventListener('DOMContentLoaded', function(){
-            const txtSoc = document.getElementById('textDisplaySocNav');
-            Reveal.addEventListener('fragmentshown', function(ev){
-              if (Reveal.getCurrentSlide().querySelector('#textDisplaySocNav')){
-                if (ev.fragment.dataset.fragmentIndex === '0'){
-                  txtSoc.textContent = '📌 Purpose: Benchmark for social navigation tasks.';
-                } else if (ev.fragment.dataset.fragmentIndex === '1'){
-                  txtSoc.textContent = '🎯 Role: Simulates human-populated scenarios.';
-                } else if (ev.fragment.dataset.fragmentIndex === '2'){
-                  txtSoc.textContent = '✨ Validates predictive models under real-time constraints.';
-                }
-              }
-            });
-          });
-        </script>
-      </section>
+<!-- Slide 22: LiteSocNavGym -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🏷 LiteSocNavGym</h2>
+  <div style="text-align: center; position: relative; min-height: 300px; padding-top: 50px;">
+    <div style="padding-bottom: 20px;">
+      <!-- Replace with your LiteSocNavGym video or screenshot -->
+      <video muted data-autoplay src="img/whypredictivemodellimitation.mp4" width="40%"></video>
+    </div>
+    <div style="font-size: 1em; color: white; padding-top: 20px;">
+      <p id="textDisplayLiteSocNav" class="textBlock"></p>
+    </div>
+  </div>
+  <!-- Fragments for bullet reveals -->
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const txtLite = document.getElementById('textDisplayLiteSocNav');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayLiteSocNav')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            txtLite.textContent = '📌 Purpose: Lightweight variant for quicker iteration.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            txtLite.textContent = '🎯 Preserves core social navigation challenges at lower cost.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            txtLite.textContent = '✨ Ideal for iterative testing of predictive horizon methods.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
 
-      <!-- Slide 23: LiteSocNavGym * -->
-      <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-        <h2 style="color: white; text-align: center;">🏷 LiteSocNavGym *</h2>
-        <div style="text-align: center; position: relative; min-height: 300px; padding-top: 50px;">
-          <div style="padding-bottom: 20px;">
-            <video muted data-autoplay src="img/FallingBallEnv.mp4" width="35%"></video>
-          </div>
-          <div style="font-size: 1em; color: white; padding-top: 20px;">
-            <p id="textDisplayLiteSocNav" class="textBlock"></p>
-          </div>
-        </div>
-        <div style="display: none;">
-          <span class="fragment" data-fragment-index="0"></span>
-          <span class="fragment" data-fragment-index="1"></span>
-          <span class="fragment" data-fragment-index="2"></span>
-        </div>
-        <script>
-          document.addEventListener('DOMContentLoaded', function(){
-            const txtLite = document.getElementById('textDisplayLiteSocNav');
-            Reveal.addEventListener('fragmentshown', function(ev){
-              if (Reveal.getCurrentSlide().querySelector('#textDisplayLiteSocNav')){
-                if (ev.fragment.dataset.fragmentIndex === '0'){
-                  txtLite.textContent = '📌 Purpose: Lightweight variant for efficient testing (Ch. 7, p. 132).';
-                } else if (ev.fragment.dataset.fragmentIndex === '1'){
-                  txtLite.textContent = '🎯 Role: Reduces computational overhead in navigation evaluation.';
-                } else if (ev.fragment.dataset.fragmentIndex === '2'){
-                  txtLite.textContent = '✨ Ideal for iterative experiments with predictive models.';
-                }
-              }
-            });
-          });
-        </script>
-      </section>
 
 <!-- ========================================= -->
 <!-- 7. PREDICTIVE WORLD MODELS (YOUR METHODS)  -->
