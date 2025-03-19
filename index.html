@@ -131,7 +131,7 @@
         </div>
       </section>
 
-<!-- ========================================= -->
+      <!-- ========================================= -->
 <!-- 2. CONTEXT & SCOPE & APPROACHES            -->
 <!-- ========================================= -->
 
@@ -166,25 +166,25 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td style="padding: 10px; border: 1px solid white;"><span class="fragment">Path Planning (A*)</span></td>
-          <td style="padding: 10px; border: 1px solid white;"><span class="fragment">Simple & efficient</span></td>
-          <td style="padding: 10px; border: 1px solid white;"><span class="fragment">Fails in dynamic settings</span></td>
+        <tr class="fragment">
+          <td style="padding: 10px; border: 1px solid white;">Path Planning (A*)</td>
+          <td style="padding: 10px; border: 1px solid white;">Simple & efficient</td>
+          <td style="padding: 10px; border: 1px solid white;">Fails in dynamic settings</td>
         </tr>
-        <tr>
-          <td style="padding: 10px; border: 1px solid white;"><span class="fragment">Social Force Models</span></td>
-          <td style="padding: 10px; border: 1px solid white;"><span class="fragment">Good for crowd modeling</span></td>
-          <td style="padding: 10px; border: 1px solid white;"><span class="fragment">Limited adaptability</span></td>
+        <tr class="fragment">
+          <td style="padding: 10px; border: 1px solid white;">Social Force Models</td>
+          <td style="padding: 10px; border: 1px solid white;">Good for crowd modeling</td>
+          <td style="padding: 10px; border: 1px solid white;">Limited adaptability</td>
         </tr>
-        <tr>
-          <td style="padding: 10px; border: 1px solid white;"><span class="fragment">ROV2</span></td>
-          <td style="padding: 10px; border: 1px solid white;"><span class="fragment">Real-time collision avoidance; effective in dynamic scenarios</span></td>
-          <td style="padding: 10px; border: 1px solid white;"><span class="fragment">Limited in long-term planning and human comfort prediction</span></td>
+        <tr class="fragment">
+          <td style="padding: 10px; border: 1px solid white;">ROV2</td>
+          <td style="padding: 10px; border: 1px solid white;">Real-time collision avoidance; effective in dynamic scenarios</td>
+          <td style="padding: 10px; border: 1px solid white;">Limited in long-term planning and human comfort prediction</td>
         </tr>
-        <tr>
-          <td style="padding: 10px; border: 1px solid white;"><span class="fragment">Reinforcement Learning</span></td>
-          <td style="padding: 10px; border: 1px solid white;"><span class="fragment">Learns dynamically</span></td>
-          <td style="padding: 10px; border: 1px solid white;"><span class="fragment">Requires extensive training</span></td>
+        <tr class="fragment">
+          <td style="padding: 10px; border: 1px solid white;">Reinforcement Learning</td>
+          <td style="padding: 10px; border: 1px solid white;">Learns dynamically</td>
+          <td style="padding: 10px; border: 1px solid white;">Requires extensive training</td>
         </tr>
       </tbody>
     </table>
@@ -198,32 +198,32 @@
 <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
   <h2 style="color: white; text-align: center;">🌍 Context & Scope</h2>
   <div style="color: white; text-align: center; font-size: 1em; padding-top: 30px;">
-    <!-- Problem Statement -->
+    <!-- Problem Statement (always visible) -->
     <p style="font-size: 1.1em;">
       🚀 <strong>The Problem:</strong><br>
       "Robots struggle to navigate in social environments due to unpredictable human behavior."
     </p>
-    <div style="display: flex; justify-content: center; gap: 40px; padding-top: 20px;">
-      <!-- Broader Context -->
+    <!-- Next fragment: Broader Context -->
+    <div class="fragment" style="display: flex; justify-content: center; gap: 40px; padding-top: 20px;">
       <div style="width: 45%; text-align: left;">
-        <p><span class="fragment">🔎 <strong>Broader Context:</strong></span></p>
+        <p><strong>🔎 Broader Context:</strong></p>
         <ul>
-          <li class="fragment">Essential for safe integration in healthcare, hospitality, etc.</li>
-          <li class="fragment">Dynamic human behavior challenges current methods.</li>
+          <li>Essential for safe integration in healthcare, hospitality, etc.</li>
+          <li>Dynamic human behavior challenges current methods.</li>
         </ul>
       </div>
-      <!-- Research Motivation & Scope -->
       <div style="width: 45%; text-align: left;">
-        <p><span class="fragment">💡 <strong>Research Motivation & Scope:</strong></span></p>
+        <p><strong>💡 Research Motivation & Scope:</strong></p>
         <ul>
-          <li class="fragment">Hybrid RL + predictive models for long-term forecasting.</li>
-          <li class="fragment">Use of Cosine-Gated LSTM (CGLSTM) for improved prediction.</li>
-          <li class="fragment">Adaptive horizons to adjust planning based on uncertainty.</li>
+          <li>Hybrid RL + predictive models for long-term forecasting.</li>
+          <li>Use of Cosine-Gated LSTM (CGLSTM) for improved prediction.</li>
+          <li>Adaptive horizons to adjust planning based on uncertainty.</li>
         </ul>
       </div>
     </div>
-    <p style="margin-top: 20px; font-style: italic; font-size: 1em;">
-      <span class="fragment">Aiming to bridge the gap between current methods and real-world needs by forecasting future states in dynamic environments.</span>
+    <!-- Next fragment: Summary -->
+    <p class="fragment" style="margin-top: 20px; font-style: italic; font-size: 1em;">
+      Aiming to bridge the gap between current methods and real-world needs by forecasting future states in dynamic environments.
     </p>
   </div>
 </section>
