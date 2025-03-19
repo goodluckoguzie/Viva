@@ -242,7 +242,7 @@
 </section>
 
 
-      <!-- ========================================= -->
+<!-- ========================================= -->
 <!-- 4. REINFORCEMENT LEARNING                 -->
 <!-- ========================================= -->
 
@@ -251,15 +251,15 @@
   <h2 class="section-title">Reinforcement Learning</h2>
 </section>
 
-<!-- Slide 10: Reinforcement Learning Basics & Its Role in Social Navigation -->
+<!-- Slide 10: RL Fundamentals & Role in Social Navigation -->
 <section data-background="img/aston_slides_background_22.png">
-  <h2 style="color: white; text-align: center;">🤖 Fundamentals of Reinforcement Learning & Its Role in Social Navigation</h2>
+  <h2 style="color: white; text-align: center;">Fundamentals of Reinforcement Learning & Role in Social Navigation</h2>
   <div style="text-align: center; color: white; padding-top: 40px;">
     <ul>
-      <li class="fragment">An RL agent learns optimal actions via trial-and-error interactions.</li>
-      <li class="fragment">The agent–environment loop is critical for dynamic decision-making.</li>
-      <li class="fragment">Key components: states, actions, rewards, and policies.</li>
-      <li class="fragment">These fundamentals underpin our advanced methods for handling unpredictable social interactions.</li>
+      <li class="fragment">RL enables an agent to learn optimal actions through trial-and-error.</li>
+      <li class="fragment">Key loop: the agent observes the environment, takes actions, receives rewards.</li>
+      <li class="fragment">Core components: <em>states</em>, <em>actions</em>, <em>rewards</em>, and <em>policies</em>.</li>
+      <li class="fragment">In social navigation, RL handles dynamic, human-centered interactions with uncertainty.</li>
     </ul>
     <div class="fragment" style="padding-top: 20px;">
       <img src="img/rl_basics_diagram.jpg" width="70%" style="border: 2px solid white;" alt="RL Basics Diagram" />
@@ -267,91 +267,92 @@
   </div>
 </section>
 
-<!-- Slide 11: RL in Social Robot Navigation -->
+<!-- Slide 11: Why RL for Social Robot Navigation? -->
 <section data-background="img/aston_slides_background_22.png">
-  <h2 style="color: white; text-align: center;">⚙️ RL in Social Robot Navigation</h2>
+  <h2 style="color: white; text-align: center;">Why RL for Social Robot Navigation?</h2>
   <div style="text-align: center; color: white; padding-top: 40px;">
     <ul>
-      <li class="fragment">Essential for dynamic adaptation amidst unpredictable human behavior.</li>
-      <li class="fragment">Key challenges: real-time response, maintaining human comfort, and handling uncertainty.</li>
-      <li class="fragment">Our work benchmarks standard RL algorithms in social navigation settings.</li>
-      <li class="fragment">Chosen algorithms: 
+      <li class="fragment">Allows adaptation to unpredictable human behavior in real time.</li>
+      <li class="fragment">Focus on maintaining safety, comfort, and efficiency in human-populated spaces.</li>
+      <li class="fragment">Our research evaluates baseline RL algorithms to identify challenges and gaps.</li>
+      <li class="fragment">Selected algorithms:
         <ul>
-          <li>DQN (Discrete actions baseline)</li>
-          <li>PPO & SAC (For continuous control)</li>
-          <li>DreamerV3 (For latent predictive modeling)</li>
+          <li class="fragment">DQN (Discrete-action baseline)</li>
+          <li class="fragment">PPO & SAC (Continuous control)</li>
+          <li class="fragment">DreamerV3 (Model-based, latent predictive planning)</li>
         </ul>
       </li>
     </ul>
   </div>
 </section>
 
-<!-- Slide 12: RL Algorithms: Critical Comparison -->
+<!-- Slide 12: Comparing Standard RL Algorithms -->
 <section data-background="img/aston_slides_background_22.png">
-  <h2 style="color: white; text-align: center;">📊 RL Algorithms: Critical Comparison</h2>
+  <h2 style="color: white; text-align: center;">Comparing Standard RL Algorithms</h2>
   <div style="text-align: center; color: white; padding-top: 40px;">
     <table style="margin: 0 auto; width: 85%; border-collapse: collapse; font-size: 0.9em;">
       <thead style="background-color: #003087;">
         <tr>
           <th style="padding: 8px; border: 1px solid white;">Algorithm</th>
-          <th style="padding: 8px; border: 1px solid white;">✅ Strength</th>
-          <th style="padding: 8px; border: 1px solid white;">⚠️ Weakness (addressed in thesis)</th>
+          <th style="padding: 8px; border: 1px solid white;">Strengths</th>
+          <th style="padding: 8px; border: 1px solid white;">Limitations (addressed in thesis)</th>
         </tr>
       </thead>
       <tbody>
         <tr class="fragment">
-          <td style="padding: 8px; border: 1px solid white;">DQN (Mnih et al., 2015)</td>
-          <td style="padding: 8px; border: 1px solid white;">Efficient in discrete tasks</td>
-          <td style="padding: 8px; border: 1px solid white;">Limited adaptability in continuous spaces</td>
+          <td style="padding: 8px; border: 1px solid white;">DQN <br>(Mnih et al., 2015)</td>
+          <td style="padding: 8px; border: 1px solid white;">Efficient for discrete tasks</td>
+          <td style="padding: 8px; border: 1px solid white;">Not well suited for continuous or complex action spaces</td>
         </tr>
         <tr class="fragment">
-          <td style="padding: 8px; border: 1px solid white;">PPO (Schulman et al., 2017)</td>
-          <td style="padding: 8px; border: 1px solid white;">Stable and sample-efficient</td>
-          <td style="padding: 8px; border: 1px solid white;">Requires careful tuning to optimize performance</td>
+          <td style="padding: 8px; border: 1px solid white;">PPO <br>(Schulman et al., 2017)</td>
+          <td style="padding: 8px; border: 1px solid white;">Stable learning, good sample efficiency</td>
+          <td style="padding: 8px; border: 1px solid white;">Performance sensitive to hyperparameter tuning</td>
         </tr>
         <tr class="fragment">
-          <td style="padding: 8px; border: 1px solid white;">SAC (Haarnoja et al., 2018)</td>
-          <td style="padding: 8px; border: 1px solid white;">Robust for continuous control</td>
-          <td style="padding: 8px; border: 1px solid white;">Higher computational overhead</td>
+          <td style="padding: 8px; border: 1px solid white;">SAC <br>(Haarnoja et al., 2018)</td>
+          <td style="padding: 8px; border: 1px solid white;">Robust in continuous control domains</td>
+          <td style="padding: 8px; border: 1px solid white;">Higher computational demands due to entropy maximization</td>
         </tr>
         <tr class="fragment">
-          <td style="padding: 8px; border: 1px solid white;">DreamerV3 (Hafner et al., 2023)</td>
-          <td style="padding: 8px; border: 1px solid white;">Learns latent world model for predictions</td>
-          <td style="padding: 8px; border: 1px solid white;">Sensitive to model accuracy and observation noise</td>
+          <td style="padding: 8px; border: 1px solid white;">DreamerV3 <br>(Hafner et al., 2023)</td>
+          <td style="padding: 8px; border: 1px solid white;">Model-based approach that learns a latent world model</td>
+          <td style="padding: 8px; border: 1px solid white;">Sensitive to model inaccuracies and observation noise</td>
         </tr>
       </tbody>
     </table>
   </div>
 </section>
 
-<!-- Slide 13: RL: Discrete vs. Continuous Actions -->
+<!-- Slide 13: Discrete vs. Continuous & Latent Modeling -->
 <section data-background="img/aston_slides_background_22.png">
-  <h2 style="color: white; text-align: center;">🔀 RL: Discrete vs. Continuous Actions</h2>
+  <h2 style="color: white; text-align: center;">Discrete vs. Continuous Actions & Latent Modeling</h2>
   <div style="text-align: center; color: white; padding-top: 40px;">
     <ul>
-      <li class="fragment">Discrete Actions:
+      <li class="fragment"><strong>Discrete Actions:</strong>
         <ul>
-          <li>Effectively handled by DQN; ideal for simple tasks (e.g., FallingBallEnv).</li>
+          <li>DQN often sufficient for simpler tasks (e.g., FallingBallEnv).</li>
         </ul>
       </li>
-      <li class="fragment">Continuous Actions (Crucial for social navigation):
+      <li class="fragment"><strong>Continuous Actions (crucial for social navigation):</strong>
         <ul>
-          <li>SAC & PPO provide smooth, real-time control.</li>
-          <li>Essential for managing complex, dynamic environments.</li>
+          <li>SAC & PPO support smooth, real-time control.</li>
+          <li>Better suited for unpredictable, dynamic environments involving humans.</li>
         </ul>
       </li>
-      <li class="fragment">Latent Modeling:
+      <li class="fragment"><strong>Latent Modeling:</strong>
         <ul>
-          <li>DreamerV3 augments predictive capabilities.</li>
-          <li>Enhances state estimation in partially observable tasks.</li>
+          <li>DreamerV3 improves predictive accuracy via learned world models.</li>
+          <li>Especially useful for partial observability and long-term planning.</li>
         </ul>
       </li>
     </ul>
     <div class="fragment" style="padding-top: 20px;">
-      <img src="img/rl_social_diagram.jpg" width="70%" style="border: 2px solid white;" />
+      <img src="img/rl_social_diagram.jpg" width="70%" style="border: 2px solid white;" alt="RL Social Diagram"/>
     </div>
   </div>
 </section>
+
 
 
       <!-- ========================================= -->
