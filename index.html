@@ -136,25 +136,7 @@
 <!-- 2. CONTEXT & SCOPE & APPROACHES            -->
 <!-- ========================================= -->
 
-<!-- Slide 3: What is Social Robot Navigation? -->
-<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-  <h2 style="color: white; text-align: center;">🤖 What is Social Robot Navigation?</h2>
-  <div style="text-align: center; padding-top: 30px;">
-    <video muted autoplay loop src="img/socialrobot.mp4" width="60%"></video>
-  </div>
-  <div style="color: white; text-align: center; padding-top: 20px;">
-    <p style="font-size: 1.1em;">
-      💡 <strong>Definition:</strong><br>
-      "Robots navigating among humans while respecting social norms, ensuring safety, and operating efficiently."
-    </p>
-    <p style="font-size: 1.1em;">
-      ✔️ <strong>Importance:</strong><br>
-      Essential for seamless integration in environments like healthcare, hospitality, and public spaces. Advanced predictive decision-making is crucial to manage inherent unpredictability.
-    </p>
-  </div>
-</section>
-
-<!-- Slide 4: Approaches to Social Robot Navigation -->
+<!-- Slide 3: Approaches to Social Robot Navigation -->
 <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
   <h2 style="color: white; text-align: center;">🚀 Approaches to Social Robot Navigation</h2>
   <div style="color: white; text-align: center; padding-top: 20px;">
@@ -195,53 +177,69 @@
   </div>
 </section>
 
-<!-- Slide: Context & Scope -->
+<!-- Slide 4: Context & Scope -->
 <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
   <h2 style="color: white; text-align: center;">🌍 Context & Scope</h2>
   <div style="color: white; text-align: center; font-size: 1em; padding-top: 30px;">
-    <p style="font-size: 1.1em;">
+    <p style="font-size: 1.1em;" class="fragment">
       🚀 <strong>The Problem:</strong><br>
       "Robots struggle to navigate in social environments due to unpredictable human behavior."
     </p>
     <div style="display: flex; justify-content: center; gap: 40px; padding-top: 20px;">
+      <!-- Left column: Broader Context -->
       <div style="width: 45%; text-align: left;">
-        <p>🔎 <strong>Broader Context:</strong></p>
+        <p class="fragment"><strong>🔎 Broader Context:</strong></p>
         <ul>
-          <li>Essential for safe integration in healthcare, hospitality, etc.</li>
-          <li>Dynamic human behavior challenges current methods.</li>
+          <li class="fragment">Essential for safe integration in healthcare, hospitality, etc.</li>
+          <li class="fragment">Dynamic human behavior challenges current methods.</li>
         </ul>
       </div>
+      <!-- Right column: Research Motivation & Scope -->
       <div style="width: 45%; text-align: left;">
-        <p>💡 <strong>Research Motivation & Scope:</strong></p>
+        <p class="fragment"><strong>💡 Research Motivation & Scope:</strong></p>
         <ul>
-          <li>Hybrid RL + predictive models for long-term forecasting.</li>
-          <li>Use of Cosine-Gated LSTM (CGLSTM) for improved prediction.</li>
-          <li>Adaptive horizons adjust planning based on uncertainty.</li>
+          <li class="fragment">Hybrid RL + predictive models for long-term forecasting.</li>
+          <li class="fragment">Use of Cosine-Gated LSTM (CGLSTM) for improved prediction.</li>
+          <li class="fragment">Adaptive horizons adjust planning based on uncertainty.</li>
         </ul>
       </div>
     </div>
-    <p style="margin-top: 20px; font-style: italic; font-size: 1em;">
+    <p style="margin-top: 20px; font-style: italic; font-size: 1em;" class="fragment">
       Aiming to bridge the gap between current methods and real-world needs by forecasting future states in dynamic environments.
     </p>
   </div>
 </section>
 
+<!-- Slide 5: What is Social Robot Navigation? -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <h2 style="color: white; text-align: center;">🤖 What is Social Robot Navigation?</h2>
+  <div style="text-align: center; padding-top: 30px;">
+    <video muted autoplay loop src="img/socialrobot.mp4" width="60%"></video>
+  </div>
+  <div style="color: white; text-align: center; padding-top: 20px;">
+    <p style="font-size: 1.1em;" class="fragment">
+      💡 <strong>Definition:</strong><br>
+      "Robots navigating among humans while respecting social norms, ensuring safety, and operating efficiently."
+    </p>
+    <p style="font-size: 1.1em;" class="fragment">
+      ✔️ <strong>Importance:</strong><br>
+      Crucial for seamless integration into environments such as healthcare, hospitality, and public spaces. Advanced predictive decision-making is essential to manage inherent unpredictability.
+    </p>
+  </div>
+</section>
 
-
-
-<!-- Slide 4: Research Questions -->
+<!-- Slide 7: Research Questions -->
 <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
   <h2 style="color: white; text-align: center;">🔍 Research Questions</h2>
   <div style="color: white; text-align: center; font-size: 1em; padding-top: 30px;">
-    <p>❓ <strong>Q1:</strong> How can predictive world models enhance <strong>long-term decision-making</strong> in RL-based social navigation?</p>
-    <p>❓ <strong>Q2:</strong> How do <strong>adaptive horizon adjustments</strong> improve navigation performance?</p>
-    <p style="margin-top: 20px; font-size: 1.1em;">
+    <p class="fragment">❓ <strong>Q1:</strong> How can predictive world models enhance <strong>long-term decision-making</strong> in RL-based social navigation?</p>
+    <p class="fragment">❓ <strong>Q2:</strong> How do <strong>adaptive horizon adjustments</strong> improve navigation performance?</p>
+    <p style="margin-top: 20px; font-size: 1.1em;" class="fragment">
       🎯 <strong>Main Objective:</strong><br>
       Develop predictive RL methods that dynamically adjust horizons to improve social robot navigation performance.
     </p>
   </div>
 </section>
-
 
       <!-- ========================================= -->
       <!-- 4. REINFORCEMENT LEARNING                 -->
