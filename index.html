@@ -242,95 +242,141 @@
 </section>
 
 
-      
       <!-- ========================================= -->
-      <!-- 4. REINFORCEMENT LEARNING                 -->
-      <!-- ========================================= -->
+<!-- 4. REINFORCEMENT LEARNING                 -->
+<!-- ========================================= -->
 
-      <!-- Slide 9: Section Title: Reinforcement Learning -->
-      <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-        <h2 class="section-title">Reinforcement Learning</h2>
-      </section>
+<!-- Slide 9: Section Title: Reinforcement Learning -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <h2 class="section-title">Reinforcement Learning</h2>
+</section>
 
-      <!-- Slide 10: RL Basics -->
-      <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">🤖 Reinforcement Learning Basics</h2>
-        <div style="text-align: center; color: white; font-size: 0.9em; padding-top: 60px;">
-          <ul>
-            <li class="fragment">Learns actions via trial-and-error (Ch. 3, p. 34)</li>
-            <li class="fragment">Model-Free vs. Model-Based RL (p. 36)</li>
-            <li class="fragment">Agent-Environment loop: dynamic interactions</li>
-          </ul>
-          <div class="fragment" style="padding-top: 20px;">
-            <img src="img/rl_basics_diagram.jpg" width="70%" style="border: 2px solid white;" />
-          </div>
-        </div>
-      </section>
+<!-- Slide 10: Reinforcement Learning Basics -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center;">🤖 Reinforcement Learning Basics</h2>
+  <div style="text-align: center; color: white; padding-top: 40px;">
+    <ul>
+      <li class="fragment">Learns optimal actions via trial-and-error interactions.</li>
+      <li class="fragment">Agent-Environment loop: crucial for dynamic human settings.</li>
+      <li class="fragment">My thesis leverages RL to handle unpredictability in social robot navigation tasks.</li>
+    </ul>
+    <div class="fragment" style="padding-top: 20px;">
+      <img src="img/rl_basics_diagram.jpg" width="70%" style="border: 2px solid white;" />
+    </div>
+  </div>
+</section>
 
-      <!-- Slide 11: RL in Social Robot Navigation (1) -->
-      <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">⚙️ RL in Social Robot Navigation</h2>
-        <div style="text-align: center; color: white; padding-top: 50px;">
-          <ul>
-            <li class="fragment">Role: Dynamic adaptation in human settings</li>
-            <li class="fragment">Challenges: Unpredictability, real-time demands</li>
-            <li class="fragment">Key algorithms: DQN, PPO, SAC, DreamerV3</li>
-          </ul>
-        </div>
-      </section>
+<!-- Slide 11: RL in Social Robot Navigation -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center;">⚙️ RL in Social Robot Navigation</h2>
+  <div style="text-align: center; color: white; padding-top: 40px;">
+    <ul>
+      <li class="fragment">Essential for dynamic adaptation amidst human unpredictability.</li>
+      <li class="fragment">Key Challenges: real-time responses, human comfort, uncertainty.</li>
+      <li class="fragment">Chosen Algorithms (relevant to my contributions): 
+        <ul>
+          <li>DQN (Discrete actions baseline)</li>
+          <li>PPO & SAC (Continuous control stability)</li>
+          <li>DreamerV3 (Predictive latent modeling)</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</section>
 
-      <!-- Slide 12: RL Algorithms: Strengths & Weaknesses -->
-      <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">📊 RL Algorithms: Strengths & Weaknesses</h2>
-        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
-          <table style="margin: 0 auto; width: 80%; border-collapse: collapse;">
-            <thead style="background-color: #003087;">
-              <tr>
-                <th style="padding: 6px; border: 1px solid white;">Algorithm</th>
-                <th style="padding: 6px; border: 1px solid white;">Strength</th>
-                <th style="padding: 6px; border: 1px solid white;">Weakness</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="fragment">
-                <td style="border: 1px solid white; padding: 6px;">DQN</td>
-                <td style="border: 1px solid white; padding: 6px;">Effective (discrete)</td>
-                <td style="border: 1px solid white; padding: 6px;">Struggles in continuous</td>
-              </tr>
-              <tr class="fragment">
-                <td style="border: 1px solid white; padding: 6px;">PPO</td>
-                <td style="border: 1px solid white; padding: 6px;">Stable, sample-efficient</td>
-                <td style="border: 1px solid white; padding: 6px;">Needs tuning</td>
-              </tr>
-              <tr class="fragment">
-                <td style="border: 1px solid white; padding: 6px;">SAC</td>
-                <td style="border: 1px solid white; padding: 6px;">Robust for continuous</td>
-                <td style="border: 1px solid white; padding: 6px;">Higher computation</td>
-              </tr>
-              <tr class="fragment">
-                <td style="border: 1px solid white; padding: 6px;">DreamerV3</td>
-                <td style="border: 1px solid white; padding: 6px;">Learns latent world model</td>
-                <td style="border: 1px solid white; padding: 6px;">Requires accurate model</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
+<!-- Slide 12: RL Algorithms: Critical Comparison -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center;">📊 RL Algorithms: Critical Comparison</h2>
+  <div style="text-align: center; color: white; padding-top: 40px;">
+    <table style="margin: 0 auto; width: 85%; border-collapse: collapse; font-size: 0.9em;">
+      <thead style="background-color: #003087;">
+        <tr>
+          <th style="padding: 8px; border: 1px solid white;">Algorithm</th>
+          <th style="padding: 8px; border: 1px solid white;">Strength</th>
+          <th style="padding: 8px; border: 1px solid white;">Weakness (addressed in thesis)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="fragment">
+          <td style="padding: 8px; border: 1px solid white;">DQN (Mnih et al., 2015)</td>
+          <td style="padding: 8px; border: 1px solid white;">Efficient in discrete tasks</td>
+          <td style="padding: 8px; border: 1px solid white;">Limited continuous-space adaptability</td>
+        </tr>
+        <tr class="fragment">
+          <td style="padding: 8px; border: 1px solid white;">PPO (Schulman et al., 2017)</td>
+          <td style="padding: 8px; border: 1px solid white;">Stable, sample-efficient</td>
+          <td style="padding: 8px; border: 1px solid white;">Requires careful tuning (My adaptive horizons reduce manual tuning efforts)</td>
+        </tr>
+        <tr class="fragment">
+          <td style="padding: 8px; border: 1px solid white;">SAC (Haarnoja et al., 2018)</td>
+          <td style="padding: 8px; border: 1px solid white;">Robust continuous control</td>
+          <td style="padding: 8px; border: 1px solid white;">Higher computational overhead (Mitigated by adaptive prediction horizons)</td>
+        </tr>
+        <tr class="fragment">
+          <td style="padding: 8px; border: 1px solid white;">DreamerV3 (Hafner et al., 2023)</td>
+          <td style="padding: 8px; border: 1px solid white;">Latent model-based predictions</td>
+          <td style="padding: 8px; border: 1px solid white;">Sensitive to model accuracy (Improved by integrating Cosine-Gated LSTM)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
-      <!-- Slide 13: RL – Discrete vs. Continuous -->
-      <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔀 RL: Discrete vs. Continuous</h2>
-        <div style="text-align: center; color: white; font-size: 0.85em; padding-top: 50px;">
-          <ul>
-            <li class="fragment">Discrete: DQN works effectively</li>
-            <li class="fragment">Continuous: SAC, PPO, DreamerV3 excel</li>
-            <li class="fragment">Diagram illustrates RL flow in social tasks</li>
-          </ul>
-          <div class="fragment" style="padding-top: 20px;">
-            <img src="img/rl_social_diagram.jpg" width="70%" style="border: 2px solid white;" />
-          </div>
-        </div>
-      </section>
+<!-- Slide 13: RL: Discrete vs. Continuous Actions -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center;">🔀 RL: Discrete vs. Continuous Actions</h2>
+  <div style="text-align: center; color: white; padding-top: 40px;">
+    <ul>
+      <li class="fragment">Discrete Actions:
+        <ul>
+          <li>Handled effectively by DQN.</li>
+          <li>Baseline for simpler scenarios (e.g., FallingBallEnv).</li>
+        </ul>
+      </li>
+      <li class="fragment">Continuous Actions (Key to Thesis):
+        <ul>
+          <li>SAC & PPO: essential for real-time smooth robot navigation.</li>
+          <li>Adaptive horizons significantly improved continuous-action RL results.</li>
+        </ul>
+      </li>
+      <li class="fragment">Latent Modeling:
+        <ul>
+          <li>DreamerV3 augmented with CGLSTM.</li>
+          <li>Essential for managing partial observability in realistic tasks.</li>
+        </ul>
+      </li>
+    </ul>
+    <div class="fragment" style="padding-top: 20px;">
+      <img src="img/rl_social_diagram.jpg" width="70%" style="border: 2px solid white;" />
+    </div>
+  </div>
+</section>
+
+<!-- New Slide 14: Empirical RL Results -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center;">🧩 Empirical RL Results: Key Outcomes</h2>
+  <div style="text-align: center; color: white; padding-top: 40px;">
+    <ul>
+      <li class="fragment">Discrete Task Results (DQN):
+        <ul>
+          <li>Baseline validated in FallingBallEnv; limited flexibility observed.</li>
+        </ul>
+      </li>
+      <li class="fragment">Continuous Task Results (SAC & PPO):
+        <ul>
+          <li>Adaptive horizons improved LunarLander returns by ~25%.</li>
+          <li>Stable performance in LiteSocNavGym, validating dynamic horizons.</li>
+        </ul>
+      </li>
+      <li class="fragment">Latent World Modeling (DreamerV3 + CGLSTM):
+        <ul>
+          <li>Significantly improved predictive accuracy in LiteSocNavGym.</li>
+          <li>Enhanced long-term state forecasting and RL planning efficiency.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</section>
 
       <!-- ========================================= -->
       <!-- 5. PREDICTIVE MODELS                     -->
