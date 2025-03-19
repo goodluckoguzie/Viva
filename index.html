@@ -131,44 +131,10 @@
         </div>
       </section>
 <!-- ========================================= -->
-<!-- 2. CONTEXT & SCOPE                        -->
+<!-- 2. CONTEXT & SCOPE & APPROACHES            -->
 <!-- ========================================= -->
 
-<!-- ========================================= -->
-<!-- 2. CONTEXT & SCOPE                        -->
-<!-- ========================================= -->
-
-<!-- Slide 3: Context & Scope -->
-<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-  <h2 style="color: white; text-align: center;">🌍 Context & Scope</h2>
-  <div style="color: white; text-align: center; font-size: 1em; padding-top: 30px;">
-    <p style="font-size: 1.1em;">
-      🚀 <strong>The Problem:</strong><br>
-      "Robots struggle to navigate in social environments due to unpredictable human behavior."
-    </p>
-    <div style="display: flex; justify-content: center; gap: 40px; padding-top: 20px;">
-      <div style="width: 30%; text-align: left;">
-        <p>🔎 <strong>Current Challenges:</strong></p>
-        <ul>
-          <li>✔️ Rule-based methods fail in dynamic interactions.</li>
-          <li>✔️ Traditional ML models lack long-term predictive accuracy.</li>
-        </ul>
-      </div>
-      <div style="width: 30%; text-align: left;">
-        <p>💡 <strong>Our Approach:</strong></p>
-        <ul>
-          <li>🔹 Cosine-Gated LSTM (CGLSTM) for enhanced sequence prediction.</li>
-          <li>🔹 Adaptive decision-making with reinforcement learning.</li>
-        </ul>
-      </div>
-    </div>
-    <p style="margin-top: 20px; font-style: italic;">
-      This motivates the development of hybrid predictive methods that integrate RL with advanced sequence modeling to better forecast future states in complex, dynamic environments.
-    </p>
-  </div>
-</section>
-
-<!-- Slide 4: What is Social Robot Navigation? -->
+<!-- Slide 1: What is Social Robot Navigation? -->
 <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
   <h2 style="color: white; text-align: center;">🤖 What is Social Robot Navigation?</h2>
   <div style="text-align: center; padding-top: 30px;">
@@ -179,13 +145,14 @@
       💡 <strong>Definition:</strong><br>
       "Robots navigating among humans while respecting social norms, ensuring safety, and operating efficiently."
     </p>
-    <p>
-      ✔️ <strong>Importance:</strong> Crucial for seamless integration into environments such as healthcare, hospitality, and public spaces. Advanced predictive decision-making is essential to address the inherent complexities.
+    <p style="font-size: 1.1em;">
+      ✔️ <strong>Importance:</strong><br>
+      Social robot navigation is crucial for seamless integration into environments such as healthcare, hospitality, and public spaces. Advanced predictive decision-making is essential to manage the inherent unpredictability.
     </p>
   </div>
 </section>
 
-<!-- Slide 5: Approaches to Social Robot Navigation -->
+<!-- Slide 2: Approaches to Social Robot Navigation -->
 <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
   <h2 style="color: white; text-align: center;">🚀 Approaches to Social Robot Navigation</h2>
   <div style="color: white; text-align: center; padding-top: 20px;">
@@ -215,25 +182,54 @@
         </tr>
         <tr>
           <td style="padding: 10px; border: 1px solid white;">Predictive Models</td>
-          <td style="padding: 10px; border: 1px solid white;">Forecasts future states</td>
+          <td style="padding: 10px; border: 1px solid white;">Forecast future states</td>
           <td style="padding: 10px; border: 1px solid white;">High computational cost</td>
         </tr>
       </tbody>
     </table>
-    <p style="margin-top: 15px;">
-      💡 <strong>Our research uniquely integrates reinforcement learning with advanced predictive models (e.g., CGLSTM and adaptive horizons) to overcome these limitations.</strong>
+    <p style="margin-top: 15px; font-size: 1.1em;">
+      💡 <strong>Our Research:</strong> Integrates reinforcement learning with advanced predictive models (e.g., Cosine-Gated LSTM and adaptive horizons) to overcome these limitations.
     </p>
   </div>
 </section>
 
+<!-- Slide 3: Context & Scope -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <h2 style="color: white; text-align: center;">🌍 Context & Scope</h2>
+  <div style="color: white; text-align: center; font-size: 1em; padding-top: 30px;">
+    <p style="font-size: 1.1em;">
+      🚀 <strong>The Problem:</strong><br>
+      "Robots struggle to navigate in social environments due to unpredictable human behavior."
+    </p>
+    <div style="display: flex; justify-content: center; gap: 40px; padding-top: 20px;">
+      <div style="width: 30%; text-align: left;">
+        <p>🔎 <strong>Current Challenges:</strong></p>
+        <ul>
+          <li>✔️ Rule-based methods fail in dynamic interactions.</li>
+          <li>✔️ Traditional ML models lack long-term predictive accuracy.</li>
+        </ul>
+      </div>
+      <div style="width: 30%; text-align: left;">
+        <p>💡 <strong>Our Approach:</strong></p>
+        <ul>
+          <li>🔹 Cosine-Gated LSTM (CGLSTM) for enhanced sequence prediction.</li>
+          <li>🔹 Adaptive decision-making using reinforcement learning.</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top: 20px; font-style: italic; font-size: 1em;">
+      This motivates the development of hybrid predictive methods that combine RL with advanced sequence modeling to better forecast future states in complex, dynamic environments.
+    </p>
+  </div>
+</section>
 
-<!-- Slide 7: Research Questions -->
+<!-- Slide 4: Research Questions -->
 <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
   <h2 style="color: white; text-align: center;">🔍 Research Questions</h2>
   <div style="color: white; text-align: center; font-size: 1em; padding-top: 30px;">
     <p>❓ <strong>Q1:</strong> How can predictive world models enhance <strong>long-term decision-making</strong> in RL-based social navigation?</p>
     <p>❓ <strong>Q2:</strong> How do <strong>adaptive horizon adjustments</strong> improve navigation performance?</p>
-    <p style="margin-top: 20px;">
+    <p style="margin-top: 20px; font-size: 1.1em;">
       🎯 <strong>Main Objective:</strong><br>
       Develop predictive RL methods that dynamically adjust horizons to improve social robot navigation performance.
     </p>
