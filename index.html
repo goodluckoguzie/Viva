@@ -177,12 +177,70 @@
   </div>
 </section>
 
-
 <!-- ========================================= -->
 <!-- 2. CONTEXT & SCOPE & APPROACHES            -->
 <!-- ========================================= -->
 
-<!-- Slide 4: Context & Scope -->
+<!-- Slide 3: What is Social Robot Navigation? -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <h2 style="color: white; text-align: center;">🤖 What is Social Robot Navigation?</h2>
+  <div style="text-align: center; padding-top: 30px;">
+    <video muted autoplay loop src="img/socialrobot.mp4" width="60%"></video>
+  </div>
+  <div style="color: white; text-align: center; padding-top: 20px;">
+    <p style="font-size: 1.1em;">
+      💡 <strong>Definition:</strong><br>
+      "Robots navigating among humans while respecting social norms, ensuring safety, and operating efficiently."
+    </p>
+    <p style="font-size: 1.1em;">
+      ✔️ <strong>Importance:</strong><br>
+      Essential for seamless integration in environments like healthcare, hospitality, and public spaces. Advanced predictive decision-making is crucial to manage inherent unpredictability.
+    </p>
+  </div>
+</section>
+
+<!-- Slide 4: Approaches to Social Robot Navigation -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <h2 style="color: white; text-align: center;">🚀 Approaches to Social Robot Navigation</h2>
+  <div style="color: white; text-align: center; padding-top: 20px;">
+    <table style="width: 80%; margin: auto; border-collapse: collapse;">
+      <thead style="background-color: #003087;">
+        <tr>
+          <th style="padding: 10px; border: 1px solid white;">Approach</th>
+          <th style="padding: 10px; border: 1px solid white;">✅ Strength</th>
+          <th style="padding: 10px; border: 1px solid white;">⚠️ Weakness</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 10px; border: 1px solid white;">Path Planning (A*)</td>
+          <td style="padding: 10px; border: 1px solid white;">Simple & efficient</td>
+          <td style="padding: 10px; border: 1px solid white;">Fails in dynamic settings</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid white;">Social Force Models</td>
+          <td style="padding: 10px; border: 1px solid white;">Good for crowd modeling</td>
+          <td style="padding: 10px; border: 1px solid white;">Limited adaptability</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid white;">ROV2</td>
+          <td style="padding: 10px; border: 1px solid white;">Real-time collision avoidance; effective in dynamic scenarios</td>
+          <td style="padding: 10px; border: 1px solid white;">Limited in long-term planning and human comfort prediction</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid white;">Reinforcement Learning</td>
+          <td style="padding: 10px; border: 1px solid white;">Learns dynamically</td>
+          <td style="padding: 10px; border: 1px solid white;">Requires extensive training</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top: 15px; font-size: 1.1em;">
+      💡 <strong>Our Research:</strong> Integrates reinforcement learning with advanced predictive models (e.g., Cosine-Gated LSTM and adaptive horizons) to overcome these limitations.
+    </p>
+  </div>
+</section>
+
+<!-- Slide 5: Context & Scope -->
 <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
   <h2 style="color: white; text-align: center;">🌍 Context & Scope</h2>
   <div style="color: white; text-align: center; font-size: 1em; padding-top: 30px;">
@@ -191,29 +249,28 @@
       "Robots struggle to navigate in social environments due to unpredictable human behavior."
     </p>
     <div style="display: flex; justify-content: center; gap: 40px; padding-top: 20px;">
-      <!-- Left column: Broader Context -->
       <div style="width: 45%; text-align: left;">
         <p>🔎 <strong>Broader Context:</strong></p>
         <ul>
-          <li>✔️ Social robot navigation is essential for safe integration in real-world settings (healthcare, hospitality, public spaces).</li>
-          <li>✔️ Dynamic human behaviors and environmental variability challenge traditional and ML-based methods.</li>
+          <li>✔️ Essential for safe integration in settings like healthcare, hospitality, and public spaces.</li>
+          <li>✔️ Dynamic human behavior and environmental variability challenge existing methods.</li>
         </ul>
       </div>
-      <!-- Right column: Research Motivation & Scope -->
       <div style="width: 45%; text-align: left;">
         <p>💡 <strong>Research Motivation & Scope:</strong></p>
         <ul>
-          <li>🔹 Develop a hybrid approach that integrates reinforcement learning with advanced predictive models.</li>
-          <li>🔹 Leverage Cosine-Gated LSTM (CGLSTM) for improved long-term sequence prediction.</li>
-          <li>🔹 Incorporate adaptive prediction horizons to dynamically adjust planning based on uncertainty.</li>
+          <li>🔹 Develop a hybrid approach integrating RL with advanced predictive models.</li>
+          <li>🔹 Utilize Cosine-Gated LSTM (CGLSTM) for improved long-term sequence prediction.</li>
+          <li>🔹 Incorporate adaptive prediction horizons to adjust planning based on uncertainty.</li>
         </ul>
       </div>
     </div>
     <p style="margin-top: 20px; font-style: italic; font-size: 1em;">
-      This research aims to bridge the gap between current methods and real-world requirements by enabling robots to better forecast future states in complex, dynamic environments.
+      This research aims to bridge the gap between current methods and real-world requirements by enabling robots to forecast future states in complex, dynamic environments.
     </p>
   </div>
 </section>
+
 
 
 <!-- Slide 4: Research Questions -->
