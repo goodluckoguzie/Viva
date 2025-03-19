@@ -252,20 +252,68 @@
 </section>
 
 <!-- Slide 10: RL Fundamentals & Role in Social Navigation -->
-<section data-background="img/aston_slides_background_22.png">
-  <h2 style="color: white; text-align: center;">Fundamentals of Reinforcement Learning & Role in Social Navigation</h2>
-  <div style="text-align: center; color: white; padding-top: 40px;">
-    <ul>
-      <li class="fragment">RL enables an agent to learn optimal actions through trial-and-error.</li>
-      <li class="fragment">Key loop: the agent observes the environment, takes actions, receives rewards.</li>
-      <li class="fragment">Core components: <em>states</em>, <em>actions</em>, <em>rewards</em>, and <em>policies</em>.</li>
-      <li class="fragment">In social navigation, RL handles dynamic, human-centered interactions with uncertainty.</li>
-    </ul>
-    <div class="fragment" style="padding-top: 20px;">
-      <img src="img/rl_basics_diagram.jpg" width="70%" style="border: 2px solid white;" alt="RL Basics Diagram" />
+<section 
+  data-background="img/aston_slides_background_22.png"
+  data-background-size="cover"
+  data-background-position="0 -20px"
+>
+  <!-- Slide Title -->
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">
+    Fundamentals of Reinforcement Learning &amp; Role in Social Navigation
+  </h2>
+
+  <!-- Main container for the diagram and text -->
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <!-- Diagram in the center -->
+    <img 
+      src="img/rl_basics_diagram.jpg" 
+      width="70%" 
+      style="display: block; margin: 0 auto; border: 2px solid white;" 
+      alt="RL Basics Diagram" 
+    />
+    
+    <!-- Single text container, updated as fragments appear -->
+    <div style="margin-top: 20px; text-align: center;">
+      <p id="textDisplayRL" class="textBlock" style="color: white;"></p>
     </div>
   </div>
+
+  <!-- Hidden fragments to trigger text changes -->
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+    <span class="fragment" data-fragment-index="3"></span>
+  </div>
+
+  <!-- Script to replace the text for each fragment in sequence -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const rlTxt = document.getElementById('textDisplayRL');
+
+      Reveal.addEventListener('fragmentshown', function(ev) {
+        // Only handle fragments on this slide
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayRL')) {
+          switch (ev.fragment.dataset.fragmentIndex) {
+            case '0':
+              rlTxt.textContent = '1) RL enables an agent to learn optimal actions through trial-and-error.';
+              break;
+            case '1':
+              rlTxt.textContent = '2) The agent–environment loop: observe, act, and receive rewards.';
+              break;
+            case '2':
+              rlTxt.textContent = '3) Core components: states, actions, rewards, and policies.';
+              break;
+            case '3':
+              rlTxt.textContent = '4) In social navigation, RL addresses human-centered uncertainties.';
+              break;
+          }
+        }
+      });
+    });
+  </script>
 </section>
+
 
 <!-- Slide 11: Why RL for Social Robot Navigation? -->
 <section data-background="img/aston_slides_background_22.png">
