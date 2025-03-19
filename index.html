@@ -371,122 +371,86 @@
   </div>
 </section>
 
-      
 <!-- ========================================= -->
-<!-- 5. PREDICTIVE MODELS (RNN, LSTM, GRU, TF) -->
+<!-- 5. PREDICTIVE MODELS (2 Slides)          -->
 <!-- ========================================= -->
 
-<!-- Slide A: Section Title: Predictive Models -->
-<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-  <h2 class="section-title" style="color: white; text-align: center;">
-    Predictive Models (RNN, LSTM, GRU, Transformers)
-  </h2>
-</section>
-
-<!-- Slide B: RNN & LSTM -->
-<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🧠 RNN &amp; LSTM</h2>
-  <div style="text-align: center; color: white; padding-top: 50px;">
-    <ul style="list-style-position: inside; max-width: 80%; margin: 0 auto; text-align: left;">
-      <li class="fragment">🎯 RNNs model sequential data by propagating hidden states across time steps</li>
-      <li class="fragment">🧩 LSTM extends RNNs with gating to mitigate vanishing/exploding gradients</li>
-      <li class="fragment">⚠️ Can be computationally expensive for very long sequences</li>
-    </ul>
-    <div class="fragment" style="padding-top: 20px; text-align: center;">
-      <img 
-        src="img/lstm_diagram.jpg" 
-        width="60%" 
-        style="border: 2px solid white;" 
-        alt="LSTM Diagram"
-      />
-    </div>
-  </div>
-</section>
-
-<!-- Slide C: GRU & Transformers -->
+<!-- Slide 1: Predictive Models Table -->
 <section data-background="img/aston_slides_background_22.png">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎛 GRU &amp; Transformers</h2>
-  <div style="text-align: center; color: white; font-size: 0.9em; padding-top: 40px;">
-    <ul style="list-style-position: inside; max-width: 80%; margin: 0 auto; text-align: left;">
-      <li class="fragment">🚀 GRU: Simpler gating than LSTM, often faster and lighter in parameters</li>
-      <li class="fragment">🧠 Transformers (Vaswani et al., 2017) use self-attention to capture long-range dependencies</li>
-      <li class="fragment">⚡ Excellent for large-scale data, but demand higher compute & memory</li>
-      <li class="fragment">💡 Selection depends on data size, latency constraints, and desired accuracy</li>
-    </ul>
-  </div>
-</section>
-
-<!-- Slide D: Why Predictive Models Matter -->
-<section data-background="img/aston_slides_background_22.png">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔑 Why Predictive Models Matter</h2>
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🧠 Predictive Models</h2>
   <div style="text-align: center; color: white; padding-top: 40px;">
-    <ul style="list-style-position: inside; max-width: 80%; margin: 0 auto; text-align: left;">
-      <li class="fragment">🎯 Forecasts human motion & dynamic changes, crucial in social environments</li>
-      <li class="fragment">🤝 Enables safer, socially aware navigation among people</li>
-      <li class="fragment">📈 Facilitates proactive decision-making when integrated with RL</li>
-    </ul>
-  </div>
-</section>
-
-<!-- Slide E: Predictive Models: Critical Comparison (Table) -->
-<section data-background="img/aston_slides_background_22.png">
-  <h2 style="color: white; text-align: center;">Predictive Models: Critical Comparison</h2>
-  <div style="text-align: center; color: white; padding-top: 40px;">
-    <table style="margin: 0 auto; width: 85%; border-collapse: collapse; font-size: 0.9em;">
+    <table style="margin: 0 auto; width: 90%; border-collapse: collapse; font-size: 0.9em;">
       <thead style="background-color: #003087; color: white;">
         <tr>
           <th style="padding: 8px; border: 1px solid white;">Model</th>
-          <th style="padding: 8px; border: 1px solid white;">🎯 Strengths</th>
-          <th style="padding: 8px; border: 1px solid white;">⚠️ Weaknesses</th>
+          <th style="padding: 8px; border: 1px solid white;">Description</th>
+          <th style="padding: 8px; border: 1px solid white;">🎯 Pros</th>
+          <th style="padding: 8px; border: 1px solid white;">⚠️ Cons</th>
         </tr>
       </thead>
       <tbody>
         <tr class="fragment">
+          <td style="padding: 8px; border: 1px solid white; color: white;">RNN</td>
           <td style="padding: 8px; border: 1px solid white; color: white;">
-            RNN
+            Basic recurrent network passing hidden states across time steps
           </td>
           <td style="padding: 8px; border: 1px solid white; color: white;">
-            🎯 Simple architecture for sequential data
+            🎯 Simple, good for short sequences
           </td>
           <td style="padding: 8px; border: 1px solid white; color: white;">
-            ⚠️ Susceptible to vanishing/exploding gradients over long sequences
-          </td>
-        </tr>
-        <tr class="fragment">
-          <td style="padding: 8px; border: 1px solid white; color: white;">
-            LSTM
-          </td>
-          <td style="padding: 8px; border: 1px solid white; color: white;">
-            🎯 Gating effectively addresses long-term dependencies
-          </td>
-          <td style="padding: 8px; border: 1px solid white; color: white;">
-            ⚠️ Larger parameter count, higher computational cost
+            ⚠️ Prone to vanishing/exploding gradients
           </td>
         </tr>
         <tr class="fragment">
+          <td style="padding: 8px; border: 1px solid white; color: white;">LSTM</td>
           <td style="padding: 8px; border: 1px solid white; color: white;">
-            GRU
+            Uses gating (input, forget, output) to manage long-term dependencies
           </td>
           <td style="padding: 8px; border: 1px solid white; color: white;">
-            🎯 Fewer parameters than LSTM, often faster training
+            🎯 Mitigates vanishing gradients; effective for longer sequences
           </td>
           <td style="padding: 8px; border: 1px solid white; color: white;">
-            ⚠️ May capture slightly less nuance than LSTM in some tasks
+            ⚠️ More parameters, higher compute cost
           </td>
         </tr>
         <tr class="fragment">
+          <td style="padding: 8px; border: 1px solid white; color: white;">GRU</td>
           <td style="padding: 8px; border: 1px solid white; color: white;">
-            Transformers
+            Simplified LSTM; merges input &amp; forget gates
           </td>
           <td style="padding: 8px; border: 1px solid white; color: white;">
-            🎯 Global context via self-attention; excels at long-range dependencies
+            🎯 Fewer parameters, faster training vs. LSTM
           </td>
           <td style="padding: 8px; border: 1px solid white; color: white;">
-            ⚠️ High memory & compute requirements, especially for lengthy inputs
+            ⚠️ May capture slightly less nuance for very long sequences
+          </td>
+        </tr>
+        <tr class="fragment">
+          <td style="padding: 8px; border: 1px solid white; color: white;">Transformers</td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            Self-attention mechanism to model global context
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            🎯 Handles very long-range dependencies well
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            ⚠️ High memory &amp; compute demands
           </td>
         </tr>
       </tbody>
     </table>
+  </div>
+</section>
+
+<!-- Slide 2: Why Predictive Models Matter -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔑 Why Predictive Models Matter</h2>
+  <div style="text-align: center; color: white; padding-top: 40px;">
+    <ul style="list-style-position: inside; max-width: 80%; margin: 0 auto; text-align: left;">
+      <li class="fragment">🎯 Anticipates future human/agent movements in dynamic settings</li>
+      <li class="fragment">🤝 Crucial for safe and socially-aware navigation among people</li>
+      <li class="fragment">📈 Facilitates proactive planning and improves RL policy performance</li>
+    </ul>
   </div>
 </section>
 
