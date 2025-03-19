@@ -371,6 +371,7 @@
   </div>
 </section>
 
+      
 <!-- ========================================= -->
 <!-- 5. PREDICTIVE MODELS (RNN, LSTM, GRU, TF) -->
 <!-- ========================================= -->
@@ -387,12 +388,17 @@
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🧠 RNN &amp; LSTM</h2>
   <div style="text-align: center; color: white; padding-top: 50px;">
     <ul style="list-style-position: inside; max-width: 80%; margin: 0 auto; text-align: left;">
-      <li class="fragment">🎯 RNNs model sequential data by passing hidden states across time steps</li>
-      <li class="fragment">🧩 LSTM extends RNNs with gating mechanisms to combat vanishing gradients</li>
-      <li class="fragment">⚠️ Can be computationally intensive for very long sequences</li>
+      <li class="fragment">🎯 RNNs model sequential data by propagating hidden states across time steps</li>
+      <li class="fragment">🧩 LSTM extends RNNs with gating to mitigate vanishing/exploding gradients</li>
+      <li class="fragment">⚠️ Can be computationally expensive for very long sequences</li>
     </ul>
     <div class="fragment" style="padding-top: 20px; text-align: center;">
-      <img src="img/lstm_diagram.jpg" width="60%" style="border: 2px solid white;" alt="LSTM Diagram"/>
+      <img 
+        src="img/lstm_diagram.jpg" 
+        width="60%" 
+        style="border: 2px solid white;" 
+        alt="LSTM Diagram"
+      />
     </div>
   </div>
 </section>
@@ -402,10 +408,10 @@
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎛 GRU &amp; Transformers</h2>
   <div style="text-align: center; color: white; font-size: 0.9em; padding-top: 40px;">
     <ul style="list-style-position: inside; max-width: 80%; margin: 0 auto; text-align: left;">
-      <li class="fragment">🚀 GRU: Simpler than LSTM (fewer parameters), often faster to train</li>
-      <li class="fragment">🧠 Transformers (Vaswani et al., 2017): Use self-attention to capture global context in sequences</li>
-      <li class="fragment">⚡ Transformers excel at large-scale data but demand higher compute and memory</li>
-      <li class="fragment">💡 Choice depends on data size, real-time constraints, and target performance</li>
+      <li class="fragment">🚀 GRU: Simpler gating than LSTM, often faster and lighter in parameters</li>
+      <li class="fragment">🧠 Transformers (Vaswani et al., 2017) use self-attention to capture long-range dependencies</li>
+      <li class="fragment">⚡ Excellent for large-scale data, but demand higher compute & memory</li>
+      <li class="fragment">💡 Selection depends on data size, latency constraints, and desired accuracy</li>
     </ul>
   </div>
 </section>
@@ -415,13 +421,77 @@
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔑 Why Predictive Models Matter</h2>
   <div style="text-align: center; color: white; padding-top: 40px;">
     <ul style="list-style-position: inside; max-width: 80%; margin: 0 auto; text-align: left;">
-      <li class="fragment">🎯 Forecasts human motion &amp; dynamic changes in social environments</li>
-      <li class="fragment">🤝 Enables safer, more socially aware robot navigation</li>
-      <li class="fragment">📈 Facilitates advanced planning and policy learning when integrated with RL</li>
+      <li class="fragment">🎯 Forecasts human motion & dynamic changes, crucial in social environments</li>
+      <li class="fragment">🤝 Enables safer, socially aware navigation among people</li>
+      <li class="fragment">📈 Facilitates proactive decision-making when integrated with RL</li>
     </ul>
   </div>
 </section>
-<!-- ========================================= -->
+
+<!-- Slide E: Predictive Models: Critical Comparison (Table) -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center;">Predictive Models: Critical Comparison</h2>
+  <div style="text-align: center; color: white; padding-top: 40px;">
+    <table style="margin: 0 auto; width: 85%; border-collapse: collapse; font-size: 0.9em;">
+      <thead style="background-color: #003087; color: white;">
+        <tr>
+          <th style="padding: 8px; border: 1px solid white;">Model</th>
+          <th style="padding: 8px; border: 1px solid white;">🎯 Strengths</th>
+          <th style="padding: 8px; border: 1px solid white;">⚠️ Weaknesses</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="fragment">
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            RNN
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            🎯 Simple architecture for sequential data
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            ⚠️ Susceptible to vanishing/exploding gradients over long sequences
+          </td>
+        </tr>
+        <tr class="fragment">
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            LSTM
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            🎯 Gating effectively addresses long-term dependencies
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            ⚠️ Larger parameter count, higher computational cost
+          </td>
+        </tr>
+        <tr class="fragment">
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            GRU
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            🎯 Fewer parameters than LSTM, often faster training
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            ⚠️ May capture slightly less nuance than LSTM in some tasks
+          </td>
+        </tr>
+        <tr class="fragment">
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            Transformers
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            🎯 Global context via self-attention; excels at long-range dependencies
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            ⚠️ High memory & compute requirements, especially for lengthy inputs
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+      
+      <!-- ========================================= -->
 <!-- 6. ENVIRONMENTS USED                     -->
 <!-- ========================================= -->
 
