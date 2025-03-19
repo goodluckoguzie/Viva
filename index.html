@@ -371,67 +371,56 @@
   </div>
 </section>
 
+<!-- ========================================= -->
+<!-- 5. PREDICTIVE MODELS (RNN, LSTM, GRU, TF) -->
+<!-- ========================================= -->
 
-      <!-- ========================================= -->
-      <!-- 5. PREDICTIVE MODELS                     -->
-      <!-- ========================================= -->
+<!-- Slide A: Section Title: Predictive Models -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <h2 class="section-title" style="color: white; text-align: center;">
+    Predictive Models (RNN, LSTM, GRU, Transformers)
+  </h2>
+</section>
 
-      <!-- Slide 14: Section Title: Predictive Models -->
-      <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-        <h2 class="section-title">Predictive Models (LSTM, GRU, DreamerV3)</h2>
-      </section>
+<!-- Slide B: RNN & LSTM -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🧠 RNN &amp; LSTM</h2>
+  <div style="text-align: center; color: white; padding-top: 50px;">
+    <ul style="list-style-position: inside; max-width: 80%; margin: 0 auto; text-align: left;">
+      <li class="fragment">🎯 RNNs model sequential data by passing hidden states across time steps</li>
+      <li class="fragment">🧩 LSTM extends RNNs with gating mechanisms to combat vanishing gradients</li>
+      <li class="fragment">⚠️ Can be computationally intensive for very long sequences</li>
+    </ul>
+    <div class="fragment" style="padding-top: 20px; text-align: center;">
+      <img src="img/lstm_diagram.jpg" width="60%" style="border: 2px solid white;" alt="LSTM Diagram"/>
+    </div>
+  </div>
+</section>
 
-      <!-- Slide 15: RNN & LSTM -->
-      <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">🧠 RNN & LSTM</h2>
-        <div style="text-align: center; color: white; padding-top: 50px;">
-          <ul>
-            <li class="fragment">RNNs process sequential data</li>
-            <li class="fragment">LSTM uses gating to avoid vanishing gradients</li>
-            <li class="fragment">May be heavy for very long sequences</li>
-          </ul>
-          <div class="fragment" style="padding-top: 20px;">
-            <img src="img/lstm_diagram.jpg" width="60%" style="border: 2px solid white;" />
-          </div>
-        </div>
-      </section>
+<!-- Slide C: GRU & Transformers -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎛 GRU &amp; Transformers</h2>
+  <div style="text-align: center; color: white; font-size: 0.9em; padding-top: 40px;">
+    <ul style="list-style-position: inside; max-width: 80%; margin: 0 auto; text-align: left;">
+      <li class="fragment">🚀 GRU: Simpler than LSTM (fewer parameters), often faster to train</li>
+      <li class="fragment">🧠 Transformers (Vaswani et al., 2017): Use self-attention to capture global context in sequences</li>
+      <li class="fragment">⚡ Transformers excel at large-scale data but demand higher compute and memory</li>
+      <li class="fragment">💡 Choice depends on data size, real-time constraints, and target performance</li>
+    </ul>
+  </div>
+</section>
 
-      <!-- Slide 16: GRU & Others -->
-      <section data-background="img/aston_slides_background_22.png">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎛 GRU & Other Architectures</h2>
-        <div style="text-align: center; color: white; font-size: 0.9em; padding-top: 40px;">
-          <ul>
-            <li class="fragment">GRU: Simpler gating, often faster</li>
-            <li class="fragment">Others: RAU, Transformers for advanced sequence modeling</li>
-            <li class="fragment">Selection depends on data & computational limits</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Slide 17: DreamerV3 (Model-Based RL) -->
-      <section data-background="img/aston_slides_background_22.png">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">🌐 DreamerV3: Model-Based RL</h2>
-        <div style="text-align: center; color: white; font-size: 0.9em; padding-top: 40px;">
-          <ul>
-            <li class="fragment">Learns a latent world model to plan in “imagination”</li>
-            <li class="fragment">Similar to VAE/MDN-RNN approaches</li>
-            <li class="fragment">Ideal for partial-observation tasks</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Slide 18: Why Predictive Models Matter -->
-      <section data-background="img/aston_slides_background_22.png">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔑 Why Predictive Models Matter</h2>
-        <div style="text-align: center; color: white; padding-top: 40px;">
-          <ul>
-            <li class="fragment">Forecasts human motion & environmental changes</li>
-            <li class="fragment">Key for safe and socially acceptable navigation</li>
-            <li class="fragment">Enables advanced planning when combined with RL</li>
-          </ul>
-        </div>
-      </section>
-
+<!-- Slide D: Why Predictive Models Matter -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔑 Why Predictive Models Matter</h2>
+  <div style="text-align: center; color: white; padding-top: 40px;">
+    <ul style="list-style-position: inside; max-width: 80%; margin: 0 auto; text-align: left;">
+      <li class="fragment">🎯 Forecasts human motion &amp; dynamic changes in social environments</li>
+      <li class="fragment">🤝 Enables safer, more socially aware robot navigation</li>
+      <li class="fragment">📈 Facilitates advanced planning and policy learning when integrated with RL</li>
+    </ul>
+  </div>
+</section>
 <!-- ========================================= -->
 <!-- 6. ENVIRONMENTS USED                     -->
 <!-- ========================================= -->
