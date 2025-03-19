@@ -372,13 +372,24 @@
 </section>
 
 <!-- ========================================= -->
-<!-- 5. PREDICTIVE MODELS (2 Slides)          -->
+<!-- 5. PREDICTIVE MODELS                     -->
 <!-- ========================================= -->
 
-<!-- Slide 1: Predictive Models Table -->
+<!-- Slide 1: Title Slide (Minimal) -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <!-- A simple or “blank” title slide -->
+  <h2 class="section-title" style="color: white; text-align: center;">
+    Predictive Models
+  </h2>
+  <p style="text-align: center; color: white; margin-top: 20px;">
+    (RNN, LSTM, GRU, Transformers)
+  </p>
+</section>
+
+<!-- Slide 2: Table of Predictive Models -->
 <section data-background="img/aston_slides_background_22.png">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🧠 Predictive Models</h2>
-  <div style="text-align: center; color: white; padding-top: 40px;">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🧠 Comparison of Predictive Models</h2>
+  <div style="text-align: center; color: white; padding-top: 20px;">
     <table style="margin: 0 auto; width: 90%; border-collapse: collapse; font-size: 0.9em;">
       <thead style="background-color: #003087; color: white;">
         <tr>
@@ -389,52 +400,56 @@
         </tr>
       </thead>
       <tbody>
+        <!-- RNN -->
         <tr class="fragment">
           <td style="padding: 8px; border: 1px solid white; color: white;">RNN</td>
           <td style="padding: 8px; border: 1px solid white; color: white;">
-            Basic recurrent network passing hidden states across time steps
+            Basic recurrent net passing hidden states across time
           </td>
           <td style="padding: 8px; border: 1px solid white; color: white;">
-            🎯 Simple, good for short sequences
+            🎯 Simple, suitable for short sequences
           </td>
           <td style="padding: 8px; border: 1px solid white; color: white;">
             ⚠️ Prone to vanishing/exploding gradients
           </td>
         </tr>
+        <!-- LSTM -->
         <tr class="fragment">
           <td style="padding: 8px; border: 1px solid white; color: white;">LSTM</td>
           <td style="padding: 8px; border: 1px solid white; color: white;">
-            Uses gating (input, forget, output) to manage long-term dependencies
+            Adds gating (input, forget, output) to maintain long-term dependencies
           </td>
           <td style="padding: 8px; border: 1px solid white; color: white;">
-            🎯 Mitigates vanishing gradients; effective for longer sequences
+            🎯 Mitigates vanishing gradients, good for longer sequences
           </td>
           <td style="padding: 8px; border: 1px solid white; color: white;">
-            ⚠️ More parameters, higher compute cost
+            ⚠️ Higher param count, heavier compute
           </td>
         </tr>
+        <!-- GRU -->
         <tr class="fragment">
           <td style="padding: 8px; border: 1px solid white; color: white;">GRU</td>
           <td style="padding: 8px; border: 1px solid white; color: white;">
-            Simplified LSTM; merges input &amp; forget gates
+            Simpler gating mechanism, merges input & forget gates
           </td>
           <td style="padding: 8px; border: 1px solid white; color: white;">
-            🎯 Fewer parameters, faster training vs. LSTM
+            🎯 Faster than LSTM, fewer parameters
           </td>
           <td style="padding: 8px; border: 1px solid white; color: white;">
-            ⚠️ May capture slightly less nuance for very long sequences
+            ⚠️ May capture slightly less nuance over very long sequences
           </td>
         </tr>
+        <!-- Transformers -->
         <tr class="fragment">
           <td style="padding: 8px; border: 1px solid white; color: white;">Transformers</td>
           <td style="padding: 8px; border: 1px solid white; color: white;">
-            Self-attention mechanism to model global context
+            Relies on self-attention to handle global dependencies
           </td>
           <td style="padding: 8px; border: 1px solid white; color: white;">
-            🎯 Handles very long-range dependencies well
+            🎯 Excellent for long-range context
           </td>
           <td style="padding: 8px; border: 1px solid white; color: white;">
-            ⚠️ High memory &amp; compute demands
+            ⚠️ High memory/compute requirements
           </td>
         </tr>
       </tbody>
@@ -442,14 +457,14 @@
   </div>
 </section>
 
-<!-- Slide 2: Why Predictive Models Matter -->
+<!-- Slide 3: Why Predictive Models Matter -->
 <section data-background="img/aston_slides_background_22.png">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔑 Why Predictive Models Matter</h2>
   <div style="text-align: center; color: white; padding-top: 40px;">
     <ul style="list-style-position: inside; max-width: 80%; margin: 0 auto; text-align: left;">
-      <li class="fragment">🎯 Anticipates future human/agent movements in dynamic settings</li>
-      <li class="fragment">🤝 Crucial for safe and socially-aware navigation among people</li>
-      <li class="fragment">📈 Facilitates proactive planning and improves RL policy performance</li>
+      <li class="fragment">🎯 Anticipates future human behavior & dynamic changes</li>
+      <li class="fragment">🤝 Vital for safe, socially compatible robot navigation</li>
+      <li class="fragment">📈 Enhances proactive policy learning when integrated with RL</li>
     </ul>
   </div>
 </section>
