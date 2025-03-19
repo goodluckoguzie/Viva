@@ -130,29 +130,13 @@
           </div>
         </div>
       </section>
-<!-- ========================================= -->
+
+
+      <!-- ========================================= -->
 <!-- 2. CONTEXT & SCOPE & APPROACHES            -->
 <!-- ========================================= -->
 
-<!-- Slide 1: What is Social Robot Navigation? -->
-<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-  <h2 style="color: white; text-align: center;">🤖 What is Social Robot Navigation?</h2>
-  <div style="text-align: center; padding-top: 30px;">
-    <video muted autoplay loop src="img/socialrobot.mp4" width="60%"></video>
-  </div>
-  <div style="color: white; text-align: center; padding-top: 20px;">
-    <p style="font-size: 1.1em;">
-      💡 <strong>Definition:</strong><br>
-      "Robots navigating among humans while respecting social norms, ensuring safety, and operating efficiently."
-    </p>
-    <p style="font-size: 1.1em;">
-      ✔️ <strong>Importance:</strong><br>
-      Social robot navigation is crucial for seamless integration into environments such as healthcare, hospitality, and public spaces. Advanced predictive decision-making is essential to manage the inherent unpredictability.
-    </p>
-  </div>
-</section>
-
-<!-- Slide 2: Approaches to Social Robot Navigation -->
+<!-- Slide 3: Approaches to Social Robot Navigation -->
 <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
   <h2 style="color: white; text-align: center;">🚀 Approaches to Social Robot Navigation</h2>
   <div style="color: white; text-align: center; padding-top: 20px;">
@@ -176,14 +160,14 @@
           <td style="padding: 10px; border: 1px solid white;">Limited adaptability</td>
         </tr>
         <tr>
+          <td style="padding: 10px; border: 1px solid white;">ROV2</td>
+          <td style="padding: 10px; border: 1px solid white;">Real-time collision avoidance; effective in dynamic scenarios</td>
+          <td style="padding: 10px; border: 1px solid white;">Limited in long-term planning and human comfort prediction</td>
+        </tr>
+        <tr>
           <td style="padding: 10px; border: 1px solid white;">Reinforcement Learning</td>
           <td style="padding: 10px; border: 1px solid white;">Learns dynamically</td>
           <td style="padding: 10px; border: 1px solid white;">Requires extensive training</td>
-        </tr>
-        <tr>
-          <td style="padding: 10px; border: 1px solid white;">Predictive Models</td>
-          <td style="padding: 10px; border: 1px solid white;">Forecast future states</td>
-          <td style="padding: 10px; border: 1px solid white;">High computational cost</td>
         </tr>
       </tbody>
     </table>
@@ -193,7 +177,12 @@
   </div>
 </section>
 
-<!-- Slide 3: Context & Scope -->
+
+<!-- ========================================= -->
+<!-- 2. CONTEXT & SCOPE & APPROACHES            -->
+<!-- ========================================= -->
+
+<!-- Slide 4: Context & Scope -->
 <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
   <h2 style="color: white; text-align: center;">🌍 Context & Scope</h2>
   <div style="color: white; text-align: center; font-size: 1em; padding-top: 30px;">
@@ -202,26 +191,30 @@
       "Robots struggle to navigate in social environments due to unpredictable human behavior."
     </p>
     <div style="display: flex; justify-content: center; gap: 40px; padding-top: 20px;">
-      <div style="width: 30%; text-align: left;">
-        <p>🔎 <strong>Current Challenges:</strong></p>
+      <!-- Left column: Broader Context -->
+      <div style="width: 45%; text-align: left;">
+        <p>🔎 <strong>Broader Context:</strong></p>
         <ul>
-          <li>✔️ Rule-based methods fail in dynamic interactions.</li>
-          <li>✔️ Traditional ML models lack long-term predictive accuracy.</li>
+          <li>✔️ Social robot navigation is essential for safe integration in real-world settings (healthcare, hospitality, public spaces).</li>
+          <li>✔️ Dynamic human behaviors and environmental variability challenge traditional and ML-based methods.</li>
         </ul>
       </div>
-      <div style="width: 30%; text-align: left;">
-        <p>💡 <strong>Our Approach:</strong></p>
+      <!-- Right column: Research Motivation & Scope -->
+      <div style="width: 45%; text-align: left;">
+        <p>💡 <strong>Research Motivation & Scope:</strong></p>
         <ul>
-          <li>🔹 Cosine-Gated LSTM (CGLSTM) for enhanced sequence prediction.</li>
-          <li>🔹 Adaptive decision-making using reinforcement learning.</li>
+          <li>🔹 Develop a hybrid approach that integrates reinforcement learning with advanced predictive models.</li>
+          <li>🔹 Leverage Cosine-Gated LSTM (CGLSTM) for improved long-term sequence prediction.</li>
+          <li>🔹 Incorporate adaptive prediction horizons to dynamically adjust planning based on uncertainty.</li>
         </ul>
       </div>
     </div>
     <p style="margin-top: 20px; font-style: italic; font-size: 1em;">
-      This motivates the development of hybrid predictive methods that combine RL with advanced sequence modeling to better forecast future states in complex, dynamic environments.
+      This research aims to bridge the gap between current methods and real-world requirements by enabling robots to better forecast future states in complex, dynamic environments.
     </p>
   </div>
 </section>
+
 
 <!-- Slide 4: Research Questions -->
 <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
