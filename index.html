@@ -662,8 +662,11 @@
 <!-- ========================================= -->
 <!-- 7. PREDICTIVE WORLD MODELS (YOUR METHODS)  -->
 <!-- ========================================= -->
+
+  <!-- Slide A24: Section Title: Predictive World Models with PDF Toggle -->
 <section id="predictiveSlide" data-background="img/aston_slides_background_22.png" data-background-size="cover">
   <h2 class="section-title" style="color: white;">Predictive World Models *</h2>
+  <!-- Hidden PDF container overlay -->
   <div id="pdfContainer" style="
       display: none;
       position: absolute;
@@ -680,51 +683,22 @@
 </section>
 
 <script>
-  // Ensure Reveal.js is loaded and initialized
-  document.addEventListener('DOMContentLoaded', function() {
-    // Check if Reveal is defined
-    if (typeof Reveal === 'undefined') {
-      console.error('Reveal.js is not loaded');
-      return;
+  // Bind the down arrow (keyCode 40) to show the PDF overlay when on this slide
+  Reveal.addKeyBinding({ keyCode: 40 }, function() {
+    var currentSlide = Reveal.getCurrentSlide();
+    if (currentSlide && currentSlide.id === "predictiveSlide") {
+      document.getElementById("pdfContainer").style.display = "block";
     }
+  });
 
-    // Add keydown listener
-    document.addEventListener('keydown', function(event) {
-      try {
-        var currentSlide = Reveal.getCurrentSlide();
-        if (!currentSlide) {
-          console.warn('No current slide detected');
-          return;
-        }
-
-        if (currentSlide.id === "predictiveSlide") {
-          var pdfContainer = document.getElementById("pdfContainer");
-          if (!pdfContainer) {
-            console.error('pdfContainer not found');
-            return;
-          }
-
-          if (event.key === "ArrowDown") {
-            pdfContainer.style.display = "block";
-            event.preventDefault();
-          } else if (event.key === "ArrowUp") {
-            pdfContainer.style.display = "none";
-            event.preventDefault();
-          }
-        }
-      } catch (error) {
-        console.error('Error in keydown handler:', error);
-      }
-    });
-
-    // Log when Reveal.js is ready
-    Reveal.addEventListener('ready', function() {
-      console.log('Reveal.js is ready');
-    });
+  // Bind the up arrow (keyCode 38) to hide the PDF overlay when on this slide
+  Reveal.addKeyBinding({ keyCode: 38 }, function() {
+    var currentSlide = Reveal.getCurrentSlide();
+    if (currentSlide && currentSlide.id === "predictiveSlide") {
+      document.getElementById("pdfContainer").style.display = "none";
+    }
   });
 </script>
-
-
 
 
 <!-- Slide A25: Why Predictive World Models? -->
