@@ -663,10 +663,32 @@
 <!-- 7. PREDICTIVE WORLD MODELS (YOUR METHODS)  -->
 <!-- ========================================= -->
 
-<!-- Slide A24: Section Title: Predictive World Models -->
-<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+<!-- Slide A24: Section Title: Predictive World Models with PDF Toggle -->
+<section id="predictiveSlide" data-background="img/aston_slides_background_22.png" data-background-size="cover">
   <h2 class="section-title" style="color: white;">Predictive World Models *</h2>
+  <!-- Hidden PDF container -->
+  <div id="pdfContainer" style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255,255,255,0.95); z-index: 10;">
+    <iframe src="articles/_UKCI_2023__Predictive_World_Models_for_Social_Navigation (2).pdf" width="100%" height="100%" style="border: none;"></iframe>
+  </div>
+  <script>
+    document.addEventListener('keydown', function(e) {
+      // Check if the current slide is the Predictive World Models slide
+      if (Reveal.getCurrentSlide() && Reveal.getCurrentSlide().id === "predictiveSlide") {
+        // When the down arrow is pressed, show the PDF
+        if (e.key === "ArrowDown") {
+          document.getElementById("pdfContainer").style.display = "block";
+          e.preventDefault();
+        }
+        // When the up arrow is pressed, hide the PDF
+        else if (e.key === "ArrowUp") {
+          document.getElementById("pdfContainer").style.display = "none";
+          e.preventDefault();
+        }
+      }
+    });
+  </script>
 </section>
+
 
 <!-- Slide A25: Why Predictive World Models? -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
