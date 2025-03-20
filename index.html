@@ -666,29 +666,42 @@
 <!-- Slide A24: Section Title: Predictive World Models with PDF Toggle -->
 <section id="predictiveSlide" data-background="img/aston_slides_background_22.png" data-background-size="cover">
   <h2 class="section-title" style="color: white;">Predictive World Models *</h2>
-  <!-- Hidden PDF container -->
-  <div id="pdfContainer" style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.95); z-index: 10;">
-    <iframe src="articles/UKCI_2023__Predictive_World_Models_for_Social_Navigation.pdf" width="100%" height="100%" style="border: none;"></iframe>
+  <!-- Hidden PDF container overlay -->
+  <div id="pdfContainer" style="
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      z-index: 10;
+    ">
+    <iframe src="articles/UKCI_2023__Predictive_World_Models_for_Social_Navigation.pdf" 
+            width="100%" height="100%" style="border: none;"></iframe>
   </div>
 </section>
 
 <script>
-  // Bind the down arrow (keyCode 40) to show the PDF when on the predictiveSlide
-  Reveal.addKeyBinding({ keyCode: 40 }, function() {
+  // Listen for keydown events globally
+  document.addEventListener('keydown', function(event) {
+    // Get the current slide from Reveal.js
     var currentSlide = Reveal.getCurrentSlide();
     if (currentSlide && currentSlide.id === "predictiveSlide") {
-      document.getElementById("pdfContainer").style.display = "block";
-    }
-  });
-  
-  // Bind the up arrow (keyCode 38) to hide the PDF when on the predictiveSlide
-  Reveal.addKeyBinding({ keyCode: 38 }, function() {
-    var currentSlide = Reveal.getCurrentSlide();
-    if (currentSlide && currentSlide.id === "predictiveSlide") {
-      document.getElementById("pdfContainer").style.display = "none";
+      if (event.key === "ArrowDown") {
+        // Show the PDF overlay when down arrow is pressed
+        document.getElementById("pdfContainer").style.display = "block";
+        // Prevent default scrolling action
+        event.preventDefault();
+      } else if (event.key === "ArrowUp") {
+        // Hide the PDF overlay when up arrow is pressed
+        document.getElementById("pdfContainer").style.display = "none";
+        event.preventDefault();
+      }
     }
   });
 </script>
+
 
 
 
