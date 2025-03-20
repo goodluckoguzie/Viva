@@ -106,321 +106,405 @@
           <span style="font-size: 0.8em;">190212683@aston.ac.uk</span>
         </h3>
       </section>
+      
+<!-- Slide 2: Presentation Outline -->
+<section
+  data-background="img/aston_slides_background_22.png"
+  data-background-size="cover"
+  data-background-position="top"
+  data-transition="slide"
+>
+  <div style="margin-top: 100px; text-align: center;">
+    <h2 style="color: white; margin-bottom: 20px;">🔎 Presentation Outline</h2>
+  </div>
 
-      <!-- Slide 2: Presentation Outline -->
-      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="top" data-transition="slide">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔎 Presentation Outline</h2>
-        <div style="display: flex; justify-content: center; align-items: flex-start; padding-top: 40px; font-size: 1em; color: white;">
-          <div style="flex: 0 0 40%; text-align: left; padding-right: 30px;">
-            <ol style="list-style-position: inside;">
-              <li class="fragment">Context & Scope</li>
-              <li class="fragment">Foundations</li>
-              <li class="fragment">Reinforcement Learning</li>
-              <li class="fragment">Predictive Models</li>
-            </ol>
-          </div>
-          <div style="flex: 0 0 40%; text-align: left; padding-left: 30px;">
-            <ol start="5" style="list-style-position: inside;">
-              <li class="fragment">Environments Used</li>
-              <li class="fragment">Predictive World Models *</li>
-              <li class="fragment">Cosine-Gated LSTM (CGLSTM) *</li>
-              <li class="fragment">Adaptive Prediction Horizons *</li>
-              <li class="fragment">Conclusion</li>
-            </ol>
-          </div>
-        </div>
-      </section>
+  <div
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 40px;
+      font-size: 1em;
+      color: white;
+    "
+  >
+    <!-- Left Column: 4 items -->
+    <div style="flex: 0 0 40%; text-align: left; padding-right: 30px;">
+      <ol style="list-style-position: inside;">
+        <li>Context &amp; Scope</li>
+        <li>Reinforcement Learning</li>
+        <li>Predictive Models</li>
+        <li>Environments Used</li>
+      </ol>
+    </div>
 
-      <!-- ========================================= -->
-      <!-- 2. CONTEXT & SCOPE                       -->
-      <!-- ========================================= -->
+    <!-- Right Column: 4 items -->
+    <div style="flex: 0 0 40%; text-align: left; padding-left: 30px;">
+      <ol start="5" style="list-style-position: inside;">
+        <li>Predictive World Models *</li>
+        <li>Cosine-Gated LSTM (CGLSTM) *</li>
+        <li>Adaptive Prediction Horizons *</li>
+        <li>Conclusion</li>
+      </ol>
+    </div>
+  </div>
+</section>
 
-      <!-- Slide 3: Section Title: Context & Scope -->
-      <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-        <h2 class="section-title">Context & Scope</h2>
-      </section>
-
-      <!-- Slide 4: What is Social Robot Navigation? -->
-      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">🤖 What is Social Robot Navigation?</h2>
-        <div style="text-align: center; padding-top: 50px; position: relative; min-height: 300px;">
-          <div style="padding-bottom: 20px;">
-            <video muted data-autoplay src="img/socialrobot.mp4" width="60%"></video>
-          </div>
-          <div style="position: relative; z-index: 10; margin-top: -40px;">
-            <p id="textDisplaySlide4" class="textBlock"></p>
-          </div>
-        </div>
-        <div style="display: none;">
-          <span class="fragment" data-fragment-index="0"></span>
-          <span class="fragment" data-fragment-index="1"></span>
-          <span class="fragment" data-fragment-index="2"></span>
-        </div>
-        <script>
-          document.addEventListener('DOMContentLoaded', function() {
-            let textDisplay = document.getElementById('textDisplaySlide4');
-            if (!textDisplay) return;
-            Reveal.addEventListener('fragmentshown', function(ev) {
-              if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide4')) {
-                if (ev.fragment.dataset.fragmentIndex === '0') {
-                  textDisplay.textContent = '📌 Definition: Robots navigating among humans, respecting social norms.';
-                } else if (ev.fragment.dataset.fragmentIndex === '1') {
-                  textDisplay.textContent = '🔍 Importance: Crucial for seamless integration into daily life.';
-                } else if (ev.fragment.dataset.fragmentIndex === '2') {
-                  textDisplay.textContent = '🎯 Applications: Healthcare, hospitality, public spaces.';
-                }
-              }
-            });
-          });
-        </script>
-      </section>
-
-      <!-- Slide 5: Approaches to Social Robot Navigation -->
-      <section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">🚀 Approaches to Social Robot Navigation</h2>
-        <div style="display: flex; justify-content: center; align-items: flex-start; font-size: 0.9em; color: white; padding-top: 50px;">
-          <div style="flex: 0 0 50%; padding-right: 20px;">
-            <p class="fragment">Existing methods include:</p>
-            <ul>
-              <li class="fragment">Traditional:
-                <ul style="list-style-type: none;">
-                  <li>Path planning (A*, Dijkstra’s) – static focus</li>
-                  <li>Social force models – crowd dynamics</li>
-                  <li>Rule-based – limited adaptability</li>
-                </ul>
-              </li>
-              <li class="fragment" style="color: #00A9D4;">Modern:
-                <ul style="list-style-type: none;">
-                  <li>Reinforcement Learning – dynamic adaptability</li>
-                  <li>Predictive Models – forecast human behavior</li>
-                  <li>Socially Aware Navigation – human comfort zones</li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-          <div class="fragment" style="flex: 0 0 50%;">
-            <table style="width: 100%; color: white; border-collapse: collapse;">
-              <thead style="background-color: #003087;">
-                <tr>
-                  <th style="padding: 6px; border: 1px solid white;">Method</th>
-                  <th style="padding: 6px; border: 1px solid white;">Strength</th>
-                  <th style="padding: 6px; border: 1px solid white;">Limitation</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="fragment">
-                  <td style="border: 1px solid white; padding: 6px;">Path Planning (A*)</td>
-                  <td style="border: 1px solid white; padding: 6px;">Efficient in static settings</td>
-                  <td style="border: 1px solid white; padding: 6px;">Fails with unpredictability</td>
-                </tr>
-                <tr class="fragment">
-                  <td style="border: 1px solid white; padding: 6px;">Social Force Models</td>
-                  <td style="border: 1px solid white; padding: 6px;">Models crowd behavior</td>
-                  <td style="border: 1px solid white; padding: 6px;">Predefined rules only</td>
-                </tr>
-                <tr class="fragment" style="color: #00A9D4;">
-                  <td style="border: 1px solid white; padding: 6px;">Reinforcement Learning</td>
-                  <td style="border: 1px solid white; padding: 6px;">Adapts dynamically</td>
-                  <td style="border: 1px solid white; padding: 6px;">Requires extensive training</td>
-                </tr>
-                <tr class="fragment">
-                  <td style="border: 1px solid white; padding: 6px;">World Models</td>
-                  <td style="border: 1px solid white; padding: 6px;">Train in simulation</td>
-                  <td style="border: 1px solid white; padding: 6px;">Computational overhead</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
 
       <!-- ========================================= -->
-      <!-- 3. FOUNDATIONS OF SOCIAL ROBOT NAVIGATION -->
-      <!-- ========================================= -->
+<!-- 2. CONTEXT & SCOPE & APPROACHES            -->
+<!-- ========================================= -->
 
-      <!-- Slide 6: Section Title -->
-      <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-        <h2 class="section-title">Foundations of Social Robot Navigation</h2>
-      </section>
+<!-- Slide 1: What is Social Robot Navigation? -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <h2 style="color: white; text-align: center;">🤖 What is Social Robot Navigation?</h2>
+  <div style="text-align: center; padding-top: 30px;">
+    <video muted autoplay loop src="img/socialrobot.mp4" width="60%"></video>
+  </div>
+  <div style="color: white; text-align: center; padding-top: 20px;">
+    <p style="font-size: 1.1em;">
+      💡 <strong>Definition:</strong><br>
+      "Robots navigating among humans while respecting social norms, ensuring safety, and operating efficiently."
+    </p>
+    <p style="font-size: 1.1em;">
+      ✔️ <strong>Importance:</strong><br>
+      Social robot navigation is crucial for seamless integration into environments such as healthcare, hospitality, and public spaces. Advanced predictive decision-making is essential to manage inherent unpredictability.
+    </p>
+  </div>
+</section>
 
-      <!-- Slide 7: Foundations Content -->
-      <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">🏛 Foundations of Social Robot Navigation</h2>
-        <div style="text-align: center; color: white; font-size: 0.9em; padding-top: 60px;">
-          <ul>
-            <li class="fragment">Historical evolution: from classical planning to ML (Ch. 4, p. 58)</li>
-            <li class="fragment">Approaches: A*, Dijkstra’s, rule-based, RL, predictive models</li>
-            <li class="fragment">SocNavGym: Key benchmark (p. 63)</li>
-          </ul>
-          <div class="fragment" style="padding-top: 20px;">
-            <img src="img/social_navigation_diagram.jpg" width="70%" style="border: 2px solid white;" />
-          </div>
-        </div>
-      </section>
+<!-- Slide 3: Approaches to Social Robot Navigation -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <h2 style="color: white; text-align: center;">🚀 Approaches to Social Robot Navigation</h2>
+  <div style="color: white; text-align: center; padding-top: 20px;">
+    <table style="width: 80%; margin: auto; border-collapse: collapse;">
+      <thead style="background-color: #003087;">
+        <tr>
+          <th style="padding: 10px; border: 1px solid white;"><span class="fragment">Approach</span></th>
+          <th style="padding: 10px; border: 1px solid white;"><span class="fragment">✅ Strength</span></th>
+          <th style="padding: 10px; border: 1px solid white;"><span class="fragment">⚠️ Weakness</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="fragment">
+          <td style="padding: 10px; border: 1px solid white;">Path Planning (A*)</td>
+          <td style="padding: 10px; border: 1px solid white;">Simple & efficient</td>
+          <td style="padding: 10px; border: 1px solid white;">Fails in dynamic settings</td>
+        </tr>
+        <tr class="fragment">
+          <td style="padding: 10px; border: 1px solid white;">Social Force Models</td>
+          <td style="padding: 10px; border: 1px solid white;">Good for crowd modeling</td>
+          <td style="padding: 10px; border: 1px solid white;">Limited adaptability</td>
+        </tr>
+        <tr class="fragment">
+          <td style="padding: 10px; border: 1px solid white;">ROV2</td>
+          <td style="padding: 10px; border: 1px solid white;">Real-time collision avoidance; effective in dynamic scenarios</td>
+          <td style="padding: 10px; border: 1px solid white;">Limited in long-term planning and human comfort prediction</td>
+        </tr>
+        <tr class="fragment">
+          <td style="padding: 10px; border: 1px solid white;">Reinforcement Learning</td>
+          <td style="padding: 10px; border: 1px solid white;">Learns dynamically</td>
+          <td style="padding: 10px; border: 1px solid white;">Requires extensive training</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top: 15px; font-size: 1.1em;">
+      <span class="fragment">💡 <strong>Our Research:</strong> Integrates reinforcement learning with advanced predictive models (e.g., Cosine-Gated LSTM and adaptive horizons) to overcome these limitations.</span>
+    </p>
+  </div>
+</section>
 
-      <!-- Slide 8: Research Questions -->
-      <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-        <h2 style="color: white; text-align: center; margin-bottom: 10px;">🔍 Research Questions</h2>
-        <ul style="text-align: center; color: white; list-style: none; font-size: 1em; margin-top: 40px;">
-          <li class="fragment" style="margin-bottom: 20px;">
-            <span style="color: #00A9D4;">Q1:</span> How do predictive world models improve decision-making?
-          </li>
-          <li class="fragment">
-            <span style="color: #00A9D4;">Q2:</span> What challenges arise from discrete→continuous transitions?
-          </li>
+<!-- Slide 4: Context & Scope -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <h2 style="color: white; text-align: center;">🌍 Context & Scope</h2>
+  <div style="color: white; text-align: center; font-size: 1em; padding-top: 30px;">
+    <!-- Problem Statement (always visible) -->
+    <p style="font-size: 1.1em;">
+      🚀 <strong>The Problem:</strong><br>
+      "Robots struggle to navigate in social environments due to unpredictable human behavior."
+    </p>
+    <!-- Next fragment: Broader Context -->
+    <div class="fragment" style="display: flex; justify-content: center; gap: 40px; padding-top: 20px;">
+      <div style="width: 45%; text-align: left;">
+        <p><strong>🔎 Broader Context:</strong></p>
+        <ul>
+          <li>Essential for safe integration in healthcare, hospitality, etc.</li>
+          <li>Dynamic human behavior challenges current methods.</li>
         </ul>
-      </section>
+      </div>
+      <div style="width: 45%; text-align: left;">
+        <p><strong>💡 Research Motivation & Scope:</strong></p>
+        <ul>
+          <li>Hybrid RL + predictive models for long-term forecasting.</li>
+          <li>Use of Cosine-Gated LSTM (CGLSTM) for improved prediction.</li>
+          <li>Adaptive horizons to adjust planning based on uncertainty.</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Next fragment: Summary -->
+    <p class="fragment" style="margin-top: 20px; font-style: italic; font-size: 1em;">
+      Aiming to bridge the gap between current methods and real-world needs by forecasting future states in dynamic environments.
+    </p>
+  </div>
+</section>
 
-      <!-- ========================================= -->
-      <!-- 4. REINFORCEMENT LEARNING                 -->
-      <!-- ========================================= -->
-
-      <!-- Slide 9: Section Title: Reinforcement Learning -->
-      <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-        <h2 class="section-title">Reinforcement Learning</h2>
-      </section>
-
-      <!-- Slide 10: RL Basics -->
-      <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">🤖 Reinforcement Learning Basics</h2>
-        <div style="text-align: center; color: white; font-size: 0.9em; padding-top: 60px;">
-          <ul>
-            <li class="fragment">Learns actions via trial-and-error (Ch. 3, p. 34)</li>
-            <li class="fragment">Model-Free vs. Model-Based RL (p. 36)</li>
-            <li class="fragment">Agent-Environment loop: dynamic interactions</li>
-          </ul>
-          <div class="fragment" style="padding-top: 20px;">
-            <img src="img/rl_basics_diagram.jpg" width="70%" style="border: 2px solid white;" />
-          </div>
-        </div>
-      </section>
-
-      <!-- Slide 11: RL in Social Robot Navigation (1) -->
-      <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">⚙️ RL in Social Robot Navigation</h2>
-        <div style="text-align: center; color: white; padding-top: 50px;">
-          <ul>
-            <li class="fragment">Role: Dynamic adaptation in human settings</li>
-            <li class="fragment">Challenges: Unpredictability, real-time demands</li>
-            <li class="fragment">Key algorithms: DQN, PPO, SAC, DreamerV3</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Slide 12: RL Algorithms: Strengths & Weaknesses -->
-      <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">📊 RL Algorithms: Strengths & Weaknesses</h2>
-        <div style="text-align: center; font-size: 0.85em; color: white; padding-top: 50px;">
-          <table style="margin: 0 auto; width: 80%; border-collapse: collapse;">
-            <thead style="background-color: #003087;">
-              <tr>
-                <th style="padding: 6px; border: 1px solid white;">Algorithm</th>
-                <th style="padding: 6px; border: 1px solid white;">Strength</th>
-                <th style="padding: 6px; border: 1px solid white;">Weakness</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="fragment">
-                <td style="border: 1px solid white; padding: 6px;">DQN</td>
-                <td style="border: 1px solid white; padding: 6px;">Effective (discrete)</td>
-                <td style="border: 1px solid white; padding: 6px;">Struggles in continuous</td>
-              </tr>
-              <tr class="fragment">
-                <td style="border: 1px solid white; padding: 6px;">PPO</td>
-                <td style="border: 1px solid white; padding: 6px;">Stable, sample-efficient</td>
-                <td style="border: 1px solid white; padding: 6px;">Needs tuning</td>
-              </tr>
-              <tr class="fragment">
-                <td style="border: 1px solid white; padding: 6px;">SAC</td>
-                <td style="border: 1px solid white; padding: 6px;">Robust for continuous</td>
-                <td style="border: 1px solid white; padding: 6px;">Higher computation</td>
-              </tr>
-              <tr class="fragment">
-                <td style="border: 1px solid white; padding: 6px;">DreamerV3</td>
-                <td style="border: 1px solid white; padding: 6px;">Learns latent world model</td>
-                <td style="border: 1px solid white; padding: 6px;">Requires accurate model</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <!-- Slide 13: RL – Discrete vs. Continuous -->
-      <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔀 RL: Discrete vs. Continuous</h2>
-        <div style="text-align: center; color: white; font-size: 0.85em; padding-top: 50px;">
-          <ul>
-            <li class="fragment">Discrete: DQN works effectively</li>
-            <li class="fragment">Continuous: SAC, PPO, DreamerV3 excel</li>
-            <li class="fragment">Diagram illustrates RL flow in social tasks</li>
-          </ul>
-          <div class="fragment" style="padding-top: 20px;">
-            <img src="img/rl_social_diagram.jpg" width="70%" style="border: 2px solid white;" />
-          </div>
-        </div>
-      </section>
-
-      <!-- ========================================= -->
-      <!-- 5. PREDICTIVE MODELS                     -->
-      <!-- ========================================= -->
-
-      <!-- Slide 14: Section Title: Predictive Models -->
-      <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-        <h2 class="section-title">Predictive Models (LSTM, GRU, DreamerV3)</h2>
-      </section>
-
-      <!-- Slide 15: RNN & LSTM -->
-      <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">🧠 RNN & LSTM</h2>
-        <div style="text-align: center; color: white; padding-top: 50px;">
-          <ul>
-            <li class="fragment">RNNs process sequential data</li>
-            <li class="fragment">LSTM uses gating to avoid vanishing gradients</li>
-            <li class="fragment">May be heavy for very long sequences</li>
-          </ul>
-          <div class="fragment" style="padding-top: 20px;">
-            <img src="img/lstm_diagram.jpg" width="60%" style="border: 2px solid white;" />
-          </div>
-        </div>
-      </section>
-
-      <!-- Slide 16: GRU & Others -->
-      <section data-background="img/aston_slides_background_22.png">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎛 GRU & Other Architectures</h2>
-        <div style="text-align: center; color: white; font-size: 0.9em; padding-top: 40px;">
-          <ul>
-            <li class="fragment">GRU: Simpler gating, often faster</li>
-            <li class="fragment">Others: RAU, Transformers for advanced sequence modeling</li>
-            <li class="fragment">Selection depends on data & computational limits</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Slide 17: DreamerV3 (Model-Based RL) -->
-      <section data-background="img/aston_slides_background_22.png">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">🌐 DreamerV3: Model-Based RL</h2>
-        <div style="text-align: center; color: white; font-size: 0.9em; padding-top: 40px;">
-          <ul>
-            <li class="fragment">Learns a latent world model to plan in “imagination”</li>
-            <li class="fragment">Similar to VAE/MDN-RNN approaches</li>
-            <li class="fragment">Ideal for partial-observation tasks</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Slide 18: Why Predictive Models Matter -->
-      <section data-background="img/aston_slides_background_22.png">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔑 Why Predictive Models Matter</h2>
-        <div style="text-align: center; color: white; padding-top: 40px;">
-          <ul>
-            <li class="fragment">Forecasts human motion & environmental changes</li>
-            <li class="fragment">Key for safe and socially acceptable navigation</li>
-            <li class="fragment">Enables advanced planning when combined with RL</li>
-          </ul>
-        </div>
-      </section>
+<!-- Slide 7: Research Questions -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <h2 style="color: white; text-align: center;">🔍 Research Questions</h2>
+  <div style="color: white; text-align: center; font-size: 1em; padding-top: 30px;">
+    <p class="fragment">❓ <strong>Q1:</strong> How can predictive world models enhance <strong>long-term decision-making</strong> in RL-based social navigation?</p>
+    <p class="fragment">❓ <strong>Q2:</strong> How do <strong>adaptive horizon adjustments</strong> improve navigation performance?</p>
+    <p style="margin-top: 20px; font-size: 1.1em;" class="fragment">
+      🎯 <strong>Main Objective:</strong><br>
+      Develop predictive RL methods that dynamically adjust horizons to improve social robot navigation performance.
+    </p>
+  </div>
+</section>
 
 <!-- ========================================= -->
+<!-- 4. REINFORCEMENT LEARNING                 -->
+<!-- ========================================= -->
+
+<!-- Slide 9: Section Title: Reinforcement Learning -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <div style="margin-top: 200px; text-align: center;">
+    <h2 class="section-title" style="color: white;">Reinforcement Learning</h2>
+  </div>
+</section>
+
+<!-- Slide 10: Fundamentals of RL & Role in Social Navigation -->
+<section 
+  data-background="img/aston_slides_background_22.png"
+  data-background-size="cover"
+  data-background-position="0 -20px"
+>
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">
+    Fundamentals of Reinforcement Learning &amp; Role in Social Navigation
+  </h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <!-- RL Basics Diagram -->
+    <img 
+      src="img/rl_basics_diagram.jpg" 
+      width="70%" 
+      style="display: block; margin: 0 auto; border: 2px solid white;" 
+      alt="RL Basics Diagram" 
+    />
+
+    <!-- Text updated by fragment reveals -->
+    <div style="margin-top: 20px; text-align: center;">
+      <p id="textDisplayRL" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+
+  <!-- Hidden fragments -->
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+    <span class="fragment" data-fragment-index="3"></span>
+  </div>
+
+  <!-- Script to update text upon fragment reveal -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const rlTxt = document.getElementById('textDisplayRL');
+
+      Reveal.addEventListener('fragmentshown', function(ev) {
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayRL')) {
+          switch (ev.fragment.dataset.fragmentIndex) {
+            case '0':
+              rlTxt.textContent = '🎯 RL enables agents to learn optimal actions through trial-and-error.';
+              break;
+            case '1':
+              rlTxt.textContent = '🔄 The agent–environment loop: observe, act, and receive rewards.';
+              break;
+            case '2':
+              rlTxt.textContent = '🧩 Core elements: states, actions, rewards, and policies.';
+              break;
+            case '3':
+              rlTxt.textContent = '🤝 In social navigation, RL handles uncertain, human-centered interactions.';
+              break;
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide 11: RL Algorithms: Critical Comparison -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center;">RL Algorithms: Critical Comparison</h2>
+  <div style="text-align: center; color: white; padding-top: 40px;">
+    <table style="margin: 0 auto; width: 85%; border-collapse: collapse; font-size: 0.9em;">
+      <thead style="background-color: #003087; color: white;">
+        <tr>
+          <th style="padding: 8px; border: 1px solid white;">Algorithm</th>
+          <th style="padding: 8px; border: 1px solid white;">🎯 Strengths</th>
+          <th style="padding: 8px; border: 1px solid white;">⚠️ Limitations (addressed in thesis)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="fragment">
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            DQN (Mnih et al., 2015)
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            🎯 Efficient in discrete tasks
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            ⚠️ Not well suited for continuous or complex action spaces
+          </td>
+        </tr>
+        <tr class="fragment">
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            PPO (Schulman et al., 2017)
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            🎯 Stable learning, good sample efficiency
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            ⚠️ Sensitive to hyperparameter tuning
+          </td>
+        </tr>
+        <tr class="fragment">
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            SAC (Haarnoja et al., 2018)
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            🎯 Robust for continuous control, promotes exploration
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            ⚠️ Higher computational demands
+          </td>
+        </tr>
+        <tr class="fragment">
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            DreamerV3 (Hafner et al., 2023)
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            🎯 Learns a latent world model for planning
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            ⚠️ Sensitive to model inaccuracies and observation noise
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ========================================= -->
+<!-- 5. PREDICTIVE MODELS                     -->
+<!-- ========================================= -->
+
+<!-- Slide 1: Blank-Style Title Slide -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <div style="margin-top: 200px; text-align: center;">
+    <h2 class="section-title" style="color: white;">
+      Predictive Models
+    </h2>
+    <p style="color: white; margin-top: 20px;">
+      (RNN, LSTM, GRU, Transformers)
+    </p>
+  </div>
+</section>
+
+<!-- Slide 2: Intro to Predictive Models -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <h2 style="color: white; text-align: center;">Introduction</h2>
+  <div style="color: white; max-width: 75%; margin: 40px auto; text-align: left;">
+    <ul>
+      <li class="fragment">🎯 <strong>Motivation:</strong> These models learn from sequential data (e.g., human motion, sensor readings), making them suitable for dynamic, real-world tasks.</li>
+      <li class="fragment">🏷️ <strong>Key Benefit:</strong> By predicting future states, robots can proactively plan and avoid collisions or uncomfortable interactions.</li>
+      <li class="fragment">🤝 <strong>Relevance:</strong> Critical in social navigation contexts where anticipating human behavior is essential.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Slide 3: Table of Predictive Models -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">Comparison of Predictive Models</h2>
+  <div style="text-align: center; color: white; padding-top: 20px;">
+    <table style="margin: 0 auto; width: 90%; border-collapse: collapse; font-size: 0.9em;">
+      <thead style="background-color: #003087; color: white;">
+        <tr>
+          <th style="padding: 8px; border: 1px solid white;">Model</th>
+          <th style="padding: 8px; border: 1px solid white;">Description</th>
+          <th style="padding: 8px; border: 1px solid white;">🎯 Pros</th>
+          <th style="padding: 8px; border: 1px solid white;">⚠️ Cons</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- RNN -->
+        <tr class="fragment">
+          <td style="padding: 8px; border: 1px solid white; color: white;">RNN</td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            Basic recurrent net passing hidden states across time
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            🎯 Simple, good for short sequences
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            ⚠️ Vanishing/exploding gradients for long sequences
+          </td>
+        </tr>
+        <!-- LSTM -->
+        <tr class="fragment">
+          <td style="padding: 8px; border: 1px solid white; color: white;">LSTM</td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            Adds gating (input, forget, output) for long-term dependencies
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            🎯 Mitigates vanishing gradients; better for lengthy sequences
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            ⚠️ More parameters, heavier computation
+          </td>
+        </tr>
+        <!-- GRU -->
+        <tr class="fragment">
+          <td style="padding: 8px; border: 1px solid white; color: white;">GRU</td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            A simplified LSTM with fewer gates
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            🎯 Fewer parameters, faster training than LSTM
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            ⚠️ May capture slightly less nuance for very long sequences
+          </td>
+        </tr>
+        <!-- Transformers -->
+        <tr class="fragment">
+          <td style="padding: 8px; border: 1px solid white; color: white;">Transformers</td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            Employ self-attention for global context
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            🎯 Excels at capturing long-range dependencies
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            ⚠️ High memory & compute requirements
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Slide 4: Why Predictive Models Matter -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔑 Why Predictive Models Matter</h2>
+  <div style="text-align: center; color: white; padding-top: 40px;">
+    <ul style="list-style-position: inside; max-width: 80%; margin: 0 auto; text-align: left;">
+      <li class="fragment">🎯 Anticipates future changes (e.g., human movement, obstacle motion)</li>
+      <li class="fragment">🤝 Essential for safe and socially acceptable robot navigation</li>
+      <li class="fragment">📈 Enables proactive planning & improved RL performance</li>
+    </ul>
+  </div>
+</section>
+      
+      <!-- ========================================= -->
 <!-- 6. ENVIRONMENTS USED                     -->
 <!-- ========================================= -->
 
@@ -579,10 +663,43 @@
 <!-- 7. PREDICTIVE WORLD MODELS (YOUR METHODS)  -->
 <!-- ========================================= -->
 
-<!-- Slide A24: Section Title: Predictive World Models -->
-<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <!-- Slide A24: Section Title: Predictive World Models with PDF Toggle -->
+<section id="predictiveSlide" data-background="img/aston_slides_background_22.png" data-background-size="cover">
   <h2 class="section-title" style="color: white;">Predictive World Models *</h2>
+  <!-- Hidden PDF container overlay -->
+  <div id="pdfContainer" style="
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      z-index: 10;
+    ">
+    <iframe src="articles/UKCI_2023__Predictive_World_Models_for_Social_Navigation.pdf" 
+            width="100%" height="100%" style="border: none;"></iframe>
+  </div>
 </section>
+
+<script>
+  // Bind the down arrow (keyCode 40) to show the PDF overlay when on this slide
+  Reveal.addKeyBinding({ keyCode: 40 }, function() {
+    var currentSlide = Reveal.getCurrentSlide();
+    if (currentSlide && currentSlide.id === "predictiveSlide") {
+      document.getElementById("pdfContainer").style.display = "block";
+    }
+  });
+
+  // Bind the up arrow (keyCode 38) to hide the PDF overlay when on this slide
+  Reveal.addKeyBinding({ keyCode: 38 }, function() {
+    var currentSlide = Reveal.getCurrentSlide();
+    if (currentSlide && currentSlide.id === "predictiveSlide") {
+      document.getElementById("pdfContainer").style.display = "none";
+    }
+  });
+</script>
+
 
 <!-- Slide A25: Why Predictive World Models? -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
