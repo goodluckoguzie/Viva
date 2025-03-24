@@ -1,1 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PhD Viva Presentation - Goodluck Oguzie</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <!-- Reveal.js Core CSS and JS -->
+  <link rel="stylesheet" href="dist/reset.css" />
+  <link rel="stylesheet" href="dist/reveal.css" />
+  <link rel="stylesheet" href="dist/theme/white.css" />
+  <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+
+  <script src="dist/reveal.js"></script>
+  <script src="plugin/notes/notes.js"></script>
+  <script src="plugin/markdown/markdown.js"></script>
+  <script src="plugin/highlight/highlight.js"></script>
+  <script src="plugin/math/math.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="mycss.css" />
+
+  <script type="text/javascript">
+    window.addEventListener("load", function() {
+      var revealDiv = document.querySelector("body div.reveal");
+      var footer = document.querySelector(".footer");
+      if (footer) revealDiv.appendChild(footer);
+    });
+  </script>
+
+  <style>
+    /* Slide number styling */
+    .reveal .slide-number {
+      font-size: 20pt;
+      color: #000;
+    }
+
+    video::-webkit-media-controls-panel {
+      background-image: linear-gradient(transparent, transparent) !important;
+    }
+
+    .reveal section div ul li span {
+      line-height: 1.2;
+    }
+
+    .fragment.fade-in {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .fragment.fade-in.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    .fragment.slide-in {
+      transform: translateY(100%);
+      transition: transform 0.5s ease-in-out;
+    }
+    .fragment.slide-in.visible {
+      transform: translateY(0);
+    }
+
+    /* Text block styling */
+    .textBlock {
+      margin: 0 auto;
+      line-height: 1.5;
+      padding: 15px;
+      border-radius: 5px;
+      display: inline-block;
+      max-width: 80%;
+      text-align: center;
+    }
+
+    /* Section title styling */
+    .section-title {
+      color: white;
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Final link styling */
+    .final-link {
+      font-size: 1.2em;
+      color: #00A9D4;
+      text-decoration: none;
+      margin-top: 20px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- ====================================== -->
+      <!-- SLIDE 1: Title Slide (kept as original) -->
+      <!-- ====================================== -->
+      <section data-background="img/aston_title_background.jpg"
+               data-background-size="cover"
+               data-background-position="0 20px">
+        <h2 style="color: white; text-align: left; margin-left: 40px;">
+          Enhancing Robot Social Navigation<br>
+          with Reinforcement Learning<br>
+          and Advanced Predictive Models
+        </h2>
+        <h3 style="color: white; text-align: left; margin-left: 40px;">
+          <span style="font-size: 0.9em;">Goodluck Oguzie</span><br>
+          <span style="font-size: 0.8em;">190212683@aston.ac.uk</span>
+        </h3>
+      </section>
+
+      <!-- ====================================== -->
+      <!-- SLIDE 2: The Robot Social Navigation Problem -->
+      <!-- ====================================== -->
+      <section
+        data-background="img/aston_slides_background_22.png"
+        data-background-size="cover"
+        data-background-position="0 20px"
+      >
+        <h2 style="color: white; text-align: center; margin-top: 80px;">
+          The Robot Social Navigation Problem
+        </h2>
+        <div style="
+          color: white;
+          max-width: 70%;
+          margin: 40px auto;
+          text-align: left;
+          font-size: 1.1em;
+          line-height: 1.4;
+        ">
+          <ul>
+            <li>Robots are increasingly entering human-populated spaces (hospitals, malls, airports)</li>
+            <li><strong>Key Question:</strong> How can a robot move through a busy crowd <em>safely</em> and <em>politely</em>?</li>
+            <li>Current robots often struggle to avoid people smoothly or follow social norms</li>
+          </ul>
+        </div>
+        <!-- Optional Media / Illustration -->
+        <div style="text-align: center; margin-top: 30px;">
+          <!-- Example: a representative image -->
+          <img
+            src="img/robot_in_crowd.jpg"
+            alt="Robot in crowded hallway"
+            width="50%"
+            style="border: 2px solid #fff; border-radius: 4px;"
+          />
+        </div>
+      </section>
+
+      <!-- ====================================== -->
+      <!-- SLIDE 3: Context – Why Social Navigation Matters -->
+      <!-- ====================================== -->
+      <section
+        data-background="img/aston_slides_background_22.png"
+        data-background-size="cover"
+      >
+        <h2 style="color: white; text-align: center; margin-top: 80px;">
+          Context – Why Social Navigation Matters
+        </h2>
+        <div style="
+          color: white;
+          max-width: 70%;
+          margin: 40px auto;
+          text-align: left;
+          font-size: 1.1em;
+          line-height: 1.4;
+        ">
+          <ul>
+            <li><strong>High Impact:</strong> In healthcare, hospitality, etc., robots must navigate around people to be truly useful</li>
+            <li><strong>Socially Aware Navigation:</strong> Beyond just avoiding collisions, robots should respect personal space and social norms</li>
+            <li><strong>Integration into Society:</strong> Effective social navigation is critical for robots to be accepted in daily life</li>
+          </ul>
+        </div>
+        <!-- Optional Media -->
+        <div style="text-align: center; margin-top: 30px;">
+          <!-- Example: a service robot interacting with humans -->
+          <img
+            src="img/robot_hospital.jpg"
+            alt="Service robot in a hospital environment"
+            width="50%"
+            style="border: 2px solid #fff; border-radius: 4px;"
+          />
+        </div>
+      </section>
+
+      <!-- ====================================== -->
+      <!-- SLIDE 4: Challenges in Human–Robot Coexistence -->
+      <!-- ====================================== -->
+      <section
+        data-background="img/aston_slides_background_22.png"
+        data-background-size="cover"
+      >
+        <h2 style="color: white; text-align: center; margin-top: 80px;">
+          Challenges in Human–Robot Coexistence
+        </h2>
+        <div style="
+          color: white;
+          max-width: 70%;
+          margin: 40px auto;
+          text-align: left;
+          font-size: 1.1em;
+          line-height: 1.4;
+        ">
+          <ul>
+            <li><strong>Unpredictable Humans:</strong> People can stop, turn, or crowd unexpectedly – hard to model this behavior</li>
+            <li><strong>Dynamic Environments:</strong> Crowds create a constantly changing maze; static path-planning isn’t enough</li>
+            <li><strong>Safety vs. Efficiency:</strong> Robots must avoid accidents while reaching goals quickly – a tough balance</li>
+            <li><strong>Social Norms:</strong> Behaviors like keeping distance or queueing are implicit – robots must <em>learn</em> them</li>
+          </ul>
+        </div>
+        <!-- Optional Media -->
+        <div style="text-align: center; margin-top: 30px;">
+          <!-- Example: schematic showing unpredictability -->
+          <img
+            src="img/robot_vs_pedestrians.jpg"
+            alt="Robot navigating pedestrians"
+            width="50%"
+            style="border: 2px solid #fff; border-radius: 4px;"
+          />
+        </div>
+      </section>
+
+      <!-- ====================================== -->
+      <!-- SLIDE 5: Research Questions -->
+      <!-- ====================================== -->
+      <section
+        data-background="img/aston_slides_background_22.png"
+        data-background-size="cover"
+      >
+        <h2 style="color: white; text-align: center; margin-top: 80px;">
+          Research Questions
+        </h2>
+        <div style="
+          color: white;
+          max-width: 70%;
+          margin: 40px auto;
+          text-align: left;
+          font-size: 1.1em;
+          line-height: 1.4;
+        ">
+          <p><strong>RQ1:</strong> How can predictive world models improve decision-making in social robot navigation?</p>
+          <ul>
+            <li>Investigates whether <em>anticipating</em> human movements leads to better robot path planning</li>
+          </ul>
+          <p style="margin-top: 15px;">
+            <strong>RQ2:</strong> What challenges arise when using Reinforcement Learning in
+            <em>continuous</em> robot control for social navigation, and how can we address them?
+          </p>
+          <ul>
+            <li>Examines difficulties transitioning from discrete to smooth motion controls and how to overcome them</li>
+          </ul>
+          <p style="margin-top: 15px;">
+            These questions set the stage for developing a new approach to socially aware robot navigation.
+          </p>
+        </div>
+        <!-- No image needed -->
+      </section>
+
+      <!-- ====================================== -->
+      <!-- (OPTIONAL) Continue with Additional Slides -->
+      <!-- ====================================== -->
+      <!-- 
+           If you want to keep your remaining slides (Predictive Models, RL, etc.), 
+           you can re-insert or place them below, or integrate them as needed.
+      -->
+
+
+    </div>
+  </div>
+
+  <script>
+    Reveal.initialize({
+      hash: true,
+      width: 1600,
+      height: 900,
+      slideNumber: true,
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+    });
+
+    // Optional: handle fragment animations
+    Reveal.addEventListener('fragmentshown', function(event) {
+      event.fragment.classList.add('visible');
+    });
+    Reveal.addEventListener('fragmenthidden', function(event) {
+      event.fragment.classList.remove('visible');
+    });
+  </script>
+</body>
+</html>
 
