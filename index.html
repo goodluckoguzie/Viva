@@ -300,9 +300,9 @@
     <table style="margin: 0 auto; width: 85%; border-collapse: collapse; font-size: 0.9em;">
       <thead style="background-color: #003087; color: white;">
         <tr>
-          <th style="padding: 8px; border: 1px solid white;">Algorithm</th>
+          <th style="padding: 8px; border: 1px solid white;">RL Algorithm</th>
           <th style="padding: 8px; border: 1px solid white;">🎯 Strengths</th>
-          <th style="padding: 8px; border: 1px solid white;">⚠️ Limitations (addressed in thesis)</th>
+          <th style="padding: 8px; border: 1px solid white;">⚠️ Limitations </th>
         </tr>
       </thead>
       <tbody>
@@ -357,19 +357,42 @@
       (RNN, LSTM, GRU, Transformers)
     </p>
   </div>
-</section>
 
-<!-- Slide 2: Intro to Predictive Models -->
-<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-  <h2 style="color: white; text-align: center;">Introduction</h2>
-  <div style="color: white; max-width: 75%; margin: 40px auto; text-align: left;">
-    <ul>
-      <li class="fragment">🎯 <strong>Motivation:</strong> These models learn from sequential data (e.g., human motion, sensor readings), making them suitable for dynamic, real-world tasks.</li>
-      <li class="fragment">🏷️ <strong>Key Benefit:</strong> By predicting future states, robots can proactively plan and avoid collisions or uncomfortable interactions.</li>
-      <li class="fragment">🤝 <strong>Relevance:</strong> Critical in social navigation contexts where anticipating human behavior is essential.</li>
-    </ul>
+
+
+<!-- Slide 10: Predictive Models (Short Version) -->
+<section 
+  data-background="img/aston_slides_background_22.png"
+  data-background-size="cover"
+  data-background-position="0 -20px"
+>
+  <!-- Short Heading -->
+  <div style="text-align: center; padding-top: 20px;">
+    <p style="color: white; font-size: 1.3em; font-weight: bold;">Predictive Models</p>
+  </div>
+  
+  <!-- Main Text (No image, just text) -->
+  <div style="text-align: center; padding-top: 20px; min-height: 300px;">
+    <p style="color: white; font-size: 1.1em; max-width: 70%; margin: 0 auto;">
+      🤝 <strong>Predictive Models</strong> are machine learning models that learn from sequential data to forecast future states.
+    </p>
+    <br>
+    <p style="color: white; font-size: 1.1em; max-width: 70%; margin: 0 auto;">
+      🎯 <strong>RNNs</strong> propagate information through hidden states over time, capturing short-term dependencies.
+    </p>
+    <br>
+    <p style="color: white; font-size: 1.1em; max-width: 70%; margin: 0 auto;">
+      🏷️ <strong>LSTM</strong> and <strong>GRU</strong> enhance RNNs with gating mechanisms to better manage long-term dependencies and mitigate issues 
+      like vanishing gradients (<em>Hochreiter &amp; Schmidhuber, 1997; Cho et al., 2014</em>).
+    </p>
+    <br>
+    <p style="color: white; font-size: 1.1em; max-width: 70%; margin: 0 auto;">
+      <strong>Transformers</strong> leverage self-attention mechanisms to process entire sequences in parallel, effectively capturing global context 
+      (<em>Vaswani et al., 2017</em>).
+    </p>
   </div>
 </section>
+
 
 <!-- Slide 3: Table of Predictive Models -->
 <section data-background="img/aston_slides_background_22.png">
