@@ -219,7 +219,6 @@
 </section>
 
 
-
 <!-- Slide 4: Context & Scope -->
 <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
   <div style="color: white; text-align: center; font-size: 1.1em; padding-top: 20px;">
@@ -232,7 +231,7 @@
   
   <!-- Embedded Video at the Center -->
   <div style="text-align: center; padding-top: 20px;">
-    <video muted autoplay loop src="problem.MP4" width="60%"></video>
+    <video muted autoplay loop src="img/problem.mp4" width="60%"></video>
   </div>
   
   <!-- Bottom Text Fragments -->
@@ -250,9 +249,7 @@
   <!-- Script to replace Predict vs. React with Research Gap on next arrow press -->
   <script>
     document.addEventListener('DOMContentLoaded', function(){
-      // Listen for fragment events
       Reveal.addEventListener('fragmentshown', function(e) {
-        // When the second fragment is revealed, swap the text
         if(e.fragment.id === 'researchGapFragment'){
           document.getElementById('predictFragment').style.display = 'none';
           document.getElementById('researchGapFragment').style.display = 'block';
@@ -261,6 +258,7 @@
     });
   </script>
 </section>
+
 
 
 
