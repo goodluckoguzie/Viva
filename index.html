@@ -347,56 +347,29 @@
 <!-- 5. PREDICTIVE MODELS                     -->
 <!-- ========================================= -->
 
+
 <!-- Slide 1: Blank-Style Title Slide -->
 <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
   <div style="margin-top: 200px; text-align: center;">
     <h2 class="section-title" style="color: white;">
       Predictive Models
     </h2>
-    <p style="color: white; margin-top: 20px;">
-      (RNN, LSTM, GRU, Transformers)
-    </p>
   </div>
+</section>
 
 
-
-<!-- Slide 10: Predictive Models (Short Version) -->
-<section 
-  data-background="img/aston_slides_background_22.png"
-  data-background-size="cover"
-  data-background-position="0 -20px"
->
-  <!-- Short Heading -->
-  <div style="text-align: center; padding-top: 20px;">
-    <p style="color: white; font-size: 1.3em; font-weight: bold;">Predictive Models</p>
-  </div>
-  
-  <!-- Main Text (No image, just text) -->
-  <div style="text-align: center; padding-top: 20px; min-height: 300px;">
-    <p style="color: white; font-size: 1.1em; max-width: 70%; margin: 0 auto;">
-      🤝 <strong>Predictive Models</strong> are machine learning models that learn from sequential data to forecast future states.
-    </p>
-    <br>
-    <p style="color: white; font-size: 1.1em; max-width: 70%; margin: 0 auto;">
-      🎯 <strong>RNNs</strong> propagate information through hidden states over time, capturing short-term dependencies.
-    </p>
-    <br>
-    <p style="color: white; font-size: 1.1em; max-width: 70%; margin: 0 auto;">
-      🏷️ <strong>LSTM</strong> and <strong>GRU</strong> enhance RNNs with gating mechanisms to better manage long-term dependencies and mitigate issues 
-      like vanishing gradients (<em>Hochreiter &amp; Schmidhuber, 1997; Cho et al., 2014</em>).
-    </p>
-    <br>
-    <p style="color: white; font-size: 1.1em; max-width: 70%; margin: 0 auto;">
-      <strong>Transformers</strong> leverage self-attention mechanisms to process entire sequences in parallel, effectively capturing global context 
-      (<em>Vaswani et al., 2017</em>).
+<!-- Slide 2: Definition of Predictive Models -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <div style="text-align: center; padding-top: 100px;">
+    <p style="color: white; font-size: 1.3em; max-width: 80%; margin: 0 auto;">
+      🤝 Predictive Models are machine learning models that learn from sequential data to forecast future states.
     </p>
   </div>
 </section>
 
 
-<!-- Slide 3: Table of Predictive Models -->
+<!-- Slide 3: Comparison of Predictive Models (No Heading) -->
 <section data-background="img/aston_slides_background_22.png">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">Comparison of Predictive Models</h2>
   <div style="text-align: center; color: white; padding-top: 20px;">
     <table style="margin: 0 auto; width: 90%; border-collapse: collapse; font-size: 0.9em;">
       <thead style="background-color: #003087; color: white;">
@@ -410,7 +383,10 @@
       <tbody>
         <!-- RNN -->
         <tr class="fragment">
-          <td style="padding: 8px; border: 1px solid white; color: white;">RNN</td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            <strong>RNN</strong><br>
+            (<em>Rumelhart et al., 1986</em>)
+          </td>
           <td style="padding: 8px; border: 1px solid white; color: white;">
             Basic recurrent net passing hidden states across time
           </td>
@@ -423,7 +399,10 @@
         </tr>
         <!-- LSTM -->
         <tr class="fragment">
-          <td style="padding: 8px; border: 1px solid white; color: white;">LSTM</td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            <strong>LSTM</strong><br>
+            (<em>Hochreiter &amp; Schmidhuber, 1997</em>)
+          </td>
           <td style="padding: 8px; border: 1px solid white; color: white;">
             Adds gating (input, forget, output) for long-term dependencies
           </td>
@@ -436,7 +415,10 @@
         </tr>
         <!-- GRU -->
         <tr class="fragment">
-          <td style="padding: 8px; border: 1px solid white; color: white;">GRU</td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            <strong>GRU</strong><br>
+            (<em>Cho et al., 2014</em>)
+          </td>
           <td style="padding: 8px; border: 1px solid white; color: white;">
             A simplified LSTM with fewer gates
           </td>
@@ -449,7 +431,10 @@
         </tr>
         <!-- Transformers -->
         <tr class="fragment">
-          <td style="padding: 8px; border: 1px solid white; color: white;">Transformers</td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            <strong>Transformers</strong><br>
+            (<em>Vaswani et al., 2017</em>)
+          </td>
           <td style="padding: 8px; border: 1px solid white; color: white;">
             Employ self-attention for global context
           </td>
@@ -457,7 +442,7 @@
             🎯 Excels at capturing long-range dependencies
           </td>
           <td style="padding: 8px; border: 1px solid white; color: white;">
-            ⚠️ High memory & compute requirements
+            ⚠️ High memory &amp; compute requirements
           </td>
         </tr>
       </tbody>
@@ -465,17 +450,8 @@
   </div>
 </section>
 
-<!-- Slide 4: Why Predictive Models Matter -->
-<section data-background="img/aston_slides_background_22.png">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔑 Why Predictive Models Matter</h2>
-  <div style="text-align: center; color: white; padding-top: 40px;">
-    <ul style="list-style-position: inside; max-width: 80%; margin: 0 auto; text-align: left;">
-      <li class="fragment">🎯 Anticipates future changes (e.g., human movement, obstacle motion)</li>
-      <li class="fragment">🤝 Essential for safe and socially acceptable robot navigation</li>
-      <li class="fragment">📈 Enables proactive planning & improved RL performance</li>
-    </ul>
-  </div>
-</section>
+
+
       
       <!-- ========================================= -->
 <!-- 6. ENVIRONMENTS USED                     -->
