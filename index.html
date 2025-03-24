@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -34,15 +36,12 @@
       font-size: 20pt;
       color: #000;
     }
-
     video::-webkit-media-controls-panel {
       background-image: linear-gradient(transparent, transparent) !important;
     }
-
     .reveal section div ul li span {
       line-height: 1.2;
     }
-
     .fragment.fade-in {
       opacity: 0;
       visibility: hidden;
@@ -59,8 +58,7 @@
     .fragment.slide-in.visible {
       transform: translateY(0);
     }
-
-    /* Text block styling */
+    /* Text block styling – no background */
     .textBlock {
       margin: 0 auto;
       line-height: 1.5;
@@ -70,7 +68,6 @@
       max-width: 80%;
       text-align: center;
     }
-
     /* Section title styling */
     .section-title {
       color: white;
@@ -80,7 +77,6 @@
       left: 50%;
       transform: translate(-50%, -50%);
     }
-
     /* Final link styling */
     .final-link {
       font-size: 1.2em;
@@ -94,13 +90,13 @@
 <body>
   <div class="reveal">
     <div class="slides">
+      
+      <!-- ========================================= -->
+      <!-- 1. TITLE & OVERVIEW                      -->
+      <!-- ========================================= -->
 
-      <!-- ====================================== -->
-      <!-- SLIDE 1: Title Slide (kept as original) -->
-      <!-- ====================================== -->
-      <section data-background="img/aston_title_background.jpg"
-               data-background-size="cover"
-               data-background-position="0 20px">
+      <!-- Slide 1: Title Slide -->
+      <section data-background="img/aston_title_background.jpg" data-background-size="cover" data-background-position="0 20px">
         <h2 style="color: white; text-align: left; margin-left: 40px;">
           Enhancing Robot Social Navigation<br>
           with Reinforcement Learning<br>
@@ -111,161 +107,1735 @@
           <span style="font-size: 0.8em;">190212683@aston.ac.uk</span>
         </h3>
       </section>
+      
+<!-- Slide 2: Presentation Outline -->
+<section
+  data-background="img/aston_slides_background_22.png"
+  data-background-size="cover"
+  data-background-position="top"
+  data-transition="slide"
+>
+  <div style="margin-top: 100px; text-align: center;">
+    <h2 style="color: white; margin-bottom: 20px;">🔎 Presentation Outline</h2>
+  </div>
 
-      <!-- ====================================== -->
-      <!-- SLIDE 2: The Robot Social Navigation Problem -->
-      <!-- ====================================== -->
-      <section
-        data-background="img/aston_slides_background_22.png"
-        data-background-size="cover"
-        data-background-position="0 20px"
+  <div
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 40px;
+      font-size: 1em;
+      color: white;
+    "
+  >
+    <!-- Left Column: 4 items -->
+    <div style="flex: 0 0 40%; text-align: left; padding-right: 30px;">
+      <ol style="list-style-position: inside;">
+        <li>Context &amp; Scope</li>
+        <li>Reinforcement Learning</li>
+        <li>Predictive Models</li>
+        <li>Environments Used</li>
+      </ol>
+    </div>
+
+    <!-- Right Column: 4 items -->
+    <div style="flex: 0 0 40%; text-align: left; padding-left: 30px;">
+      <ol start="5" style="list-style-position: inside;">
+        <li>Predictive World Models *</li>
+        <li>Cosine-Gated LSTM (CGLSTM) *</li>
+        <li>Adaptive Prediction Horizons *</li>
+        <li>Conclusion</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+
+      <!-- ========================================= -->
+<!-- 2. CONTEXT & SCOPE & APPROACHES            -->
+<!-- ========================================= -->
+
+<!-- Slide 1: What is Social Robot Navigation? -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <h2 style="color: white; text-align: center;">🤖 What is Social Robot Navigation?</h2>
+  <div style="text-align: center; padding-top: 30px;">
+    <video muted autoplay loop src="img/socialrobot.mp4" width="60%"></video>
+  </div>
+  <div style="color: white; text-align: center; padding-top: 20px;">
+    <p style="font-size: 1.1em;">
+      💡 <strong>Definition:</strong><br>
+      "Robots navigating among humans while respecting social norms, ensuring safety, and operating efficiently."
+    </p>
+    <p style="font-size: 1.1em;">
+      ✔️ <strong>Importance:</strong><br>
+      Social robot navigation is crucial for seamless integration into environments such as healthcare, hospitality, and public spaces. Advanced predictive decision-making is essential to manage inherent unpredictability.
+    </p>
+  </div>
+</section>
+
+<!-- Slide 3: Approaches to Social Robot Navigation -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <h2 style="color: white; text-align: center;">🚀 Approaches to Social Robot Navigation</h2>
+  <div style="color: white; text-align: center; padding-top: 20px;">
+    <table style="width: 80%; margin: auto; border-collapse: collapse;">
+      <thead style="background-color: #003087;">
+        <tr>
+          <th style="padding: 10px; border: 1px solid white;"><span class="fragment">Approach</span></th>
+          <th style="padding: 10px; border: 1px solid white;"><span class="fragment">✅ Strength</span></th>
+          <th style="padding: 10px; border: 1px solid white;"><span class="fragment">⚠️ Weakness</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="fragment">
+          <td style="padding: 10px; border: 1px solid white;">Rule Base</td>
+          <td style="padding: 10px; border: 1px solid white;">Simple & efficient</td>
+          <td style="padding: 10px; border: 1px solid white;">Fails in dynamic settings</td>
+        </tr>
+        <tr class="fragment">
+          <td style="padding: 10px; border: 1px solid white;">Social Force Models</td>
+          <td style="padding: 10px; border: 1px solid white;">Good for crowd modeling</td>
+          <td style="padding: 10px; border: 1px solid white;">Limited adaptability</td>
+        </tr>
+        <tr class="fragment">
+          <td style="padding: 10px; border: 1px solid white;">ROV2</td>
+          <td style="padding: 10px; border: 1px solid white;">Real-time collision avoidance; effective in dynamic scenarios</td>
+          <td style="padding: 10px; border: 1px solid white;">Limited in long-term planning and human comfort prediction</td>
+        </tr>
+        <tr class="fragment">
+          <td style="padding: 10px; border: 1px solid white;">Reinforcement Learning</td>
+          <td style="padding: 10px; border: 1px solid white;">Learns dynamically</td>
+          <td style="padding: 10px; border: 1px solid white;">Requires extensive training</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top: 15px; font-size: 1.1em;">
+      <span class="fragment">💡 <strong>Our Research:</strong> Integrates reinforcement learning with advanced predictive models (e.g., Cosine-Gated LSTM and adaptive horizons) to overcome these limitations.</span>
+    </p>
+  </div>
+</section>
+
+<!-- Slide 4: Context & Scope -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <h2 style="color: white; text-align: center;">🌍 Context & Scope</h2>
+  <div style="color: white; text-align: center; font-size: 1em; padding-top: 30px;">
+    <!-- Problem Statement (always visible) -->
+    <p style="font-size: 1.1em;">
+      🚀 <strong>The Problem:</strong><br>
+      "Robots struggle to navigate in social environments due to unpredictable human behavior."
+    </p>
+    <!-- Next fragment: Broader Context -->
+    <div class="fragment" style="display: flex; justify-content: center; gap: 40px; padding-top: 20px;">
+      <div style="width: 45%; text-align: left;">
+        <p><strong>🔎 Broader Context:</strong></p>
+        <ul>
+          <li>Essential for safe integration in healthcare, hospitality, etc.</li>
+          <li>Dynamic human behavior challenges current methods.</li>
+        </ul>
+      </div>
+      <div style="width: 45%; text-align: left;">
+        <p><strong>💡 Research Motivation & Scope:</strong></p>
+        <ul>
+          <li>Hybrid RL + predictive models for long-term forecasting.</li>
+          <li>Use of Cosine-Gated LSTM (CGLSTM) for improved prediction.</li>
+          <li>Adaptive horizons to adjust planning based on uncertainty.</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Next fragment: Summary -->
+    <p class="fragment" style="margin-top: 20px; font-style: italic; font-size: 1em;">
+      Aiming to bridge the gap between current methods and real-world needs by forecasting future states in dynamic environments.
+    </p>
+  </div>
+</section>
+
+<!-- Slide 7: Research Questions -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <h2 style="color: white; text-align: center;">🔍 Research Questions</h2>
+  <div style="color: white; text-align: center; font-size: 1em; padding-top: 30px;">
+    <p class="fragment">❓ <strong>Q1:</strong> How can predictive world models enhance <strong>long-term decision-making</strong> in RL-based social navigation?</p>
+    <p class="fragment">❓ <strong>Q2:</strong> How do <strong>adaptive horizon adjustments</strong> improve navigation performance?</p>
+    <p style="margin-top: 20px; font-size: 1.1em;" class="fragment">
+      🎯 <strong>Main Objective:</strong><br>
+      Develop predictive RL methods that dynamically adjust horizons to improve social robot navigation performance.
+    </p>
+  </div>
+</section>
+
+<!-- ========================================= -->
+<!-- 4. REINFORCEMENT LEARNING                 -->
+<!-- ========================================= -->
+
+<!-- Slide 9: Section Title: Reinforcement Learning -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <div style="margin-top: 200px; text-align: center;">
+    <h2 class="section-title" style="color: white;">Reinforcement Learning</h2>
+  </div>
+</section>
+
+<!-- Slide 10: Fundamentals of RL & Role in Social Navigation -->
+<section 
+  data-background="img/aston_slides_background_22.png"
+  data-background-size="cover"
+  data-background-position="0 -20px"
+>
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">
+    Fundamentals of Reinforcement Learning &amp; Role in Social Navigation
+  </h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <!-- RL Basics Diagram -->
+    <img 
+      src="img/rl_basics_diagram.jpg" 
+      width="70%" 
+      style="display: block; margin: 0 auto; border: 2px solid white;" 
+      alt="RL Basics Diagram" 
+    />
+
+    <!-- Text updated by fragment reveals -->
+    <div style="margin-top: 20px; text-align: center;">
+      <p id="textDisplayRL" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+
+  <!-- Hidden fragments -->
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+    <span class="fragment" data-fragment-index="3"></span>
+  </div>
+
+  <!-- Script to update text upon fragment reveal -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const rlTxt = document.getElementById('textDisplayRL');
+
+      Reveal.addEventListener('fragmentshown', function(ev) {
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayRL')) {
+          switch (ev.fragment.dataset.fragmentIndex) {
+            case '0':
+              rlTxt.textContent = '🎯 RL enables agents to learn optimal actions through trial-and-error.';
+              break;
+            case '1':
+              rlTxt.textContent = '🔄 The agent–environment loop: observe, act, and receive rewards.';
+              break;
+            case '2':
+              rlTxt.textContent = '🧩 Core elements: states, actions, rewards, and policies.';
+              break;
+            case '3':
+              rlTxt.textContent = '🤝 In social navigation, RL handles uncertain, human-centered interactions.';
+              break;
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide 11: RL Algorithms: Critical Comparison -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center;">RL Algorithms: Critical Comparison</h2>
+  <div style="text-align: center; color: white; padding-top: 40px;">
+    <table style="margin: 0 auto; width: 85%; border-collapse: collapse; font-size: 0.9em;">
+      <thead style="background-color: #003087; color: white;">
+        <tr>
+          <th style="padding: 8px; border: 1px solid white;">Algorithm</th>
+          <th style="padding: 8px; border: 1px solid white;">🎯 Strengths</th>
+          <th style="padding: 8px; border: 1px solid white;">⚠️ Limitations (addressed in thesis)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="fragment">
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            DQN (Mnih et al., 2015)
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            🎯 Efficient in discrete tasks
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            ⚠️ Not well suited for continuous or complex action spaces
+          </td>
+        </tr>
+        <tr class="fragment">
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            PPO (Schulman et al., 2017)
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            🎯 Stable learning, good sample efficiency
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            ⚠️ Sensitive to hyperparameter tuning
+          </td>
+        </tr>
+        <tr class="fragment">
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            SAC (Haarnoja et al., 2018)
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            🎯 Robust for continuous control, promotes exploration
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            ⚠️ Higher computational demands
+          </td>
+        </tr>
+        <tr class="fragment">
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            DreamerV3 (Hafner et al., 2023)
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            🎯 Learns a latent world model for planning
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            ⚠️ Sensitive to model inaccuracies and observation noise
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ========================================= -->
+<!-- 5. PREDICTIVE MODELS                     -->
+<!-- ========================================= -->
+
+<!-- Slide 1: Blank-Style Title Slide -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <div style="margin-top: 200px; text-align: center;">
+    <h2 class="section-title" style="color: white;">
+      Predictive Models
+    </h2>
+    <p style="color: white; margin-top: 20px;">
+      (RNN, LSTM, GRU, Transformers)
+    </p>
+  </div>
+</section>
+
+<!-- Slide 2: Intro to Predictive Models -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <h2 style="color: white; text-align: center;">Introduction</h2>
+  <div style="color: white; max-width: 75%; margin: 40px auto; text-align: left;">
+    <ul>
+      <li class="fragment">🎯 <strong>Motivation:</strong> These models learn from sequential data (e.g., human motion, sensor readings), making them suitable for dynamic, real-world tasks.</li>
+      <li class="fragment">🏷️ <strong>Key Benefit:</strong> By predicting future states, robots can proactively plan and avoid collisions or uncomfortable interactions.</li>
+      <li class="fragment">🤝 <strong>Relevance:</strong> Critical in social navigation contexts where anticipating human behavior is essential.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Slide 3: Table of Predictive Models -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">Comparison of Predictive Models</h2>
+  <div style="text-align: center; color: white; padding-top: 20px;">
+    <table style="margin: 0 auto; width: 90%; border-collapse: collapse; font-size: 0.9em;">
+      <thead style="background-color: #003087; color: white;">
+        <tr>
+          <th style="padding: 8px; border: 1px solid white;">Model</th>
+          <th style="padding: 8px; border: 1px solid white;">Description</th>
+          <th style="padding: 8px; border: 1px solid white;">🎯 Pros</th>
+          <th style="padding: 8px; border: 1px solid white;">⚠️ Cons</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- RNN -->
+        <tr class="fragment">
+          <td style="padding: 8px; border: 1px solid white; color: white;">RNN</td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            Basic recurrent net passing hidden states across time
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            🎯 Simple, good for short sequences
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            ⚠️ Vanishing/exploding gradients for long sequences
+          </td>
+        </tr>
+        <!-- LSTM -->
+        <tr class="fragment">
+          <td style="padding: 8px; border: 1px solid white; color: white;">LSTM</td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            Adds gating (input, forget, output) for long-term dependencies
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            🎯 Mitigates vanishing gradients; better for lengthy sequences
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            ⚠️ More parameters, heavier computation
+          </td>
+        </tr>
+        <!-- GRU -->
+        <tr class="fragment">
+          <td style="padding: 8px; border: 1px solid white; color: white;">GRU</td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            A simplified LSTM with fewer gates
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            🎯 Fewer parameters, faster training than LSTM
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            ⚠️ May capture slightly less nuance for very long sequences
+          </td>
+        </tr>
+        <!-- Transformers -->
+        <tr class="fragment">
+          <td style="padding: 8px; border: 1px solid white; color: white;">Transformers</td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            Employ self-attention for global context
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            🎯 Excels at capturing long-range dependencies
+          </td>
+          <td style="padding: 8px; border: 1px solid white; color: white;">
+            ⚠️ High memory & compute requirements
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Slide 4: Why Predictive Models Matter -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔑 Why Predictive Models Matter</h2>
+  <div style="text-align: center; color: white; padding-top: 40px;">
+    <ul style="list-style-position: inside; max-width: 80%; margin: 0 auto; text-align: left;">
+      <li class="fragment">🎯 Anticipates future changes (e.g., human movement, obstacle motion)</li>
+      <li class="fragment">🤝 Essential for safe and socially acceptable robot navigation</li>
+      <li class="fragment">📈 Enables proactive planning & improved RL performance</li>
+    </ul>
+  </div>
+</section>
+      
+      <!-- ========================================= -->
+<!-- 6. ENVIRONMENTS USED                     -->
+<!-- ========================================= -->
+
+<!-- Slide 19: Section Title: Environments Used -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <h2 class="section-title" style="color: white;">Environments Used</h2>
+</section>
+
+<!-- Slide 20: FallingBallEnv -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">⚗️ FallingBallEnv</h2>
+  <div style="text-align: center; position: relative; min-height: 300px; padding-top: 50px;">
+    <div style="padding-bottom: 20px;">
+      <!-- Replace with your FallingBallEnv video or screenshot -->
+      <video muted data-autoplay src="img/FallingBallEnv.mp4" width="30%"></video>
+    </div>
+    <div style="font-size: 1em; color: white; padding-top: 20px;">
+      <p id="textDisplayFallingBall" class="textBlock"></p>
+    </div>
+  </div>
+  <!-- Fragments for bullet reveals -->
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const txtFB = document.getElementById('textDisplayFallingBall');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayFallingBall')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            txtFB.textContent = '📌 Purpose: Synthetic environment for sequence prediction.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            txtFB.textContent = '🎯 Evaluates trajectory prediction & RL adaptation.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            txtFB.textContent = '✨ Used as an original testbed for validating our predictive models.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide 21: LunarLander‑v2 -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🪂 LunarLander‑v2</h2>
+  <div style="text-align: center; position: relative; min-height: 300px; padding-top: 50px;">
+    <div style="padding-bottom: 20px;">
+      <!-- Use an image for LunarLander if you prefer -->
+      <img src="img/LunarLander.jpg" width="40%" style="display: block; margin: 0 auto;" />
+    </div>
+    <div style="font-size: 1em; color: white; padding-top: 20px;">
+      <p id="textDisplayLunar" class="textBlock"></p>
+    </div>
+  </div>
+  <!-- Fragments for bullet reveals -->
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const txtLunar = document.getElementById('textDisplayLunar');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayLunar')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            txtLunar.textContent = '📌 Purpose: Continuous control task for RL.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            txtLunar.textContent = '🎯 Tests agent robustness under physics-based conditions.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            txtLunar.textContent = '✨ Evaluates predictive horizon methods under observation noise.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide 22: SocNavGym -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🏙 SocNavGym</h2>
+  <div style="text-align: center; position: relative; min-height: 300px; padding-top: 50px;">
+    <div style="padding-bottom: 20px;">
+      <!-- Replace with your SocNavGym video or screenshot -->
+      <video muted data-autoplay src="img/whypredictivemodellimitation.mp4" width="30%"></video>
+    </div>
+    <div style="font-size: 1em; color: white; padding-top: 20px;">
+      <p id="textDisplaySocNav" class="textBlock"></p>
+    </div>
+  </div>
+  <!-- Fragments for bullet reveals -->
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const txtSoc = document.getElementById('textDisplaySocNav');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplaySocNav')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            txtSoc.textContent = '📌 Purpose: Benchmark for social navigation tasks.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            txtSoc.textContent = '🎯 Simulates human-populated scenarios with dynamic interactions.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            txtSoc.textContent = '✨ Tests RL agents in socially aware path planning.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide 23: LiteSocNavGym -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🏷 LiteSocNavGym</h2>
+  <div style="text-align: center; position: relative; min-height: 300px; padding-top: 50px;">
+    <div style="padding-bottom: 20px;">
+      <!-- Replace with your LiteSocNavGym video or screenshot -->
+      <video muted data-autoplay src="img/whypredictivemodellimitation.mp4" width="30%"></video>
+    </div>
+    <div style="font-size: 1em; color: white; padding-top: 20px;">
+      <p id="textDisplayLiteSocNav" class="textBlock"></p>
+    </div>
+  </div>
+  <!-- Fragments for bullet reveals -->
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const txtLite = document.getElementById('textDisplayLiteSocNav');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayLiteSocNav')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            txtLite.textContent = '📌 Purpose: Lightweight variant for quicker iteration.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            txtLite.textContent = '🎯 Preserves core social navigation challenges at lower cost.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            txtLite.textContent = '✨ Ideal for iterative testing of predictive horizon methods.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+
+
+<!-- ========================================= -->
+<!-- Slide 7: Predictive World Models         -->
+<!-- with Vertical (Up/Down) Navigation        -->
+<!-- ========================================= -->
+
+<!-- Outer section for vertical slides -->
+<section>
+
+  <!-- Sub-Slide 10.1: Main Content -->
+  <section id="predictiveSlide"
+           data-background="img/aston_slides_background_22.png"
+           data-background-size="cover">
+    <h2 class="section-title" style="color: white;">Predictive World Models *</h2>
+  </section>
+
+  <!-- Sub-Slide 10.2: PDF Embedding -->
+  <section data-background="img/aston_slides_background_22.png"
+           data-background-size="cover">
+    <div style="text-align:center; margin-top:70px;">
+      <h3 style="color:white;">Paper PDF / Extended Explanation</h3>
+      <iframe src="articles/UKCI_2023__Predictive_World_Models_for_Social_Navigation.pdf"
+              width="90%"
+              height="600px"
+              style="border:none;">
+      </iframe>
+    </div>
+  </section>
+
+</section>
+
+<!-- Slide A25: Why Predictive World Models? with vertical navigation for embedded site -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+
+  <!-- Sub-slide 1: Main Content -->
+  <section>
+    <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔎 Why Predictive World Models?</h2>
+    <div style="text-align: center; padding-top: 50px; min-height: 300px;">
+      <ul class="textBlock" style="color: white;">
+        <li class="fragment fade-in">📌 Overcome the limitations of traditional navigation strategies.</li>
+        <li class="fragment fade-in">🤖 Enhance dynamic prediction of human behavior in uncertain environments.</li>
+        <li class="fragment fade-in">🎯 Improve RL decision-making by anticipating future states.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Sub-slide 2: Embedded Site -->
+  <section>
+    <!-- Wrap the iframe in a div so we can easily size it -->
+    <div style="width: 90vw; height: 80vh; margin: 0 auto;">
+      <iframe 
+        src="https://worldmodels.github.io/"
+        style="width: 100%; height: 100%; border: none; overflow: auto;"
+        scrolling="yes"
       >
-        <h2 style="color: white; text-align: center; margin-top: 80px;">
-          The Robot Social Navigation Problem
-        </h2>
-        <div style="
-          color: white;
-          max-width: 70%;
-          margin: 40px auto;
-          text-align: left;
-          font-size: 1.1em;
-          line-height: 1.4;
-        ">
+      </iframe>
+    </div>
+  </section>
+
+</section>
+
+
+
+<!-- Slide: ⚠️ Limitations of Current Approaches with Video -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">⚠️ Limitations of Current Approaches</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <!-- Embedded video that autoplays, loops, and is muted -->
+    <video src="img/whypredictivemodellimitation.mp4" width="40%" autoplay loop muted style="display: block; margin: 0 auto; border: 2px solid #fff; border-radius: 4px;"></video>
+    <div style="margin-top: 20px;">
+      <p id="textDisplayLimitations" class="textBlock" style="color: white; line-height: 1.5;"></p>
+    </div>
+  </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const limTxt = document.getElementById('textDisplayLimitations');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayLimitations')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            limTxt.textContent = '🚫 Inability to capture complex social dynamics.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            limTxt.textContent = '⚠️ Insufficient modeling of human interactions.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            limTxt.textContent = '🔒 Over-reliance on static, handcrafted rules.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+
+<!-- Slide A27: Introducing Our Contributions -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">✨ Introducing Our Contributions</h2>
+  <div style="text-align: center; padding-top: 50px; min-height: 300px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">📌 Objective: Enhance social navigation through predictive modeling.</li>
+      <li class="fragment fade-in">✨ Key Contributions:</li>
+      <ul style="list-style: none; color: white;">
+        <li class="fragment fade-in">1. 2StepAhead Predictive World Model</li>
+        <li class="fragment fade-in">2. Multi Action State Predictive Model (MASPM)</li>
+        <li class="fragment fade-in">3. Hybrid 2StepAhead-MASPM Model</li>
+      </ul>
+    </ul>
+  </div>
+</section>
+
+<!-- Slide A28: 2StepAhead Predictive World Model -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🧩 2StepAhead Predictive World Model</h2>
+  <div style="text-align: center; padding-top: 50px; min-height: 300px;">
+    <div style="padding-bottom: 20px;">
+      <!-- Replace with your actual image (Figure 1.2) -->
+      <img src="img/figure1.2_2StepAhead.jpg" width="40%" style="display: block; margin: 0 auto;">
+    </div>
+    <div style="margin-top: -40px; color: white;">
+      <p id="textDisplaySlide28" class="textBlock"></p>
+    </div>
+  </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const t28 = document.getElementById('textDisplaySlide28');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide28')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            t28.textContent = '🔍 Predicts hidden & latent states two steps ahead.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            t28.textContent = '🎯 Empirically optimal: 2 steps balance foresight and efficiency.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            t28.textContent = '⚙️ Integrated with Dueling DQN for improved decision-making.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide A29: Multi Action State Predictive Model (MASPM) -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎛 Multi Action State Predictive Model (MASPM)</h2>
+  <div style="text-align: center; padding-top: 50px; min-height: 300px;">
+    <div style="padding-bottom: 20px;">
+      <!-- Replace with your actual image (Figure 1.3) -->
+      <img src="img/figure1.3_MASPM.jpg" width="40%" style="display: block; margin: 0 auto;">
+    </div>
+    <div style="margin-top: -40px; color: white;">
+      <p id="textDisplaySlide29" class="textBlock"></p>
+    </div>
+  </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const t29 = document.getElementById('textDisplaySlide29');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide29')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            t29.textContent = '📌 Predicts outcomes for all available actions.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            t29.textContent = '🎯 Provides a comprehensive view of future state possibilities.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            t29.textContent = '⚠️ Higher computational demand due to multi-action evaluation.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide A30: Hybrid Model: 2StepAhead-MASPM -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔗 2StepAhead-MASPM (Hybrid Model)</h2>
+  <div style="text-align: center; padding-top: 50px; min-height: 300px;">
+    <div style="padding-bottom: 20px;">
+      <!-- Replace with your actual image (Figure 1.4) -->
+      <img src="img/figure1.4_Hybrid.jpg" width="40%" style="display: block; margin: 0 auto;">
+    </div>
+    <div style="margin-top: -40px; color: white;">
+      <p id="textDisplaySlide30" class="textBlock"></p>
+    </div>
+  </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const t30 = document.getElementById('textDisplaySlide30');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide30')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            t30.textContent = '🔗 Combines 2StepAhead’s efficiency with MASPM’s comprehensive evaluation.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            t30.textContent = '⚙️ Balances computational cost with prediction flexibility.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            t30.textContent = '✅ Achieves improved performance in dynamic environments.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide A31: Experimental Setup & Metrics -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🧪 Experimental Setup & Metrics</h2>
+  <div style="text-align: center; padding-top: 50px; position: relative; min-height: 300px;">
+    <p id="textDisplaySlide31" class="textBlock" style="color: white;"></p>
+  </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const t31 = document.getElementById('textDisplaySlide31');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplaySlide31')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            t31.textContent = '📌 Evaluation includes reward trends, training duration, and convergence behavior.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            t31.textContent = '⏱ Metrics capture both training and testing performance across models.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            t31.textContent = '🎯 Comprehensive metrics: MAE/MSE, accuracy, perplexity, and computational cost.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide A32: Training Metrics -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">⏱ Training Metrics</h2>
+  <div style="text-align: center; padding-top: 50px; position: relative; min-height: 300px;">
+    <div style="padding-bottom: 20px;">
+      <img src="img/TrainingMetrics.jpg" width="60%" style="display: block; margin: 0 auto;" />
+    </div>
+    <div style="font-size: 1em; color: white; position: relative; z-index: 10; text-align: center;">
+      <p id="textDisplayTraining" class="textBlock" style="margin: 0 auto; line-height: 1.5;"></p>
+    </div>
+  </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var textDisplayTraining = document.getElementById('textDisplayTraining');
+      Reveal.addEventListener('fragmentshown', function(event) {
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayTraining')) {
+          if (event.fragment.dataset.fragmentIndex === '0') {
+            textDisplayTraining.textContent = '📌 Training reward curves show progressive convergence.';
+          } else if (event.fragment.dataset.fragmentIndex === '1') {
+            textDisplayTraining.textContent = '🎯 2StepAhead & MASPM models converge faster than baselines.';
+          } else if (event.fragment.dataset.fragmentIndex === '2') {
+            textDisplayTraining.textContent = '⏱ Full convergence reached in ~200k episodes with top rewards ~0.75.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide A33: Testing Metrics (1) -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎯 Testing Metrics (1)</h2>
+  <div style="text-align: center; padding-top: 50px; position: relative; min-height: 300px;">
+    <div style="padding-bottom: 20px;">
+      <img src="img/TestingMetrics1.jpg" width="60%" style="display: block; margin: 0 auto;" />
+    </div>
+    <div style="font-size: 1em; color: white; position: relative; z-index: 10; text-align: center;">
+      <p id="textDisplayTest1" class="textBlock" style="margin: 0 auto; line-height: 1.5;"></p>
+    </div>
+  </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var textDisplayTest1 = document.getElementById('textDisplayTest1');
+      Reveal.addEventListener('fragmentshown', function(event) {
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayTest1')) {
+          if (event.fragment.dataset.fragmentIndex === '0') {
+            textDisplayTest1.textContent = '✅ Testing results indicate higher rewards and success rates for our methods.';
+          } else if (event.fragment.dataset.fragmentIndex === '1') {
+            textDisplayTest1.textContent = '📊 Significant improvements in MAE/MSE metrics compared to baselines.';
+          } else if (event.fragment.dataset.fragmentIndex === '2') {
+            textDisplayTest1.textContent = '🔍 Consistent performance across multiple test scenarios.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide A34: Testing Metrics (2) -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎯 Testing Metrics (2)</h2>
+  <div style="text-align: center; padding-top: 50px; position: relative; min-height: 300px;">
+    <div style="padding-bottom: 20px;">
+      <img src="img/TestingMetrics2.jpg" width="60%" style="display: block; margin: 0 auto;" />
+    </div>
+    <div style="font-size: 1em; color: white; position: relative; z-index: 10; text-align: center;">
+      <p id="textDisplayTest2" class="textBlock" style="margin: 0 auto; line-height: 1.5;"></p>
+    </div>
+  </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var textDisplayTest2 = document.getElementById('textDisplayTest2');
+      Reveal.addEventListener('fragmentshown', function(event) {
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayTest2')) {
+          if (event.fragment.dataset.fragmentIndex === '0') {
+            textDisplayTest2.textContent = '📌 Additional comparisons: RVO2, Social Force, etc.';
+          } else if (event.fragment.dataset.fragmentIndex === '1') {
+            textDisplayTest2.textContent = '🎯 2StepAhead-MASPM demonstrates superior multi-metric performance.';
+          } else if (event.fragment.dataset.fragmentIndex === '2') {
+            textDisplayTest2.textContent = '✨ Future improvements may enhance personal space compliance.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide A35: Chapter Summary & Discussion -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📚 Chapter Summary & Discussion</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">📌 Predictive world models improve RL decision-making by forecasting future states.</li>
+      <li class="fragment fade-in">🤖 2StepAhead, MASPM, and their hybrid combine efficiency with comprehensive evaluation.</li>
+      <li class="fragment fade-in">✅ Experimental results demonstrate higher rewards and robustness compared to baselines.</li>
+      <li class="fragment fade-in">⚠️ Limitations include increased computational cost and sensitivity to horizon selection.</li>
+      <li class="fragment fade-in">🔍 Future work: Optimize efficiency, refine horizon mapping, and extend to broader domains.</li>
+    </ul>
+  </div>
+  <div style="text-align: center; margin-top: 30px;">
+    <a href="https://goodluckoguzie.github.io/Viva" target="_blank" class="final-link">https://goodluckoguzie.github.io/Viva</a>
+  </div>
+</section>
+
+
+<!-- ========================================= -->
+<!-- Slide: Cosine-Gated LSTM (CGLSTM) with PDF -->
+<!-- ========================================= -->
+<section>
+  <!-- Sub-Slide 1: Title -->
+  <section id="cglstmSlide"
+           data-background="img/aston_slides_background_22.png"
+           data-background-size="cover">
+    <h2 class="section-title" style="color: white;">Cosine-Gated LSTM (CGLSTM)</h2>
+  </section>
+
+  <!-- Sub-Slide 2: PDF Embedding -->
+  <section data-background="img/aston_slides_background_22.png"
+           data-background-size="cover">
+    <div style="text-align:center; margin-top:70px;">
+      <iframe src="articles/Cosine_Gated_LSTM_main.pdf" 
+              width="90%" 
+              height="600px" 
+              style="border:none;">
+      </iframe>
+    </div>
+  </section>
+</section>
+
+<!-- Slide X+1: Introduction -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📌 Introduction</h2>
+  <div style="text-align: center; padding-top: 50px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">✅ Proposes a novel LSTM-based architecture with a cosine similarity gate.</li>
+      <li class="fragment fade-in">🤖 Aims to improve sequence prediction by focusing on directional alignment.</li>
+      <li class="fragment fade-in">📌 Builds on limitations observed in previous LSTM experiments (e.g., in SocNavGym).</li>
+    </ul>
+  </div>
+</section>
+
+
+
+<!-- Slide: 🔍 Fundamentals & Limitations -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔍 Fundamentals & Limitations</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <!-- Replace with your actual image file for limitations -->
+    <img src="img/limitationforCGLSTM.jpg" width="50%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplayLimitationsCGLSTM" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <!-- Hidden fragments for bullet point text reveals -->
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const limitTxt = document.getElementById('textDisplayLimitationsCGLSTM');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        const currentSlide = Reveal.getCurrentSlide();
+        if (currentSlide && currentSlide.querySelector('#textDisplayLimitationsCGLSTM')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            limitTxt.textContent = '📌 LSTM handles vanishing gradients but may struggle with dynamic outliers.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            limitTxt.textContent = '🤖 GRU is simpler but can miss long-term dependencies in complex tasks.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            limitTxt.textContent = '🔍 This motivates an enhanced gating mechanism (CGLSTM) for robust sequence modeling.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+
+
+
+<!-- Slide X+3: Why Cosine-Gated LSTM -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">💡 Why Cosine-Gated LSTM?</h2>
+  <div style="text-align: center; padding-top: 50px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">✅ Cosine similarity emphasizes vector orientation over magnitude.</li>
+      <li class="fragment fade-in">🤖 Helps the model focus on the most relevant sequence features.</li>
+      <li class="fragment fade-in">📌 Leads to more robust gating and improved long-term dependency modeling.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Slide X+4: CGLSTM Architecture (Diagram) -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🏗️ CGLSTM Architecture</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <!-- Replace with your actual diagram image (JPG) -->
+    <img src="img/CGLSTMArchitecture.jpg" width="50%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplayCGLSTM" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const cglstmTxt = document.getElementById('textDisplayCGLSTM');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayCGLSTM')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            cglstmTxt.textContent = '🔗 Integrates cosine-similarity gates into the vanilla LSTM.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            cglstmTxt.textContent = '⚙️ Dynamically weighs new inputs vs. hidden states based on alignment.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide X: Cosine Similarity Gate -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🌀 Cosine Similarity Gate</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <!-- Replace with your actual image filename for the cosine similarity equations -->
+    <img src="img/cosinesimilarity.JPG" width="40%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplayCosineGate" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+
+  <!-- Hidden fragments for bullet-point reveals -->
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const cgTxt = document.getElementById('textDisplayCosineGate');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayCosineGate')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            cgTxt.textContent = '📌 gate-ic: Measures alignment between transformed input (IM) & previous output.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            cgTxt.textContent = '🤖 gate-co: Measures alignment between IM & the current output state.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            cgTxt.textContent = '🔗 Helps emphasize relevant features and suppress noise, improving long-term dependency handling.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+
+<!-- Slide X+6: Datasets & Evaluation Setup -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🧪 Datasets & Evaluation</h2>
+  <div style="text-align: center; padding-top: 50px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">✅ FallingBallEnv: Tests fundamental motion prediction (balanced & unbalanced).</li>
+      <li class="fragment fade-in">🤖 Benchmark tasks: Adding Problem, row-wise MNIST, Fashion-MNIST, IMDB, PTB.</li>
+      <li class="fragment fade-in">📌 SocNavGym: Real-world-like social navigation scenario.</li>
+      <li class="fragment fade-in">✅ Metrics: MAE/MSE, accuracy, perplexity, training/testing time, t-tests.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Slide X+7: Experimental Results #1 (FallingBallEnv) -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">⏱ FallingBallEnv Results</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <!-- Replace with your FallingBallEnv results image -->
+    <img src="img/fallingballenv_cglstm_results.jpg" width="60%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplayFBE" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const fbeTxt = document.getElementById('textDisplayFBE');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayFBE')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            fbeTxt.textContent = '📌 CGLSTM outperforms LSTM, GRU, and Transformer in bounce predictions.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            fbeTxt.textContent = '🔍 Balanced dataset yields more robust predictions versus unbalanced data.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide X+8: Experimental Results #2 (Benchmarks) -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎯 Benchmark Tasks (MNIST, etc.)</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <!-- Replace with your benchmark table image -->
+    <img src="img/cgltsmtestResult.jpg" width="70%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplayBench" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const benchTxt = document.getElementById('textDisplayBench');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayBench')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            benchTxt.textContent = '✅ Highest accuracy on row-wise MNIST (99.07%).';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            benchTxt.textContent = '🤖 Strong improvements on IMDB sentiment (~86% accuracy).';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            benchTxt.textContent = '📌 Slightly slower than GRU but significantly more accurate.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide X+9: Experimental Results #3 (SocNavGym) -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🤖 SocNavGym: Realistic Scenario</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <!-- Replace with your SocNavGym results table image -->
+    <img src="img/cgltsmtestResultforsocnav.jpg" width="70%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplayResultsSocNav" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const snTxt = document.getElementById('textDisplayResultsSocNav');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayResultsSocNav')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            snTxt.textContent = '📌 Achieves the lowest MAE across prediction horizons (k=1 to k=10).';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            snTxt.textContent = '🤖 Slightly higher compute than GRU but ~5% better predictive accuracy.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide X+10: Experimental Results #4 (Training & Testing Times) -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">⏲️ Training & Testing Times</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <img src="img/cgltsmtestTimeResult.jpg" width="70%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplayTimeResult" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const timeTxt = document.getElementById('textDisplayTimeResult');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayTimeResult')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            timeTxt.textContent = '📊 GRU is faster, but CGLSTM invests ~5% more time for superior accuracy.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            timeTxt.textContent = '⚖️ Transformer exhibits highest parameter count and slowest runtime.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide X+11: Statistical Tests -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📐 Statistical Tests</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <img src="img/cgltsmtestTtestResult.jpg" width="60%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplayTTest" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const ttestTxt = document.getElementById('textDisplayTTest');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayTTest')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            ttestTxt.textContent = '📌 p-values < 0.05 indicate statistically significant improvements for CGLSTM.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            ttestTxt.textContent = '🤖 RAU shows promise, but differences vs. CGLSTM are not always significant.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- ========================================= -->
+<!-- Chapter Summary & Discussion -->
+<!-- ========================================= -->
+
+<!-- Slide A20: Chapter Summary & Discussion -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📚 Chapter Summary & Discussion</h2>
+  <div style="text-align: center; padding-top: 40px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">📌 Adaptive horizons enable dynamic planning based on uncertainty.</li>
+      <li class="fragment fade-in">🤖 Entropy-driven adjustments improve exploration and efficiency in continuous action spaces.</li>
+      <li class="fragment fade-in">✅ Integration of CGLSTM with SAC and DreamerV3 enhances state prediction and policy performance.</li>
+      <li class="fragment fade-in">⚠️ Limitations: Sensitivity to entropy scaling and increased computational overhead.</li>
+      <li class="fragment fade-in">🔍 Future work: Optimize overhead and extend to multi-agent systems.</li>
+    </ul>
+  </div>
+  <div style="text-align: center; margin-top: 30px;">
+    <a href="https://goodluckoguzie.github.io/Viva" target="_blank" class="final-link">https://goodluckoguzie.github.io/Viva</a>
+  </div>
+</section>
+
+<!-- ========================================= -->
+<!-- Adaptive Horizons Chapter Slide Deck      -->
+<!-- ========================================= -->
+
+<!-- Slide A1: Chapter Title -->
+<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <h2 class="section-title" style="color: white;">Adaptive Predictive Reinforcement Learning:<br>Entropy‐Driven Adaptive Prediction Horizons</h2>
+</section>
+
+<!-- Slide A2: Introduction -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📌 Introduction</h2>
+  <div style="text-align: center; padding-top: 50px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">✅ Dynamically adjusts prediction horizons in continuous action spaces.</li>
+      <li class="fragment fade-in">🤖 Uses policy entropy to detect uncertainty and set planning depth.</li>
+      <li class="fragment fade-in">🔗 Builds on our previous predictive world models (for social navigation).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Slide A3: Motivation -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">💡 Motivation</h2>
+  <div style="text-align: center; padding-top: 50px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">⚠️ Fixed horizons waste computation in simple settings, underperform in complex ones.</li>
+      <li class="fragment fade-in">🎯 Real-world tasks vary in uncertainty—longer planning is crucial when needed.</li>
+      <li class="fragment fade-in">🔍 Entropy signals action uncertainty, enabling dynamic horizon shifts.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Slide A4: Research Objectives & Contributions -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎯 Research Objectives & Contributions</h2>
+  <div style="text-align: center; padding-top: 50px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">✅ Propose an entropy-driven adaptive horizon within SAC.</li>
+      <li class="fragment fade-in">🤖 Integrate CGLSTM into DreamerV3 for enhanced predictive modeling.</li>
+      <li class="fragment fade-in">📊 Benchmark vs. SAC, PPO, TD3, DDPG, DreamerV3 variants.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Slide A5: Significance -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔑 Significance of the Research</h2>
+  <div style="text-align: center; padding-top: 50px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">📌 Balances exploration & computation in dynamic continuous-action tasks.</li>
+      <li class="fragment fade-in">🤖 Improves long-term planning & decision-making with variable horizons.</li>
+      <li class="fragment fade-in">✅ Applicable to real-world robotics & autonomous systems.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========================================= -->
+<!-- Proposed Methods Section -->
+<!-- ========================================= -->
+
+<!-- Slide A6: Proposed Methods -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔑 Proposed Methods</h2>
+  <div style="text-align: center; padding-top: 50px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">🚀 DreamerV3 + CGLSTM</li>
+      <li class="fragment fade-in">🔗 2StepAhead-MASPM (Fixed Horizon)</li>
+      <li class="fragment fade-in">🤖 SAC + CGLSTM (Adaptive Horizon)</li>
+    </ul>
+  </div>
+</section>
+
+
+
+<!-- Slide A7: Proposed: DreamerV3 + CGLSTM (Bullet by bullet) -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🚀 Proposed: DreamerV3 + CGLSTM</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <img src="img/DreamerV3_CGLSTM.JPG" width="50%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplayDreamerCGLSTM" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <div style="display: none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const dreamerTxt = document.getElementById('textDisplayDreamerCGLSTM');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayDreamerCGLSTM')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            dreamerTxt.textContent = '✅ Replaces GRU with CGLSTM to improve world-model predictions.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            dreamerTxt.textContent = '🤖 Enhances temporal representation & long-term state accuracy.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide A8: Proposed: 2StepAhead-MASPM (Fixed Horizon) -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔗 Proposed: 2StepAhead-MASPM (Fixed Horizon)</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <img src="img/figure1.4_Hybrid.jpg" width="50%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplayFixedHorizon" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <div style="display:none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const fixedTxt = document.getElementById('textDisplayFixedHorizon');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayFixedHorizon')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            fixedTxt.textContent = '🤖 Uses an 8-step fixed horizon combining 2-step ahead & MASPM.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            fixedTxt.textContent = '⚙️ Provides a strong baseline for adaptive horizon comparison.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide A9: Proposed: SAC + CGLSTM (Adaptive Horizon) -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🤖 Proposed: SAC + CGLSTM (Adaptive Horizon)</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <img src="img/SAC_CGLSTM_Adaptive.jpg" width="50%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplayAdaptiveHorizon" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <div style="display:none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const adaptiveTxt = document.getElementById('textDisplayAdaptiveHorizon');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayAdaptiveHorizon')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            adaptiveTxt.textContent = '📌 Dynamically adjusts horizon via policy entropy—longer when uncertain.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            adaptiveTxt.textContent = '⚡ Achieves higher returns & faster convergence in continuous tasks.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- ========================================= -->
+<!-- Preliminary Experiments Section (3 Slides) -->
+<!-- ========================================= -->
+
+<!-- Slide A10: Preliminary Experiments Overview (No image) -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🧪 Preliminary Experiments Overview</h2>
+  <div style="text-align: center; padding-top: 50px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">🔍 LunarLander‑v2 to optimize CGLSTM window-slide & horizon sets.</li>
+      <li class="fragment fade-in">⚙️ Tested window-slide sizes: 16, 32, 64 for trade-offs in cost vs. accuracy.</li>
+      <li class="fragment fade-in">🎯 Compared horizon sets {1,2,3,4,5} vs. {1,2,4,6,8} vs. fixed 8-step horizon.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Slide A11: Window-Slide Selection -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📊 Window-Slide Selection</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <img src="img/WindowSlide_TrainLoss-1.jpg" width="60%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplayWindowSlide" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <div style="display:none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const windowTxt = document.getElementById('textDisplayWindowSlide');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayWindowSlide')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            windowTxt.textContent = '✅ Slide=64 yields lowest training loss but is more expensive.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            windowTxt.textContent = '🎯 Chose slide=32 for a better balance of speed vs. accuracy.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide A12: Adaptive Horizon Selection -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎯 Adaptive Horizon Selection</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <img src="img/Lunarlander_Horizon_Comparison-1.jpg" width="60%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplayHorizonSets" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <div style="display:none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const horizonTxt = document.getElementById('textDisplayHorizonSets');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayHorizonSets')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            horizonTxt.textContent = '🔍 {1,2,4,6,8} eventually outperforms {1,2,3,4,5}.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            horizonTxt.textContent = '⚡ Saved ~6 hours vs. fixed 8-step horizon to reach 500k steps.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            horizonTxt.textContent = '📌 Adopted {1,2,4,6,8} & window-slide=32 for main experiments.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- ========================================= -->
+<!-- Results & Discussion Section -->
+<!-- ========================================= -->
+
+<!-- Slide A13: Training Metrics - LunarLander -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">⏱ Training Results: LunarLander</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <img src="img/TrainingReturn_LunderLander-1.jpg" width="60%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplayTrainLL" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <div style="display:none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const llTxt = document.getElementById('textDisplayTrainLL');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayTrainLL')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            llTxt.textContent = '📌 DreamerV3 variants converge quickly & reach higher final returns.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            llTxt.textContent = '🤖 SAC with adaptive horizon surpasses fixed-horizon & baseline SAC.';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            llTxt.textContent = '⚡ Overall stable learning & improved reward under noise.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide A14: Training Metrics - LiteSocNavGym -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">⏱ Training Results: LiteSocNavGym</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <img src="img/TrainingReturn_SocNavGym-1.jpg" width="60%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplayTrainSoc" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <div style="display:none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const socTxt = document.getElementById('textDisplayTrainSoc');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayTrainSoc')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            socTxt.textContent = '✅ DreamerV3 & DreamerV3 + CGLSTM converge fastest, stable.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            socTxt.textContent = '🤖 Our adaptive horizon method achieves highest final reward overall.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide A15: Table - LunarLander Results (Part 1) -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📊 LunarLander Results (1)</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <img src="img/lunarlander_results_part1.JPG" width="70%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplayLLp1" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <div style="display:none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const llp1Txt = document.getElementById('textDisplayLLp1');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayLLp1')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            llp1Txt.textContent = '✅ Adaptive horizon SAC + CGLSTM hits 100% success & top returns.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            llp1Txt.textContent = '🔍 Noise (σ=0.085) used only at test time, highlighting robust landings.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide A16: Table - LunarLander Results (Part 2) -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📊 LunarLander Results (2)</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <img src="img/lunarlander_results_part2.JPG" width="70%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplayLLp2" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <div style="display:none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+    <span class="fragment" data-fragment-index="2"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const llp2Txt = document.getElementById('textDisplayLLp2');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplayLLp2')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            llp2Txt.textContent = '⚙️ Weighted success/efficiency highest for adaptive horizon (99.73%).';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            llp2Txt.textContent = '🤖 DreamerV3 variants cost more inference time (~26-27 ms).';
+          } else if (ev.fragment.dataset.fragmentIndex === '2'){
+            llp2Txt.textContent = '📌 Proposed method maintains strong performance & moderate cost.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide A17: Table - LiteSocNavGym Results (Part 1) -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📊 LiteSocNavGym Results (1)</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <img src="img/socnav_results_part1.JPG" width="70%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplaySocNavp1" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <div style="display:none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const snp1Txt = document.getElementById('textDisplaySocNavp1');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplaySocNavp1')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            snp1Txt.textContent = '✅ DreamerV3 + CGLSTM leads with 96% success, 0.77 return.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            snp1Txt.textContent = '🤖 Adaptive horizon hits 94% success—robust in complex tasks.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide A18: Table - LiteSocNavGym Results (Part 2) -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📊 LiteSocNavGym Results (2)</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <img src="img/socnav_results_part2.JPG" width="70%" style="display: block; margin: 0 auto;" />
+    <div style="margin-top: 20px;">
+      <p id="textDisplaySocNavp2" class="textBlock" style="color: white;"></p>
+    </div>
+  </div>
+  <div style="display:none;">
+    <span class="fragment" data-fragment-index="0"></span>
+    <span class="fragment" data-fragment-index="1"></span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const snp2Txt = document.getElementById('textDisplaySocNavp2');
+      Reveal.addEventListener('fragmentshown', function(ev){
+        if (Reveal.getCurrentSlide().querySelector('#textDisplaySocNavp2')){
+          if (ev.fragment.dataset.fragmentIndex === '0'){
+            snp2Txt.textContent = '⚙️ DreamerV3 + CGLSTM uses ~9.87 ms inference & 10 ms simulation.';
+          } else if (ev.fragment.dataset.fragmentIndex === '1'){
+            snp2Txt.textContent = '✅ Adaptive horizon yields balanced success & computational cost.';
+          }
+        }
+      });
+    });
+  </script>
+</section>
+
+<!-- Slide A19: Conclusion & Future Directions -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎉 Conclusion & Future Directions</h2>
+  <div style="text-align: center; padding-top: 40px;">
+    <ul class="textBlock" style="color: white;">
+      <li class="fragment fade-in">📌 Entropy-driven adaptive horizons improve RL efficiency in continuous action spaces.</li>
+      <li class="fragment fade-in">🤖 Integration of CGLSTM boosts predictive power in DreamerV3 & SAC.</li>
+      <li class="fragment fade-in">⚠️ Limitations: Tuning entropy coefficient, horizon mapping in varied environments.</li>
+      <li class="fragment fade-in">✨ Future: Expand to multi-agent tasks, automated \(\alpha\) tuning, & real-world robotics.</li>
+    </ul>
+  </div>
+  <div style="text-align: center; margin-top: 30px;">
+    <a href="https://goodluckoguzie.github.io/Viva" target="_blank" class="final-link">https://goodluckoguzie.github.io/Viva</a>
+  </div>
+</section>
+
+
+
+      <!-- ========================================= -->
+      <!-- 8. CONCLUSION                           -->
+      <!-- ========================================= -->
+
+      <!-- Slide 43: Section Title: Conclusion -->
+      <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+        <h2 class="section-title">Conclusion</h2>
+      </section>
+
+      <!-- Slide 44: Conclusion & Future Work -->
+      <section data-background="img/aston_slides_background_22.png">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎉 Conclusion & Future Work</h2>
+        <div style="text-align: center; color: white; padding-top: 40px;">
           <ul>
-            <li>Robots are increasingly entering human-populated spaces (hospitals, malls, airports)</li>
-            <li><strong>Key Question:</strong> How can a robot move through a busy crowd <em>safely</em> and <em>politely</em>?</li>
-            <li>Current robots often struggle to avoid people smoothly or follow social norms</li>
+            <li class="fragment">📌 Advanced predictive models (2StepAhead, MASPM, CGLSTM) introduced</li>
+            <li class="fragment">🎯 Achieved gains in RL performance, safety & social acceptance</li>
+            <li class="fragment">✨ Future: Real-time hardware deployment </li>
           </ul>
         </div>
-        <!-- Optional Media / Illustration -->
         <div style="text-align: center; margin-top: 30px;">
-          <!-- Example: a representative image -->
-          <img
-            src="img/robot_in_crowd.jpg"
-            alt="Robot in crowded hallway"
-            width="50%"
-            style="border: 2px solid #fff; border-radius: 4px;"
-          />
+          <a href="https://goodluckoguzie.github.io/Viva" target="_blank" class="final-link">https://goodluckoguzie.github.io/Viva</a>
         </div>
       </section>
 
-      <!-- ====================================== -->
-      <!-- SLIDE 3: Context – Why Social Navigation Matters -->
-      <!-- ====================================== -->
-      <section
-        data-background="img/aston_slides_background_22.png"
-        data-background-size="cover"
-      >
-        <h2 style="color: white; text-align: center; margin-top: 80px;">
-          Context – Why Social Navigation Matters
-        </h2>
-        <div style="
-          color: white;
-          max-width: 70%;
-          margin: 40px auto;
-          text-align: left;
-          font-size: 1.1em;
-          line-height: 1.4;
-        ">
-          <ul>
-            <li><strong>High Impact:</strong> In healthcare, hospitality, etc., robots must navigate around people to be truly useful</li>
-            <li><strong>Socially Aware Navigation:</strong> Beyond just avoiding collisions, robots should respect personal space and social norms</li>
-            <li><strong>Integration into Society:</strong> Effective social navigation is critical for robots to be accepted in daily life</li>
-          </ul>
-        </div>
-        <!-- Optional Media -->
-        <div style="text-align: center; margin-top: 30px;">
-          <!-- Example: a service robot interacting with humans -->
-          <img
-            src="img/robot_hospital.jpg"
-            alt="Service robot in a hospital environment"
-            width="50%"
-            style="border: 2px solid #fff; border-radius: 4px;"
-          />
-        </div>
+      <!-- Slide 45: Thank You / Q&A -->
+      <section data-background="img/aston_slides_background_22.png">
+        <h2 style="color: white; text-align: center; margin-top: 100px;">🙏 Thank You</h2>
+        <h4 style="color: white; text-align: center; margin-top: 30px;">Questions?</h4>
       </section>
-
-      <!-- ====================================== -->
-      <!-- SLIDE 4: Challenges in Human–Robot Coexistence -->
-      <!-- ====================================== -->
-      <section
-        data-background="img/aston_slides_background_22.png"
-        data-background-size="cover"
-      >
-        <h2 style="color: white; text-align: center; margin-top: 80px;">
-          Challenges in Human–Robot Coexistence
-        </h2>
-        <div style="
-          color: white;
-          max-width: 70%;
-          margin: 40px auto;
-          text-align: left;
-          font-size: 1.1em;
-          line-height: 1.4;
-        ">
-          <ul>
-            <li><strong>Unpredictable Humans:</strong> People can stop, turn, or crowd unexpectedly – hard to model this behavior</li>
-            <li><strong>Dynamic Environments:</strong> Crowds create a constantly changing maze; static path-planning isn’t enough</li>
-            <li><strong>Safety vs. Efficiency:</strong> Robots must avoid accidents while reaching goals quickly – a tough balance</li>
-            <li><strong>Social Norms:</strong> Behaviors like keeping distance or queueing are implicit – robots must <em>learn</em> them</li>
-          </ul>
-        </div>
-        <!-- Optional Media -->
-        <div style="text-align: center; margin-top: 30px;">
-          <!-- Example: schematic showing unpredictability -->
-          <img
-            src="img/robot_vs_pedestrians.jpg"
-            alt="Robot navigating pedestrians"
-            width="50%"
-            style="border: 2px solid #fff; border-radius: 4px;"
-          />
-        </div>
-      </section>
-
-      <!-- ====================================== -->
-      <!-- SLIDE 5: Research Questions -->
-      <!-- ====================================== -->
-      <section
-        data-background="img/aston_slides_background_22.png"
-        data-background-size="cover"
-      >
-        <h2 style="color: white; text-align: center; margin-top: 80px;">
-          Research Questions
-        </h2>
-        <div style="
-          color: white;
-          max-width: 70%;
-          margin: 40px auto;
-          text-align: left;
-          font-size: 1.1em;
-          line-height: 1.4;
-        ">
-          <p><strong>RQ1:</strong> How can predictive world models improve decision-making in social robot navigation?</p>
-          <ul>
-            <li>Investigates whether <em>anticipating</em> human movements leads to better robot path planning</li>
-          </ul>
-          <p style="margin-top: 15px;">
-            <strong>RQ2:</strong> What challenges arise when using Reinforcement Learning in
-            <em>continuous</em> robot control for social navigation, and how can we address them?
-          </p>
-          <ul>
-            <li>Examines difficulties transitioning from discrete to smooth motion controls and how to overcome them</li>
-          </ul>
-          <p style="margin-top: 15px;">
-            These questions set the stage for developing a new approach to socially aware robot navigation.
-          </p>
-        </div>
-        <!-- No image needed -->
-      </section>
-
-      <!-- ====================================== -->
-      <!-- (OPTIONAL) Continue with Additional Slides -->
-      <!-- ====================================== -->
-      <!-- 
-           If you want to keep your remaining slides (Predictive Models, RL, etc.), 
-           you can re-insert or place them below, or integrate them as needed.
-      -->
-
 
     </div>
   </div>
@@ -279,7 +1849,7 @@
       plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
     });
 
-    // Optional: handle fragment animations
+    // Handle fragment animations
     Reveal.addEventListener('fragmentshown', function(event) {
       event.fragment.classList.add('visible');
     });
@@ -289,4 +1859,3 @@
   </script>
 </body>
 </html>
-
