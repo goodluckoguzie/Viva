@@ -221,8 +221,8 @@
 
 <!-- Slide 4: Context & Scope -->
 <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
+  <!-- Problem Statement at the Top -->
   <div style="color: white; text-align: center; font-size: 1.1em; padding-top: 20px;">
-    <!-- Problem Statement (always visible) -->
     <p>
       🚀 <strong>The Problem:</strong><br>
       "Robots struggle to navigate in social environments due to unpredictable human behavior."
@@ -234,33 +234,13 @@
     <video muted autoplay loop src="img/problem.mp4" width="60%"></video>
   </div>
   
-  <!-- Bottom Text Fragments -->
-  <div style="color: white; text-align: center; font-size: 1.1em; padding-top: 30px;">
-    <!-- Predict vs. React fragment (initially visible) -->
-    <p id="predictFragment" class="fragment" style="margin-top: 20px; font-style: italic;">
+  <!-- Predict vs. React Text at the Bottom -->
+  <div style="color: white; text-align: center; font-size: 1.1em; padding-top: 20px;">
+    <p style="font-style: italic;">
       <strong>Predict vs. React:</strong> Effective navigation requires anticipating future events rather than merely reacting to immediate obstacles.
     </p>
-    <!-- Research Gap fragment (initially hidden) -->
-    <p id="researchGapFragment" class="fragment" style="margin-top: 20px; font-style: italic; display: none;">
-      <strong>Research Gap:</strong> Robots need the ability to predict and adapt to human movements dynamically—simple collision avoidance or short-sighted RL is inadequate.
-    </p>
   </div>
-  
-  <!-- Script to replace Predict vs. React with Research Gap on next arrow press -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function(){
-      Reveal.addEventListener('fragmentshown', function(e) {
-        if(e.fragment.id === 'researchGapFragment'){
-          document.getElementById('predictFragment').style.display = 'none';
-          document.getElementById('researchGapFragment').style.display = 'block';
-        }
-      });
-    });
-  </script>
 </section>
-
-
-
 
 
 
