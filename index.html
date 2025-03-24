@@ -270,68 +270,38 @@
   </div>
 </section>
 
-<!-- Slide 10: Fundamentals of RL & Role in Social Navigation -->
+<!-- Slide 10: RL Fundamentals (Short Version) -->
 <section 
   data-background="img/aston_slides_background_22.png"
   data-background-size="cover"
   data-background-position="0 -20px"
 >
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">
-    Fundamentals of Reinforcement Learning &amp; Role in Social Navigation
-  </h2>
-  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
-    <!-- RL Basics Diagram -->
+  <!-- Short Heading -->
+  <div style="text-align: center; padding-top: 20px;">
+    <p style="color: white; font-size: 1.3em; font-weight: bold;">RL Fundamentals</p>
+  </div>
+  
+  <!-- RL Basics Diagram -->
+  <div style="text-align: center; padding-top: 20px; min-height: 300px;">
     <img 
       src="img/rl_basics_diagram.jpg" 
       width="70%" 
       style="display: block; margin: 0 auto; border: 2px solid white;" 
       alt="RL Basics Diagram" 
     />
-
-    <!-- Text updated by fragment reveals -->
-    <div style="margin-top: 20px; text-align: center;">
-      <p id="textDisplayRL" class="textBlock" style="color: white;"></p>
-    </div>
   </div>
-
-  <!-- Hidden fragments -->
-  <div style="display: none;">
-    <span class="fragment" data-fragment-index="0"></span>
-    <span class="fragment" data-fragment-index="1"></span>
-    <span class="fragment" data-fragment-index="2"></span>
-    <span class="fragment" data-fragment-index="3"></span>
+  
+  <!-- Brief Caption -->
+  <div style="text-align: center; padding-top: 15px;">
+    <p style="color: white; font-size: 1.1em;">
+      RL enables agents to learn optimal actions through trial-and-error in dynamic environments.
+    </p>
   </div>
-
-  <!-- Script to update text upon fragment reveal -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const rlTxt = document.getElementById('textDisplayRL');
-
-      Reveal.addEventListener('fragmentshown', function(ev) {
-        if (Reveal.getCurrentSlide().querySelector('#textDisplayRL')) {
-          switch (ev.fragment.dataset.fragmentIndex) {
-            case '0':
-              rlTxt.textContent = '🎯 RL enables agents to learn optimal actions through trial-and-error.';
-              break;
-            case '1':
-              rlTxt.textContent = '🔄 The agent–environment loop: observe, act, and receive rewards.';
-              break;
-            case '2':
-              rlTxt.textContent = '🧩 Core elements: states, actions, rewards, and policies.';
-              break;
-            case '3':
-              rlTxt.textContent = '🤝 In social navigation, RL handles uncertain, human-centered interactions.';
-              break;
-          }
-        }
-      });
-    });
-  </script>
 </section>
 
-<!-- Slide 11: RL Algorithms: Critical Comparison -->
+
+<!-- Slide 11: RL Algorithms: Critical Comparison (No Heading) -->
 <section data-background="img/aston_slides_background_22.png">
-  <h2 style="color: white; text-align: center;">RL Algorithms: Critical Comparison</h2>
   <div style="text-align: center; color: white; padding-top: 40px;">
     <table style="margin: 0 auto; width: 85%; border-collapse: collapse; font-size: 0.9em;">
       <thead style="background-color: #003087; color: white;">
@@ -343,54 +313,31 @@
       </thead>
       <tbody>
         <tr class="fragment">
-          <td style="padding: 8px; border: 1px solid white; color: white;">
-            DQN (Mnih et al., 2015)
-          </td>
-          <td style="padding: 8px; border: 1px solid white; color: white;">
-            🎯 Efficient in discrete tasks
-          </td>
-          <td style="padding: 8px; border: 1px solid white; color: white;">
-            ⚠️ Not well suited for continuous or complex action spaces
-          </td>
+          <td style="padding: 8px; border: 1px solid white;">DQN (Mnih et al., 2015)</td>
+          <td style="padding: 8px; border: 1px solid white;">Efficient in discrete tasks</td>
+          <td style="padding: 8px; border: 1px solid white;">Not suited for continuous or complex action spaces</td>
         </tr>
         <tr class="fragment">
-          <td style="padding: 8px; border: 1px solid white; color: white;">
-            PPO (Schulman et al., 2017)
-          </td>
-          <td style="padding: 8px; border: 1px solid white; color: white;">
-            🎯 Stable learning, good sample efficiency
-          </td>
-          <td style="padding: 8px; border: 1px solid white; color: white;">
-            ⚠️ Sensitive to hyperparameter tuning
-          </td>
+          <td style="padding: 8px; border: 1px solid white;">PPO (Schulman et al., 2017)</td>
+          <td style="padding: 8px; border: 1px solid white;">Stable learning; good sample efficiency</td>
+          <td style="padding: 8px; border: 1px solid white;">Sensitive to hyperparameter tuning</td>
         </tr>
         <tr class="fragment">
-          <td style="padding: 8px; border: 1px solid white; color: white;">
-            SAC (Haarnoja et al., 2018)
-          </td>
-          <td style="padding: 8px; border: 1px solid white; color: white;">
-            🎯 Robust for continuous control, promotes exploration
-          </td>
-          <td style="padding: 8px; border: 1px solid white; color: white;">
-            ⚠️ Higher computational demands
-          </td>
+          <td style="padding: 8px; border: 1px solid white;">SAC (Haarnoja et al., 2018)</td>
+          <td style="padding: 8px; border: 1px solid white;">Robust for continuous control; promotes exploration</td>
+          <td style="padding: 8px; border: 1px solid white;">Higher computational demands</td>
         </tr>
         <tr class="fragment">
-          <td style="padding: 8px; border: 1px solid white; color: white;">
-            DreamerV3 (Hafner et al., 2023)
-          </td>
-          <td style="padding: 8px; border: 1px solid white; color: white;">
-            🎯 Learns a latent world model for planning
-          </td>
-          <td style="padding: 8px; border: 1px solid white; color: white;">
-            ⚠️ Sensitive to model inaccuracies and observation noise
-          </td>
+          <td style="padding: 8px; border: 1px solid white;">DreamerV3 (Hafner et al., 2023)</td>
+          <td style="padding: 8px; border: 1px solid white;">Learns a latent world model for planning</td>
+          <td style="padding: 8px; border: 1px solid white;">Sensitive to model inaccuracies and observation noise</td>
         </tr>
       </tbody>
     </table>
   </div>
 </section>
 
+      
 <!-- ========================================= -->
 <!-- 5. PREDICTIVE MODELS                     -->
 <!-- ========================================= -->
