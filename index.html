@@ -454,80 +454,56 @@
 
 
 
-<!-- Slide X: Foundation: World Models (Ha & Schmidhuber, 2018) -->
-<section 
-  data-background="img/aston_slides_background_22.png" 
+<!-- Slide X: World Models (Ha & Schmidhuber, 2018) -->
+<section
+  data-background="img/aston_slides_background_22.png"
   data-background-size="cover"
 >
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">
-    🌐 Foundation: World Models
-    <br><small>(Ha &amp; Schmidhuber, 2018)</small>
+    World Models (Ha &amp; Schmidhuber, 2018)
   </h2>
 
   <!-- Centered JPG Image -->
   <div style="text-align: center; margin-bottom: 20px;">
     <!-- Replace 'img/world_model_schematic.jpg' with your actual .jpg file path/name -->
-    <img 
-      src="img/world_model_schematic.jpg" 
-      alt="World Models Diagram" 
+    <img
+      src="img/world_model_schematic.jpg"
+      alt="World Models Diagram"
       width="60%"
       style="border: 2px solid white; border-radius: 5px;"
     />
   </div>
-
-  <div style="text-align: center; padding-top: 10px; min-height: 200px;">
-    <ul style="color: white; text-align: left; display: inline-block; max-width: 75%;">
-      <li class="fragment fade-in">
-        ✅ <strong>Key Idea:</strong> Combines a <em>VAE</em> (for latent encoding)
-        and a <em>GRU-based MDN-RNN</em> (for dynamics) to “dream” offline trajectories.
-      </li>
-      <li class="fragment fade-in">
-        🎯 <strong>Successes:</strong> Improved sample-efficiency in single-agent tasks
-        like CarRacing &amp; VizDoom (no human interactions).
-      </li>
-      <li class="fragment fade-in">
-        ⚙️ <strong>Architecture:</strong> 
-        1) VAE for compressing observations, 
-        2) MDN-RNN (GRU) for predicting latent transitions, 
-        3) Evolution or RL in the learned latent space.
-      </li>
-    </ul>
-  </div>
+  <!-- No bullet points, just the heading and image -->
 </section>
 
 
-<!-- Slide X+1: Why World Models Alone Don’t Solve Social Navigation -->
-<section 
-  data-background="img/aston_slides_background_22.png" 
+<!-- Slide X+1: Dreamer Limitations -->
+<section
+  data-background="img/aston_slides_background_22.png"
   data-background-size="cover"
 >
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">
-    🔎 Why World Models Alone Don’t Solve Social Navigation
+    Dreamer: A Step Forward, but Still Not Adaptive Enough
   </h2>
+
   <div style="text-align: center; padding-top: 20px; min-height: 200px;">
     <ul style="color: white; text-align: left; display: inline-block; max-width: 75%;">
       <li class="fragment fade-in">
-        🤖 <strong>Single-Agent Domains:</strong>
-        CarRacing/VizDoom lack multi-human interactions or social norms.
+        ✅ <strong>Builds on World Models</strong> – Uses a learned latent model
+        for planning, going beyond naive single-step approaches.
       </li>
       <li class="fragment fade-in">
-        ⚠️ <strong>Generic GRU (MDN-RNN):</strong>
-        Can degrade with unpredictable, noisy human trajectories; 
-        no specialized gating for outliers or social cues.
+        ⚠️ <strong>Fixed prediction Horizon</strong> – Typically imagines
+        one or a few steps at a time; not fully adaptive for changing scenarios.
       </li>
       <li class="fragment fade-in">
-        🚫 <strong>No Social Norm Encoding:</strong>
-        Merely reconstructs visuals/rewards; no concept of personal space 
-        or comfort metrics crucial for social nav.
-      </li>
-      <li class="fragment fade-in">
-        ⏱ <strong>Offline / Fixed “Dreaming”:</strong>
-        Not adapted to real-time, multi-human unpredictability; 
-        horizon is not dynamically adjustable.
+        ⏱ <strong>Limited Real-Time Adaptation</strong> – No mechanism for
+        dynamically adjusting the prediction horizon on-the-fly.
       </li>
     </ul>
   </div>
 </section>
+
 
 
       
