@@ -489,21 +489,20 @@
   <div style="text-align: center; padding-top: 20px; min-height: 200px;">
     <ul style="color: white; text-align: left; display: inline-block; max-width: 75%;">
       <li class="fragment fade-in">
-        ✅ <strong>Builds on World Models</strong> – Uses a learned latent model
-        for planning, going beyond naive single-step approaches.
+        ✅ <strong>Builds on World Models</strong>
       </li>
       <li class="fragment fade-in">
-        ⚠️ <strong>Fixed prediction Horizon</strong> – Typically imagines
-        one or a few steps at a time; not fully adaptive for changing scenarios.
+        ⚠️<strong> Does not consider all the possible actions</strong>
       </li>
       <li class="fragment fade-in">
-        ⏱ <strong>Limited Real-Time Adaptation</strong> – No mechanism for
-        dynamically adjusting the prediction horizon on-the-fly.
+        ⚠️ <strong>Fixed Prediction Horizon (one step ahead)</strong>
+      </li>
+      <li class="fragment fade-in">
+        ⏱ <strong>Limited Real-Time Adaptation2.</strong>
       </li>
     </ul>
   </div>
 </section>
-
 
 
       
@@ -599,25 +598,31 @@
 <!-- Outer section for vertical slides -->
 <section>
 
-  <!-- Sub-Slide 10.1: Main Content -->
-  <section id="predictiveSlide"
-           data-background="img/aston_slides_background_22.png"
-           data-background-size="cover">
-    <h2 class="section-title" style="color: white;">Predictive World Models *</h2>
-  </section>
+<!-- Sub-Slide 10.1: Main Content -->
+<section id="predictiveSlide"
+         data-background="img/aston_slides_background_22.png"
+         data-background-size="cover">
+  <h2 class="section-title" style="color: white; text-align: center; margin-bottom: 20px;">
+    Predictive World Models for Social Navigation
+  </h2>
+  <p style="color: white; text-align: center; font-size: 1.2em; margin-top: 20px;">
+    Contribution 1: We extend World Models with a VAE+LSTM latent model integrated into RL—addressing one-step prediction and limited action consideration—to enable multi-step, adaptive decision-making in dynamic social environments.
+  </p>
+</section>
 
-  <!-- Sub-Slide 10.2: PDF Embedding -->
-  <section data-background="img/aston_slides_background_22.png"
-           data-background-size="cover">
-    <div style="text-align:center; margin-top:70px;">
-      <h3 style="color:white;">Paper PDF / Extended Explanation</h3>
-      <iframe src="articles/UKCI_2023__Predictive_World_Models_for_Social_Navigation.pdf"
-              width="90%"
-              height="600px"
-              style="border:none;">
-      </iframe>
-    </div>
-  </section>
+<!-- Sub-Slide 10.2: PDF Embedding -->
+<section data-background="img/aston_slides_background_22.png"
+         data-background-size="cover">
+  <div style="text-align:center; margin-top:70px;">
+    <h3 style="color:white;">Paper PDF / Extended Explanation</h3>
+    <iframe src="articles/UKCI_2023__Predictive_World_Models_for_Social_Navigation.pdf"
+            width="90%"
+            height="600px"
+            style="border:none;">
+    </iframe>
+  </div>
+</section>
+
 
 </section>
 
