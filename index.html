@@ -452,6 +452,84 @@
 
 
 
+
+
+<!-- Slide X: Foundation: World Models (Ha & Schmidhuber, 2018) -->
+<section 
+  data-background="img/aston_slides_background_22.png" 
+  data-background-size="cover"
+>
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">
+    🌐 Foundation: World Models
+    <br><small>(Ha &amp; Schmidhuber, 2018)</small>
+  </h2>
+
+  <!-- Centered SVG Image -->
+  <div style="text-align: center; margin-bottom: 20px;">
+    <!-- Replace 'img/world_models_diagram.svg' with your actual SVG filename/path -->
+    <img 
+      src="img/world_models_diagram.svg" 
+      alt="World Models Diagram" 
+      width="60%"
+      style="border: 2px solid white; border-radius: 5px;"
+    />
+  </div>
+
+  <div style="text-align: center; padding-top: 10px; min-height: 200px;">
+    <ul style="color: white; text-align: left; display: inline-block; max-width: 75%;">
+      <li class="fragment fade-in">
+        ✅ <strong>Key Idea:</strong> Combines a <em>VAE</em> (for latent encoding) 
+        and a <em>GRU-based MDN-RNN</em> (for dynamics), enabling the agent to “dream” 
+        future trajectories offline.
+      </li>
+      <li class="fragment fade-in">
+        🎯 <strong>Successes:</strong> Demonstrated improved sample efficiency in tasks 
+        like CarRacing &amp; VizDoom (single-agent, no humans).
+      </li>
+      <li class="fragment fade-in">
+        ⚙️ <strong>Architecture:</strong> 
+        1) VAE for compressing observations, 
+        2) MDN-RNN (GRU) for predicting latent transitions, 
+        3) Evolution or RL in the learned latent space.
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- Slide X+1: Why World Models Alone Don’t Solve Social Navigation -->
+<section 
+  data-background="img/aston_slides_background_22.png" 
+  data-background-size="cover"
+>
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">
+    🔎 Why World Models Alone Don’t Solve Social Navigation
+  </h2>
+  <div style="text-align: center; padding-top: 20px; min-height: 200px;">
+    <ul style="color: white; text-align: left; display: inline-block; max-width: 75%;">
+      <li class="fragment fade-in">
+        🤖 <strong>Single-Agent Domains:</strong> 
+        CarRacing/VizDoom have no multi-human interactions or social norms.
+      </li>
+      <li class="fragment fade-in">
+        ⚠️ <strong>Generic GRU (MDN-RNN):</strong> 
+        Can degrade with highly dynamic, noisy human trajectories; 
+        lacks specialized gating for outliers.
+      </li>
+      <li class="fragment fade-in">
+        🚫 <strong>No Social Norm Encoding:</strong> 
+        Merely reconstructs visuals/rewards; no concept of personal space 
+        or comfort metrics crucial for social nav.
+      </li>
+      <li class="fragment fade-in">
+        ⏱ <strong>Offline / Fixed “Dreaming”:</strong> 
+        Not adapted to real-time, multi-human unpredictability; 
+        horizon is not dynamically adjustable.
+      </li>
+    </ul>
+  </div>
+</section>
+
       
       <!-- ========================================= -->
 <!-- 6. ENVIRONMENTS USED                     -->
@@ -478,7 +556,7 @@
     </div>
     <!-- Single Bullet -->
     <p style="font-size: 1em; color: white; padding-top: 20px;">
-      📌 Purpose: Synthetic environment for sequence prediction.
+      📌 Purpose: Toy environment for sequence prediction.
     </p>
   </div>
 </section>
@@ -496,7 +574,7 @@
     </div>
     <!-- Single Bullet -->
     <p style="font-size: 1em; color: white; padding-top: 20px;">
-      📌 Purpose: Continuous control task for RL.
+      📌 Purpose: A Simple Continuous control task for RL.
     </p>
   </div>
 </section>
