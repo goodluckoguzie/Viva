@@ -952,15 +952,18 @@
 <!-- ========================================= -->
 <!-- Preliminary Experiments Section -->
 <!-- ========================================= -->
+<!-- ========================================= -->
+<!-- Preliminary Experiments Section         -->
+<!-- ========================================= -->
 
 <!-- Slide A10: Preliminary Experiments Overview -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🧪 Preliminary Experiments Overview</h2>
   <div style="text-align: center; padding-top: 50px;">
-    <ul class="textBlock" style="color: white;">
-      <li class="fragment fade-in">🔍 LunarLander‑v2 to optimize CGLSTM window-slide &amp; horizon sets.</li>
-      <li class="fragment fade-in">⚙️ Tested window-slide sizes: 16, 32, 64 for trade-offs in cost vs. accuracy.</li>
-      <li class="fragment fade-in">🎯 Compared horizon sets {1,2,3,4,5} vs. {1,2,4,6,8} vs. fixed 8-step horizon.</li>
+    <ul class="textBlock" style="color: white; font-size: 1.2em;">
+      <!-- Removed the "LunarLander‑v2" bullet as requested -->
+      <li class="fragment fade-in" style="margin-bottom: 10px;">⚙️ Tested window-slide sizes: 16, 32, 64 for trade-offs in cost vs. accuracy.</li>
+      <li class="fragment fade-in" style="margin-bottom: 10px;">🎯 Compared horizon sets {1,2,3,4,5} vs. {1,2,4,6,8} vs. fixed 8-step horizon.</li>
     </ul>
   </div>
 </section>
@@ -980,12 +983,26 @@
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎯 Adaptive Horizon Selection</h2>
   <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <!-- You can keep the original image if desired or update it -->
     <img src="img/Lunarlander_Horizon_Comparison-1.jpg" width="60%" style="display: block; margin: 0 auto;">
     <div style="margin-top: 20px; color: white; text-align: center; font-size: 1.2em;">
       🎯 Adaptive horizons yield optimal performance.
     </div>
   </div>
 </section>
+
+<!-- New Slide: Adaptive vs. Fixed Horizon Comparison -->
+<section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📊 Adaptive vs. Fixed Horizon</h2>
+  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+    <!-- Updated image for comparison -->
+    <img src="img/Lunarlander_Fixed_vs_Entropy.jpg" width="60%" style="display: block; margin: 0 auto;">
+    <div style="margin-top: 20px; color: white; text-align: center; font-size: 1.2em;">
+      {1,2,4,6,8} vs. fixed 8-step horizon.
+    </div>
+  </div>
+</section>
+
 
 <!-- Slide A13: Training Results: LunarLander -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
