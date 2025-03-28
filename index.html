@@ -710,15 +710,48 @@
   <!-- Sub-Slide 1: Title & Explanation -->
   <section id="cglstmSlide"
            data-background="img/aston_slides_background_22.png"
-           data-background-size="cover">
-    <h2 style="color: white; text-align: center; margin-bottom: 20px;">
+           data-background-size="cover"
+           style="padding: 60px 0;"
+  >
+    <h2 
+      style="
+        color: white; 
+        text-align: center; 
+        margin-bottom: 30px; 
+        font-size: 2em;
+      "
+    >
       Cosine-Gated LSTM (CGLSTM)
     </h2>
-    <p style="color: white; text-align: center; font-size: 1.2em; margin-top: 20px;">
-      🤖 Aims to improve sequence prediction by focusing on directional alignment.<br>
-      📌 Builds on limitations observed in previous LSTM experiments (e.g., in SocNavGym).
-    </p>
+
+    <div style="text-align: center; margin-top: 20px;">
+      <!-- Contribution 2 Label -->
+      <p style="color: white; font-size: 1.2em; margin-bottom: 20px;">
+        <strong>Contribution 2:</strong>
+      </p>
+
+      <!-- Bullet List -->
+      <ul 
+        style="
+          color: white; 
+          text-align: left; 
+          display: inline-block; 
+          max-width: 75%; 
+          font-size: 1.2em; 
+          line-height: 1.4;
+        "
+      >
+        <li style="margin-bottom: 10px;">
+          🤖 Aims to improve sequence prediction by focusing on directional alignment.
+        </li>
+        <li style="margin-bottom: 10px;">
+          📌 Builds on limitations observed in previous LSTM experiments (e.g., in SocNavGym).
+        </li>
+      </ul>
+    </div>
   </section>
+</section>
+
 
   <!-- Sub-Slide 2: PDF Embedding -->
   <section data-background="img/aston_slides_background_22.png"
@@ -825,17 +858,43 @@
 
 
 <!-- Slide A1: Chapter Title with Contributions (Contribution 3) -->
-<section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-  <h2 class="section-title" style="color: white;">Entropy‐Driven Adaptive Prediction Horizons</h2>
-  <div style="text-align: center; padding-top: 20px; min-height: 150px;">
-    <p style="color: white; font-size: 1.1em; margin-bottom: 10px;">Contribution 3:</p>
-    <ul style="color: white; text-align: left; display: inline-block; max-width: 75%; font-size: 1.2em;">
+<section 
+  data-background="img/aston_slides_background_22.png" 
+  data-background-size="cover"
+  style="padding: 60px 0;"
+>
+  <h2 
+    style="
+      color: white; 
+      text-align: center; 
+      margin-bottom: 30px; 
+      font-size: 2em;
+    "
+  >
+    Entropy‐Driven Adaptive Prediction Horizons
+  </h2>
+
+  <div style="text-align: center; margin-top: 20px;">
+    <p style="color: white; font-size: 1.2em; margin-bottom: 20px;">
+      <strong>Contribution 3:</strong>
+    </p>
+    <ul 
+      style="
+        color: white; 
+        text-align: left; 
+        display: inline-block; 
+        max-width: 75%; 
+        font-size: 1.2em; 
+        line-height: 1.4;
+      "
+    >
       <li style="margin-bottom: 10px;">✅ Propose an entropy-driven adaptive horizon within SAC.</li>
       <li style="margin-bottom: 10px;">🤖 Integrate CGLSTM into DreamerV3 for enhanced predictive modeling.</li>
       <li style="margin-bottom: 10px;">📊 Benchmark vs. SAC, PPO, TD3, DDPG, DreamerV3 variants.</li>
     </ul>
   </div>
 </section>
+
 
 
 <!-- ========================================= -->
