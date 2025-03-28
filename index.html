@@ -1033,31 +1033,195 @@
       <!-- 8. CONCLUSION                           -->
       <!-- ========================================= -->
 
-      <!-- Slide 43: Section Title: Conclusion -->
-      <section data-background="img/aston_slides_background_22.png" data-background-size="cover">
-        <h2 class="section-title">Conclusion</h2>
-      </section>
+<!-- ========================================= -->
+<!-- CONCLUSION SLIDE (Bullet Points Only)    -->
+<!-- ========================================= -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎉 Conclusion</h2>
+  <div style="text-align: center; color: white; padding-top: 40px;">
+    <ul style="font-size: 1.2em; list-style: none; padding-left: 0;">
+      <li class="fragment fade-in" style="margin-bottom: 10px;">
+        <strong>Novel Predictive Models</strong>: 
+        2StepAhead, MASPM, and CGLSTM address short-horizon 
+        and reactive limitations in social robot navigation.
+      </li>
+      <li class="fragment fade-in" style="margin-bottom: 10px;">
+        <strong>Enhanced Performance</strong>: 
+        Demonstrated higher safety, human comfort, 
+        and success rates in diverse simulation environments.
+      </li>
+      <li class="fragment fade-in" style="margin-bottom: 10px;">
+        <strong>Adaptive Horizons in RL</strong>:
+        Introduced an entropy-driven approach, surpassing fixed-horizon 
+        methods and enhancing continuous-control capabilities.
+      </li>
+    </ul>
+  </div>
+</section>
 
-      <!-- Slide 44: Conclusion & Future Work -->
-      <section data-background="img/aston_slides_background_22.png">
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">🎉 Conclusion & Future Work</h2>
-        <div style="text-align: center; color: white; padding-top: 40px;">
-          <ul>
-            <li class="fragment">📌 Advanced predictive models (2StepAhead, MASPM, CGLSTM) introduced</li>
-            <li class="fragment">🎯 Achieved gains in RL performance, safety & social acceptance</li>
-            <li class="fragment">✨ Future: Real-time hardware deployment </li>
-          </ul>
-        </div>
-        <div style="text-align: center; margin-top: 30px;">
-          <a href="https://goodluckoguzie.github.io/Viva" target="_blank" class="final-link">https://goodluckoguzie.github.io/Viva</a>
-        </div>
-      </section>
 
-      <!-- Slide 45: Thank You / Q&A -->
-      <section data-background="img/aston_slides_background_22.png">
-        <h2 style="color: white; text-align: center; margin-top: 100px;">🙏 Thank You</h2>
-        <h4 style="color: white; text-align: center; margin-top: 30px;">Questions?</h4>
-      </section>
+<!-- ========================================= -->
+<!-- FUTURE WORK SLIDE (Image first, then text) -->
+<!-- ========================================= -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">🚀 Future Work</h2>
+  <div style="text-align: center; color: white; padding-top: 30px;">
+
+    <!-- Robot Image first -->
+    <div style="margin-top: 30px;">
+      <img 
+        src="img/my_robot.jpg" 
+        alt="Laboratory Robot Platform" 
+        style="width: 35%; border: 2px solid white; border-radius: 5px;"
+      />
+    </div>
+
+    <!-- Text under the image -->
+    <p style="font-size: 1.1em; max-width: 70%; margin: 40px auto 0; text-align: left;">
+      We plan to transfer our trained RL models from simulation 
+      to a physical robot platform, integrating camera and LiDAR sensors 
+      via a custom HAL. By leveraging mapping (Nav2) and real-time policy 
+      execution, we aim to validate social navigation performance 
+      beyond simulation.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- ========================================= -->
+<!-- PUBLICATIONS & ONGOING WORK SLIDE        -->
+<!-- ========================================= -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📝 Publications & Ongoing Work</h2>
+  <div style="text-align: left; color: white; padding: 40px; font-size: 1em; max-width: 80%; margin: 0 auto;">
+    <ul style="list-style-type: disc; padding-left: 20px;">
+      <!-- Example Published Work -->
+      <li class="fragment fade-in" style="margin-bottom: 10px;">
+        <strong>[Published]</strong> G. Oguzie, et al., 
+        “Predictive World Models for Social Navigation,” 
+        in <em>Proc. UKCI</em>, 2023.
+      </li>
+      <li class="fragment fade-in" style="margin-bottom: 10px;">
+        <strong>[Published]</strong> G. Oguzie, et al., 
+        “Cosine-Gated LSTM for Dynamic Sequence Prediction,” 
+        in <em>Conference on XY</em>, 2023.
+      </li>
+      <!-- Example Future/Planned Work -->
+      <li class="fragment fade-in" style="margin-bottom: 10px;">
+        <strong>[In Preparation]</strong> G. Oguzie, et al., 
+        “Adaptive Horizons in Model-Based RL for Human-Robot Interaction,” 
+        Target Journal: <em>IEEE Transactions on Robotics</em>.
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ========================================= -->
+<!-- REFERENCES SLIDE (All Citations)         -->
+<!-- ========================================= -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📚 References</h2>
+  <div style="text-align: left; color: white; padding: 40px; font-size: 0.95em; max-width: 80%; margin: 0 auto;">
+    <ol>
+      <!-- References from the entire presentation -->
+      <li class="fragment fade-in">
+        R. C. Arkin, <em>Behavior-Based Robotics</em>. MIT Press, 1998.
+      </li>
+      <li class="fragment fade-in">
+        D. Helbing and P. Molnar, 
+        “Social force model for pedestrian dynamics,” 
+        <em>Phys. Rev. E</em>, vol. 51, no. 5, p. 4282, 1995.
+      </li>
+      <li class="fragment fade-in">
+        J. van den Berg, S. J. Guy, M. Lin, and D. Manocha, 
+        “Reciprocal n-body collision avoidance,” 
+        in <em>Robotics Research</em>. Springer, 2011.
+      </li>
+      <li class="fragment fade-in">
+        V. Mnih, K. Kavukcuoglu, D. Silver, et al., 
+        “Playing Atari with deep reinforcement learning,” 
+        <em>arXiv preprint arXiv:1312.5602</em>, 2013.
+      </li>
+      <li class="fragment fade-in">
+        R. S. Sutton and A. G. Barto, 
+        <em>Reinforcement Learning: An Introduction</em>, 2nd ed. 
+        MIT Press, 2018.
+      </li>
+      <li class="fragment fade-in">
+        T. P. Lillicrap, J. Hunt, A. Pritzel, et al., 
+        “Continuous control with deep reinforcement learning,” 
+        <em>arXiv preprint arXiv:1509.02971</em>, 2015.
+      </li>
+      <li class="fragment fade-in">
+        J. Schulman, F. Wolski, P. Dhariwal, et al., 
+        “Proximal policy optimization algorithms,” 
+        <em>arXiv preprint arXiv:1707.06347</em>, 2017.
+      </li>
+      <li class="fragment fade-in">
+        S. Fujimoto, H. van Hoof, and D. Meger, 
+        “Addressing function approximation error in actor-critic methods,” 
+        in <em>Proc. 35th Int. Conf. Machine Learning (ICML)</em>, 2018.
+      </li>
+      <li class="fragment fade-in">
+        T. Haarnoja, A. Zhou, K. Hartikainen, et al., 
+        “Soft actor-critic algorithms and applications,” 
+        <em>arXiv preprint arXiv:1812.05905</em>, 2018.
+      </li>
+      <li class="fragment fade-in">
+        D. Hafner, T. Lillicrap, M. Norouzi, and J. Ba, 
+        “Mastering diverse domains through world models,” 
+        <em>arXiv preprint arXiv:2301.04104</em>, 2023.
+      </li>
+      <li class="fragment fade-in">
+        D. E. Rumelhart, G. E. Hinton, and R. J. Williams, 
+        “Learning representations by back-propagating errors,” 
+        <em>Nature</em>, vol. 323, pp. 533–536, 1986.
+      </li>
+      <li class="fragment fade-in">
+        S. Hochreiter and J. Schmidhuber, 
+        “Long short-term memory,” 
+        <em>Neural Computation</em>, vol. 9, no. 8, pp. 1735–1780, 1997.
+      </li>
+      <li class="fragment fade-in">
+        K. Cho, B. van Merrienboer, D. Bahdanau, and Y. Bengio, 
+        “On the properties of neural machine translation: 
+        Encoder-decoder approaches,” 
+        <em>arXiv preprint arXiv:1409.1259</em>, 2014.
+      </li>
+      <li class="fragment fade-in">
+        A. Vaswani, N. Shazeer, N. Parmar, et al., 
+        “Attention is all you need,” 
+        in <em>Advances in Neural Information Processing Systems (NIPS)</em>, 2017.
+      </li>
+      <li class="fragment fade-in">
+        D. Ha and J. Schmidhuber, 
+        “Recurrent world models facilitate policy evolution,” 
+        in <em>Advances in Neural Information Processing Systems (NIPS)</em>, 2018.
+      </li>
+    </ol>
+  </div>
+</section>
+
+
+<!-- ========================================= -->
+<!-- THANK YOU / Q&A SLIDE (Link only here)    -->
+<!-- ========================================= -->
+<section data-background="img/aston_slides_background_22.png">
+  <h2 style="color: white; text-align: center; margin-top: 100px;">🙏 Thank You</h2>
+  <h4 style="color: white; text-align: center; margin-top: 30px;">Questions?</h4>
+
+  <!-- Viva link ONLY here -->
+  <div style="text-align: center; margin-top: 30px;">
+    <a href="https://goodluckoguzie.github.io/Viva" 
+       target="_blank" 
+       style="font-size: 1.2em; color: #00A9D4; text-decoration: none;">
+       https://goodluckoguzie.github.io/Viva
+    </a>
+  </div>
+</section>
+
 
     </div>
   </div>
