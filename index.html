@@ -628,7 +628,7 @@
   <div style="text-align: center; padding-top: 50px; min-height: 300px;">
     <div style="padding-bottom: 20px;">
       <!-- Retain the image for 2StepAhead -->
-      <img src="img/figure1.2_2StepAhead.jpg" width="40%" style="display: block; margin: 0 auto;">
+      <img src="img/figure1.2_2StepAhead.jpg" width="70%" style="display: block; margin: 0 auto;">
     </div>
     <div style="margin-top: 20px; color: white; text-align: center; font-size: 1.2em;">
       🔍 Predicts hidden &amp; latent states two steps ahead.
@@ -642,7 +642,7 @@
   <div style="text-align: center; padding-top: 50px; min-height: 300px;">
     <div style="padding-bottom: 20px;">
       <!-- Retain the image for MASPM -->
-      <img src="img/figure1.3_MASPM.jpg" width="40%" style="display: block; margin: 0 auto;">
+      <img src="img/figure1.3_MASPM.jpg" width="70%" style="display: block; margin: 0 auto;">
     </div>
     <div style="margin-top: 20px; color: white; text-align: center; font-size: 1.2em;">
       📌 Predicts outcomes for all available actions.
@@ -656,7 +656,7 @@
   <div style="text-align: center; padding-top: 50px; min-height: 300px;">
     <div style="padding-bottom: 20px;">
       <!-- Retain the image for Hybrid Model -->
-      <img src="img/figure1.4_Hybrid.jpg" width="40%" style="display: block; margin: 0 auto;">
+      <img src="img/figure1.4_Hybrid.jpg" width="70%" style="display: block; margin: 0 auto;">
     </div>
     <div style="margin-top: 20px; color: white; text-align: center; font-size: 1.2em;">
       🔗 Combines 2StepAhead’s efficiency with MASPM’s comprehensive evaluation.
@@ -805,7 +805,7 @@
   <div style="text-align: center; padding-top: 40px; min-height: 300px;">
     <img src="img/CGLSTMArchitecture.jpg" width="50%" style="display: block; margin: 0 auto;" />
     <div style="margin-top: 20px; color: white; text-align: center; font-size: 1.2em;">
-      ⚙️ Dynamically weighs new inputs vs. hidden states based on alignment.
+      ⚙️ Dynamically weighs new inputs vs. hidden states based on similarities.
     </div>
   </div>
 </section>
@@ -816,7 +816,7 @@
   <div style="text-align: center; padding-top: 40px; min-height: 300px;">
     <img src="img/fallingballenv_cglstm_results.jpg" width="60%" style="display: block; margin: 0 auto;" />
     <div style="font-size: 1em; color: white; text-align: center; margin-top: 20px;">
-      📌 CGLSTM outperforms LSTM, GRU, and Transformer in bounce predictions.
+      📌 CGLSTM outperforms LSTM, GRU, and Transformer in the falling ball predictions.
     </div>
   </div>
 </section>
@@ -827,7 +827,7 @@
   <div style="text-align: center; padding-top: 40px; min-height: 300px;">
     <img src="img/cgltsmtestResult.jpg" width="70%" style="display: block; margin: 0 auto;" />
     <div style="font-size: 1em; color: white; text-align: center; margin-top: 20px;">
-      ✅ Highest accuracy on row-wise MNIST (99.07%).
+      ✅ Highest accuracy overall.
     </div>
   </div>
 </section>
@@ -840,7 +840,7 @@
       <img src="img/cgltsmtestTimeResult.jpg" width="70%" style="display: block; margin: 0 auto;" />
     </div>
     <div style="font-size: 1em; color: white; text-align: center; margin-top: 20px;">
-      📊 GRU is faster, but CGLSTM invests ~5% more time for superior accuracy.
+      📊 GRU is faster, but CGLSTM uses ~5% more time for superior accuracy.
     </div>
   </div>
 </section>
@@ -910,21 +910,22 @@
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔑 Proposed Methods</h2>
   <div style="text-align: center; padding-top: 50px;">
-    <ul class="textBlock" style="color: white;">
-      <li class="fragment fade-in">🚀 DreamerV3 + CGLSTM</li>
-      <li class="fragment fade-in">🔗 2StepAhead-MASPM (Fixed Horizon)</li>
-      <li class="fragment fade-in">🤖 SAC + CGLSTM (Adaptive Horizon)</li>
+    <ul class="textBlock" style="color: white; font-size: 1.2em; list-style: none; padding: 0;">
+      <li style="margin-bottom: 10px;">🚀 DreamerV3 + CGLSTM</li>
+      <li style="margin-bottom: 10px;">🔗 2StepAhead-MASPM (Fixed Horizon)</li>
+      <li style="margin-bottom: 10px;">🤖 SAC + CGLSTM (Adaptive Horizon)</li>
     </ul>
   </div>
 </section>
+
 
 <!-- Slide A7: Proposed: DreamerV3 + CGLSTM -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🚀 Proposed: DreamerV3 + CGLSTM</h2>
   <div style="text-align: center; padding-top: 40px; min-height: 300px;">
-    <img src="img/DreamerV3_CGLSTM.JPG" width="50%" style="display: block; margin: 0 auto;">
+    <img src="img/DreamerV3_CGLSTM.JPG" width="70%" style="display: block; margin: 0 auto;">
     <div style="margin-top: 30px; color: white; text-align: center; font-size: 1.2em;">
-      🤖 Enhances temporal representation &amp; long-term state accuracy.
+      🤖 Enhances State Prediction.
     </div>
   </div>
 </section>
@@ -933,7 +934,7 @@
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔗 Proposed: 2StepAhead-MASPM (Fixed Horizon)</h2>
   <div style="text-align: center; padding-top: 40px; min-height: 300px;">
-    <img src="img/figure1.4_Hybrid.jpg" width="50%" style="display: block; margin: 0 auto;">
+    <img src="img/figure1.4_Hybrid.jpg" width="70%" style="display: block; margin: 0 auto;">
     <div style="margin-top: 30px; color: white; text-align: center; font-size: 1.2em;">
       ⚙️ Provides a strong baseline for adaptive horizon comparison.
     </div>
@@ -944,9 +945,9 @@
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">🤖 Proposed: SAC + CGLSTM (Adaptive Horizon)</h2>
   <div style="text-align: center; padding-top: 40px; min-height: 300px;">
-    <img src="img/SAC_CGLSTM_Adaptive.jpg" width="50%" style="display: block; margin: 0 auto;">
+    <img src="img/SAC_CGLSTM_Adaptive.jpg" width="70%" style="display: block; margin: 0 auto;">
     <div style="margin-top: 30px; color: white; text-align: center; font-size: 1.2em;">
-      Dynamically adjusts horizon via policy entropy—longer when uncertain.
+      Dynamically adjusts prediction horizon via action entropy.
     </div>
   </div>
 </section>
@@ -974,7 +975,7 @@
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">📊 Window-Slide Selection</h2>
   <div style="text-align: center; padding-top: 40px; min-height: 300px;">
-    <img src="img/WindowSlide_TrainLoss-1.jpg" width="60%" style="display: block; margin: 0 auto;">
+    <img src="img/WindowSlide_TrainLoss-1.jpg" width="70%" style="display: block; margin: 0 auto;">
     <div style="margin-top: 20px; color: white; text-align: center; font-size: 1.2em;">
       ✅ Slide=64 yields lowest training loss.
     </div>
@@ -988,7 +989,7 @@
     <!-- You can keep the original image if desired or update it -->
     <img src="img/Lunarlander_Horizon_Comparison-1.jpg" width="60%" style="display: block; margin: 0 auto;">
     <div style="margin-top: 20px; color: white; text-align: center; font-size: 1.2em;">
-      🎯 Adaptive horizons yield optimal performance.
+      🎯 Adaptive Horizon Selection Result.
     </div>
   </div>
 </section>
@@ -998,7 +999,7 @@
   <h2 style="color: white; text-align: center; margin-bottom: 20px;">📊 Adaptive vs. Fixed Horizon</h2>
   <div style="text-align: center; padding-top: 40px; min-height: 300px;">
     <!-- Updated image for comparison -->
-    <img src="img/Lunarlander_Fixed_vs_Entropy.jpg" width="60%" style="display: block; margin: 0 auto;">
+    <img src="img/Lunarlander_Fixed_vs_Entropy.jpg" width="70%" style="display: block; margin: 0 auto;">
     <div style="margin-top: 20px; color: white; text-align: center; font-size: 1.2em;">
       Adaptive {1,2,4,6,8} vs. fixed 8-step Prediction horizon.
     </div>
@@ -1012,7 +1013,7 @@
   <div style="text-align: center; padding-top: 40px; min-height: 300px;">
     <img src="img/TrainingReturn_LunderLander-1.jpg" width="60%" style="display: block; margin: 0 auto;">
     <div style="margin-top: 20px; color: white; text-align: center; font-size: 1.2em;">
-      ⏱ Full convergence reached in ~200k episodes.
+      ⏱ Full convergence reached in ~500k episodes.
     </div>
   </div>
 </section>
@@ -1023,21 +1024,27 @@
   <div style="text-align: center; padding-top: 40px; min-height: 300px;">
     <img src="img/TrainingReturn_SocNavGym-1.jpg" width="60%" style="display: block; margin: 0 auto;">
     <div style="margin-top: 20px; color: white; text-align: center; font-size: 1.2em;">
-      ⏱ Full convergence reached in ~200k episodes.
+      ⏱ Full convergence reached in ~4 Million episodes.
     </div>
   </div>
 </section>
 
 <!-- Slide A15: LunarLander Results (1) -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
-  <h2 style="color: white; text-align: center; margin-bottom: 20px;">📊 LunarLander Results (1)</h2>
-  <div style="text-align: center; padding-top: 40px; min-height: 300px;">
+  <h2 style="color: white; text-align: center; margin-bottom: 10px;">
+    📊 LunarLander Results (1)
+  </h2>
+  <p style="color: white; text-align: center; font-size: 0.9em; margin-bottom: 20px;">
+    Note: Gaussian noise (σ = 0.085) added to the environment only during testing.
+  </p>
+  <div style="text-align: center; padding-top: 20px; min-height: 300px;">
     <img src="img/lunarlander_results_part1.JPG" width="70%" style="display: block; margin: 0 auto;">
     <div style="margin-top: 20px; color: white; text-align: center; font-size: 1.2em;">
-      📊 Adaptive horizon SAC + CGLSTM achieves 100% success.
+      📊 Adaptive horizon SAC + CGLSTM achieves 175.22 average return.
     </div>
   </div>
 </section>
+
 
 <!-- Slide A16: LunarLander Results (2) -->
 <section data-background="img/aston_slides_background_22.png" data-background-position="0 -20px">
